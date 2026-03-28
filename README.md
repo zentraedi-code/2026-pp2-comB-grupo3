@@ -7,7 +7,7 @@ Este repositorio fue creado con fines académicos y corresponde al:
 
 ## 👥 Integrantes
 
-- José Luis Galvis  
+- Jose Luis Galvis  
 - Marcelo Agustin Pereira  
 - Maria Emilia Sosa Tomada  
 - Javier Churquina  
