@@ -19,6 +19,7 @@ Este repositorio fue creado con fines académicos y corresponde al:
 
 ---
 
-📌 Este proyecto se utiliza exclusivamente en el contexto de la cursada.
+📌 Este proyecto se utiliza exclusivamente en el contexto de la cursada Desarrollo de Aplicaciones para Dispositivos Moviles
 
 AKA: DAM
+
