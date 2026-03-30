@@ -11,7 +11,7 @@ Este repositorio fue creado con fines académicos para la materia:
 - Marcelo Agustin Pereira  
 - Maria Emilia Sosa Tomada  
 - Javier Churquina  
-- Juan Pablo Duarte  
+
 
 ## 🔗 Links
 
