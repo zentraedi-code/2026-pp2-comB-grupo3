@@ -1,0 +1,92 @@
+﻿namespace Seprise
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btnOpcion1 = new Button();
+            btnOpcion2 = new Button();
+            lblTitulo = new Label();
+            SuspendLayout();
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Anchor = AnchorStyles.Top;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblTitulo.Location = new Point(250, 80);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(300, 46);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Menú Principal";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnOpcion1
+            // 
+            btnOpcion1.Anchor = AnchorStyles.None;
+            btnOpcion1.Font = new Font("Segoe UI", 12F);
+            btnOpcion1.Location = new Point(300, 180);
+            btnOpcion1.Name = "btnOpcion1";
+            btnOpcion1.Size = new Size(200, 60);
+            btnOpcion1.TabIndex = 1;
+            btnOpcion1.Text = "Opción 1";
+            btnOpcion1.UseVisualStyleBackColor = true;
+            btnOpcion1.Click += btnOpcion1_Click;
+            // 
+            // btnOpcion2
+            // 
+            btnOpcion2.Anchor = AnchorStyles.None;
+            btnOpcion2.Font = new Font("Segoe UI", 12F);
+            btnOpcion2.Location = new Point(300, 260);
+            btnOpcion2.Name = "btnOpcion2";
+            btnOpcion2.Size = new Size(200, 60);
+            btnOpcion2.TabIndex = 2;
+            btnOpcion2.Text = "Opción 2";
+            btnOpcion2.UseVisualStyleBackColor = true;
+            btnOpcion2.Click += btnOpcion2_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnOpcion2);
+            Controls.Add(btnOpcion1);
+            Controls.Add(lblTitulo);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Seprise - Menú Principal";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label lblTitulo;
+        private Button btnOpcion1;
+        private Button btnOpcion2;
+    }
+}

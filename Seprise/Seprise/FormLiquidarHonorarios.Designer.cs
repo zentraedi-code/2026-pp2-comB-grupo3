@@ -1,0 +1,154 @@
+namespace Seprise
+{
+    partial class FormLiquidarHonorarios
+    {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblSubtitulo;
+        private System.Windows.Forms.Label lblMedico;
+        private System.Windows.Forms.ComboBox cmbMedico;
+        private System.Windows.Forms.Label lblDesde;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.Label lblHasta;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.DataGridView dgvHonorarios;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblSubtitulo = new System.Windows.Forms.Label();
+            this.lblMedico = new System.Windows.Forms.Label();
+            this.cmbMedico = new System.Windows.Forms.ComboBox();
+            this.lblDesde = new System.Windows.Forms.Label();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.lblHasta = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.dgvHonorarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHonorarios)).BeginInit();
+            this.SuspendLayout();
+
+            // lblTitulo
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(20, 20);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "CU13 - Liquidar honorarios médicos";
+
+            // lblSubtitulo
+            this.lblSubtitulo.AutoSize = true;
+            this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
+            this.lblSubtitulo.Name = "lblSubtitulo";
+            this.lblSubtitulo.TabIndex = 1;
+            this.lblSubtitulo.Text = "Reporte de facturación por médico.";
+
+            // lblMedico
+            this.lblMedico.AutoSize = true;
+            this.lblMedico.Location = new System.Drawing.Point(20, 90);
+            this.lblMedico.Name = "lblMedico";
+            this.lblMedico.Size = new System.Drawing.Size(47, 15);
+            this.lblMedico.TabIndex = 2;
+            this.lblMedico.Text = "Médico";
+
+            // cmbMedico
+            this.cmbMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMedico.FormattingEnabled = true;
+            this.cmbMedico.Location = new System.Drawing.Point(20, 110);
+            this.cmbMedico.Name = "cmbMedico";
+            this.cmbMedico.Size = new System.Drawing.Size(250, 23);
+            this.cmbMedico.TabIndex = 3;
+
+            // lblDesde
+            this.lblDesde.AutoSize = true;
+            this.lblDesde.Location = new System.Drawing.Point(290, 90);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(39, 15);
+            this.lblDesde.TabIndex = 4;
+            this.lblDesde.Text = "Desde";
+
+            // dtpDesde
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(290, 110);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(150, 23);
+            this.dtpDesde.TabIndex = 5;
+
+            // lblHasta
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Location = new System.Drawing.Point(460, 90);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(37, 15);
+            this.lblHasta.TabIndex = 6;
+            this.lblHasta.Text = "Hasta";
+
+            // dtpHasta
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(460, 110);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(150, 23);
+            this.dtpHasta.TabIndex = 7;
+
+            // btnGenerar
+            this.btnGenerar.Location = new System.Drawing.Point(20, 150);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(120, 30);
+            this.btnGenerar.TabIndex = 8;
+            this.btnGenerar.Text = "Generar reporte";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+
+            // btnExportar
+            this.btnExportar.Location = new System.Drawing.Point(150, 150);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(100, 30);
+            this.btnExportar.TabIndex = 9;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+
+            // dgvHonorarios
+            this.dgvHonorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHonorarios.Location = new System.Drawing.Point(20, 200);
+            this.dgvHonorarios.Name = "dgvHonorarios";
+            this.dgvHonorarios.RowTemplate.Height = 25;
+            this.dgvHonorarios.Size = new System.Drawing.Size(760, 300);
+            this.dgvHonorarios.TabIndex = 10;
+
+            // FormLiquidarHonorarios
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 530);
+            this.Controls.Add(this.dgvHonorarios);
+            this.Controls.Add(this.btnExportar);
+            this.Controls.Add(this.btnGenerar);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.lblHasta);
+            this.Controls.Add(this.dtpDesde);
+            this.Controls.Add(this.lblDesde);
+            this.Controls.Add(this.cmbMedico);
+            this.Controls.Add(this.lblMedico);
+            this.Controls.Add(this.lblSubtitulo);
+            this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "FormLiquidarHonorarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Liquidar honorarios médicos";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHonorarios)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+    }
+}

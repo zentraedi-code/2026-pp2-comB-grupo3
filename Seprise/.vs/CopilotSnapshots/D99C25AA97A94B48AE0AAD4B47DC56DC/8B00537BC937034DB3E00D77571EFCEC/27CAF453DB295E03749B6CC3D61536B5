@@ -1,0 +1,22 @@
+﻿namespace Seprise
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnOpcion1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Has seleccionado la Opción 1", "Opción 1", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnOpcion2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Has seleccionado la Opción 2", "Opción 2", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+}

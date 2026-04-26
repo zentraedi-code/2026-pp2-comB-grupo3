@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CU23 - Entregar estudio - Sistema PP2</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Sistema de Consultorios Externos y Estudios Clínicos</h1>
+    <p>Mockup navegable simple para PP2</p>
+  </header>
+  <div class="layout">
+    <nav>
+      <a href="index.html">Inicio</a>
+
+      <h3>Común</h3>
+      <a href="pacientes.html">ABM Pacientes</a>
+      <a href="solicitud-estudio.html">Crear solicitud de estudio</a>
+
+      <h3>Consultorios externos</h3>
+      <a href="medicos.html">ABM Médicos</a>
+      <a href="crear-agenda-medica.html">Crear agenda médica</a>
+      <a href="confirmar-agenda-medica.html">Confirmar agenda médica</a>
+      <a href="reservar-turno-medico.html">Reservar turno médico</a>
+      <a href="cancelar-reserva-medica.html">Cancelar reserva</a>
+      <a href="recepcionar-paciente.html">Recepcionar paciente</a>
+      <a href="facturar-consulta.html">Facturar consulta</a>
+      <a href="cola-espera-medico.html">Cola de espera médico</a>
+      <a href="atencion-medica.html">Atención médica / Historia clínica</a>
+<a href="liquidar-honorarios.html">Liquidar honorarios</a>
+
+      <h3>Estudios clínicos</h3>
+      <a href="crear-agenda-estudios.html">Crear agenda estudios</a>
+      <a href="cancelar-agenda-estudios.html">Cancelar agenda estudios</a>
+      <a href="confirmar-agenda-estudios.html">Confirmar agenda estudios</a>
+      <a href="reservar-turno-estudio.html">Reservar turno estudio</a>
+      <a href="recepcionar-estudio.html">Recepcionar paciente estudio</a>
+      <a href="facturar-estudio.html">Facturar estudio</a>
+      <a href="finalizar-estudio.html">Finalizar atención estudio</a>
+      <a href="generar-informe-estudio.html">Generar informe estudio</a>
+      <a href="entregar-estudio.html" class="active">Entregar estudio</a>
+    </nav>
+    <main>
+      <section id="entregar-estudio" class="screen active">
+        <h2>CU23 - Entregar estudio</h2>
+        <p class="subtitle">Imprime el estudio, registra fecha de retiro y cambia el estado a entregado.</p>
+        <div class="grid">
+          <div class="field"><label>Buscar estudio informado</label><input placeholder="Paciente / DNI / solicitud"></div>
+          <div class="field"><label>Estado</label><select><option>INFORMADO</option><option>ENTREGADO</option></select></div>
+        </div>
+        <div class="actions"><button>Buscar</button></div>
+        <table>
+          <tr><th>Solicitud</th><th>Paciente</th><th>Tipo estudio</th><th>Fecha informe</th><th>Estado</th><th>Acción</th></tr>
+          <tr><td>#105</td><td>Pérez Juan</td><td>Radiografía</td><td>2026-05-12</td><td>INFORMADO</td><td><button>Seleccionar</button></td></tr>
+        </table>
+        <div class="grid">
+          <div class="field"><label>Fecha de retiro</label><input type="datetime-local"></div>
+          <div class="field"><label>Retirado por</label><input placeholder="Paciente / familiar / autorizado"></div>
+        </div>
+        <div class="actions"><button class="secondary">Imprimir estudio</button><button class="success">Registrar entrega</button></div>
+        <div class="note">Al registrar entrega: se completa la fecha de retiro y el estado cambia a ENTREGADO.</div>
+      </section>
+    </main>
+  </div>
+  <div id="abm-modal" class="modal-backdrop">
+    <div class="modal">
+      <h3 id="modal-title">ABM</h3>
+      <div id="modal-content"></div>
+      <div class="actions">
+        <button id="modal-save" class="success" onclick="closeModal()">Guardar</button>
+        <button class="secondary" onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

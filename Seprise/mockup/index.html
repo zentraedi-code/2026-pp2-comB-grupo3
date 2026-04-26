@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CU00 - Inicio - Sistema PP2</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Sistema de Consultorios Externos y Estudios Clínicos</h1>
+    <p>Mockup navegable simple para PP2</p>
+  </header>
+  <div class="layout">
+    <nav>
+      <a href="index.html" class="active">Inicio</a>
+
+      <h3>Común</h3>
+      <a href="pacientes.html">ABM Pacientes</a>
+      <a href="solicitud-estudio.html">Crear solicitud de estudio</a>
+
+      <h3>Consultorios externos</h3>
+      <a href="medicos.html">ABM Médicos</a>
+      <a href="crear-agenda-medica.html">Crear agenda médica</a>
+      <a href="confirmar-agenda-medica.html">Confirmar agenda médica</a>
+      <a href="reservar-turno-medico.html">Reservar turno médico</a>
+      <a href="cancelar-reserva-medica.html">Cancelar reserva</a>
+      <a href="recepcionar-paciente.html">Recepcionar paciente</a>
+      <a href="facturar-consulta.html">Facturar consulta</a>
+      <a href="atencion-medica.html">Atención médica / Historia clínica</a>
+<a href="liquidar-honorarios.html">Liquidar honorarios</a>
+
+      <h3>Estudios clínicos</h3>
+      <a href="crear-agenda-estudios.html">Crear agenda estudios</a>
+      <a href="cancelar-agenda-estudios.html">Cancelar agenda estudios</a>
+      <a href="confirmar-agenda-estudios.html">Confirmar agenda estudios</a>
+      <a href="reservar-turno-estudio.html">Reservar turno estudio</a>
+      <a href="recepcionar-estudio.html">Recepcionar paciente estudio</a>
+      <a href="facturar-estudio.html">Facturar estudio</a>
+      <a href="finalizar-estudio.html">Finalizar atención estudio</a>
+      <a href="generar-informe-estudio.html">Generar informe estudio</a>
+      <a href="entregar-estudio.html">Entregar estudio</a>
+    </nav>
+    <main>
+      <section id="inicio" class="screen active">
+        <h2>CU00 - Inicio</h2>
+        <p class="subtitle">Pantalla principal del sistema.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>Consultorios externos</h3>
+            <p>Gestión de médicos, agendas, turnos, recepción, atención médica y liquidación de honorarios.</p>
+            <button onclick="go('crear-agenda-medica')">Ir a agendas médicas</button>
+          </div>
+          <div class="card">
+            <h3>Estudios clínicos</h3>
+            <p>Gestión de solicitudes, agendas, turnos de estudio, informes y entrega de resultados.</p>
+            <button onclick="go('crear-agenda-estudios')">Ir a estudios</button>
+          </div>
+          <div class="card">
+            <h3>Pacientes</h3>
+            <p>Alta, baja y modificación de pacientes utilizados en ambos circuitos.</p>
+            <button onclick="go('pacientes')">Gestionar pacientes</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div id="abm-modal" class="modal-backdrop">
+    <div class="modal">
+      <h3 id="modal-title">ABM</h3>
+      <div id="modal-content"></div>
+      <div class="actions">
+        <button id="modal-save" class="success" onclick="closeModal()">Guardar</button>
+        <button class="secondary" onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

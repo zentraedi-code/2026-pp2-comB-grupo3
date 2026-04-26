@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CU22 - Generar informe de estudio - Sistema PP2</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Sistema de Consultorios Externos y Estudios Clínicos</h1>
+    <p>Mockup navegable simple para PP2</p>
+  </header>
+  <div class="layout">
+    <nav>
+      <a href="index.html">Inicio</a>
+
+      <h3>Común</h3>
+      <a href="pacientes.html">ABM Pacientes</a>
+      <a href="solicitud-estudio.html">Crear solicitud de estudio</a>
+
+      <h3>Consultorios externos</h3>
+      <a href="medicos.html">ABM Médicos</a>
+      <a href="crear-agenda-medica.html">Crear agenda médica</a>
+      <a href="confirmar-agenda-medica.html">Confirmar agenda médica</a>
+      <a href="reservar-turno-medico.html">Reservar turno médico</a>
+      <a href="cancelar-reserva-medica.html">Cancelar reserva</a>
+      <a href="recepcionar-paciente.html">Recepcionar paciente</a>
+      <a href="facturar-consulta.html">Facturar consulta</a>
+      <a href="cola-espera-medico.html">Cola de espera médico</a>
+      <a href="atencion-medica.html">Atención médica / Historia clínica</a>
+<a href="liquidar-honorarios.html">Liquidar honorarios</a>
+
+      <h3>Estudios clínicos</h3>
+      <a href="crear-agenda-estudios.html">Crear agenda estudios</a>
+      <a href="cancelar-agenda-estudios.html">Cancelar agenda estudios</a>
+      <a href="confirmar-agenda-estudios.html">Confirmar agenda estudios</a>
+      <a href="reservar-turno-estudio.html">Reservar turno estudio</a>
+      <a href="recepcionar-estudio.html">Recepcionar paciente estudio</a>
+      <a href="facturar-estudio.html">Facturar estudio</a>
+      <a href="finalizar-estudio.html">Finalizar atención estudio</a>
+      <a href="generar-informe-estudio.html" class="active">Generar informe estudio</a>
+      <a href="entregar-estudio.html">Entregar estudio</a>
+    </nav>
+    <main>
+      <section id="generar-informe-estudio" class="screen active">
+        <h2>CU22 - Generar informe de estudio</h2>
+        <p class="subtitle">Carga el resultado del estudio y cambia el estado a informado.</p>
+        <div class="grid">
+          <div class="field"><label>Buscar solicitud realizada</label><input placeholder="Paciente / solicitud / tipo de estudio"></div>
+          <div class="field"><label>Tipo de estudio</label><select><option>Radiografía</option><option>Ecografía</option><option>Laboratorio</option></select></div>
+        </div>
+        <div class="actions"><button>Buscar</button></div>
+        <table>
+          <tr><th>Solicitud</th><th>Paciente</th><th>Tipo</th><th>Estado</th><th>Acción</th></tr>
+          <tr><td>#105</td><td>Pérez Juan</td><td>Radiografía</td><td>REALIZADO</td><td><button>Cargar informe</button></td></tr>
+        </table>
+        <div class="grid">
+          <div class="field" style="grid-column: 1 / -1"><label>Resultado del estudio</label><textarea placeholder="Texto del informe / resultado del estudio..."></textarea></div>
+          <div class="field"><label>Profesional informante</label><input placeholder="Ej: Dr. López"></div>
+          <div class="field"><label>Fecha informe</label><input type="datetime-local"></div>
+        </div>
+        <div class="actions"><button class="success">Guardar informe</button><button class="secondary">Vista previa</button></div>
+        <div class="note">Al guardar: la solicitud cambia a INFORMADO.</div>
+      </section>
+    </main>
+  </div>
+  <div id="abm-modal" class="modal-backdrop">
+    <div class="modal">
+      <h3 id="modal-title">ABM</h3>
+      <div id="modal-content"></div>
+      <div class="actions">
+        <button id="modal-save" class="success" onclick="closeModal()">Guardar</button>
+        <button class="secondary" onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

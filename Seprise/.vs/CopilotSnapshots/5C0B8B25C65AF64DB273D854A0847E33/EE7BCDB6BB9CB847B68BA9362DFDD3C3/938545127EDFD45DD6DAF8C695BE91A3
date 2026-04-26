@@ -1,0 +1,172 @@
+﻿namespace Seprise
+{
+    partial class FormMedicoABM
+    {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblMatricula;
+        private System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label lblEspecialidad;
+        private System.Windows.Forms.ComboBox cmbEspecialidad;
+        private System.Windows.Forms.Label lblHonorario;
+        private System.Windows.Forms.TextBox txtHonorario;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblMatricula = new System.Windows.Forms.Label();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.lblEspecialidad = new System.Windows.Forms.Label();
+            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.lblHonorario = new System.Windows.Forms.Label();
+            this.txtHonorario = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+
+            // lblTitulo
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(20, 20);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "ABM Médico";
+
+            // lblMatricula
+            this.lblMatricula.AutoSize = true;
+            this.lblMatricula.Location = new System.Drawing.Point(20, 60);
+            this.lblMatricula.Name = "lblMatricula";
+            this.lblMatricula.Size = new System.Drawing.Size(60, 15);
+            this.lblMatricula.TabIndex = 1;
+            this.lblMatricula.Text = "Matrícula";
+
+            // txtMatricula
+            this.txtMatricula.Location = new System.Drawing.Point(20, 80);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.PlaceholderText = "Ej: MN12345";
+            this.txtMatricula.Size = new System.Drawing.Size(250, 23);
+            this.txtMatricula.TabIndex = 2;
+
+            // lblNombre
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(290, 60);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(51, 15);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "Nombre";
+
+            // txtNombre
+            this.txtNombre.Location = new System.Drawing.Point(290, 80);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(250, 23);
+            this.txtNombre.TabIndex = 4;
+
+            // lblApellido
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(20, 120);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(51, 15);
+            this.lblApellido.TabIndex = 5;
+            this.lblApellido.Text = "Apellido";
+
+            // txtApellido
+            this.txtApellido.Location = new System.Drawing.Point(20, 140);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(250, 23);
+            this.txtApellido.TabIndex = 6;
+
+            // lblEspecialidad
+            this.lblEspecialidad.AutoSize = true;
+            this.lblEspecialidad.Location = new System.Drawing.Point(290, 120);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.Size = new System.Drawing.Size(72, 15);
+            this.lblEspecialidad.TabIndex = 7;
+            this.lblEspecialidad.Text = "Especialidad";
+
+            // cmbEspecialidad
+            this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEspecialidad.FormattingEnabled = true;
+            this.cmbEspecialidad.Location = new System.Drawing.Point(290, 140);
+            this.cmbEspecialidad.Name = "cmbEspecialidad";
+            this.cmbEspecialidad.Size = new System.Drawing.Size(250, 23);
+            this.cmbEspecialidad.TabIndex = 8;
+
+            // lblHonorario
+            this.lblHonorario.AutoSize = true;
+            this.lblHonorario.Location = new System.Drawing.Point(20, 180);
+            this.lblHonorario.Name = "lblHonorario";
+            this.lblHonorario.Size = new System.Drawing.Size(63, 15);
+            this.lblHonorario.TabIndex = 9;
+            this.lblHonorario.Text = "Honorario";
+
+            // txtHonorario
+            this.txtHonorario.Location = new System.Drawing.Point(20, 200);
+            this.txtHonorario.Name = "txtHonorario";
+            this.txtHonorario.PlaceholderText = "Ej: 15000";
+            this.txtHonorario.Size = new System.Drawing.Size(250, 23);
+            this.txtHonorario.TabIndex = 10;
+
+            // btnGuardar
+            this.btnGuardar.Location = new System.Drawing.Point(20, 250);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(100, 30);
+            this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+
+            // btnCancelar
+            this.btnCancelar.Location = new System.Drawing.Point(130, 250);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 30);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+
+            // FormMedicoABM
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(560, 300);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtHonorario);
+            this.Controls.Add(this.lblHonorario);
+            this.Controls.Add(this.cmbEspecialidad);
+            this.Controls.Add(this.lblEspecialidad);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtMatricula);
+            this.Controls.Add(this.lblMatricula);
+            this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormMedicoABM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "ABM Médico";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+    }
+}

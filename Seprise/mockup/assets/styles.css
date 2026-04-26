@@ -1,0 +1,163 @@
+* { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+    }
+    header {
+      background: #243447;
+      color: white;
+      padding: 16px 24px;
+    }
+    header h1 { margin: 0; font-size: 22px; }
+    header p { margin: 4px 0 0; color: #d7dee8; }
+    .layout {
+      display: flex;
+      min-height: calc(100vh - 74px);
+    }
+    nav {
+      width: 280px;
+      background: #ffffff;
+      border-right: 1px solid #ddd;
+      padding: 16px;
+      overflow-y: auto;
+    }
+    nav h3 {
+      margin: 18px 0 8px;
+      font-size: 13px;
+      color: #666;
+      text-transform: uppercase;
+    }
+    nav a {
+      display: block;
+      padding: 9px 10px;
+      margin-bottom: 4px;
+      color: #243447;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    nav a:hover, nav a.active {
+      background: #e8eef5;
+      font-weight: bold;
+    }
+    main {
+      flex: 1;
+      padding: 24px;
+    }
+    section.screen {
+      display: none;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 22px;
+      max-width: 1100px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    section.screen.active { display: block; }
+    h2 { margin-top: 0; }
+    .subtitle { color: #666; margin-top: -8px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .field label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 9px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #fff;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    .actions {
+      margin: 18px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    button {
+      border: 0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      cursor: pointer;
+      background: #2f6fab;
+      color: white;
+      font-weight: bold;
+    }
+    button.secondary { background: #6c757d; }
+    button.danger { background: #b23b3b; }
+    button.success { background: #2f8f55; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 9px;
+      text-align: left;
+    }
+    th { background: #eef2f6; }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #e6eef7;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .note {
+      background: #fff8dc;
+      border: 1px solid #eadc9a;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #5f4a00;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 16px;
+      background: #fafafa;
+    }
+    .card h3 { margin-top: 0; }
+    .inline-input { display:flex; gap:6px; }
+    .inline-input input { flex:1; }
+    .icon-btn { padding: 9px 12px; background:#2f6fab; border-radius:6px; color:white; border:0; cursor:pointer; }
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal {
+      width: min(720px, 92vw);
+      background: white;
+      border-radius: 10px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .modal h3 { margin-top: 0; }
+    .modal .grid { margin-top: 12px; }
+    .readonly input, .readonly select { background: #f1f1f1; pointer-events: none; }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CU11/12 - Atención médica e historia clínica - Sistema PP2</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Sistema de Consultorios Externos y Estudios Clínicos</h1>
+    <p>Mockup navegable simple para PP2</p>
+  </header>
+  <div class="layout">
+    <nav>
+      <a href="index.html">Inicio</a>
+
+      <h3>Común</h3>
+      <a href="pacientes.html">ABM Pacientes</a>
+      <a href="solicitud-estudio.html">Crear solicitud de estudio</a>
+
+      <h3>Consultorios externos</h3>
+      <a href="medicos.html">ABM Médicos</a>
+      <a href="crear-agenda-medica.html">Crear agenda médica</a>
+      <a href="confirmar-agenda-medica.html">Confirmar agenda médica</a>
+      <a href="reservar-turno-medico.html">Reservar turno médico</a>
+      <a href="cancelar-reserva-medica.html">Cancelar reserva</a>
+      <a href="recepcionar-paciente.html">Recepcionar paciente</a>
+      <a href="facturar-consulta.html">Facturar consulta</a>
+      <a href="cola-espera-medico.html">Cola de espera médico</a>
+      <a href="atencion-medica.html" class="active">Atención médica / Historia clínica</a>
+<a href="liquidar-honorarios.html">Liquidar honorarios</a>
+
+      <h3>Estudios clínicos</h3>
+      <a href="crear-agenda-estudios.html">Crear agenda estudios</a>
+      <a href="cancelar-agenda-estudios.html">Cancelar agenda estudios</a>
+      <a href="confirmar-agenda-estudios.html">Confirmar agenda estudios</a>
+      <a href="reservar-turno-estudio.html">Reservar turno estudio</a>
+      <a href="recepcionar-estudio.html">Recepcionar paciente estudio</a>
+      <a href="facturar-estudio.html">Facturar estudio</a>
+      <a href="finalizar-estudio.html">Finalizar atención estudio</a>
+      <a href="generar-informe-estudio.html">Generar informe estudio</a>
+      <a href="entregar-estudio.html">Entregar estudio</a>
+    </nav>
+    <main>
+      <section id="atencion-medica" class="screen active">
+        <h2>CU11/12 - Atención médica e historia clínica</h2>
+        <p class="subtitle">El médico atiende al paciente, registra la historia clínica y finaliza la atención.</p>
+        <div class="grid">
+          <div class="field"><label>Paciente</label><input value="Pérez Juan" disabled></div>
+          <div class="field"><label>Médico</label><input value="Dra. Gómez Laura" disabled></div>
+          <div class="field"><label>Fecha atención</label><input type="datetime-local"></div>
+          <div class="field"><label>Estado turno</label><input value="RECEPCIONADO" disabled></div>
+          <div class="field" style="grid-column: 1 / -1"><label>Motivo de consulta</label><textarea placeholder="Describe el motivo de consulta..."></textarea></div>
+          <div class="field" style="grid-column: 1 / -1"><label>Diagnóstico / evolución</label><textarea placeholder="Carga de historia clínica..."></textarea></div>
+          <div class="field" style="grid-column: 1 / -1"><label>Indicaciones</label><textarea placeholder="Tratamiento, recomendaciones o medicación..."></textarea></div>
+        </div>
+        <div class="note">Desde esta pantalla el médico puede finalizar la atención directamente o generar una solicitud de estudio si lo considera necesario.</div>
+        <div class="actions">
+          <button class="success">Guardar historia y finalizar atención</button>
+          <button onclick="go('solicitud-estudio')">Solicitar estudio</button>
+        </div>
+        <table>
+          <tr><th>Estudios solicitados en esta atención</th><th>Tipo</th><th>Origen</th><th>Estado</th></tr>
+          <tr><td>#105</td><td>Radiografía</td><td>CONSULTORIO_EXTERNO</td><td>PENDIENTE</td></tr>
+        </table>
+      </section>
+    </main>
+  </div>
+  <div id="abm-modal" class="modal-backdrop">
+    <div class="modal">
+      <h3 id="modal-title">ABM</h3>
+      <div id="modal-content"></div>
+      <div class="actions">
+        <button id="modal-save" class="success" onclick="closeModal()">Guardar</button>
+        <button class="secondary" onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

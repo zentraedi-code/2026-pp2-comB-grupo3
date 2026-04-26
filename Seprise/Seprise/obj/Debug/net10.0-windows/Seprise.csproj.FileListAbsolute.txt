@@ -1,0 +1,17 @@
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.exe
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.deps.json
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.runtimeconfig.json
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.dll
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.pdb
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.Form1.resources
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.csproj.GenerateResource.cache
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.GeneratedMSBuildEditorConfig.editorconfig
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.AssemblyInfoInputs.cache
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.AssemblyInfo.cs
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.csproj.CoreCompileInputs.cache
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.sourcelink.json
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.dll
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\refint\Seprise.dll
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.pdb
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.genruntimeconfig.cache
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\ref\Seprise.dll

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CU21 - Finalizar atención de estudio - Sistema PP2</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Sistema de Consultorios Externos y Estudios Clínicos</h1>
+    <p>Mockup navegable simple para PP2</p>
+  </header>
+  <div class="layout">
+    <nav>
+      <a href="index.html">Inicio</a>
+
+      <h3>Común</h3>
+      <a href="pacientes.html">ABM Pacientes</a>
+      <a href="solicitud-estudio.html">Crear solicitud de estudio</a>
+
+      <h3>Consultorios externos</h3>
+      <a href="medicos.html">ABM Médicos</a>
+      <a href="crear-agenda-medica.html">Crear agenda médica</a>
+      <a href="confirmar-agenda-medica.html">Confirmar agenda médica</a>
+      <a href="reservar-turno-medico.html">Reservar turno médico</a>
+      <a href="cancelar-reserva-medica.html">Cancelar reserva</a>
+      <a href="recepcionar-paciente.html">Recepcionar paciente</a>
+      <a href="facturar-consulta.html">Facturar consulta</a>
+      <a href="cola-espera-medico.html">Cola de espera médico</a>
+      <a href="atencion-medica.html">Atención médica / Historia clínica</a>
+<a href="liquidar-honorarios.html">Liquidar honorarios</a>
+
+      <h3>Estudios clínicos</h3>
+      <a href="crear-agenda-estudios.html">Crear agenda estudios</a>
+      <a href="cancelar-agenda-estudios.html">Cancelar agenda estudios</a>
+      <a href="confirmar-agenda-estudios.html">Confirmar agenda estudios</a>
+      <a href="reservar-turno-estudio.html">Reservar turno estudio</a>
+      <a href="recepcionar-estudio.html">Recepcionar paciente estudio</a>
+      <a href="facturar-estudio.html">Facturar estudio</a>
+      <a href="finalizar-estudio.html" class="active">Finalizar atención estudio</a>
+      <a href="generar-informe-estudio.html">Generar informe estudio</a>
+      <a href="entregar-estudio.html">Entregar estudio</a>
+    </nav>
+    <main>
+      <section id="finalizar-estudio" class="screen active">
+        <h2>CU21 - Finalizar atención de estudio</h2>
+        <p class="subtitle">Registra que el estudio fue realizado.</p>
+        <div class="grid">
+          <div class="field"><label>Paciente</label><input value="Pérez Juan" disabled></div>
+          <div class="field"><label>Solicitud</label><input value="#105 - Radiografía" disabled></div>
+          <div class="field"><label>Fecha realización</label><input type="datetime-local"></div>
+          <div class="field"><label>Estado actual</label><input value="RECEPCIONADO" disabled></div>
+          <div class="field" style="grid-column: 1 / -1"><label>Observaciones técnicas</label><textarea placeholder="Observaciones del técnico o del procedimiento..."></textarea></div>
+        </div>
+        <div class="actions"><button class="success">Marcar como realizado</button></div>
+        <div class="note">Al finalizar: la solicitud de estudio cambia a REALIZADO.</div>
+      </section>
+    </main>
+  </div>
+  <div id="abm-modal" class="modal-backdrop">
+    <div class="modal">
+      <h3 id="modal-title">ABM</h3>
+      <div id="modal-content"></div>
+      <div class="actions">
+        <button id="modal-save" class="success" onclick="closeModal()">Guardar</button>
+        <button class="secondary" onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
