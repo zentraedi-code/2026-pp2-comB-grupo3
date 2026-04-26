@@ -4,13 +4,14 @@ DROP DATABASE IF EXISTS clinica_seprise;
 -- Crear base nueva
 CREATE DATABASE clinica_seprise;
 
--- Usarla
-USE clinica_seprise;
+use clinica_seprise;
+
 -- ESPECIALIDAD
 CREATE TABLE especialidad (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     descripcion VARCHAR(255),
+    duracion_minima_turno INT NOT NULL,
     activo BOOLEAN NOT NULL
 );
 
@@ -38,14 +39,18 @@ CREATE TABLE paciente (
     activo BOOLEAN NOT NULL
 );
 
+
 -- CONSULTORIO
+
 CREATE TABLE consultorio (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     activo BOOLEAN NOT NULL
 );
 
+
 -- AGENDA_MEDICA
+
 CREATE TABLE agenda_medica (
     id INT AUTO_INCREMENT PRIMARY KEY,
     medico_id INT NOT NULL,
@@ -60,7 +65,9 @@ CREATE TABLE agenda_medica (
     FOREIGN KEY (consultorio_id) REFERENCES consultorio(id)
 );
 
+
 -- TURNO_CONSULTA
+
 CREATE TABLE turno_consulta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     agenda_medica_id INT NOT NULL,
@@ -75,7 +82,9 @@ CREATE TABLE turno_consulta (
     FOREIGN KEY (paciente_id) REFERENCES paciente(id)
 );
 
+
 -- ESTUDIO
+
 CREATE TABLE estudio (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -85,7 +94,9 @@ CREATE TABLE estudio (
     activo BOOLEAN NOT NULL
 );
 
+
 -- AGENDA_ESTUDIO
+
 CREATE TABLE agenda_estudio (
     id INT AUTO_INCREMENT PRIMARY KEY,
     estudio_id INT NOT NULL,
@@ -97,7 +108,9 @@ CREATE TABLE agenda_estudio (
     FOREIGN KEY (estudio_id) REFERENCES estudio(id)
 );
 
+
 -- TURNO_ESTUDIO
+
 CREATE TABLE turno_estudio (
     id INT AUTO_INCREMENT PRIMARY KEY,
     agenda_estudio_id INT NOT NULL,
@@ -110,13 +123,17 @@ CREATE TABLE turno_estudio (
     FOREIGN KEY (paciente_id) REFERENCES paciente(id)
 );
 
+
 -- ORIGEN_ATENCION
+
 CREATE TABLE origen_atencion (
     id INT AUTO_INCREMENT PRIMARY KEY,
     descripcion VARCHAR(50) NOT NULL
 );
 
+
 -- SOLICITUD_ESTUDIO
+
 CREATE TABLE solicitud_estudio (
     id INT AUTO_INCREMENT PRIMARY KEY,
     paciente_id INT NOT NULL,
@@ -139,7 +156,9 @@ CREATE TABLE solicitud_estudio (
     FOREIGN KEY (origen_atencion_id) REFERENCES origen_atencion(id)
 );
 
+
 -- HISTORIA_CLINICA
+
 CREATE TABLE historia_clinica (
     id INT AUTO_INCREMENT PRIMARY KEY,
     paciente_id INT NOT NULL,
@@ -154,7 +173,9 @@ CREATE TABLE historia_clinica (
     FOREIGN KEY (turno_consulta_id) REFERENCES turno_consulta(id)
 );
 
+
 -- FACTURA
+
 CREATE TABLE factura (
     id INT AUTO_INCREMENT PRIMARY KEY,
     paciente_id INT NOT NULL,
@@ -169,7 +190,9 @@ CREATE TABLE factura (
     FOREIGN KEY (solicitud_estudio_id) REFERENCES solicitud_estudio(id)
 );
 
+
 -- INSUMO
+
 CREATE TABLE insumo (
     id INT AUTO_INCREMENT PRIMARY KEY,
     descripcion VARCHAR(255) NOT NULL,
@@ -177,7 +200,9 @@ CREATE TABLE insumo (
     activo BOOLEAN NOT NULL
 );
 
+
 -- ESTUDIO_INSUMO
+
 CREATE TABLE estudio_insumo (
     id INT AUTO_INCREMENT PRIMARY KEY,
     estudio_id INT NOT NULL,
@@ -186,6 +211,3 @@ CREATE TABLE estudio_insumo (
     FOREIGN KEY (estudio_id) REFERENCES estudio(id),
     FOREIGN KEY (insumo_id) REFERENCES insumo(id)
 );
-
-
-

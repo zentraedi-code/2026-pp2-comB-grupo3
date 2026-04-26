@@ -1,11 +1,12 @@
 -- ESPECIALIDAD
-INSERT INTO especialidad (id, nombre, descripcion, activo) VALUES
-(1, 'Clínica Médica', NULL, true),
-(2, 'Pediatría', NULL, true),
-(3, 'Cardiología', NULL, true),
-(4, 'Traumatología', NULL, true),
-(5, 'Ginecología', NULL, true);
-
+INSERT INTO especialidad (id, nombre, descripcion, duracion_minima_turno, activo) VALUES
+(1, 'Clínica Médica', NULL, 15, true),
+(2, 'Pediatría', NULL, 15, true),
+(3, 'Cardiología', NULL, 15, true),
+(4, 'Traumatología', NULL, 15, true),
+(5, 'Ginecología', NULL, 15, true),
+(6, 'Fisio-kinesiología', NULL, 25, true),
+(7, 'Salud mental', NULL, 30, true);
 -- CONSULTORIO
 INSERT INTO consultorio (id, nombre, activo) VALUES
 (1, 'Consultorio 1', true),
