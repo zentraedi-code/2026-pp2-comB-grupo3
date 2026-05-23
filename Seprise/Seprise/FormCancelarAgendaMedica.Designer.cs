@@ -1,6 +1,6 @@
 namespace Seprise
 {
-    partial class FormConfirmarAgendaMedica
+    partial class FormCancelarAgendaMedica
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label lblTitulo;
@@ -41,14 +41,14 @@ namespace Seprise
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "CU06 - Confirmar agenda médica";
+            this.lblTitulo.Text = "CU07 - Cancelar agenda médica";
 
             // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "Genera turnos disponibles según la duración de consulta, incluyendo un sobreturno por hora.";
+            this.lblSubtitulo.Text = "Cancela la agenda médica y elimina todos los turnos asociados.";
 
             // lblBuscar
             this.lblBuscar.AutoSize = true;
@@ -95,7 +95,7 @@ namespace Seprise
             this.lblNota.Location = new System.Drawing.Point(20, 460);
             this.lblNota.Name = "lblNota";
             this.lblNota.TabIndex = 7;
-            this.lblNota.Text = "Al confirmar, el sistema crea turnos en estado DISPONIBLE y agrega 1 sobreturno por hora.";
+            this.lblNota.Text = "Al cancelar, el sistema elimina todos los turnos asociados a esta agenda.";
 
             // btnSalir
             this.btnSalir.Location = new System.Drawing.Point(780, 455);
@@ -106,7 +106,7 @@ namespace Seprise
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 
-            // FormConfirmarAgendaMedica
+            // FormCancelarAgendaMedica
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 500);
@@ -123,9 +123,9 @@ namespace Seprise
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormConfirmarAgendaMedica";
+            this.Name = "FormCancelarAgendaMedica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Confirmar agenda médica";
+            this.Text = "Cancelar agenda médica";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgendas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

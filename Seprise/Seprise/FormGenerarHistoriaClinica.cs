@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    public partial class FormAtencionMedica : Form
+    public partial class FormGenerarHistoriaClinica : Form
     {
-        public FormAtencionMedica()
+        public FormGenerarHistoriaClinica()
         {
             InitializeComponent();
             ConfigurarDataGridView();

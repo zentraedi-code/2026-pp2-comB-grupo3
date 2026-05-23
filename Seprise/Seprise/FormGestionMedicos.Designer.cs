@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    partial class FormRecepcionarPaciente
+    partial class FormGestionMedicos
     {
         private System.ComponentModel.IContainer components = null;
         private Panel panelHeader;
         private Label lblTitulo;
         private Panel panelBotones;
-        private Button btnConfirmarAsistencia;
-        private Button btnFacturarConsulta;
+        private Button btnABMMedicos;
+        private Button btnLiquidarHonorarios;
         private Button btnSalir;
 
         protected override void Dispose(bool disposing)
@@ -29,8 +29,8 @@ namespace Seprise
             panelHeader = new Panel();
             lblTitulo = new Label();
             panelBotones = new Panel();
-            btnConfirmarAsistencia = new Button();
-            btnFacturarConsulta = new Button();
+            btnABMMedicos = new Button();
+            btnLiquidarHonorarios = new Button();
             btnSalir = new Button();
             panelHeader.SuspendLayout();
             panelBotones.SuspendLayout();
@@ -58,14 +58,14 @@ namespace Seprise
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(450, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Recepcionar paciente";
+            lblTitulo.Text = "Gestión Médicos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
             // 
             // panelBotones
             // 
-            panelBotones.Controls.Add(btnConfirmarAsistencia);
-            panelBotones.Controls.Add(btnFacturarConsulta);
+            panelBotones.Controls.Add(btnABMMedicos);
+            panelBotones.Controls.Add(btnLiquidarHonorarios);
             panelBotones.Controls.Add(btnSalir);
             panelBotones.Dock = DockStyle.Fill;
             panelBotones.Location = new Point(0, 60);
@@ -80,11 +80,11 @@ namespace Seprise
             int inicioX = (450 - totalAncho) / 2;
             int posY = 50;
 
-            ConfigurarBotonConIcono(btnConfirmarAsistencia, "Confirmar\nAsistencia", "📋✓", 
-                inicioX, posY, tamañoBoton, btnConfirmarAsistencia_Click);
+            ConfigurarBotonConIcono(btnABMMedicos, "ABM\nMédicos", "👨‍⚕️📋", 
+                inicioX, posY, tamañoBoton, btnABMMedicos_Click);
 
-            ConfigurarBotonConIcono(btnFacturarConsulta, "Facturar\nConsulta", "💰", 
-                inicioX + tamañoBoton + espaciado, posY, tamañoBoton, btnFacturarConsulta_Click);
+            ConfigurarBotonConIcono(btnLiquidarHonorarios, "Liquidar\nHonorarios", "💰📊", 
+                inicioX + tamañoBoton + espaciado, posY, tamañoBoton, btnLiquidarHonorarios_Click);
 
             // 
             // btnSalir
@@ -111,7 +111,7 @@ namespace Seprise
             };
 
             // 
-            // FormRecepcionarPaciente
+            // FormGestionMedicos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -123,9 +123,9 @@ namespace Seprise
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormRecepcionarPaciente";
+            Name = "FormGestionMedicos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Recepcionar paciente";
+            Text = "Gestión Médicos";
             panelHeader.ResumeLayout(false);
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);

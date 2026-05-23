@@ -4,22 +4,37 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormAtencionMedica.cs">
+    <Compile Update="FormAtencionPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormCancelarAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormCancelarReservaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormColaEsperaMedico.cs">
+    <Compile Update="FormConfirmarAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormConfirmarAgendaMedica.cs">
+    <Compile Update="FormConfirmarAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormCrearAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormFacturarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormGenerarHistoriaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormGestionAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormGestionMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormGestionTurnos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormLiquidarHonorarios.cs">
@@ -43,8 +58,22 @@
     <Compile Update="FormReservarTurnoMedico.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormRevisarPacientesPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormSolicitudEstudio.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="FormCancelarAgendaMedica.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormGestionAgenda.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormGestionTurnos.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

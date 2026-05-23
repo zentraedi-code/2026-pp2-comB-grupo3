@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    public partial class FormConfirmarAgendaMedica : Form
+    public partial class FormCancelarAgendaMedica : Form
     {
-        public FormConfirmarAgendaMedica()
+        public FormCancelarAgendaMedica()
         {
             InitializeComponent();
             ConfigurarDataGridView();
@@ -34,17 +34,17 @@ namespace Seprise
             dgvAgendas.Columns.Add("Duracion", "Duración");
             dgvAgendas.Columns.Add("Estado", "Estado");
 
-            DataGridViewButtonColumn btnConfirmar = new DataGridViewButtonColumn();
-            btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Text = "Confirmar";
-            btnConfirmar.UseColumnTextForButtonValue = true;
-            dgvAgendas.Columns.Add(btnConfirmar);
+            DataGridViewButtonColumn btnCancelar = new DataGridViewButtonColumn();
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseColumnTextForButtonValue = true;
+            dgvAgendas.Columns.Add(btnCancelar);
         }
 
         private void CargarDatosEjemplo()
         {
             dgvAgendas.Rows.Add("2026-05-10", "Dra. Gómez", "08:00 - 12:00", "15 min", "BORRADOR");
-            dgvAgendas.Rows.Add("2026-05-11", "Dr. Rodríguez", "14:00 - 18:00", "20 min", "BORRADOR");
+            dgvAgendas.Rows.Add("2026-05-11", "Dr. Rodríguez", "14:00 - 18:00", "20 min", "CONFIRMADA");
         }
 
         private void dgvAgendas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -53,15 +53,15 @@ namespace Seprise
 
             string columna = dgvAgendas.Columns[e.ColumnIndex].Name;
 
-            if (columna == "btnConfirmar")
+            if (columna == "btnCancelar")
             {
-                var result = MessageBox.Show("Al confirmar, el sistema creará turnos en estado DISPONIBLE y agregará 1 sobreturno por hora.\n\n¿Desea continuar?", 
-                    "Confirmar agenda", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var result = MessageBox.Show("Al cancelar, el sistema eliminará todos los turnos asociados a esta agenda.\n\n¿Desea continuar?", 
+                    "Cancelar agenda", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
-                    dgvAgendas.Rows[e.RowIndex].Cells["Estado"].Value = "CONFIRMADA";
-                    MessageBox.Show("Agenda confirmada exitosamente. Turnos creados.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvAgendas.Rows[e.RowIndex].Cells["Estado"].Value = "CANCELADA";
+                    MessageBox.Show("Agenda cancelada exitosamente. Turnos eliminados.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

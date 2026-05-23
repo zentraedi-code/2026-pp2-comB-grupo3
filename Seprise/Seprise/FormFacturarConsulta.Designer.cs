@@ -19,6 +19,7 @@ namespace Seprise
         private System.Windows.Forms.TextBox txtEstadoFactura;
         private System.Windows.Forms.Button btnEmitir;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnSalir;
 
         protected override void Dispose(bool disposing)
         {
@@ -47,6 +48,7 @@ namespace Seprise
             this.txtEstadoFactura = new System.Windows.Forms.TextBox();
             this.btnEmitir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
             // lblTitulo
@@ -172,10 +174,20 @@ namespace Seprise
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
 
+            // btnSalir
+            this.btnSalir.Location = new System.Drawing.Point(565, 280);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 30);
+            this.btnSalir.TabIndex = 16;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+
             // FormFacturarConsulta
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 340);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnEmitir);
             this.Controls.Add(this.txtEstadoFactura);
@@ -192,6 +204,7 @@ namespace Seprise
             this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.lblSubtitulo);
             this.Controls.Add(this.lblTitulo);
+            this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

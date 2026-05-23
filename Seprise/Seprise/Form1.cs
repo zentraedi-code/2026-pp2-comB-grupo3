@@ -24,33 +24,21 @@ namespace Seprise
             form.ShowDialog();
         }
 
-        private void btnMedicos_Click(object sender, EventArgs e)
+        private void btnGestionMedicos_Click(object sender, EventArgs e)
         {
-            var form = new FormMedicos();
+            var form = new FormGestionMedicos();
             form.ShowDialog();
         }
 
-        private void btnCrearAgendaMedica_Click(object sender, EventArgs e)
+        private void btnGestionAgenda_Click(object sender, EventArgs e)
         {
-            var form = new FormCrearAgendaMedica();
+            var form = new FormGestionAgenda();
             form.ShowDialog();
         }
 
-        private void btnConfirmarAgendaMedica_Click(object sender, EventArgs e)
+        private void btnGestionTurnos_Click(object sender, EventArgs e)
         {
-            var form = new FormConfirmarAgendaMedica();
-            form.ShowDialog();
-        }
-
-        private void btnReservarTurnoMedico_Click(object sender, EventArgs e)
-        {
-            var form = new FormReservarTurnoMedico();
-            form.ShowDialog();
-        }
-
-        private void btnCancelarReservaMedica_Click(object sender, EventArgs e)
-        {
-            var form = new FormCancelarReservaMedica();
+            var form = new FormGestionTurnos();
             form.ShowDialog();
         }
 
@@ -60,27 +48,9 @@ namespace Seprise
             form.ShowDialog();
         }
 
-        private void btnFacturarConsulta_Click(object sender, EventArgs e)
+        private void btnAtencionPaciente_Click(object sender, EventArgs e)
         {
-            var form = new FormFacturarConsulta();
-            form.ShowDialog();
-        }
-
-        private void btnColaEsperaMedico_Click(object sender, EventArgs e)
-        {
-            var form = new FormColaEsperaMedico();
-            form.ShowDialog();
-        }
-
-        private void btnAtencionMedica_Click(object sender, EventArgs e)
-        {
-            var form = new FormAtencionMedica();
-            form.ShowDialog();
-        }
-
-        private void btnLiquidarHonorarios_Click(object sender, EventArgs e)
-        {
-            var form = new FormLiquidarHonorarios();
+            var form = new FormAtencionPaciente();
             form.ShowDialog();
         }
 
@@ -102,6 +72,11 @@ namespace Seprise
         private void btnReservarTurnoEstudio_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Funcionalidad en desarrollo", "Reservar Turno Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnCancelarReservaEstudio_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Funcionalidad en desarrollo", "Cancelar Reserva Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnRecepcionarEstudio_Click(object sender, EventArgs e)

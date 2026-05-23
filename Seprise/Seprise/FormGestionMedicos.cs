@@ -4,24 +4,24 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    public partial class FormRecepcionarPaciente : Form
+    public partial class FormGestionMedicos : Form
     {
-        public FormRecepcionarPaciente()
+        public FormGestionMedicos()
         {
             InitializeComponent();
         }
 
-        private void btnConfirmarAsistencia_Click(object sender, EventArgs e)
+        private void btnABMMedicos_Click(object sender, EventArgs e)
         {
-            using (var form = new FormConfirmarAsistencia())
+            using (var form = new FormMedicos())
             {
                 form.ShowDialog();
             }
         }
 
-        private void btnFacturarConsulta_Click(object sender, EventArgs e)
+        private void btnLiquidarHonorarios_Click(object sender, EventArgs e)
         {
-            using (var form = new FormFacturarConsulta())
+            using (var form = new FormLiquidarHonorarios())
             {
                 form.ShowDialog();
             }

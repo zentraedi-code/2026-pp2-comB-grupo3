@@ -15,6 +15,7 @@ namespace Seprise
         private System.Windows.Forms.Button btnPrimeraDisponible;
         private System.Windows.Forms.DataGridView dgvTurnos;
         private System.Windows.Forms.Label lblNota;
+        private System.Windows.Forms.Button btnSalir;
 
         protected override void Dispose(bool disposing)
         {
@@ -39,6 +40,7 @@ namespace Seprise
             this.btnPrimeraDisponible = new System.Windows.Forms.Button();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.lblNota = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
 
@@ -137,10 +139,21 @@ namespace Seprise
             this.lblNota.TabIndex = 11;
             this.lblNota.Text = "El DNI del paciente se solicita recién al presionar Reservar.";
 
+            // btnSalir
+            this.btnSalir.Location = new System.Drawing.Point(780, 505);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(100, 30);
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+
             // FormReservarTurnoMedico
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 550);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.dgvTurnos);
             this.Controls.Add(this.btnPrimeraDisponible);
@@ -155,6 +168,7 @@ namespace Seprise
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormReservarTurnoMedico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reservar turno médico";

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {}
+    "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {}
   },
   "projects": {
-    "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {
+    "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
+        "projectUniqueName": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
         "projectName": "Seprise",
-        "projectPath": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
+        "projectPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
         "packagesPath": "C:\\Users\\mpereira\\.nuget\\packages\\",
-        "outputPath": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\obj\\",
+        "outputPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mpereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,7 +41,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0-windows": {
@@ -66,7 +66,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

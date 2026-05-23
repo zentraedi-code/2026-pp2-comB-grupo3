@@ -1,6 +1,6 @@
 namespace Seprise
 {
-    partial class FormAtencionMedica
+    partial class FormGenerarHistoriaClinica
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label lblTitulo;
@@ -63,7 +63,7 @@ namespace Seprise
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "CU11/12 - Atención médica e historia clínica";
+            this.lblTitulo.Text = "Generar historia clínica";
 
             // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
@@ -218,7 +218,7 @@ namespace Seprise
             this.dgvEstudios.Size = new System.Drawing.Size(910, 150);
             this.dgvEstudios.TabIndex = 19;
 
-            // FormAtencionMedica
+            // FormGenerarHistoriaClinica
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
@@ -244,9 +244,9 @@ namespace Seprise
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "FormAtencionMedica";
+            this.Name = "FormGenerarHistoriaClinica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Atención médica e historia clínica";
+            this.Text = "Generar historia clínica";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

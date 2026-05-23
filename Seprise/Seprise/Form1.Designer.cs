@@ -23,21 +23,17 @@ namespace Seprise
             btnPacientes = new Button();
             btnSolicitudEstudio = new Button();
             lblConsultorios = new Label();
-            btnMedicos = new Button();
-            btnCrearAgendaMedica = new Button();
-            btnConfirmarAgendaMedica = new Button();
-            btnReservarTurnoMedico = new Button();
-            btnCancelarReservaMedica = new Button();
+            btnGestionMedicos = new Button();
+            btnGestionAgenda = new Button();
+            btnGestionTurnos = new Button();
             btnRecepcionarPaciente = new Button();
-            btnFacturarConsulta = new Button();
-            btnColaEsperaMedico = new Button();
-            btnAtencionMedica = new Button();
-            btnLiquidarHonorarios = new Button();
+            btnAtencionPaciente = new Button();
             lblEstudios = new Label();
             btnCrearAgendaEstudios = new Button();
-            btnCancelarAgendaEstudios = new Button();
             btnConfirmarAgendaEstudios = new Button();
+            btnCancelarAgendaEstudios = new Button();
             btnReservarTurnoEstudio = new Button();
+            btnCancelarReservaEstudio = new Button();
             btnRecepcionarEstudio = new Button();
             btnFacturarEstudio = new Button();
             btnFinalizarEstudio = new Button();
@@ -77,21 +73,17 @@ namespace Seprise
             panelMenu.Controls.Add(btnPacientes);
             panelMenu.Controls.Add(btnSolicitudEstudio);
             panelMenu.Controls.Add(lblConsultorios);
-            panelMenu.Controls.Add(btnMedicos);
-            panelMenu.Controls.Add(btnCrearAgendaMedica);
-            panelMenu.Controls.Add(btnConfirmarAgendaMedica);
-            panelMenu.Controls.Add(btnReservarTurnoMedico);
-            panelMenu.Controls.Add(btnCancelarReservaMedica);
+            panelMenu.Controls.Add(btnGestionMedicos);
+            panelMenu.Controls.Add(btnGestionAgenda);
+            panelMenu.Controls.Add(btnGestionTurnos);
             panelMenu.Controls.Add(btnRecepcionarPaciente);
-            panelMenu.Controls.Add(btnFacturarConsulta);
-            panelMenu.Controls.Add(btnColaEsperaMedico);
-            panelMenu.Controls.Add(btnAtencionMedica);
-            panelMenu.Controls.Add(btnLiquidarHonorarios);
+            panelMenu.Controls.Add(btnAtencionPaciente);
             panelMenu.Controls.Add(lblEstudios);
             panelMenu.Controls.Add(btnCrearAgendaEstudios);
-            panelMenu.Controls.Add(btnCancelarAgendaEstudios);
             panelMenu.Controls.Add(btnConfirmarAgendaEstudios);
+            panelMenu.Controls.Add(btnCancelarAgendaEstudios);
             panelMenu.Controls.Add(btnReservarTurnoEstudio);
+            panelMenu.Controls.Add(btnCancelarReservaEstudio);
             panelMenu.Controls.Add(btnRecepcionarEstudio);
             panelMenu.Controls.Add(btnFacturarEstudio);
             panelMenu.Controls.Add(btnFinalizarEstudio);
@@ -129,34 +121,30 @@ namespace Seprise
             lblConsultorios.Text = "CONSULTORIOS EXTERNOS";
 
             // Botones Consultorios
-            ConfigurarBotonMenu(btnMedicos, "ABM Médicos", 195, btnMedicos_Click);
-            ConfigurarBotonMenu(btnCrearAgendaMedica, "Crear agenda médica", 230, btnCrearAgendaMedica_Click);
-            ConfigurarBotonMenu(btnConfirmarAgendaMedica, "Confirmar agenda médica", 265, btnConfirmarAgendaMedica_Click);
-            ConfigurarBotonMenu(btnReservarTurnoMedico, "Reservar turno médico", 300, btnReservarTurnoMedico_Click);
-            ConfigurarBotonMenu(btnCancelarReservaMedica, "Cancelar reserva", 335, btnCancelarReservaMedica_Click);
-            ConfigurarBotonMenu(btnRecepcionarPaciente, "Recepcionar paciente", 370, btnRecepcionarPaciente_Click);
-            ConfigurarBotonMenu(btnFacturarConsulta, "Facturar consulta", 405, btnFacturarConsulta_Click);
-            ConfigurarBotonMenu(btnColaEsperaMedico, "Cola de espera médico", 440, btnColaEsperaMedico_Click);
-            ConfigurarBotonMenu(btnAtencionMedica, "Atención médica / Historia clínica", 475, btnAtencionMedica_Click);
-            ConfigurarBotonMenu(btnLiquidarHonorarios, "Liquidar honorarios", 510, btnLiquidarHonorarios_Click);
+            ConfigurarBotonMenu(btnGestionMedicos, "Gestión Médicos", 195, btnGestionMedicos_Click);
+            ConfigurarBotonMenu(btnGestionAgenda, "Gestión de Agenda", 230, btnGestionAgenda_Click);
+            ConfigurarBotonMenu(btnGestionTurnos, "Gestión de Turnos", 265, btnGestionTurnos_Click);
+            ConfigurarBotonMenu(btnRecepcionarPaciente, "Recepcionar paciente", 300, btnRecepcionarPaciente_Click);
+            ConfigurarBotonMenu(btnAtencionPaciente, "Atención paciente", 335, btnAtencionPaciente_Click);
 
             // Label Estudios
             lblEstudios.AutoSize = true;
-            lblEstudios.Location = new Point(10, 560);
+            lblEstudios.Location = new Point(10, 385);
             lblEstudios.Name = "lblEstudios";
             lblEstudios.TabIndex = 14;
             lblEstudios.Text = "ESTUDIOS CLÍNICOS";
 
             // Botones Estudios
-            ConfigurarBotonMenu(btnCrearAgendaEstudios, "Crear agenda estudios", 585, btnCrearAgendaEstudios_Click);
-            ConfigurarBotonMenu(btnCancelarAgendaEstudios, "Cancelar agenda estudios", 620, btnCancelarAgendaEstudios_Click);
-            ConfigurarBotonMenu(btnConfirmarAgendaEstudios, "Confirmar agenda estudios", 655, btnConfirmarAgendaEstudios_Click);
-            ConfigurarBotonMenu(btnReservarTurnoEstudio, "Reservar turno estudio", 690, btnReservarTurnoEstudio_Click);
-            ConfigurarBotonMenu(btnRecepcionarEstudio, "Recepcionar paciente estudio", 725, btnRecepcionarEstudio_Click);
-            ConfigurarBotonMenu(btnFacturarEstudio, "Facturar estudio", 760, btnFacturarEstudio_Click);
-            ConfigurarBotonMenu(btnFinalizarEstudio, "Finalizar atención estudio", 795, btnFinalizarEstudio_Click);
-            ConfigurarBotonMenu(btnGenerarInformeEstudio, "Generar informe estudio", 830, btnGenerarInformeEstudio_Click);
-            ConfigurarBotonMenu(btnEntregarEstudio, "Entregar estudio", 865, btnEntregarEstudio_Click);
+            ConfigurarBotonMenu(btnCrearAgendaEstudios, "Crear agenda estudios", 410, btnCrearAgendaEstudios_Click);
+            ConfigurarBotonMenu(btnConfirmarAgendaEstudios, "Confirmar agenda estudios", 445, btnConfirmarAgendaEstudios_Click);
+            ConfigurarBotonMenu(btnCancelarAgendaEstudios, "Cancelar agenda estudios", 480, btnCancelarAgendaEstudios_Click);
+            ConfigurarBotonMenu(btnReservarTurnoEstudio, "Reservar turno estudio", 515, btnReservarTurnoEstudio_Click);
+            ConfigurarBotonMenu(btnCancelarReservaEstudio, "Cancelar reserva estudio", 550, btnCancelarReservaEstudio_Click);
+            ConfigurarBotonMenu(btnRecepcionarEstudio, "Recepcionar paciente estudio", 585, btnRecepcionarEstudio_Click);
+            ConfigurarBotonMenu(btnFacturarEstudio, "Facturar estudio", 620, btnFacturarEstudio_Click);
+            ConfigurarBotonMenu(btnFinalizarEstudio, "Finalizar atención estudio", 655, btnFinalizarEstudio_Click);
+            ConfigurarBotonMenu(btnGenerarInformeEstudio, "Generar informe estudio", 690, btnGenerarInformeEstudio_Click);
+            ConfigurarBotonMenu(btnEntregarEstudio, "Entregar estudio", 725, btnEntregarEstudio_Click);
         }
 
         private void ConfigurarBotonMenu(Button btn, string texto, int posY, EventHandler clickHandler)
@@ -214,21 +202,17 @@ namespace Seprise
         private Button btnPacientes;
         private Button btnSolicitudEstudio;
         private Label lblConsultorios;
-        private Button btnMedicos;
-        private Button btnCrearAgendaMedica;
-        private Button btnConfirmarAgendaMedica;
-        private Button btnReservarTurnoMedico;
-        private Button btnCancelarReservaMedica;
+        private Button btnGestionMedicos;
+        private Button btnGestionAgenda;
+        private Button btnGestionTurnos;
         private Button btnRecepcionarPaciente;
-        private Button btnFacturarConsulta;
-        private Button btnColaEsperaMedico;
-        private Button btnAtencionMedica;
-        private Button btnLiquidarHonorarios;
+        private Button btnAtencionPaciente;
         private Label lblEstudios;
         private Button btnCrearAgendaEstudios;
-        private Button btnCancelarAgendaEstudios;
         private Button btnConfirmarAgendaEstudios;
+        private Button btnCancelarAgendaEstudios;
         private Button btnReservarTurnoEstudio;
+        private Button btnCancelarReservaEstudio;
         private Button btnRecepcionarEstudio;
         private Button btnFacturarEstudio;
         private Button btnFinalizarEstudio;

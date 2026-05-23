@@ -65,5 +65,10 @@ namespace Seprise
         {
             MessageBox.Show("Imprimiendo comprobante...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -64,5 +64,10 @@ namespace Seprise
             cboConsultorio.SelectedIndex = 0;
             txtDuracion.Clear();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

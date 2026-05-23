@@ -3,14 +3,15 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    partial class FormRecepcionarPaciente
+    partial class FormAtencionPaciente
     {
         private System.ComponentModel.IContainer components = null;
         private Panel panelHeader;
         private Label lblTitulo;
         private Panel panelBotones;
-        private Button btnConfirmarAsistencia;
-        private Button btnFacturarConsulta;
+        private Button btnRevisarPacientesPendientes;
+        private Button btnGenerarHistoriaClinica;
+        private Button btnSolicitarEstudios;
         private Button btnSalir;
 
         protected override void Dispose(bool disposing)
@@ -29,8 +30,9 @@ namespace Seprise
             panelHeader = new Panel();
             lblTitulo = new Label();
             panelBotones = new Panel();
-            btnConfirmarAsistencia = new Button();
-            btnFacturarConsulta = new Button();
+            btnRevisarPacientesPendientes = new Button();
+            btnGenerarHistoriaClinica = new Button();
+            btnSolicitarEstudios = new Button();
             btnSalir = new Button();
             panelHeader.SuspendLayout();
             panelBotones.SuspendLayout();
@@ -44,7 +46,7 @@ namespace Seprise
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(450, 60);
+            panelHeader.Size = new Size(520, 60);
             panelHeader.TabIndex = 0;
 
             // 
@@ -56,43 +58,47 @@ namespace Seprise
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(450, 60);
+            lblTitulo.Size = new Size(520, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Recepcionar paciente";
+            lblTitulo.Text = "Atención paciente";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
             // 
             // panelBotones
             // 
-            panelBotones.Controls.Add(btnConfirmarAsistencia);
-            panelBotones.Controls.Add(btnFacturarConsulta);
+            panelBotones.Controls.Add(btnRevisarPacientesPendientes);
+            panelBotones.Controls.Add(btnGenerarHistoriaClinica);
+            panelBotones.Controls.Add(btnSolicitarEstudios);
             panelBotones.Controls.Add(btnSalir);
             panelBotones.Dock = DockStyle.Fill;
             panelBotones.Location = new Point(0, 60);
             panelBotones.Name = "panelBotones";
-            panelBotones.Size = new Size(450, 240);
+            panelBotones.Size = new Size(520, 240);
             panelBotones.TabIndex = 1;
 
             // Configurar botones centrados en una fila
             int tamañoBoton = 140;
             int espaciado = 15;
-            int totalAncho = (tamañoBoton * 2) + espaciado;
-            int inicioX = (450 - totalAncho) / 2;
+            int totalAncho = (tamañoBoton * 3) + (espaciado * 2);
+            int inicioX = (520 - totalAncho) / 2;
             int posY = 50;
 
-            ConfigurarBotonConIcono(btnConfirmarAsistencia, "Confirmar\nAsistencia", "📋✓", 
-                inicioX, posY, tamañoBoton, btnConfirmarAsistencia_Click);
+            ConfigurarBotonConIcono(btnRevisarPacientesPendientes, "Revisar\nPacientes", "📋👥", 
+                inicioX, posY, tamañoBoton, btnRevisarPacientesPendientes_Click);
 
-            ConfigurarBotonConIcono(btnFacturarConsulta, "Facturar\nConsulta", "💰", 
-                inicioX + tamañoBoton + espaciado, posY, tamañoBoton, btnFacturarConsulta_Click);
+            ConfigurarBotonConIcono(btnGenerarHistoriaClinica, "Generar\nHistoria", "📝🏥", 
+                inicioX + tamañoBoton + espaciado, posY, tamañoBoton, btnGenerarHistoriaClinica_Click);
+
+            ConfigurarBotonConIcono(btnSolicitarEstudios, "Solicitar\nEstudios", "🔬📋", 
+                inicioX + (tamañoBoton + espaciado) * 2, posY, tamañoBoton, btnSolicitarEstudios_Click);
 
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(330, 205);
+            btnSalir.Location = new Point(400, 205);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(100, 30);
-            btnSalir.TabIndex = 3;
+            btnSalir.TabIndex = 4;
             btnSalir.Text = "Salir";
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.FlatStyle = FlatStyle.Flat;
@@ -111,21 +117,21 @@ namespace Seprise
             };
 
             // 
-            // FormRecepcionarPaciente
+            // FormAtencionPaciente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(450, 300);
+            ClientSize = new Size(520, 300);
             ControlBox = false;
             Controls.Add(panelBotones);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormRecepcionarPaciente";
+            Name = "FormAtencionPaciente";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Recepcionar paciente";
+            Text = "Atención paciente";
             panelHeader.ResumeLayout(false);
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);

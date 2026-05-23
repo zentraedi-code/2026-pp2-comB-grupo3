@@ -1,6 +1,6 @@
 namespace Seprise
 {
-    partial class FormColaEsperaMedico
+    partial class FormRevisarPacientesPendientes
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label lblTitulo;
@@ -39,7 +39,7 @@ namespace Seprise
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "CU14 - Cola de espera del médico";
+            this.lblTitulo.Text = "Revisar pacientes pendientes";
 
             // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
@@ -82,9 +82,9 @@ namespace Seprise
             // btnActualizar
             this.btnActualizar.Location = new System.Drawing.Point(20, 150);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(120, 30);
+            this.btnActualizar.Size = new System.Drawing.Size(150, 30);
             this.btnActualizar.TabIndex = 6;
-            this.btnActualizar.Text = "Actualizar cola";
+            this.btnActualizar.Text = "Actualizar lista";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
 
@@ -97,7 +97,7 @@ namespace Seprise
             this.dgvCola.TabIndex = 7;
             this.dgvCola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCola_CellClick);
 
-            // FormColaEsperaMedico
+            // FormRevisarPacientesPendientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 550);
@@ -111,9 +111,9 @@ namespace Seprise
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "FormColaEsperaMedico";
+            this.Name = "FormRevisarPacientesPendientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Cola de espera del médico";
+            this.Text = "Revisar pacientes pendientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

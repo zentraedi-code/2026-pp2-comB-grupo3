@@ -15,3 +15,7 @@ c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\n
 c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.pdb
 c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.genruntimeconfig.cache
 c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\ref\Seprise.dll
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGestionAgenda.resources
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormCancelarAgendaMedica.resources
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGestionTurnos.resources
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormMedicos.resources

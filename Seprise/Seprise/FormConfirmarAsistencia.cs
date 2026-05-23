@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    public partial class FormCancelarReservaMedica : Form
+    public partial class FormConfirmarAsistencia : Form
     {
-        public FormCancelarReservaMedica()
+        public FormConfirmarAsistencia()
         {
             InitializeComponent();
             ConfigurarDataGridView();
@@ -21,17 +21,17 @@ namespace Seprise
             dgvTurnos.MultiSelect = false;
             dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgvTurnos.Columns.Add("Fecha", "Fecha");
             dgvTurnos.Columns.Add("Hora", "Hora");
             dgvTurnos.Columns.Add("Paciente", "Paciente");
             dgvTurnos.Columns.Add("Medico", "Médico");
+            dgvTurnos.Columns.Add("Consultorio", "Consultorio");
             dgvTurnos.Columns.Add("Estado", "Estado");
 
-            DataGridViewButtonColumn btnCancelar = new DataGridViewButtonColumn();
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Text = "Cancelar reserva";
-            btnCancelar.UseColumnTextForButtonValue = true;
-            dgvTurnos.Columns.Add(btnCancelar);
+            DataGridViewButtonColumn btnConfirmar = new DataGridViewButtonColumn();
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseColumnTextForButtonValue = true;
+            dgvTurnos.Columns.Add(btnConfirmar);
         }
 
         private void btnBuscarPaciente_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Seprise
                 return;
             }
 
-            txtPaciente.Text = $"(auto) Pérez Juan - DNI {txtDniPaciente.Text}";
+            txtPaciente.Text = $"(auto) Apellido Nombre - DNI {txtDniPaciente.Text}";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -54,8 +54,7 @@ namespace Seprise
             }
 
             dgvTurnos.Rows.Clear();
-            dgvTurnos.Rows.Add("2026-05-10", "08:00", "Pérez Juan", "Dra. Gómez", "RESERVADO");
-            dgvTurnos.Rows.Add("2026-05-12", "14:00", "Pérez Juan", "Dr. Rodríguez", "RESERVADO");
+            dgvTurnos.Rows.Add("08:00", "Pérez Juan", "Dra. Gómez", "1", "RESERVADO");
         }
 
         private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -64,16 +63,11 @@ namespace Seprise
 
             string columna = dgvTurnos.Columns[e.ColumnIndex].Name;
 
-            if (columna == "btnCancelar")
+            if (columna == "btnConfirmar")
             {
-                var result = MessageBox.Show("Al cancelar: se desasigna el paciente, se borra fecha de reserva y el turno vuelve a DISPONIBLE.\n\n¿Desea continuar?", 
-                    "Confirmar cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    dgvTurnos.Rows.RemoveAt(e.RowIndex);
-                    MessageBox.Show("Reserva cancelada exitosamente. El turno volvió a estado DISPONIBLE.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                dgvTurnos.Rows[e.RowIndex].Cells["Estado"].Value = "RECEPCIONADO";
+                MessageBox.Show("Asistencia confirmada exitosamente. El turno está disponible para facturación y cola del médico.", 
+                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

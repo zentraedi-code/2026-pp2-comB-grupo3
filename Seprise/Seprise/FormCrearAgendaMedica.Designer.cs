@@ -37,6 +37,7 @@ namespace Seprise
             lblNota = new Label();
             btnCrear = new Button();
             btnLimpiar = new Button();
+            btnSalir = new Button();
             pnlNota.SuspendLayout();
             SuspendLayout();
             // 
@@ -224,11 +225,23 @@ namespace Seprise
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(670, 500);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(100, 35);
+            btnSalir.TabIndex = 21;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // FormCrearAgendaMedica
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 560);
+            ControlBox = false;
+            Controls.Add(btnSalir);
             Controls.Add(btnLimpiar);
             Controls.Add(btnCrear);
             Controls.Add(pnlNota);
@@ -250,6 +263,9 @@ namespace Seprise
             Controls.Add(lblFecha);
             Controls.Add(lblSubtitulo);
             Controls.Add(lblTitulo);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormCrearAgendaMedica";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Crear Agenda Médica - Sistema PP2";
@@ -280,5 +296,6 @@ namespace Seprise
         private Label lblNota;
         private Button btnCrear;
         private Button btnLimpiar;
+        private Button btnSalir;
     }
 }

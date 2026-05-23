@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    public partial class FormColaEsperaMedico : Form
+    public partial class FormRevisarPacientesPendientes : Form
     {
-        public FormColaEsperaMedico()
+        public FormRevisarPacientesPendientes()
         {
             InitializeComponent();
             ConfigurarDataGridView();
@@ -55,7 +55,7 @@ namespace Seprise
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             CargarDatosEjemplo();
-            MessageBox.Show("Cola actualizada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Lista de pacientes actualizada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dgvCola_CellClick(object sender, DataGridViewCellEventArgs e)
