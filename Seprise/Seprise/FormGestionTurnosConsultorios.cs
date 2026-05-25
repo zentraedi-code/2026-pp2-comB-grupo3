@@ -1,12 +1,8 @@
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-
 namespace Seprise
 {
-    public partial class FormGestionMedicos : Form
+    public partial class FormGestionTurnosConsultorios : Form
     {
-        public FormGestionMedicos()
+        public FormGestionTurnosConsultorios()
         {
             InitializeComponent();
             ConfigurarEventosHover();
@@ -22,27 +18,27 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnABMMedicos
-            btnABMMedicos.MouseEnter += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(128, 203, 196);
+            // Efecto hover para btnReservarTurno
+            btnReservarTurno.MouseEnter += (s, e) => {
+                btnReservarTurno.BackColor = Color.FromArgb(128, 203, 196);
             };
-            btnABMMedicos.MouseLeave += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
+            btnReservarTurno.MouseLeave += (s, e) => {
+                btnReservarTurno.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnLiquidarHonorarios
-            btnLiquidarHonorarios.MouseEnter += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(128, 203, 196);
+            // Efecto hover para btnCancelarReserva
+            btnCancelarReserva.MouseEnter += (s, e) => {
+                btnCancelarReserva.BackColor = Color.FromArgb(128, 203, 196);
             };
-            btnLiquidarHonorarios.MouseLeave += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(178, 235, 242);
+            btnCancelarReserva.MouseLeave += (s, e) => {
+                btnCancelarReserva.BackColor = Color.FromArgb(178, 235, 242);
             };
         }
 
         private void ConfigurarBotonConIcono(Button btn, string texto, string icono, int x, int y, int tamaño, EventHandler clickHandler)
         {
             btn.Location = new Point(x, y);
-            btn.Name = "btn" + texto.Replace(" ", "").Replace("\n", "");
+            btn.Name = "btn" + texto.Replace(" ", "");
             btn.Size = new Size(tamaño, tamaño);
             btn.TabIndex = 0;
             btn.BackColor = Color.FromArgb(178, 235, 242);
@@ -59,20 +55,16 @@ namespace Seprise
             btn.Click += clickHandler;
         }
 
-        private void btnABMMedicos_Click(object sender, EventArgs e)
+        private void btnReservarTurno_Click(object sender, EventArgs e)
         {
-            using (var form = new FormMedicos())
-            {
-                form.ShowDialog();
-            }
+            var form = new FormReservarTurnoMedico();
+            form.ShowDialog();
         }
 
-        private void btnLiquidarHonorarios_Click(object sender, EventArgs e)
+        private void btnCancelarReserva_Click(object sender, EventArgs e)
         {
-            using (var form = new FormLiquidarHonorarios())
-            {
-                form.ShowDialog();
-            }
+            var form = new FormCancelarReservaMedica();
+            form.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

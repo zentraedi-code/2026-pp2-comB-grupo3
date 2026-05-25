@@ -5,22 +5,37 @@ namespace Seprise
         public Form1()
         {
             InitializeComponent();
+            ConfigurarEventosHover();
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
+        private void ConfigurarEventosHover()
         {
-            // Ya estamos en inicio
+            // Configurar hover para todos los botones
+            var botones = new[] {
+                btnPacientes,
+                btnGestionMedicos, btnGestionAgenda, btnGestionTurnos,
+                btnRecepcionarPaciente, btnAtencionPaciente,
+                btnGestionAgendaEstudios, btnGestionTurnosEstudios,
+                btnRecepcionarPacienteEstudio, btnSolicitudEstudios,
+                btnConfirmacionEstudios, btnProcesamientoEstudios
+            };
+
+            foreach (var btn in botones)
+            {
+                btn.MouseEnter += (s, e) =>
+                {
+                    btn.BackColor = Color.FromArgb(128, 203, 196);
+                };
+                btn.MouseLeave += (s, e) =>
+                {
+                    btn.BackColor = Color.FromArgb(178, 235, 242);
+                };
+            }
         }
 
         private void btnPacientes_Click(object sender, EventArgs e)
         {
             var form = new FormPacientes();
-            form.ShowDialog();
-        }
-
-        private void btnSolicitudEstudio_Click(object sender, EventArgs e)
-        {
-            var form = new FormSolicitudEstudio();
             form.ShowDialog();
         }
 
@@ -32,19 +47,19 @@ namespace Seprise
 
         private void btnGestionAgenda_Click(object sender, EventArgs e)
         {
-            var form = new FormGestionAgenda();
+            var form = new FormGestionAgendaConsultorios();
             form.ShowDialog();
         }
 
         private void btnGestionTurnos_Click(object sender, EventArgs e)
         {
-            var form = new FormGestionTurnos();
+            var form = new FormGestionTurnosConsultorios();
             form.ShowDialog();
         }
 
         private void btnRecepcionarPaciente_Click(object sender, EventArgs e)
         {
-            var form = new FormRecepcionarPaciente();
+            var form = new FormRecepcionarPacienteConsultorios();
             form.ShowDialog();
         }
 
@@ -54,54 +69,50 @@ namespace Seprise
             form.ShowDialog();
         }
 
-        private void btnCrearAgendaEstudios_Click(object sender, EventArgs e)
+        private void btnGestionAgendaEstudios_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidad en desarrollo", "Crear Agenda Estudios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var form = new FormGestionAgendaEstudios();
+            form.ShowDialog();
         }
 
-        private void btnCancelarAgendaEstudios_Click(object sender, EventArgs e)
+        private void btnGestionTurnosEstudios_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidad en desarrollo", "Cancelar Agenda Estudios", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnConfirmarAgendaEstudios_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Funcionalidad en desarrollo", "Confirmar Agenda Estudios", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnReservarTurnoEstudio_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Funcionalidad en desarrollo", "Reservar Turno Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnCancelarReservaEstudio_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Funcionalidad en desarrollo", "Cancelar Reserva Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var form = new FormGestionTurnosEstudios();
+            form.ShowDialog();
         }
 
         private void btnRecepcionarEstudio_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidad en desarrollo", "Recepcionar Paciente Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var form = new FormRecepcionarPacienteEstudios();
+            form.ShowDialog();
         }
 
-        private void btnFacturarEstudio_Click(object sender, EventArgs e)
+        private void btnSolicitudEstudios_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidad en desarrollo", "Facturar Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var form = new FormSolicitudEstudio();
+            form.ShowDialog();
         }
 
-        private void btnFinalizarEstudio_Click(object sender, EventArgs e)
+        private void btnConfirmacionEstudios_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidad en desarrollo", "Finalizar Atención Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var form = new FormConfirmacionEstudios();
+            form.ShowDialog();
         }
 
-        private void btnGenerarInformeEstudio_Click(object sender, EventArgs e)
+        private void btnProcesamientoEstudios_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidad en desarrollo", "Generar Informe Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var form = new FormProcesamientoEstudios();
+            form.ShowDialog();
         }
 
-        private void btnEntregarEstudio_Click(object sender, EventArgs e)
+        private void panelContenido_Paint(object sender, PaintEventArgs e)
         {
-            MessageBox.Show("Funcionalidad en desarrollo", "Entregar Estudio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void lblSeccionComun_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

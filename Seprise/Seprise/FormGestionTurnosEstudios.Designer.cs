@@ -1,6 +1,6 @@
 namespace Seprise
 {
-    partial class FormGestionTurnos
+    partial class FormGestionTurnosEstudios
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -49,7 +49,7 @@ namespace Seprise
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(450, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Gestión de Turnos";
+            lblTitulo.Text = "Gestión de Turnos - Estudios Clínicos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
             // 
@@ -64,45 +64,61 @@ namespace Seprise
             panelBotones.Size = new Size(450, 240);
             panelBotones.TabIndex = 1;
 
-            // Configurar botones centrados en una fila
-            int tamañoBoton = 140;
-            int espaciado = 15;
-            int totalAncho = (tamañoBoton * 2) + espaciado;
-            int inicioX = (450 - totalAncho) / 2;
-            int posY = 50;
+            // 
+            // btnReservarTurno
+            // 
+            btnReservarTurno.BackColor = Color.FromArgb(178, 235, 242);
+            btnReservarTurno.Cursor = Cursors.Hand;
+            btnReservarTurno.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnReservarTurno.FlatAppearance.BorderSize = 2;
+            btnReservarTurno.FlatStyle = FlatStyle.Flat;
+            btnReservarTurno.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnReservarTurno.Location = new Point(50, 50);
+            btnReservarTurno.Name = "btnReservarTurno";
+            btnReservarTurno.Size = new Size(160, 140);
+            btnReservarTurno.TabIndex = 0;
+            btnReservarTurno.Text = "🔬📅+\n\nReservar Turno";
+            btnReservarTurno.TextAlign = ContentAlignment.MiddleCenter;
+            btnReservarTurno.UseVisualStyleBackColor = false;
+            btnReservarTurno.Click += btnReservarTurno_Click;
 
-            ConfigurarBotonConIcono(btnReservarTurno, "Reservar Turno", "📅+", 
-                inicioX, posY, tamañoBoton, btnReservarTurno_Click);
-
-            ConfigurarBotonConIcono(btnCancelarReserva, "Cancelar Reserva", "✖📅", 
-                inicioX + tamañoBoton + espaciado, posY, tamañoBoton, btnCancelarReserva_Click);
+            // 
+            // btnCancelarReserva
+            // 
+            btnCancelarReserva.BackColor = Color.FromArgb(178, 235, 242);
+            btnCancelarReserva.Cursor = Cursors.Hand;
+            btnCancelarReserva.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnCancelarReserva.FlatAppearance.BorderSize = 2;
+            btnCancelarReserva.FlatStyle = FlatStyle.Flat;
+            btnCancelarReserva.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCancelarReserva.Location = new Point(240, 50);
+            btnCancelarReserva.Name = "btnCancelarReserva";
+            btnCancelarReserva.Size = new Size(160, 140);
+            btnCancelarReserva.TabIndex = 1;
+            btnCancelarReserva.Text = "✖📅\n\nCancelar Reserva";
+            btnCancelarReserva.TextAlign = ContentAlignment.MiddleCenter;
+            btnCancelarReserva.UseVisualStyleBackColor = false;
+            btnCancelarReserva.Click += btnCancelarReserva_Click;
 
             // 
             // btnSalir
             // 
+            btnSalir.BackColor = Color.FromArgb(178, 235, 242);
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnSalir.FlatAppearance.BorderSize = 2;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnSalir.Location = new Point(330, 205);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(100, 30);
-            btnSalir.TabIndex = 3;
+            btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
-            btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnSalir.FlatAppearance.BorderSize = 2;
-            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // Efecto hover para btnSalir
-            btnSalir.MouseEnter += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnSalir.MouseLeave += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
             // 
-            // FormGestionTurnos
+            // FormGestionTurnosEstudios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -114,40 +130,12 @@ namespace Seprise
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormGestionTurnos";
+            Name = "FormGestionTurnosEstudios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gestión de Turnos";
+            Text = "Gestión de Turnos - Estudios Clínicos";
             panelHeader.ResumeLayout(false);
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);
-        }
-
-        private void ConfigurarBotonConIcono(Button btn, string texto, string icono, int x, int y, int tamaño, EventHandler clickHandler)
-        {
-            btn.Location = new Point(x, y);
-            btn.Name = "btn" + texto.Replace(" ", "");
-            btn.Size = new Size(tamaño, tamaño);
-            btn.TabIndex = 0;
-            btn.BackColor = Color.FromArgb(178, 235, 242);
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btn.FlatAppearance.BorderSize = 2;
-            btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btn.Cursor = Cursors.Hand;
-
-            // Configurar texto con icono arriba y texto abajo
-            btn.Text = $"{icono}\n\n{texto}";
-            btn.TextAlign = ContentAlignment.MiddleCenter;
-
-            btn.Click += clickHandler;
-
-            // Efecto hover
-            btn.MouseEnter += (s, e) => {
-                btn.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btn.MouseLeave += (s, e) => {
-                btn.BackColor = Color.FromArgb(178, 235, 242);
-            };
         }
 
         #endregion

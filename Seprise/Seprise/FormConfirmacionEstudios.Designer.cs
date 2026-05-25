@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    partial class FormGestionMedicos
+    partial class FormConfirmacionEstudios
     {
         private System.ComponentModel.IContainer components = null;
         private Panel panelHeader;
         private Label lblTitulo;
         private Panel panelBotones;
-        private Button btnABMMedicos;
-        private Button btnLiquidarHonorarios;
+        private Button btnConfirmarSolicitud;
+        private Button btnFacturarEstudio;
         private Button btnSalir;
 
         protected override void Dispose(bool disposing)
@@ -29,8 +29,8 @@ namespace Seprise
             panelHeader = new Panel();
             lblTitulo = new Label();
             panelBotones = new Panel();
-            btnABMMedicos = new Button();
-            btnLiquidarHonorarios = new Button();
+            btnConfirmarSolicitud = new Button();
+            btnFacturarEstudio = new Button();
             btnSalir = new Button();
             panelHeader.SuspendLayout();
             panelBotones.SuspendLayout();
@@ -58,14 +58,14 @@ namespace Seprise
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(450, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Gestión Médicos";
+            lblTitulo.Text = "Confirmación de Estudios";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
             // 
             // panelBotones
             // 
-            panelBotones.Controls.Add(btnABMMedicos);
-            panelBotones.Controls.Add(btnLiquidarHonorarios);
+            panelBotones.Controls.Add(btnConfirmarSolicitud);
+            panelBotones.Controls.Add(btnFacturarEstudio);
             panelBotones.Controls.Add(btnSalir);
             panelBotones.Dock = DockStyle.Fill;
             panelBotones.Location = new Point(0, 60);
@@ -74,40 +74,40 @@ namespace Seprise
             panelBotones.TabIndex = 1;
 
             // 
-            // btnABMMedicos
+            // btnConfirmarSolicitud
             // 
-            btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
-            btnABMMedicos.Cursor = Cursors.Hand;
-            btnABMMedicos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnABMMedicos.FlatAppearance.BorderSize = 2;
-            btnABMMedicos.FlatStyle = FlatStyle.Flat;
-            btnABMMedicos.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnABMMedicos.Location = new Point(77, 50);
-            btnABMMedicos.Name = "btnABMMedicos";
-            btnABMMedicos.Size = new Size(140, 140);
-            btnABMMedicos.TabIndex = 0;
-            btnABMMedicos.Text = "👨‍⚕️📋\n\nABM\nMédicos";
-            btnABMMedicos.TextAlign = ContentAlignment.MiddleCenter;
-            btnABMMedicos.UseVisualStyleBackColor = false;
-            btnABMMedicos.Click += btnABMMedicos_Click;
+            btnConfirmarSolicitud.BackColor = Color.FromArgb(178, 235, 242);
+            btnConfirmarSolicitud.Cursor = Cursors.Hand;
+            btnConfirmarSolicitud.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnConfirmarSolicitud.FlatAppearance.BorderSize = 2;
+            btnConfirmarSolicitud.FlatStyle = FlatStyle.Flat;
+            btnConfirmarSolicitud.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnConfirmarSolicitud.Location = new Point(77, 50);
+            btnConfirmarSolicitud.Name = "btnConfirmarSolicitud";
+            btnConfirmarSolicitud.Size = new Size(140, 140);
+            btnConfirmarSolicitud.TabIndex = 0;
+            btnConfirmarSolicitud.Text = "✅\n\nConfirmar\nSolicitud";
+            btnConfirmarSolicitud.TextAlign = ContentAlignment.MiddleCenter;
+            btnConfirmarSolicitud.UseVisualStyleBackColor = false;
+            btnConfirmarSolicitud.Click += btnConfirmarSolicitud_Click;
 
             // 
-            // btnLiquidarHonorarios
+            // btnFacturarEstudio
             // 
-            btnLiquidarHonorarios.BackColor = Color.FromArgb(178, 235, 242);
-            btnLiquidarHonorarios.Cursor = Cursors.Hand;
-            btnLiquidarHonorarios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnLiquidarHonorarios.FlatAppearance.BorderSize = 2;
-            btnLiquidarHonorarios.FlatStyle = FlatStyle.Flat;
-            btnLiquidarHonorarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnLiquidarHonorarios.Location = new Point(232, 50);
-            btnLiquidarHonorarios.Name = "btnLiquidarHonorarios";
-            btnLiquidarHonorarios.Size = new Size(140, 140);
-            btnLiquidarHonorarios.TabIndex = 1;
-            btnLiquidarHonorarios.Text = "💰📊\n\nLiquidar\nHonorarios";
-            btnLiquidarHonorarios.TextAlign = ContentAlignment.MiddleCenter;
-            btnLiquidarHonorarios.UseVisualStyleBackColor = false;
-            btnLiquidarHonorarios.Click += btnLiquidarHonorarios_Click;
+            btnFacturarEstudio.BackColor = Color.FromArgb(178, 235, 242);
+            btnFacturarEstudio.Cursor = Cursors.Hand;
+            btnFacturarEstudio.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnFacturarEstudio.FlatAppearance.BorderSize = 2;
+            btnFacturarEstudio.FlatStyle = FlatStyle.Flat;
+            btnFacturarEstudio.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnFacturarEstudio.Location = new Point(233, 50);
+            btnFacturarEstudio.Name = "btnFacturarEstudio";
+            btnFacturarEstudio.Size = new Size(140, 140);
+            btnFacturarEstudio.TabIndex = 1;
+            btnFacturarEstudio.Text = "💵\n\nFacturar\nEstudio";
+            btnFacturarEstudio.TextAlign = ContentAlignment.MiddleCenter;
+            btnFacturarEstudio.UseVisualStyleBackColor = false;
+            btnFacturarEstudio.Click += btnFacturarEstudio_Click;
 
             // 
             // btnSalir
@@ -118,30 +118,29 @@ namespace Seprise
             btnSalir.FlatAppearance.BorderSize = 2;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnSalir.Location = new Point(330, 205);
+            btnSalir.Location = new Point(390, 210);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(100, 30);
+            btnSalir.Size = new Size(50, 25);
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
             // 
-            // FormGestionMedicos
+            // FormConfirmacionEstudios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(450, 300);
-            ControlBox = false;
             Controls.Add(panelBotones);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormGestionMedicos";
+            Name = "FormConfirmacionEstudios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gestión Médicos";
+            Text = "Confirmación de Estudios";
+            ControlBox = false;
             panelHeader.ResumeLayout(false);
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);

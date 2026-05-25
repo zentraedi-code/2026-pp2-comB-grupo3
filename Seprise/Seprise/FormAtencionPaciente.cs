@@ -9,11 +9,67 @@ namespace Seprise
         public FormAtencionPaciente()
         {
             InitializeComponent();
+            ConfigurarEventosHover();
+        }
+
+        private void ConfigurarEventosHover()
+        {
+            // Efecto hover para btnSalir
+            btnSalir.MouseEnter += (s, e) => {
+                btnSalir.BackColor = Color.FromArgb(128, 203, 196);
+            };
+            btnSalir.MouseLeave += (s, e) => {
+                btnSalir.BackColor = Color.FromArgb(178, 235, 242);
+            };
+
+            // Efecto hover para btnRevisarPacientesPendientes
+            btnRevisarPacientesPendientes.MouseEnter += (s, e) => {
+                btnRevisarPacientesPendientes.BackColor = Color.FromArgb(128, 203, 196);
+            };
+            btnRevisarPacientesPendientes.MouseLeave += (s, e) => {
+                btnRevisarPacientesPendientes.BackColor = Color.FromArgb(178, 235, 242);
+            };
+
+            // Efecto hover para btnGenerarHistoriaClinica
+            btnGenerarHistoriaClinica.MouseEnter += (s, e) => {
+                btnGenerarHistoriaClinica.BackColor = Color.FromArgb(128, 203, 196);
+            };
+            btnGenerarHistoriaClinica.MouseLeave += (s, e) => {
+                btnGenerarHistoriaClinica.BackColor = Color.FromArgb(178, 235, 242);
+            };
+
+            // Efecto hover para btnSolicitarEstudios
+            btnSolicitarEstudios.MouseEnter += (s, e) => {
+                btnSolicitarEstudios.BackColor = Color.FromArgb(128, 203, 196);
+            };
+            btnSolicitarEstudios.MouseLeave += (s, e) => {
+                btnSolicitarEstudios.BackColor = Color.FromArgb(178, 235, 242);
+            };
+        }
+
+        private void ConfigurarBotonConIcono(Button btn, string texto, string icono, int x, int y, int tamaño, EventHandler clickHandler)
+        {
+            btn.Location = new Point(x, y);
+            btn.Name = "btn" + texto.Replace(" ", "").Replace("\n", "");
+            btn.Size = new Size(tamaño, tamaño);
+            btn.TabIndex = 0;
+            btn.BackColor = Color.FromArgb(178, 235, 242);
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btn.FlatAppearance.BorderSize = 2;
+            btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btn.Cursor = Cursors.Hand;
+
+            // Configurar texto con icono arriba y texto abajo
+            btn.Text = $"{icono}\n\n{texto}";
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+
+            btn.Click += clickHandler;
         }
 
         private void btnRevisarPacientesPendientes_Click(object sender, EventArgs e)
         {
-            using (var form = new FormRevisarPacientesPendientes())
+            using (var form = new FormPacientesPendientes())
             {
                 form.ShowDialog();
             }

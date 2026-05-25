@@ -1,6 +1,6 @@
 namespace Seprise
 {
-    partial class FormGestionAgenda
+    partial class FormGestionAgendaConsultorios
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -50,7 +50,7 @@ namespace Seprise
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(550, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Gestión de Agenda";
+            lblTitulo.Text = "Gestión de Agenda - Consultorios Externos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
             // 
@@ -66,46 +66,76 @@ namespace Seprise
             panelBotones.Size = new Size(550, 240);
             panelBotones.TabIndex = 1;
 
-            // Configurar botones centrados en una fila
-            int margen = 40;
-            int tamañoBoton = 140;
-            int espaciado = 15;
-            int totalAncho = (tamañoBoton * 3) + (espaciado * 2);
-            int inicioX = (550 - totalAncho) / 2;
-            int posY = 50;
+            // 
+            // btnCrearAgenda
+            // 
+            btnCrearAgenda.BackColor = Color.FromArgb(178, 235, 242);
+            btnCrearAgenda.Cursor = Cursors.Hand;
+            btnCrearAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnCrearAgenda.FlatAppearance.BorderSize = 2;
+            btnCrearAgenda.FlatStyle = FlatStyle.Flat;
+            btnCrearAgenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCrearAgenda.Location = new Point(50, 50);
+            btnCrearAgenda.Name = "btnCrearAgenda";
+            btnCrearAgenda.Size = new Size(140, 140);
+            btnCrearAgenda.TabIndex = 0;
+            btnCrearAgenda.Text = "📅\n\nCrear Agenda";
+            btnCrearAgenda.TextAlign = ContentAlignment.MiddleCenter;
+            btnCrearAgenda.UseVisualStyleBackColor = false;
+            btnCrearAgenda.Click += btnCrearAgenda_Click;
 
-            ConfigurarBotonConIcono(btnCrearAgenda, "Crear Agenda", "📅", 
-                inicioX, posY, tamañoBoton, btnCrearAgenda_Click);
+            // 
+            // btnConfirmarAgenda
+            // 
+            btnConfirmarAgenda.BackColor = Color.FromArgb(178, 235, 242);
+            btnConfirmarAgenda.Cursor = Cursors.Hand;
+            btnConfirmarAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnConfirmarAgenda.FlatAppearance.BorderSize = 2;
+            btnConfirmarAgenda.FlatStyle = FlatStyle.Flat;
+            btnConfirmarAgenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnConfirmarAgenda.Location = new Point(205, 50);
+            btnConfirmarAgenda.Name = "btnConfirmarAgenda";
+            btnConfirmarAgenda.Size = new Size(140, 140);
+            btnConfirmarAgenda.TabIndex = 1;
+            btnConfirmarAgenda.Text = "✓📅\n\nConfirmar Agenda";
+            btnConfirmarAgenda.TextAlign = ContentAlignment.MiddleCenter;
+            btnConfirmarAgenda.UseVisualStyleBackColor = false;
+            btnConfirmarAgenda.Click += btnConfirmarAgenda_Click;
 
-            ConfigurarBotonConIcono(btnConfirmarAgenda, "Confirmar Agenda", "✓📅", 
-                inicioX + tamañoBoton + espaciado, posY, tamañoBoton, btnConfirmarAgenda_Click);
-
-            ConfigurarBotonConIcono(btnCancelarAgenda, "Cancelar Agenda", "✖📅", 
-                inicioX + (tamañoBoton + espaciado) * 2, posY, tamañoBoton, btnCancelarAgenda_Click);
+            // 
+            // btnCancelarAgenda
+            // 
+            btnCancelarAgenda.BackColor = Color.FromArgb(178, 235, 242);
+            btnCancelarAgenda.Cursor = Cursors.Hand;
+            btnCancelarAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnCancelarAgenda.FlatAppearance.BorderSize = 2;
+            btnCancelarAgenda.FlatStyle = FlatStyle.Flat;
+            btnCancelarAgenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCancelarAgenda.Location = new Point(360, 50);
+            btnCancelarAgenda.Name = "btnCancelarAgenda";
+            btnCancelarAgenda.Size = new Size(140, 140);
+            btnCancelarAgenda.TabIndex = 2;
+            btnCancelarAgenda.Text = "✖📅\n\nCancelar Agenda";
+            btnCancelarAgenda.TextAlign = ContentAlignment.MiddleCenter;
+            btnCancelarAgenda.UseVisualStyleBackColor = false;
+            btnCancelarAgenda.Click += btnCancelarAgenda_Click;
 
             // 
             // btnSalir
             // 
+            btnSalir.BackColor = Color.FromArgb(178, 235, 242);
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnSalir.FlatAppearance.BorderSize = 2;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnSalir.Location = new Point(430, 205);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(100, 30);
-            btnSalir.TabIndex = 4;
+            btnSalir.TabIndex = 3;
             btnSalir.Text = "Salir";
-            btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnSalir.FlatAppearance.BorderSize = 2;
-            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
-
-            // Efecto hover para btnSalir
-            btnSalir.MouseEnter += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnSalir.MouseLeave += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            };
 
             // 
             // FormGestionAgenda
@@ -126,34 +156,6 @@ namespace Seprise
             panelHeader.ResumeLayout(false);
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);
-        }
-
-        private void ConfigurarBotonConIcono(Button btn, string texto, string icono, int x, int y, int tamaño, EventHandler clickHandler)
-        {
-            btn.Location = new Point(x, y);
-            btn.Name = "btn" + texto.Replace(" ", "");
-            btn.Size = new Size(tamaño, tamaño);
-            btn.TabIndex = 0;
-            btn.BackColor = Color.FromArgb(178, 235, 242);
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btn.FlatAppearance.BorderSize = 2;
-            btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btn.Cursor = Cursors.Hand;
-
-            // Configurar texto con icono arriba y texto abajo
-            btn.Text = $"{icono}\n\n{texto}";
-            btn.TextAlign = ContentAlignment.MiddleCenter;
-
-            btn.Click += clickHandler;
-
-            // Efecto hover
-            btn.MouseEnter += (s, e) => {
-                btn.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btn.MouseLeave += (s, e) => {
-                btn.BackColor = Color.FromArgb(178, 235, 242);
-            };
         }
 
         #endregion

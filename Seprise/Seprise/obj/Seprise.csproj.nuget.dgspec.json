@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {}
+    "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {}
   },
   "projects": {
-    "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {
+    "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
+        "projectUniqueName": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
         "projectName": "Seprise",
-        "projectPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
+        "projectPath": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
         "packagesPath": "C:\\Users\\mpereira\\.nuget\\packages\\",
-        "outputPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\obj\\",
+        "outputPath": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mpereira\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    public partial class FormGestionMedicos : Form
+    public partial class FormRecepcionarPacienteConsultorios : Form
     {
-        public FormGestionMedicos()
+        public FormRecepcionarPacienteConsultorios()
         {
             InitializeComponent();
             ConfigurarEventosHover();
@@ -22,20 +22,20 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnABMMedicos
-            btnABMMedicos.MouseEnter += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(128, 203, 196);
+            // Efecto hover para btnConfirmarAsistencia
+            btnConfirmarAsistencia.MouseEnter += (s, e) => {
+                btnConfirmarAsistencia.BackColor = Color.FromArgb(128, 203, 196);
             };
-            btnABMMedicos.MouseLeave += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
+            btnConfirmarAsistencia.MouseLeave += (s, e) => {
+                btnConfirmarAsistencia.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnLiquidarHonorarios
-            btnLiquidarHonorarios.MouseEnter += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(128, 203, 196);
+            // Efecto hover para btnFacturarConsulta
+            btnFacturarConsulta.MouseEnter += (s, e) => {
+                btnFacturarConsulta.BackColor = Color.FromArgb(128, 203, 196);
             };
-            btnLiquidarHonorarios.MouseLeave += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(178, 235, 242);
+            btnFacturarConsulta.MouseLeave += (s, e) => {
+                btnFacturarConsulta.BackColor = Color.FromArgb(178, 235, 242);
             };
         }
 
@@ -59,17 +59,17 @@ namespace Seprise
             btn.Click += clickHandler;
         }
 
-        private void btnABMMedicos_Click(object sender, EventArgs e)
+        private void btnConfirmarAsistencia_Click(object sender, EventArgs e)
         {
-            using (var form = new FormMedicos())
+            using (var form = new FormConfirmarAsistencia())
             {
                 form.ShowDialog();
             }
         }
 
-        private void btnLiquidarHonorarios_Click(object sender, EventArgs e)
+        private void btnFacturarConsulta_Click(object sender, EventArgs e)
         {
-            using (var form = new FormLiquidarHonorarios())
+            using (var form = new FormFacturarConsulta())
             {
                 form.ShowDialog();
             }

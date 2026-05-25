@@ -1,6 +1,6 @@
 namespace Seprise
 {
-    partial class FormRevisarPacientesPendientes
+    partial class FormPacientesPendientes
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label lblTitulo;
@@ -39,7 +39,7 @@ namespace Seprise
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Revisar pacientes pendientes";
+            this.lblTitulo.Text = "Pacientes Pendientes";
 
             // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
@@ -97,7 +97,7 @@ namespace Seprise
             this.dgvCola.TabIndex = 7;
             this.dgvCola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCola_CellClick);
 
-            // FormRevisarPacientesPendientes
+            // FormPacientesPendientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 550);
@@ -111,9 +111,9 @@ namespace Seprise
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "FormRevisarPacientesPendientes";
+            this.Name = "FormPacientesPendientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Revisar pacientes pendientes";
+            this.Text = "Pacientes Pendientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

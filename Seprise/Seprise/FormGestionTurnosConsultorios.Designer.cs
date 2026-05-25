@@ -1,17 +1,8 @@
-using System.Drawing;
-using System.Windows.Forms;
-
 namespace Seprise
 {
-    partial class FormGestionMedicos
+    partial class FormGestionTurnosConsultorios
     {
         private System.ComponentModel.IContainer components = null;
-        private Panel panelHeader;
-        private Label lblTitulo;
-        private Panel panelBotones;
-        private Button btnABMMedicos;
-        private Button btnLiquidarHonorarios;
-        private Button btnSalir;
 
         protected override void Dispose(bool disposing)
         {
@@ -29,8 +20,8 @@ namespace Seprise
             panelHeader = new Panel();
             lblTitulo = new Label();
             panelBotones = new Panel();
-            btnABMMedicos = new Button();
-            btnLiquidarHonorarios = new Button();
+            btnReservarTurno = new Button();
+            btnCancelarReserva = new Button();
             btnSalir = new Button();
             panelHeader.SuspendLayout();
             panelBotones.SuspendLayout();
@@ -58,14 +49,14 @@ namespace Seprise
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(450, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Gestión Médicos";
+            lblTitulo.Text = "Gestión de Turnos - Consultorios Externos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
             // 
             // panelBotones
             // 
-            panelBotones.Controls.Add(btnABMMedicos);
-            panelBotones.Controls.Add(btnLiquidarHonorarios);
+            panelBotones.Controls.Add(btnReservarTurno);
+            panelBotones.Controls.Add(btnCancelarReserva);
             panelBotones.Controls.Add(btnSalir);
             panelBotones.Dock = DockStyle.Fill;
             panelBotones.Location = new Point(0, 60);
@@ -74,40 +65,40 @@ namespace Seprise
             panelBotones.TabIndex = 1;
 
             // 
-            // btnABMMedicos
+            // btnReservarTurno
             // 
-            btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
-            btnABMMedicos.Cursor = Cursors.Hand;
-            btnABMMedicos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnABMMedicos.FlatAppearance.BorderSize = 2;
-            btnABMMedicos.FlatStyle = FlatStyle.Flat;
-            btnABMMedicos.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnABMMedicos.Location = new Point(77, 50);
-            btnABMMedicos.Name = "btnABMMedicos";
-            btnABMMedicos.Size = new Size(140, 140);
-            btnABMMedicos.TabIndex = 0;
-            btnABMMedicos.Text = "👨‍⚕️📋\n\nABM\nMédicos";
-            btnABMMedicos.TextAlign = ContentAlignment.MiddleCenter;
-            btnABMMedicos.UseVisualStyleBackColor = false;
-            btnABMMedicos.Click += btnABMMedicos_Click;
+            btnReservarTurno.BackColor = Color.FromArgb(178, 235, 242);
+            btnReservarTurno.Cursor = Cursors.Hand;
+            btnReservarTurno.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnReservarTurno.FlatAppearance.BorderSize = 2;
+            btnReservarTurno.FlatStyle = FlatStyle.Flat;
+            btnReservarTurno.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnReservarTurno.Location = new Point(77, 50);
+            btnReservarTurno.Name = "btnReservarTurno";
+            btnReservarTurno.Size = new Size(140, 140);
+            btnReservarTurno.TabIndex = 0;
+            btnReservarTurno.Text = "📅+\n\nReservar Turno";
+            btnReservarTurno.TextAlign = ContentAlignment.MiddleCenter;
+            btnReservarTurno.UseVisualStyleBackColor = false;
+            btnReservarTurno.Click += btnReservarTurno_Click;
 
             // 
-            // btnLiquidarHonorarios
+            // btnCancelarReserva
             // 
-            btnLiquidarHonorarios.BackColor = Color.FromArgb(178, 235, 242);
-            btnLiquidarHonorarios.Cursor = Cursors.Hand;
-            btnLiquidarHonorarios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnLiquidarHonorarios.FlatAppearance.BorderSize = 2;
-            btnLiquidarHonorarios.FlatStyle = FlatStyle.Flat;
-            btnLiquidarHonorarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnLiquidarHonorarios.Location = new Point(232, 50);
-            btnLiquidarHonorarios.Name = "btnLiquidarHonorarios";
-            btnLiquidarHonorarios.Size = new Size(140, 140);
-            btnLiquidarHonorarios.TabIndex = 1;
-            btnLiquidarHonorarios.Text = "💰📊\n\nLiquidar\nHonorarios";
-            btnLiquidarHonorarios.TextAlign = ContentAlignment.MiddleCenter;
-            btnLiquidarHonorarios.UseVisualStyleBackColor = false;
-            btnLiquidarHonorarios.Click += btnLiquidarHonorarios_Click;
+            btnCancelarReserva.BackColor = Color.FromArgb(178, 235, 242);
+            btnCancelarReserva.Cursor = Cursors.Hand;
+            btnCancelarReserva.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnCancelarReserva.FlatAppearance.BorderSize = 2;
+            btnCancelarReserva.FlatStyle = FlatStyle.Flat;
+            btnCancelarReserva.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCancelarReserva.Location = new Point(232, 50);
+            btnCancelarReserva.Name = "btnCancelarReserva";
+            btnCancelarReserva.Size = new Size(140, 140);
+            btnCancelarReserva.TabIndex = 1;
+            btnCancelarReserva.Text = "✖📅\n\nCancelar Reserva";
+            btnCancelarReserva.TextAlign = ContentAlignment.MiddleCenter;
+            btnCancelarReserva.UseVisualStyleBackColor = false;
+            btnCancelarReserva.Click += btnCancelarReserva_Click;
 
             // 
             // btnSalir
@@ -127,7 +118,7 @@ namespace Seprise
             btnSalir.Click += btnSalir_Click;
 
             // 
-            // FormGestionMedicos
+            // FormGestionTurnos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -139,14 +130,21 @@ namespace Seprise
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormGestionMedicos";
+            Name = "FormGestionTurnos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gestión Médicos";
+            Text = "Gestión de Turnos";
             panelHeader.ResumeLayout(false);
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panelHeader;
+        private Label lblTitulo;
+        private Panel panelBotones;
+        private Button btnReservarTurno;
+        private Button btnCancelarReserva;
+        private Button btnSalir;
     }
 }

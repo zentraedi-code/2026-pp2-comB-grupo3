@@ -3,14 +3,13 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    partial class FormRecepcionarPaciente
+    partial class FormRecepcionarPacienteEstudios
     {
         private System.ComponentModel.IContainer components = null;
         private Panel panelHeader;
         private Label lblTitulo;
         private Panel panelBotones;
         private Button btnConfirmarAsistencia;
-        private Button btnFacturarConsulta;
         private Button btnSalir;
 
         protected override void Dispose(bool disposing)
@@ -30,7 +29,6 @@ namespace Seprise
             lblTitulo = new Label();
             panelBotones = new Panel();
             btnConfirmarAsistencia = new Button();
-            btnFacturarConsulta = new Button();
             btnSalir = new Button();
             panelHeader.SuspendLayout();
             panelBotones.SuspendLayout();
@@ -58,14 +56,13 @@ namespace Seprise
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(450, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Recepcionar paciente";
+            lblTitulo.Text = "Recepcionar Paciente - Estudios Clínicos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
             // 
             // panelBotones
             // 
             panelBotones.Controls.Add(btnConfirmarAsistencia);
-            panelBotones.Controls.Add(btnFacturarConsulta);
             panelBotones.Controls.Add(btnSalir);
             panelBotones.Dock = DockStyle.Fill;
             panelBotones.Location = new Point(0, 60);
@@ -73,90 +70,59 @@ namespace Seprise
             panelBotones.Size = new Size(450, 240);
             panelBotones.TabIndex = 1;
 
-            // Configurar botones centrados en una fila
-            int tamañoBoton = 140;
-            int espaciado = 15;
-            int totalAncho = (tamañoBoton * 2) + espaciado;
-            int inicioX = (450 - totalAncho) / 2;
-            int posY = 50;
-
-            ConfigurarBotonConIcono(btnConfirmarAsistencia, "Confirmar\nAsistencia", "📋✓", 
-                inicioX, posY, tamañoBoton, btnConfirmarAsistencia_Click);
-
-            ConfigurarBotonConIcono(btnFacturarConsulta, "Facturar\nConsulta", "💰", 
-                inicioX + tamañoBoton + espaciado, posY, tamañoBoton, btnFacturarConsulta_Click);
+            // 
+            // btnConfirmarAsistencia
+            // 
+            btnConfirmarAsistencia.BackColor = Color.FromArgb(178, 235, 242);
+            btnConfirmarAsistencia.Cursor = Cursors.Hand;
+            btnConfirmarAsistencia.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnConfirmarAsistencia.FlatAppearance.BorderSize = 2;
+            btnConfirmarAsistencia.FlatStyle = FlatStyle.Flat;
+            btnConfirmarAsistencia.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnConfirmarAsistencia.Location = new Point(155, 50);
+            btnConfirmarAsistencia.Name = "btnConfirmarAsistencia";
+            btnConfirmarAsistencia.Size = new Size(140, 140);
+            btnConfirmarAsistencia.TabIndex = 0;
+            btnConfirmarAsistencia.Text = "📋✓\n\nConfirmar\nAsistencia";
+            btnConfirmarAsistencia.TextAlign = ContentAlignment.MiddleCenter;
+            btnConfirmarAsistencia.UseVisualStyleBackColor = false;
+            btnConfirmarAsistencia.Click += btnConfirmarAsistencia_Click;
 
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(330, 205);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(100, 30);
-            btnSalir.TabIndex = 3;
-            btnSalir.Text = "Salir";
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
             btnSalir.FlatAppearance.BorderSize = 2;
+            btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.Location = new Point(390, 210);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(50, 25);
+            btnSalir.TabIndex = 1;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // Efecto hover para btnSalir
-            btnSalir.MouseEnter += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnSalir.MouseLeave += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
             // 
-            // FormRecepcionarPaciente
+            // FormRecepcionarPacienteEstudios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(450, 300);
-            ControlBox = false;
             Controls.Add(panelBotones);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormRecepcionarPaciente";
+            Name = "FormRecepcionarPacienteEstudios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Recepcionar paciente";
+            Text = "Recepcionar Paciente - Estudios Clínicos";
+            ControlBox = false;
             panelHeader.ResumeLayout(false);
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);
-        }
-
-        private void ConfigurarBotonConIcono(Button btn, string texto, string icono, int x, int y, int tamaño, EventHandler clickHandler)
-        {
-            btn.Location = new Point(x, y);
-            btn.Name = "btn" + texto.Replace(" ", "").Replace("\n", "");
-            btn.Size = new Size(tamaño, tamaño);
-            btn.TabIndex = 0;
-            btn.BackColor = Color.FromArgb(178, 235, 242);
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btn.FlatAppearance.BorderSize = 2;
-            btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btn.Cursor = Cursors.Hand;
-
-            // Configurar texto con icono arriba y texto abajo
-            btn.Text = $"{icono}\n\n{texto}";
-            btn.TextAlign = ContentAlignment.MiddleCenter;
-
-            btn.Click += clickHandler;
-
-            // Efecto hover
-            btn.MouseEnter += (s, e) => {
-                btn.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btn.MouseLeave += (s, e) => {
-                btn.BackColor = Color.FromArgb(178, 235, 242);
-            };
         }
 
         #endregion

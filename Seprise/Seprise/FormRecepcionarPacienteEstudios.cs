@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Seprise
 {
-    public partial class FormGestionMedicos : Form
+    public partial class FormRecepcionarPacienteEstudios : Form
     {
-        public FormGestionMedicos()
+        public FormRecepcionarPacienteEstudios()
         {
             InitializeComponent();
             ConfigurarEventosHover();
@@ -22,20 +22,12 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnABMMedicos
-            btnABMMedicos.MouseEnter += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(128, 203, 196);
+            // Efecto hover para btnConfirmarAsistencia
+            btnConfirmarAsistencia.MouseEnter += (s, e) => {
+                btnConfirmarAsistencia.BackColor = Color.FromArgb(128, 203, 196);
             };
-            btnABMMedicos.MouseLeave += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            // Efecto hover para btnLiquidarHonorarios
-            btnLiquidarHonorarios.MouseEnter += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnLiquidarHonorarios.MouseLeave += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(178, 235, 242);
+            btnConfirmarAsistencia.MouseLeave += (s, e) => {
+                btnConfirmarAsistencia.BackColor = Color.FromArgb(178, 235, 242);
             };
         }
 
@@ -59,20 +51,11 @@ namespace Seprise
             btn.Click += clickHandler;
         }
 
-        private void btnABMMedicos_Click(object sender, EventArgs e)
+        private void btnConfirmarAsistencia_Click(object sender, EventArgs e)
         {
-            using (var form = new FormMedicos())
-            {
-                form.ShowDialog();
-            }
-        }
-
-        private void btnLiquidarHonorarios_Click(object sender, EventArgs e)
-        {
-            using (var form = new FormLiquidarHonorarios())
-            {
-                form.ShowDialog();
-            }
+            // TODO: Implementar confirmación de asistencia para estudios
+            MessageBox.Show("Funcionalidad de Confirmar Asistencia para Estudios pendiente de implementación",
+                          "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

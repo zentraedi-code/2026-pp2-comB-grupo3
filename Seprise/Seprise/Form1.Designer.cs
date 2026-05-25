@@ -17,209 +17,342 @@ namespace Seprise
 
         private void InitializeComponent()
         {
-            panelMenu = new Panel();
-            btnInicio = new Button();
-            lblComun = new Label();
+            panelHeader = new Panel();
+            lblTitulo = new Label();
+            panelContenido = new Panel();
+            lblSeccionComun = new Label();
             btnPacientes = new Button();
-            btnSolicitudEstudio = new Button();
-            lblConsultorios = new Label();
+            lblSeccionConsultorios = new Label();
             btnGestionMedicos = new Button();
             btnGestionAgenda = new Button();
             btnGestionTurnos = new Button();
             btnRecepcionarPaciente = new Button();
             btnAtencionPaciente = new Button();
-            lblEstudios = new Label();
-            btnCrearAgendaEstudios = new Button();
-            btnConfirmarAgendaEstudios = new Button();
-            btnCancelarAgendaEstudios = new Button();
-            btnReservarTurnoEstudio = new Button();
-            btnCancelarReservaEstudio = new Button();
-            btnRecepcionarEstudio = new Button();
-            btnFacturarEstudio = new Button();
-            btnFinalizarEstudio = new Button();
-            btnGenerarInformeEstudio = new Button();
-            btnEntregarEstudio = new Button();
-            panelContenido = new Panel();
-            lblTitulo = new Label();
-            lblSubtitulo = new Label();
-            panelMenu.SuspendLayout();
+            lblSeccionEstudios = new Label();
+            btnGestionAgendaEstudios = new Button();
+            btnGestionTurnosEstudios = new Button();
+            btnRecepcionarPacienteEstudio = new Button();
+            btnSolicitudEstudios = new Button();
+            btnConfirmacionEstudios = new Button();
+            btnProcesamientoEstudios = new Button();
+            panelHeader.SuspendLayout();
             panelContenido.SuspendLayout();
             SuspendLayout();
-
-            ConfigurarPanelMenu();
-            ConfigurarBotonesMenu();
-            ConfigurarPanelContenido();
-            ConfigurarFormulario();
-
-            panelMenu.ResumeLayout(false);
-            panelMenu.PerformLayout();
-            panelContenido.ResumeLayout(false);
-            panelContenido.PerformLayout();
-            ResumeLayout(false);
-        }
-
-        private void ConfigurarPanelMenu()
-        {
-            panelMenu.AutoScroll = true;
-            panelMenu.BorderStyle = BorderStyle.FixedSingle;
-            panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 0);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(280, 700);
-            panelMenu.TabIndex = 0;
-
-            panelMenu.Controls.Add(btnInicio);
-            panelMenu.Controls.Add(lblComun);
-            panelMenu.Controls.Add(btnPacientes);
-            panelMenu.Controls.Add(btnSolicitudEstudio);
-            panelMenu.Controls.Add(lblConsultorios);
-            panelMenu.Controls.Add(btnGestionMedicos);
-            panelMenu.Controls.Add(btnGestionAgenda);
-            panelMenu.Controls.Add(btnGestionTurnos);
-            panelMenu.Controls.Add(btnRecepcionarPaciente);
-            panelMenu.Controls.Add(btnAtencionPaciente);
-            panelMenu.Controls.Add(lblEstudios);
-            panelMenu.Controls.Add(btnCrearAgendaEstudios);
-            panelMenu.Controls.Add(btnConfirmarAgendaEstudios);
-            panelMenu.Controls.Add(btnCancelarAgendaEstudios);
-            panelMenu.Controls.Add(btnReservarTurnoEstudio);
-            panelMenu.Controls.Add(btnCancelarReservaEstudio);
-            panelMenu.Controls.Add(btnRecepcionarEstudio);
-            panelMenu.Controls.Add(btnFacturarEstudio);
-            panelMenu.Controls.Add(btnFinalizarEstudio);
-            panelMenu.Controls.Add(btnGenerarInformeEstudio);
-            panelMenu.Controls.Add(btnEntregarEstudio);
-        }
-
-        private void ConfigurarBotonesMenu()
-        {
-            // Botón Inicio
-            btnInicio.Location = new Point(10, 10);
-            btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(250, 35);
-            btnInicio.TabIndex = 0;
-            btnInicio.Text = "Inicio";
-            btnInicio.TextAlign = ContentAlignment.MiddleLeft;
-            btnInicio.Click += btnInicio_Click;
-
-            // Label Común
-            lblComun.AutoSize = true;
-            lblComun.Location = new Point(10, 60);
-            lblComun.Name = "lblComun";
-            lblComun.TabIndex = 1;
-            lblComun.Text = "COMÚN";
-
-            // Botones Común
-            ConfigurarBotonMenu(btnPacientes, "ABM Pacientes", 85, btnPacientes_Click);
-            ConfigurarBotonMenu(btnSolicitudEstudio, "Crear solicitud de estudio", 120, btnSolicitudEstudio_Click);
-
-            // Label Consultorios
-            lblConsultorios.AutoSize = true;
-            lblConsultorios.Location = new Point(10, 170);
-            lblConsultorios.Name = "lblConsultorios";
-            lblConsultorios.TabIndex = 4;
-            lblConsultorios.Text = "CONSULTORIOS EXTERNOS";
-
-            // Botones Consultorios
-            ConfigurarBotonMenu(btnGestionMedicos, "Gestión Médicos", 195, btnGestionMedicos_Click);
-            ConfigurarBotonMenu(btnGestionAgenda, "Gestión de Agenda", 230, btnGestionAgenda_Click);
-            ConfigurarBotonMenu(btnGestionTurnos, "Gestión de Turnos", 265, btnGestionTurnos_Click);
-            ConfigurarBotonMenu(btnRecepcionarPaciente, "Recepcionar paciente", 300, btnRecepcionarPaciente_Click);
-            ConfigurarBotonMenu(btnAtencionPaciente, "Atención paciente", 335, btnAtencionPaciente_Click);
-
-            // Label Estudios
-            lblEstudios.AutoSize = true;
-            lblEstudios.Location = new Point(10, 385);
-            lblEstudios.Name = "lblEstudios";
-            lblEstudios.TabIndex = 14;
-            lblEstudios.Text = "ESTUDIOS CLÍNICOS";
-
-            // Botones Estudios
-            ConfigurarBotonMenu(btnCrearAgendaEstudios, "Crear agenda estudios", 410, btnCrearAgendaEstudios_Click);
-            ConfigurarBotonMenu(btnConfirmarAgendaEstudios, "Confirmar agenda estudios", 445, btnConfirmarAgendaEstudios_Click);
-            ConfigurarBotonMenu(btnCancelarAgendaEstudios, "Cancelar agenda estudios", 480, btnCancelarAgendaEstudios_Click);
-            ConfigurarBotonMenu(btnReservarTurnoEstudio, "Reservar turno estudio", 515, btnReservarTurnoEstudio_Click);
-            ConfigurarBotonMenu(btnCancelarReservaEstudio, "Cancelar reserva estudio", 550, btnCancelarReservaEstudio_Click);
-            ConfigurarBotonMenu(btnRecepcionarEstudio, "Recepcionar paciente estudio", 585, btnRecepcionarEstudio_Click);
-            ConfigurarBotonMenu(btnFacturarEstudio, "Facturar estudio", 620, btnFacturarEstudio_Click);
-            ConfigurarBotonMenu(btnFinalizarEstudio, "Finalizar atención estudio", 655, btnFinalizarEstudio_Click);
-            ConfigurarBotonMenu(btnGenerarInformeEstudio, "Generar informe estudio", 690, btnGenerarInformeEstudio_Click);
-            ConfigurarBotonMenu(btnEntregarEstudio, "Entregar estudio", 725, btnEntregarEstudio_Click);
-        }
-
-        private void ConfigurarBotonMenu(Button btn, string texto, int posY, EventHandler clickHandler)
-        {
-            if (btn == null)
-                throw new ArgumentNullException(nameof(btn), $"El botón para '{texto}' es null");
-
-            btn.Location = new Point(10, posY);
-            btn.Name = "btn" + texto.Replace(" ", "");
-            btn.Size = new Size(250, 35);
-            btn.Text = texto;
-            btn.TextAlign = ContentAlignment.MiddleLeft;
-            btn.Click += clickHandler;
-        }
-
-        private void ConfigurarPanelContenido()
-        {
-            panelContenido.Controls.Add(lblTitulo);
-            panelContenido.Controls.Add(lblSubtitulo);
-            panelContenido.Dock = DockStyle.Fill;
-            panelContenido.Location = new Point(280, 0);
-            panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(920, 700);
-            panelContenido.TabIndex = 1;
-
-            lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(30, 30);
+            // 
+            // panelHeader
+            // 
+            panelHeader.BackColor = Color.FromArgb(0, 150, 136);
+            panelHeader.Controls.Add(lblTitulo);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(1203, 80);
+            panelHeader.TabIndex = 0;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(1203, 80);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Sistema de Consultorios Externos y Estudios Clínicos";
-
-            lblSubtitulo.AutoSize = true;
-            lblSubtitulo.Location = new Point(30, 75);
-            lblSubtitulo.Name = "lblSubtitulo";
-            lblSubtitulo.TabIndex = 1;
-            lblSubtitulo.Text = "Seleccione una opción del menú para comenzar";
-        }
-
-        private void ConfigurarFormulario()
-        {
+            lblTitulo.Text = "Sistema de Gestión - Clínica SEPRISE";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelContenido
+            // 
+            panelContenido.AutoScroll = true;
+            panelContenido.BackColor = Color.White;
+            panelContenido.Controls.Add(lblSeccionComun);
+            panelContenido.Controls.Add(btnPacientes);
+            panelContenido.Controls.Add(lblSeccionConsultorios);
+            panelContenido.Controls.Add(btnGestionMedicos);
+            panelContenido.Controls.Add(btnGestionAgenda);
+            panelContenido.Controls.Add(btnGestionTurnos);
+            panelContenido.Controls.Add(btnRecepcionarPaciente);
+            panelContenido.Controls.Add(btnAtencionPaciente);
+            panelContenido.Controls.Add(lblSeccionEstudios);
+            panelContenido.Controls.Add(btnGestionAgendaEstudios);
+            panelContenido.Controls.Add(btnGestionTurnosEstudios);
+            panelContenido.Controls.Add(btnRecepcionarPacienteEstudio);
+            panelContenido.Controls.Add(btnSolicitudEstudios);
+            panelContenido.Controls.Add(btnConfirmacionEstudios);
+            panelContenido.Controls.Add(btnProcesamientoEstudios);
+            panelContenido.Dock = DockStyle.Fill;
+            panelContenido.Location = new Point(0, 80);
+            panelContenido.Name = "panelContenido";
+            panelContenido.Size = new Size(1203, 749);
+            panelContenido.TabIndex = 1;
+            panelContenido.Paint += panelContenido_Paint;
+            // 
+            // lblSeccionComun
+            // 
+            lblSeccionComun.BackColor = Color.FromArgb(0, 150, 136);
+            lblSeccionComun.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblSeccionComun.ForeColor = Color.White;
+            lblSeccionComun.Location = new Point(30, 20);
+            lblSeccionComun.Name = "lblSeccionComun";
+            lblSeccionComun.Padding = new Padding(20, 0, 0, 0);
+            lblSeccionComun.Size = new Size(1140, 40);
+            lblSeccionComun.TabIndex = 0;
+            lblSeccionComun.Text = "ADMINISTRACIÓN";
+            lblSeccionComun.TextAlign = ContentAlignment.MiddleLeft;
+            lblSeccionComun.Click += lblSeccionComun_Click;
+            // 
+            // btnPacientes
+            // 
+            btnPacientes.BackColor = Color.FromArgb(178, 235, 242);
+            btnPacientes.Cursor = Cursors.Hand;
+            btnPacientes.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnPacientes.FlatAppearance.BorderSize = 2;
+            btnPacientes.FlatStyle = FlatStyle.Flat;
+            btnPacientes.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnPacientes.Location = new Point(250, 73);
+            btnPacientes.Name = "btnPacientes";
+            btnPacientes.Size = new Size(180, 120);
+            btnPacientes.TabIndex = 1;
+            btnPacientes.Text = "👥\r\n\r\nGestión de\r\nPacientes";
+            btnPacientes.UseVisualStyleBackColor = false;
+            btnPacientes.Click += btnPacientes_Click;
+            // 
+            // lblSeccionConsultorios
+            // 
+            lblSeccionConsultorios.BackColor = Color.FromArgb(0, 150, 136);
+            lblSeccionConsultorios.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblSeccionConsultorios.ForeColor = Color.White;
+            lblSeccionConsultorios.Location = new Point(30, 230);
+            lblSeccionConsultorios.Name = "lblSeccionConsultorios";
+            lblSeccionConsultorios.Padding = new Padding(20, 0, 0, 0);
+            lblSeccionConsultorios.Size = new Size(1140, 40);
+            lblSeccionConsultorios.TabIndex = 3;
+            lblSeccionConsultorios.Text = "CONSULTORIOS EXTERNOS";
+            lblSeccionConsultorios.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // btnGestionMedicos
+            // 
+            btnGestionMedicos.BackColor = Color.FromArgb(178, 235, 242);
+            btnGestionMedicos.Cursor = Cursors.Hand;
+            btnGestionMedicos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnGestionMedicos.FlatAppearance.BorderSize = 2;
+            btnGestionMedicos.FlatStyle = FlatStyle.Flat;
+            btnGestionMedicos.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnGestionMedicos.Location = new Point(50, 73);
+            btnGestionMedicos.Name = "btnGestionMedicos";
+            btnGestionMedicos.Size = new Size(180, 120);
+            btnGestionMedicos.TabIndex = 4;
+            btnGestionMedicos.Text = "👨‍⚕️\r\n\r\nGestión de\r\nMédicos";
+            btnGestionMedicos.UseVisualStyleBackColor = false;
+            btnGestionMedicos.Click += btnGestionMedicos_Click;
+            // 
+            // btnGestionAgenda
+            // 
+            btnGestionAgenda.BackColor = Color.FromArgb(178, 235, 242);
+            btnGestionAgenda.Cursor = Cursors.Hand;
+            btnGestionAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnGestionAgenda.FlatAppearance.BorderSize = 2;
+            btnGestionAgenda.FlatStyle = FlatStyle.Flat;
+            btnGestionAgenda.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnGestionAgenda.Location = new Point(50, 292);
+            btnGestionAgenda.Name = "btnGestionAgenda";
+            btnGestionAgenda.Size = new Size(180, 120);
+            btnGestionAgenda.TabIndex = 5;
+            btnGestionAgenda.Text = "📅\n\nGestión de Agenda\n";
+            btnGestionAgenda.UseVisualStyleBackColor = false;
+            btnGestionAgenda.Click += btnGestionAgenda_Click;
+            // 
+            // btnGestionTurnos
+            // 
+            btnGestionTurnos.BackColor = Color.FromArgb(178, 235, 242);
+            btnGestionTurnos.Cursor = Cursors.Hand;
+            btnGestionTurnos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnGestionTurnos.FlatAppearance.BorderSize = 2;
+            btnGestionTurnos.FlatStyle = FlatStyle.Flat;
+            btnGestionTurnos.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnGestionTurnos.Location = new Point(250, 292);
+            btnGestionTurnos.Name = "btnGestionTurnos";
+            btnGestionTurnos.Size = new Size(180, 120);
+            btnGestionTurnos.TabIndex = 6;
+            btnGestionTurnos.Text = "🕐\r\n\r\nGestión de Turnos\r\n";
+            btnGestionTurnos.UseVisualStyleBackColor = false;
+            btnGestionTurnos.Click += btnGestionTurnos_Click;
+            // 
+            // btnRecepcionarPaciente
+            // 
+            btnRecepcionarPaciente.BackColor = Color.FromArgb(178, 235, 242);
+            btnRecepcionarPaciente.Cursor = Cursors.Hand;
+            btnRecepcionarPaciente.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnRecepcionarPaciente.FlatAppearance.BorderSize = 2;
+            btnRecepcionarPaciente.FlatStyle = FlatStyle.Flat;
+            btnRecepcionarPaciente.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnRecepcionarPaciente.Location = new Point(448, 292);
+            btnRecepcionarPaciente.Name = "btnRecepcionarPaciente";
+            btnRecepcionarPaciente.Size = new Size(180, 120);
+            btnRecepcionarPaciente.TabIndex = 7;
+            btnRecepcionarPaciente.Text = "📋✓\r\n\r\nRecepcionar Pacientes";
+            btnRecepcionarPaciente.UseVisualStyleBackColor = false;
+            btnRecepcionarPaciente.Click += btnRecepcionarPaciente_Click;
+            // 
+            // btnAtencionPaciente
+            // 
+            btnAtencionPaciente.BackColor = Color.FromArgb(178, 235, 242);
+            btnAtencionPaciente.Cursor = Cursors.Hand;
+            btnAtencionPaciente.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnAtencionPaciente.FlatAppearance.BorderSize = 2;
+            btnAtencionPaciente.FlatStyle = FlatStyle.Flat;
+            btnAtencionPaciente.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnAtencionPaciente.Location = new Point(646, 292);
+            btnAtencionPaciente.Name = "btnAtencionPaciente";
+            btnAtencionPaciente.Size = new Size(180, 120);
+            btnAtencionPaciente.TabIndex = 8;
+            btnAtencionPaciente.Text = "🏥\r\n\r\nAtención de Pacientes";
+            btnAtencionPaciente.UseVisualStyleBackColor = false;
+            btnAtencionPaciente.Click += btnAtencionPaciente_Click;
+            // 
+            // lblSeccionEstudios
+            // 
+            lblSeccionEstudios.BackColor = Color.FromArgb(0, 150, 136);
+            lblSeccionEstudios.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblSeccionEstudios.ForeColor = Color.White;
+            lblSeccionEstudios.Location = new Point(30, 440);
+            lblSeccionEstudios.Name = "lblSeccionEstudios";
+            lblSeccionEstudios.Padding = new Padding(20, 0, 0, 0);
+            lblSeccionEstudios.Size = new Size(1140, 40);
+            lblSeccionEstudios.TabIndex = 9;
+            lblSeccionEstudios.Text = "ESTUDIOS CLÍNICOS";
+            lblSeccionEstudios.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // btnGestionAgendaEstudios
+            // 
+            btnGestionAgendaEstudios.BackColor = Color.FromArgb(178, 235, 242);
+            btnGestionAgendaEstudios.Cursor = Cursors.Hand;
+            btnGestionAgendaEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnGestionAgendaEstudios.FlatAppearance.BorderSize = 2;
+            btnGestionAgendaEstudios.FlatStyle = FlatStyle.Flat;
+            btnGestionAgendaEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnGestionAgendaEstudios.Location = new Point(50, 500);
+            btnGestionAgendaEstudios.Name = "btnGestionAgendaEstudios";
+            btnGestionAgendaEstudios.Size = new Size(180, 100);
+            btnGestionAgendaEstudios.TabIndex = 10;
+            btnGestionAgendaEstudios.Text = "🔬📅\n\nGestión de Agenda\n";
+            btnGestionAgendaEstudios.UseVisualStyleBackColor = false;
+            btnGestionAgendaEstudios.Click += btnGestionAgendaEstudios_Click;
+            // 
+            // btnGestionTurnosEstudios
+            // 
+            btnGestionTurnosEstudios.BackColor = Color.FromArgb(178, 235, 242);
+            btnGestionTurnosEstudios.Cursor = Cursors.Hand;
+            btnGestionTurnosEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnGestionTurnosEstudios.FlatAppearance.BorderSize = 2;
+            btnGestionTurnosEstudios.FlatStyle = FlatStyle.Flat;
+            btnGestionTurnosEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnGestionTurnosEstudios.Location = new Point(250, 500);
+            btnGestionTurnosEstudios.Name = "btnGestionTurnosEstudios";
+            btnGestionTurnosEstudios.Size = new Size(180, 100);
+            btnGestionTurnosEstudios.TabIndex = 11;
+            btnGestionTurnosEstudios.Text = "🔬🕐\n\nGestión de Turnos\n";
+            btnGestionTurnosEstudios.UseVisualStyleBackColor = false;
+            btnGestionTurnosEstudios.Click += btnGestionTurnosEstudios_Click;
+            // 
+            // btnRecepcionarPacienteEstudio
+            // 
+            btnRecepcionarPacienteEstudio.BackColor = Color.FromArgb(178, 235, 242);
+            btnRecepcionarPacienteEstudio.Cursor = Cursors.Hand;
+            btnRecepcionarPacienteEstudio.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnRecepcionarPacienteEstudio.FlatAppearance.BorderSize = 2;
+            btnRecepcionarPacienteEstudio.FlatStyle = FlatStyle.Flat;
+            btnRecepcionarPacienteEstudio.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnRecepcionarPacienteEstudio.Location = new Point(450, 500);
+            btnRecepcionarPacienteEstudio.Name = "btnRecepcionarPacienteEstudio";
+            btnRecepcionarPacienteEstudio.Size = new Size(180, 100);
+            btnRecepcionarPacienteEstudio.TabIndex = 12;
+            btnRecepcionarPacienteEstudio.Text = "📋✓\n\nRecepcionar";
+            btnRecepcionarPacienteEstudio.UseVisualStyleBackColor = false;
+            btnRecepcionarPacienteEstudio.Click += btnRecepcionarEstudio_Click;
+            // 
+            // btnSolicitudEstudios
+            // 
+            btnSolicitudEstudios.BackColor = Color.FromArgb(178, 235, 242);
+            btnSolicitudEstudios.Cursor = Cursors.Hand;
+            btnSolicitudEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnSolicitudEstudios.FlatAppearance.BorderSize = 2;
+            btnSolicitudEstudios.FlatStyle = FlatStyle.Flat;
+            btnSolicitudEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSolicitudEstudios.Location = new Point(50, 620);
+            btnSolicitudEstudios.Name = "btnSolicitudEstudios";
+            btnSolicitudEstudios.Size = new Size(180, 100);
+            btnSolicitudEstudios.TabIndex = 13;
+            btnSolicitudEstudios.Text = "📝\n\nSolicitar Estudios";
+            btnSolicitudEstudios.UseVisualStyleBackColor = false;
+            btnSolicitudEstudios.Click += btnSolicitudEstudios_Click;
+            // 
+            // btnConfirmacionEstudios
+            // 
+            btnConfirmacionEstudios.BackColor = Color.FromArgb(178, 235, 242);
+            btnConfirmacionEstudios.Cursor = Cursors.Hand;
+            btnConfirmacionEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnConfirmacionEstudios.FlatAppearance.BorderSize = 2;
+            btnConfirmacionEstudios.FlatStyle = FlatStyle.Flat;
+            btnConfirmacionEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnConfirmacionEstudios.Location = new Point(250, 620);
+            btnConfirmacionEstudios.Name = "btnConfirmacionEstudios";
+            btnConfirmacionEstudios.Size = new Size(180, 100);
+            btnConfirmacionEstudios.TabIndex = 14;
+            btnConfirmacionEstudios.Text = "✅\n\nConfirmar Estudios";
+            btnConfirmacionEstudios.UseVisualStyleBackColor = false;
+            btnConfirmacionEstudios.Click += btnConfirmacionEstudios_Click;
+            // 
+            // btnProcesamientoEstudios
+            // 
+            btnProcesamientoEstudios.BackColor = Color.FromArgb(178, 235, 242);
+            btnProcesamientoEstudios.Cursor = Cursors.Hand;
+            btnProcesamientoEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
+            btnProcesamientoEstudios.FlatAppearance.BorderSize = 2;
+            btnProcesamientoEstudios.FlatStyle = FlatStyle.Flat;
+            btnProcesamientoEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnProcesamientoEstudios.Location = new Point(450, 620);
+            btnProcesamientoEstudios.Name = "btnProcesamientoEstudios";
+            btnProcesamientoEstudios.Size = new Size(180, 100);
+            btnProcesamientoEstudios.TabIndex = 15;
+            btnProcesamientoEstudios.Text = "⚙️\n\nProcesar Estudios";
+            btnProcesamientoEstudios.UseVisualStyleBackColor = false;
+            btnProcesamientoEstudios.Click += btnProcesamientoEstudios_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 700);
+            ClientSize = new Size(1203, 829);
             Controls.Add(panelContenido);
-            Controls.Add(panelMenu);
+            Controls.Add(panelHeader);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema PP2 - Consultorios y Estudios Clínicos";
+            panelHeader.ResumeLayout(false);
+            panelContenido.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panelMenu;
-        private Button btnInicio;
-        private Label lblComun;
+        private Panel panelHeader;
+        private Label lblTitulo;
+        private Panel panelContenido;
+        private Label lblSeccionComun;
         private Button btnPacientes;
-        private Button btnSolicitudEstudio;
-        private Label lblConsultorios;
+        private Label lblSeccionConsultorios;
         private Button btnGestionMedicos;
         private Button btnGestionAgenda;
         private Button btnGestionTurnos;
         private Button btnRecepcionarPaciente;
         private Button btnAtencionPaciente;
-        private Label lblEstudios;
-        private Button btnCrearAgendaEstudios;
-        private Button btnConfirmarAgendaEstudios;
-        private Button btnCancelarAgendaEstudios;
-        private Button btnReservarTurnoEstudio;
-        private Button btnCancelarReservaEstudio;
-        private Button btnRecepcionarEstudio;
-        private Button btnFacturarEstudio;
-        private Button btnFinalizarEstudio;
-        private Button btnGenerarInformeEstudio;
-        private Button btnEntregarEstudio;
-        private Panel panelContenido;
-        private Label lblTitulo;
-        private Label lblSubtitulo;
+        private Label lblSeccionEstudios;
+        private Button btnGestionAgendaEstudios;
+        private Button btnGestionTurnosEstudios;
+        private Button btnRecepcionarPacienteEstudio;
+        private Button btnSolicitudEstudios;
+        private Button btnConfirmacionEstudios;
+        private Button btnProcesamientoEstudios;
     }
 }

@@ -13,6 +13,9 @@
     <Compile Update="FormCancelarReservaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormConfirmacionEstudios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormConfirmarAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -28,13 +31,19 @@
     <Compile Update="FormGenerarHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormGestionAgenda.cs">
+    <Compile Update="FormGestionAgendaConsultorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormGestionAgendaEstudios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormGestionMedicos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormGestionTurnos.cs">
+    <Compile Update="FormGestionTurnosConsultorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormGestionTurnosEstudios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormLiquidarHonorarios.cs">
@@ -52,13 +61,19 @@
     <Compile Update="FormPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormRecepcionarPaciente.cs">
+    <Compile Update="FormPacientesPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormProcesamientoEstudios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormRecepcionarPacienteConsultorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormRecepcionarPacienteEstudios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormReservarTurnoMedico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormRevisarPacientesPendientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormSolicitudEstudio.cs">
@@ -69,10 +84,10 @@
     <EmbeddedResource Update="FormCancelarAgendaMedica.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="FormGestionAgenda.resx">
+    <EmbeddedResource Update="FormGestionAgendaEstudios.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="FormGestionTurnos.resx">
+    <EmbeddedResource Update="FormGestionTurnosEstudios.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
