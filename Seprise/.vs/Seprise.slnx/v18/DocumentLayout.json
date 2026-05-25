@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormPaciente.cs",
+              "DocumentMoniker": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormPaciente.cs",
+              "RelativeDocumentMoniker": "Seprise\\Forms\\FormPaciente.cs",
+              "ToolTip": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormPaciente.cs*",
+              "RelativeToolTip": "Seprise\\Forms\\FormPaciente.cs*",
+              "ViewState": "AgIAANkAAAAAAAAAAAAYwIUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:59:02.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormPaciente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormPaciente.cs",
+              "RelativeDocumentMoniker": "Seprise\\Forms\\FormPaciente.cs",
+              "ToolTip": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormPaciente.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Seprise\\Forms\\FormPaciente.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:58:47.291Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
