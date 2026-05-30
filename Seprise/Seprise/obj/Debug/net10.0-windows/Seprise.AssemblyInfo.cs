@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Seprise")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+952763a24037c5b546fe5eaae71c05182143ca7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e8507fe1d9b9be9c8044751855f11479cf7fa29")]
 [assembly: System.Reflection.AssemblyProductAttribute("Seprise")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Seprise")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
