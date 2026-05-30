@@ -85,7 +85,8 @@ namespace Seprise
             // 
             // dtpHoraDesde
             // 
-            dtpHoraDesde.Format = DateTimePickerFormat.Time;
+            dtpHoraDesde.Format = DateTimePickerFormat.Custom;
+            dtpHoraDesde.CustomFormat = "HH:mm";
             dtpHoraDesde.ShowUpDown = true;
             dtpHoraDesde.Location = new Point(26, 175);
             dtpHoraDesde.Margin = new Padding(3, 2, 3, 2);
@@ -104,7 +105,8 @@ namespace Seprise
             // 
             // dtpHoraHasta
             // 
-            dtpHoraHasta.Format = DateTimePickerFormat.Time;
+            dtpHoraHasta.Format = DateTimePickerFormat.Custom;
+            dtpHoraHasta.CustomFormat = "HH:mm";
             dtpHoraHasta.ShowUpDown = true;
             dtpHoraHasta.Location = new Point(368, 175);
             dtpHoraHasta.Margin = new Padding(3, 2, 3, 2);
