@@ -151,10 +151,10 @@ namespace Seprise.dao
                              "FROM paciente WHERE activo = 1";
 
                 if (!string.IsNullOrEmpty(dni))
-                    sql += $" AND dni LIKE '%{dni}%'";
+                    sql += $" AND dni = '{dni}'";
 
                 if (!string.IsNullOrEmpty(nomApe))
-                    sql += $" AND (nombre LIKE '%{nomApe}%' OR apellido LIKE '%{nomApe}%')";
+                    sql += $" AND apellido LIKE '%{nomApe}%'";
 
                 sql += " ORDER BY apellido, nombre";
 

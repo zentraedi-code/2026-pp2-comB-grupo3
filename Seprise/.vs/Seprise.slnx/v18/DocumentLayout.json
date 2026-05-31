@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpereira\\.copilot\\plans\\plan-estandarizar-y-funcionalizar-formreservarturnomedico.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpereira\\.copilot\\plans\\plan-restaurar-trabajo-perdido-por-git-checkout.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
     },
     {
@@ -60,6 +63,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formbuscarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formbuscarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formreservarturnomedico.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formreservarturnomedico.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formreservarturnomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formreservarturnomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -69,11 +80,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
+              "Title": "FormReservarTurnoMedico.cs",
+              "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormReservarTurnoMedico.cs",
+              "RelativeDocumentMoniker": "Seprise\\Forms\\FormReservarTurnoMedico.cs",
+              "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormReservarTurnoMedico.cs",
+              "RelativeToolTip": "Seprise\\Forms\\FormReservarTurnoMedico.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBJwAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T17:59:02.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FormReservarTurnoMedico.Designer.cs",
+              "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "RelativeDocumentMoniker": "Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "RelativeToolTip": "Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T17:58:15.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "plan-estandarizar-y-funcionalizar-formreservarturnomedico.md [Versi\u00F3n preliminar]",
+              "DocumentMoniker": "C:\\Users\\mpereira\\.copilot\\plans\\plan-estandarizar-y-funcionalizar-formreservarturnomedico.md",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\mpereira\\.copilot\\plans\\plan-estandarizar-y-funcionalizar-formreservarturnomedico.md",
+              "ToolTip": "C:\\Users\\mpereira\\.copilot\\plans\\plan-estandarizar-y-funcionalizar-formreservarturnomedico.md [Versi\u00F3n preliminar]",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\mpereira\\.copilot\\plans\\plan-estandarizar-y-funcionalizar-formreservarturnomedico.md [Versi\u00F3n preliminar]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T17:57:28.937Z",
+              "EditorCaption": " [Versi\u00F3n preliminar]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "FormBuscarPaciente.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormBuscarPaciente.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormBuscarPaciente.cs",
@@ -86,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "FormConfirmarAgendaMedica.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormConfirmarAgendaMedica.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormConfirmarAgendaMedica.cs",
@@ -99,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "FormCrearAgendaMedica.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormCrearAgendaMedica.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormCrearAgendaMedica.cs",
@@ -112,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "FormCrearAgendaMedica.Designer.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormCrearAgendaMedica.Designer.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormCrearAgendaMedica.Designer.cs",
@@ -125,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "plan-restaurar-trabajo-perdido-por-git-checkout.md [Versi\u00F3n preliminar]",
               "DocumentMoniker": "C:\\Users\\mpereira\\.copilot\\plans\\plan-restaurar-trabajo-perdido-por-git-checkout.md",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\mpereira\\.copilot\\plans\\plan-restaurar-trabajo-perdido-por-git-checkout.md",
@@ -137,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TurnoConsultaDao.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\dao\\TurnoConsultaDao.cs",
               "RelativeDocumentMoniker": "Seprise\\dao\\TurnoConsultaDao.cs",
@@ -150,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FormCancelarAgendaMedica.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormCancelarAgendaMedica.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormCancelarAgendaMedica.cs",
@@ -163,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AgendaMedicaDao.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\dao\\AgendaMedicaDao.cs",
               "RelativeDocumentMoniker": "Seprise\\dao\\AgendaMedicaDao.cs",
@@ -176,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormCancelarAgendaMedica.Designer.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormCancelarAgendaMedica.Designer.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormCancelarAgendaMedica.Designer.cs",
@@ -189,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "FormConfirmarAgendaMedica.Designer.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormConfirmarAgendaMedica.Designer.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormConfirmarAgendaMedica.Designer.cs",
@@ -202,20 +251,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PacienteDao.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\dao\\PacienteDao.cs",
               "RelativeDocumentMoniker": "Seprise\\dao\\PacienteDao.cs",
               "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\dao\\PacienteDao.cs",
               "RelativeToolTip": "Seprise\\dao\\PacienteDao.cs",
-              "ViewState": "AgIAALkAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-31T17:22:30.08Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AbstractDao.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\dao\\AbstractDao.cs",
               "RelativeDocumentMoniker": "Seprise\\dao\\AbstractDao.cs",
@@ -228,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ServicioConexion.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\service\\ServicioConexion.cs",
               "RelativeDocumentMoniker": "Seprise\\service\\ServicioConexion.cs",
@@ -241,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FormCancelarReservaMedica.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormCancelarReservaMedica.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormCancelarReservaMedica.cs",
@@ -254,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "FormCancelarReservaMedica.Designer.cs",
               "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormCancelarReservaMedica.Designer.cs",
               "RelativeDocumentMoniker": "Seprise\\Forms\\FormCancelarReservaMedica.Designer.cs",

@@ -1,83 +1,235 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
+using Seprise.dao;
+using Seprise.entity;
 
 namespace Seprise
 {
     public partial class FormReservarTurnoMedico : Form
     {
+        private List<Medico> medicos = new List<Medico>();
+        private List<Especialidad> especialidades = new List<Especialidad>();
+
         public FormReservarTurnoMedico()
         {
             InitializeComponent();
-            ConfigurarDataGridView();
-            CargarDatosIniciales();
+            if (!IsDesignMode())
+            {
+                CargarDatos();
+                ConfigurarGrilla();
+            }
         }
 
-        private void CargarDatosIniciales()
+        private bool IsDesignMode()
         {
-            cmbEspecialidad.Items.AddRange(new string[] { "Clínica médica", "Fisio-kinesiología", "Salud mental", "Cardiología", "Pediatría" });
-            cmbProfesional.Items.AddRange(new string[] { "Cualquiera", "Dra. Gómez Laura", "Dr. Rodríguez Carlos" });
+            return LicenseManager.UsageMode == LicenseUsageMode.Designtime || (Site != null && Site.DesignMode);
+        }
 
-            if (cmbEspecialidad.Items.Count > 0)
+        private void CargarDatos()
+        {
+            try
+            {
+                EspecialidadDao espDao = new EspecialidadDao();
+                especialidades = espDao.listarActivas();
+
+                cmbEspecialidad.Items.Clear();
+                cmbEspecialidad.Items.Add("-- Todas --");
+                foreach (Especialidad esp in especialidades)
+                    cmbEspecialidad.Items.Add(esp);
                 cmbEspecialidad.SelectedIndex = 0;
-            if (cmbProfesional.Items.Count > 0)
-                cmbProfesional.SelectedIndex = 0;
 
-            dtpFecha.Value = DateTime.Now;
+                CargarMedicosPorEspecialidad(null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void ConfigurarDataGridView()
+        private void CargarMedicosPorEspecialidad(int? especialidadId)
         {
-            dgvTurnos.AllowUserToAddRows = false;
-            dgvTurnos.AllowUserToDeleteRows = false;
-            dgvTurnos.ReadOnly = true;
-            dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTurnos.MultiSelect = false;
+            try
+            {
+                MedicoDao medicoDao = new MedicoDao();
+                List<Medico> todos = medicoDao.listarActivos();
+
+                medicos = especialidadId.HasValue
+                    ? todos.Where(m => m.IdEspecialidad == especialidadId.Value).ToList()
+                    : todos;
+
+                cmbMedico.Items.Clear();
+                cmbMedico.Items.Add("-- Todos --");
+                foreach (Medico m in medicos)
+                    cmbMedico.Items.Add(m);
+                cmbMedico.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar médicos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ConfigurarGrilla()
+        {
             dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTurnos.MultiSelect = false;
+            dgvTurnos.RowHeadersVisible = false;
+            dgvTurnos.Font = new Font("Segoe UI", 9f);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 107, 160);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvTurnos.EnableHeadersVisualStyles = false;
+            dgvTurnos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 246, 255);
 
-            dgvTurnos.Columns.Add("Fecha", "Fecha");
-            dgvTurnos.Columns.Add("Hora", "Hora");
-            dgvTurnos.Columns.Add("Medico", "Médico");
-            dgvTurnos.Columns.Add("Consultorio", "Consultorio");
-            dgvTurnos.Columns.Add("Tipo", "Tipo");
-            dgvTurnos.Columns.Add("Estado", "Estado");
+            dgvTurnos.Columns.Clear();
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "ID", Visible = false });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colFecha", HeaderText = "Fecha", FillWeight = 14 });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colHora", HeaderText = "Hora", FillWeight = 10 });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colMedico", HeaderText = "Médico", FillWeight = 30 });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colConsultorio", HeaderText = "Consultorio", FillWeight = 18 });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colTipo", HeaderText = "Tipo", FillWeight = 13 });
 
-            DataGridViewButtonColumn btnReservar = new DataGridViewButtonColumn();
-            btnReservar.Name = "btnReservar";
-            btnReservar.Text = "Reservar";
-            btnReservar.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn btnReservar = new DataGridViewButtonColumn
+            {
+                Name = "colReservar",
+                HeaderText = "",
+                Text = "Reservar",
+                UseColumnTextForButtonValue = true,
+                FillWeight = 15,
+                FlatStyle = FlatStyle.Flat
+            };
             dgvTurnos.Columns.Add(btnReservar);
+        }
+
+        private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int? espId = cmbEspecialidad.SelectedItem is Especialidad esp ? esp.Id : (int?)null;
+            CargarMedicosPorEspecialidad(espId);
+        }
+
+        private void chkFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFecha.Enabled = chkFecha.Checked;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dgvTurnos.Rows.Clear();
-            dgvTurnos.Rows.Add("2026-05-10", "08:00", "Dra. Gómez", "1", "Normal", "DISPONIBLE");
-            dgvTurnos.Rows.Add("2026-05-10", "08:45", "Dra. Gómez", "1", "Sobreturno", "DISPONIBLE");
-            dgvTurnos.Rows.Add("2026-05-10", "09:00", "Dra. Gómez", "1", "Normal", "DISPONIBLE");
+            if (cmbMedico.SelectedItem is not Medico medico)
+            {
+                MessageBox.Show("Seleccione un médico para buscar disponibilidad.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!chkFecha.Checked)
+            {
+                MessageBox.Show("Marque la opción Fecha e ingrese una fecha para buscar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                TurnoConsultaDao dao = new TurnoConsultaDao();
+                List<TurnoConsulta> turnos = dao.buscarDisponiblesPorProfesionalYFecha(medico.Id, dtpFecha.Value.Date);
+                CargarGrilla(turnos);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar turnos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnPrimeraDisponible_Click(object sender, EventArgs e)
         {
+            if (cmbMedico.SelectedItem is not Medico medico)
+            {
+                MessageBox.Show("Seleccione un médico para ver la primera fecha disponible.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                TurnoConsultaDao dao = new TurnoConsultaDao();
+                List<TurnoConsulta> turnos = dao.buscarPrimeraDisponiblePorProfesional(medico.Id);
+                CargarGrilla(turnos);
+
+                if (turnos.Count > 0)
+                {
+                    chkFecha.Checked = true;
+                    dtpFecha.Value = turnos[0].FechaHoraTurno.Date;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar primera disponible: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarGrilla(List<TurnoConsulta> turnos)
+        {
             dgvTurnos.Rows.Clear();
-            dgvTurnos.Rows.Add("2026-05-10", "08:00", "Dra. Gómez", "1", "Normal", "DISPONIBLE");
-            MessageBox.Show("Se muestra la primera fecha disponible.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (turnos == null || turnos.Count == 0)
+            {
+                MessageBox.Show("No se encontraron turnos DISPONIBLES con los filtros indicados.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (TurnoConsulta t in turnos)
+            {
+                int idx = dgvTurnos.Rows.Add(
+                    t.Id.ToString(),
+                    t.FechaHoraTurno.ToString("dd/MM/yyyy"),
+                    t.FechaHoraTurno.ToString("HH:mm"),
+                    t.MedicoNombreCompleto ?? "-",
+                    t.ConsultorioNombre ?? "-",
+                    t.EsSobreturno ? "Sobreturno" : "Normal"
+                );
+                dgvTurnos.Rows[idx].Tag = t;
+            }
         }
 
         private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0 || e.ColumnIndex != dgvTurnos.Columns["colReservar"].Index)
+                return;
 
-            string columna = dgvTurnos.Columns[e.ColumnIndex].Name;
+            TurnoConsulta turno = dgvTurnos.Rows[e.RowIndex].Tag as TurnoConsulta;
+            if (turno == null) return;
 
-            if (columna == "btnReservar")
+            using FormBuscarPaciente formPaciente = new FormBuscarPaciente();
+            if (formPaciente.ShowDialog() != DialogResult.OK)
+                return;
+
+            Paciente paciente = formPaciente.PacienteSeleccionado;
+            if (paciente == null) return;
+
+            var respuesta = MessageBox.Show(
+                $"¿Reservar turno el {turno.FechaHoraTurno:dd/MM/yyyy} a las {turno.FechaHoraTurno:HH:mm} para {paciente.Apellido}, {paciente.Nombre}?",
+                "Confirmar reserva",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (respuesta != DialogResult.Yes)
+                return;
+
+            try
             {
-                string dniPaciente = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el DNI del paciente:", "Reservar turno", "", -1, -1);
+                TurnoConsultaDao dao = new TurnoConsultaDao();
+                bool ok = dao.reservar(turno.Id, paciente.Id);
 
-                if (!string.IsNullOrWhiteSpace(dniPaciente))
+                if (ok)
                 {
-                    dgvTurnos.Rows[e.RowIndex].Cells["Estado"].Value = "RESERVADO";
-                    MessageBox.Show($"Turno reservado exitosamente para el paciente DNI {dniPaciente}.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Turno reservado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvTurnos.Rows.RemoveAt(e.RowIndex);
                 }
+                else
+                {
+                    MessageBox.Show("No se pudo reservar el turno. Es posible que ya no esté disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al reservar turno: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -87,3 +239,4 @@ namespace Seprise
         }
     }
 }
+

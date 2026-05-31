@@ -3,169 +3,211 @@
     partial class FormReservarTurnoMedico
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Label lblEspecialidad;
-        private System.Windows.Forms.ComboBox cmbEspecialidad;
-        private System.Windows.Forms.Label lblProfesional;
-        private System.Windows.Forms.ComboBox cmbProfesional;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnPrimeraDisponible;
-        private System.Windows.Forms.DataGridView dgvTurnos;
-        private System.Windows.Forms.Label lblNota;
-        private System.Windows.Forms.Button btnSalir;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblSubtitulo = new System.Windows.Forms.Label();
-            this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
-            this.lblProfesional = new System.Windows.Forms.Label();
-            this.cmbProfesional = new System.Windows.Forms.ComboBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnPrimeraDisponible = new System.Windows.Forms.Button();
-            this.dgvTurnos = new System.Windows.Forms.DataGridView();
-            this.lblNota = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
-            this.SuspendLayout();
+            lblTitulo = new Label();
+            grpFiltros = new GroupBox();
+            lblEspecialidad = new Label();
+            cmbEspecialidad = new ComboBox();
+            lblMedico = new Label();
+            cmbMedico = new ComboBox();
+            chkFecha = new CheckBox();
+            dtpFecha = new DateTimePicker();
+            btnBuscar = new Button();
+            btnPrimeraDisponible = new Button();
+            dgvTurnos = new DataGridView();
+            lblNota = new Label();
+            btnSalir = new Button();
+            grpFiltros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
+            SuspendLayout();
 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(20, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "CU07 - Reservar turno médico";
+            // lblTitulo
+            lblTitulo.BackColor = Color.FromArgb(30, 107, 160);
+            lblTitulo.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(900, 48);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "   Reservar turno médico";
+            lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
 
-            this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
-            this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "Muestra primera fecha disponible y permite consultar disponibilidad por otra fecha.";
+            // grpFiltros
+            grpFiltros.Location = new Point(15, 62);
+            grpFiltros.Name = "grpFiltros";
+            grpFiltros.Size = new Size(870, 100);
+            grpFiltros.TabIndex = 1;
+            grpFiltros.TabStop = false;
+            grpFiltros.Text = "Filtros de búsqueda";
 
-            this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(20, 90);
-            this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(72, 15);
-            this.lblEspecialidad.TabIndex = 2;
-            this.lblEspecialidad.Text = "Especialidad";
+            // lblEspecialidad
+            lblEspecialidad.AutoSize = true;
+            lblEspecialidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblEspecialidad.Location = new Point(12, 24);
+            lblEspecialidad.Name = "lblEspecialidad";
+            lblEspecialidad.TabIndex = 0;
+            lblEspecialidad.Text = "Especialidad:";
 
-            this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEspecialidad.FormattingEnabled = true;
-            this.cmbEspecialidad.Location = new System.Drawing.Point(20, 110);
-            this.cmbEspecialidad.Name = "cmbEspecialidad";
-            this.cmbEspecialidad.Size = new System.Drawing.Size(250, 23);
-            this.cmbEspecialidad.TabIndex = 3;
+            // cmbEspecialidad
+            cmbEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEspecialidad.FormattingEnabled = true;
+            cmbEspecialidad.Location = new Point(100, 21);
+            cmbEspecialidad.Name = "cmbEspecialidad";
+            cmbEspecialidad.Size = new Size(220, 23);
+            cmbEspecialidad.TabIndex = 1;
+            cmbEspecialidad.SelectedIndexChanged += cmbEspecialidad_SelectedIndexChanged;
 
-            this.lblProfesional.AutoSize = true;
-            this.lblProfesional.Location = new System.Drawing.Point(290, 90);
-            this.lblProfesional.Name = "lblProfesional";
-            this.lblProfesional.Size = new System.Drawing.Size(66, 15);
-            this.lblProfesional.TabIndex = 4;
-            this.lblProfesional.Text = "Profesional";
+            // lblMedico
+            lblMedico.AutoSize = true;
+            lblMedico.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblMedico.Location = new Point(335, 24);
+            lblMedico.Name = "lblMedico";
+            lblMedico.TabIndex = 2;
+            lblMedico.Text = "Médico:";
 
-            this.cmbProfesional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProfesional.FormattingEnabled = true;
-            this.cmbProfesional.Location = new System.Drawing.Point(290, 110);
-            this.cmbProfesional.Name = "cmbProfesional";
-            this.cmbProfesional.Size = new System.Drawing.Size(250, 23);
-            this.cmbProfesional.TabIndex = 5;
+            // cmbMedico
+            cmbMedico.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMedico.FormattingEnabled = true;
+            cmbMedico.Location = new Point(390, 21);
+            cmbMedico.Name = "cmbMedico";
+            cmbMedico.Size = new Size(280, 23);
+            cmbMedico.TabIndex = 3;
 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(560, 90);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(85, 15);
-            this.lblFecha.TabIndex = 6;
-            this.lblFecha.Text = "Fecha deseada";
+            // chkFecha
+            chkFecha.AutoSize = true;
+            chkFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            chkFecha.Location = new Point(12, 62);
+            chkFecha.Name = "chkFecha";
+            chkFecha.Size = new Size(56, 19);
+            chkFecha.TabIndex = 4;
+            chkFecha.Text = "Fecha:";
+            chkFecha.CheckedChanged += chkFecha_CheckedChanged;
 
-            this.dtpFecha.CustomFormat = "dd/MM/yyyy";
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(560, 110);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 23);
-            this.dtpFecha.TabIndex = 7;
+            // dtpFecha
+            dtpFecha.CustomFormat = "dd/MM/yyyy";
+            dtpFecha.Enabled = false;
+            dtpFecha.Format = DateTimePickerFormat.Custom;
+            dtpFecha.Location = new Point(75, 59);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(140, 23);
+            dtpFecha.TabIndex = 5;
 
-            this.btnBuscar.Location = new System.Drawing.Point(20, 150);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(150, 30);
-            this.btnBuscar.TabIndex = 8;
-            this.btnBuscar.Text = "Buscar disponibilidad";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // btnBuscar
+            btnBuscar.BackColor = Color.FromArgb(30, 107, 160);
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(390, 57);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(130, 28);
+            btnBuscar.TabIndex = 6;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
 
-            this.btnPrimeraDisponible.Location = new System.Drawing.Point(180, 150);
-            this.btnPrimeraDisponible.Name = "btnPrimeraDisponible";
-            this.btnPrimeraDisponible.Size = new System.Drawing.Size(150, 30);
-            this.btnPrimeraDisponible.TabIndex = 9;
-            this.btnPrimeraDisponible.Text = "Primera disponible";
-            this.btnPrimeraDisponible.UseVisualStyleBackColor = true;
-            this.btnPrimeraDisponible.Click += new System.EventHandler(this.btnPrimeraDisponible_Click);
+            // btnPrimeraDisponible
+            btnPrimeraDisponible.BackColor = Color.FromArgb(60, 140, 60);
+            btnPrimeraDisponible.FlatAppearance.BorderSize = 0;
+            btnPrimeraDisponible.FlatStyle = FlatStyle.Flat;
+            btnPrimeraDisponible.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnPrimeraDisponible.ForeColor = Color.White;
+            btnPrimeraDisponible.Location = new Point(530, 57);
+            btnPrimeraDisponible.Name = "btnPrimeraDisponible";
+            btnPrimeraDisponible.Size = new Size(160, 28);
+            btnPrimeraDisponible.TabIndex = 7;
+            btnPrimeraDisponible.Text = "Primera disponible";
+            btnPrimeraDisponible.UseVisualStyleBackColor = false;
+            btnPrimeraDisponible.Click += btnPrimeraDisponible_Click;
 
-            this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(20, 200);
-            this.dgvTurnos.Name = "dgvTurnos";
-            this.dgvTurnos.RowTemplate.Height = 25;
-            this.dgvTurnos.Size = new System.Drawing.Size(860, 300);
-            this.dgvTurnos.TabIndex = 10;
-            this.dgvTurnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellClick);
+            grpFiltros.Controls.Add(lblEspecialidad);
+            grpFiltros.Controls.Add(cmbEspecialidad);
+            grpFiltros.Controls.Add(lblMedico);
+            grpFiltros.Controls.Add(cmbMedico);
+            grpFiltros.Controls.Add(chkFecha);
+            grpFiltros.Controls.Add(dtpFecha);
+            grpFiltros.Controls.Add(btnBuscar);
+            grpFiltros.Controls.Add(btnPrimeraDisponible);
 
-            this.lblNota.AutoSize = true;
-            this.lblNota.Location = new System.Drawing.Point(20, 510);
-            this.lblNota.Name = "lblNota";
-            this.lblNota.TabIndex = 11;
-            this.lblNota.Text = "El DNI del paciente se solicita recién al presionar Reservar.";
+            // dgvTurnos
+            dgvTurnos.AllowUserToAddRows = false;
+            dgvTurnos.AllowUserToDeleteRows = false;
+            dgvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTurnos.Location = new Point(15, 174);
+            dgvTurnos.Name = "dgvTurnos";
+            dgvTurnos.ReadOnly = true;
+            dgvTurnos.RowTemplate.Height = 25;
+            dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTurnos.Size = new Size(870, 260);
+            dgvTurnos.TabIndex = 2;
+            dgvTurnos.CellClick += dgvTurnos_CellClick;
 
-            this.btnSalir.Location = new System.Drawing.Point(780, 505);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 30);
-            this.btnSalir.TabIndex = 12;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(47, 143, 85);
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // lblNota
+            lblNota.BackColor = Color.FromArgb(232, 244, 248);
+            lblNota.BorderStyle = BorderStyle.FixedSingle;
+            lblNota.Location = new Point(15, 444);
+            lblNota.Name = "lblNota";
+            lblNota.Padding = new Padding(6, 4, 6, 4);
+            lblNota.Size = new Size(760, 28);
+            lblNota.TabIndex = 3;
+            lblNota.Text = "Al reservar un turno se solicitará la búsqueda del paciente.";
 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 550);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.lblNota);
-            this.Controls.Add(this.dgvTurnos);
-            this.Controls.Add(this.btnPrimeraDisponible);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.cmbProfesional);
-            this.Controls.Add(this.lblProfesional);
-            this.Controls.Add(this.cmbEspecialidad);
-            this.Controls.Add(this.lblEspecialidad);
-            this.Controls.Add(this.lblSubtitulo);
-            this.Controls.Add(this.lblTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormReservarTurnoMedico";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Reservar turno médico";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // btnSalir
+            btnSalir.BackColor = Color.FromArgb(100, 149, 180);
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(785, 440);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(100, 32);
+            btnSalir.TabIndex = 4;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(900, 487);
+            ControlBox = false;
+            Controls.Add(btnSalir);
+            Controls.Add(lblNota);
+            Controls.Add(dgvTurnos);
+            Controls.Add(grpFiltros);
+            Controls.Add(lblTitulo);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormReservarTurnoMedico";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Reservar Turno Médico - Sistema SEPRISE";
+            grpFiltros.ResumeLayout(false);
+            grpFiltros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
+            ResumeLayout(false);
         }
+
+        private Label lblTitulo;
+        private GroupBox grpFiltros;
+        private Label lblEspecialidad;
+        private ComboBox cmbEspecialidad;
+        private Label lblMedico;
+        private ComboBox cmbMedico;
+        private CheckBox chkFecha;
+        private DateTimePicker dtpFecha;
+        private Button btnBuscar;
+        private Button btnPrimeraDisponible;
+        private DataGridView dgvTurnos;
+        private Label lblNota;
+        private Button btnSalir;
     }
 }
