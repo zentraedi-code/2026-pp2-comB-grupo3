@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formgestionagendaconsultorios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formgestionagendaconsultorios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formgestionturnosconsultorios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formgestionturnosconsultorios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formgestionagendaconsultorios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formgestionagendaconsultorios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formgestionturnosconsultorios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formgestionturnosconsultorios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|c:\\documents-personal\\terciario\\2026-pp2-comb-grupo3\\seprise\\seprise\\forms\\formreservarturnomedico.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E662B41-62D9-2D63-E372-7CEE7563D89C}|Seprise\\Seprise.csproj|solutionrelative:seprise\\forms\\formreservarturnomedico.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormGestionTurnosConsultorios.Designer.cs",
-              "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionTurnosConsultorios.Designer.cs",
-              "RelativeDocumentMoniker": "Seprise\\Forms\\FormGestionTurnosConsultorios.Designer.cs",
-              "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionTurnosConsultorios.Designer.cs",
-              "RelativeToolTip": "Seprise\\Forms\\FormGestionTurnosConsultorios.Designer.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T18:15:06.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormGestionAgendaConsultorios.Designer.cs",
-              "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionAgendaConsultorios.Designer.cs",
-              "RelativeDocumentMoniker": "Seprise\\Forms\\FormGestionAgendaConsultorios.Designer.cs",
-              "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionAgendaConsultorios.Designer.cs",
-              "RelativeToolTip": "Seprise\\Forms\\FormGestionAgendaConsultorios.Designer.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T18:15:06.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormGestionTurnosConsultorios.cs",
-              "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionTurnosConsultorios.cs",
-              "RelativeDocumentMoniker": "Seprise\\Forms\\FormGestionTurnosConsultorios.cs",
-              "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionTurnosConsultorios.cs",
-              "RelativeToolTip": "Seprise\\Forms\\FormGestionTurnosConsultorios.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAIBHwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T18:15:06.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormGestionAgendaConsultorios.cs",
-              "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionAgendaConsultorios.cs",
-              "RelativeDocumentMoniker": "Seprise\\Forms\\FormGestionAgendaConsultorios.cs",
-              "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormGestionAgendaConsultorios.cs",
-              "RelativeToolTip": "Seprise\\Forms\\FormGestionAgendaConsultorios.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAawDUAAAAAAAAAAAAAAA==",
+              "Title": "FormReservarTurnoMedico.Designer.cs",
+              "DocumentMoniker": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "RelativeDocumentMoniker": "Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "ToolTip": "c:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "RelativeToolTip": "Seprise\\Forms\\FormReservarTurnoMedico.Designer.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAAAL0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T18:15:06.471Z",
+              "WhenOpened": "2026-05-31T18:19:20.818Z",
               "EditorCaption": ""
             }
           ]
