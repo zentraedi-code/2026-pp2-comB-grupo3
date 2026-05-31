@@ -7,9 +7,8 @@ using System.Text;
 
 namespace ClubDeportivo.service
 {
-    public class ServicioConexion // la clase debe ser PUBLICA
+    public class ServicioConexion
     {
-        // declaramos las variables
         private string baseDatos;
         private string servidor;
         private string puerto;
@@ -21,15 +20,13 @@ namespace ClubDeportivo.service
         {
             bool correcto = false;
             int mensaje;
-            // creamos las variables para recibir los datos desde el teclado
             string T_servidor = "localhost";
             string T_puerto = "3306";
             string T_usuario = "root";
-            string T_clave = ""; // se antepuso la T para indicar
+            string T_clave = "";
 
             while (correcto != true)
             {
-                // Armamos los cuadros de dialogo para el ingreso de datos
                 T_servidor = Microsoft.VisualBasic.Interaction.InputBox
                 ("ingrese servidor", "DATOS DE INSTALACIÓN MySQL", T_servidor);
                 T_puerto = Microsoft.VisualBasic.Interaction.InputBox
@@ -38,20 +35,12 @@ namespace ClubDeportivo.service
                 ("ingrese usuario", "DATOS DE INSTALACIÓN MySQL", T_usuario);
                 T_clave = Microsoft.VisualBasic.Interaction.InputBox
                 ("ingrese clave", "DATOS DE INSTALACIÓN MySQL", T_clave);
-                /*
-                ________________________________________________________
-                ________________
-                * controlamos que los datos ingresados para acceder a
-                MySQL sean correctos
-                *
-                ________________________________________________________
-                __________________ */
                 mensaje = (int)MessageBox.Show("su ingreso: SERVIDOR = " +
                 T_servidor + " PUERTO= " + T_puerto + " USUARIO: " +
                 T_usuario + " CLAVE: " + T_clave,
                 "AVISO DEL SISTEMA", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
-                if (mensaje != 6) // el valor 6 corresponde al SI
+                if (mensaje != 6)
                 {
                     MessageBox.Show("INGRESE NUEVAMENTE LOS DATOS");
                     correcto = false;
@@ -62,17 +51,12 @@ namespace ClubDeportivo.service
                 }
             }
 
-            //baseDatos = "club";
-            //servidor = "localhost";
-            //puerto = "3306";
-            //usuario = "root";
-            //clave = "";
 
             this.baseDatos = "clinica_seprise";
-            this.servidor = T_servidor; // "localhost";
-            this.puerto = T_puerto; //"3306";
-            this.usuario = T_usuario; // "root";
-            this.clave = T_clave; // "";
+            this.servidor = T_servidor;
+            this.puerto = T_puerto;
+            this.usuario = T_usuario;
+            this.clave = T_clave;
         }
 
         public MySqlConnection CrearConexion()
@@ -119,7 +103,6 @@ namespace ClubDeportivo.service
             MySqlDataReader resultado;
             DataTable tabla = new DataTable();
             comando.Connection = sqlCon;
-            // comando.CommandType = CommandType.Text;
             comando.CommandType = CommandType.StoredProcedure;
             resultado = comando.ExecuteReader();
             tabla.Load(resultado);

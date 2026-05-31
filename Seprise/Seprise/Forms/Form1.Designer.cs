@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class Form1
     {
@@ -38,9 +38,6 @@ namespace Seprise
             panelHeader.SuspendLayout();
             panelContenido.SuspendLayout();
             SuspendLayout();
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -48,9 +45,6 @@ namespace Seprise
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1254, 80);
             panelHeader.TabIndex = 0;
-            // 
-            // lblTitulo
-            // 
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.White;
@@ -60,9 +54,6 @@ namespace Seprise
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Sistema de Gestión - Clínica SEPRISE";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panelContenido
-            // 
             panelContenido.AutoScroll = true;
             panelContenido.BackColor = Color.White;
             panelContenido.Controls.Add(lblSeccionComun);
@@ -86,9 +77,6 @@ namespace Seprise
             panelContenido.Size = new Size(1254, 623);
             panelContenido.TabIndex = 1;
             panelContenido.Paint += panelContenido_Paint;
-            // 
-            // lblSeccionComun
-            // 
             lblSeccionComun.BackColor = Color.FromArgb(0, 150, 136);
             lblSeccionComun.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblSeccionComun.ForeColor = Color.White;
@@ -100,9 +88,6 @@ namespace Seprise
             lblSeccionComun.Text = "ADMINISTRACIÓN";
             lblSeccionComun.TextAlign = ContentAlignment.MiddleLeft;
             lblSeccionComun.Click += lblSeccionComun_Click;
-            // 
-            // btnPacientes
-            // 
             btnPacientes.BackColor = Color.FromArgb(178, 235, 242);
             btnPacientes.Cursor = Cursors.Hand;
             btnPacientes.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -116,9 +101,6 @@ namespace Seprise
             btnPacientes.Text = "👥\r\n\r\nGestión de\r\nPacientes";
             btnPacientes.UseVisualStyleBackColor = false;
             btnPacientes.Click += btnPacientes_Click;
-            // 
-            // lblSeccionConsultorios
-            // 
             lblSeccionConsultorios.BackColor = Color.FromArgb(0, 150, 136);
             lblSeccionConsultorios.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblSeccionConsultorios.ForeColor = Color.White;
@@ -129,9 +111,6 @@ namespace Seprise
             lblSeccionConsultorios.TabIndex = 3;
             lblSeccionConsultorios.Text = "CONSULTORIOS EXTERNOS";
             lblSeccionConsultorios.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // btnGestionMedicos
-            // 
             btnGestionMedicos.BackColor = Color.FromArgb(178, 235, 242);
             btnGestionMedicos.Cursor = Cursors.Hand;
             btnGestionMedicos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -145,9 +124,6 @@ namespace Seprise
             btnGestionMedicos.Text = "👨‍⚕️\r\n\r\nGestión de\r\nMédicos";
             btnGestionMedicos.UseVisualStyleBackColor = false;
             btnGestionMedicos.Click += btnGestionMedicos_Click;
-            // 
-            // btnGestionAgenda
-            // 
             btnGestionAgenda.BackColor = Color.FromArgb(178, 235, 242);
             btnGestionAgenda.Cursor = Cursors.Hand;
             btnGestionAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -161,9 +137,6 @@ namespace Seprise
             btnGestionAgenda.Text = "📅\n\nGestión de Agenda\n";
             btnGestionAgenda.UseVisualStyleBackColor = false;
             btnGestionAgenda.Click += btnGestionAgenda_Click;
-            // 
-            // btnGestionTurnos
-            // 
             btnGestionTurnos.BackColor = Color.FromArgb(178, 235, 242);
             btnGestionTurnos.Cursor = Cursors.Hand;
             btnGestionTurnos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -177,9 +150,6 @@ namespace Seprise
             btnGestionTurnos.Text = "🕐\r\n\r\nGestión de Turnos\r\n";
             btnGestionTurnos.UseVisualStyleBackColor = false;
             btnGestionTurnos.Click += btnGestionTurnos_Click;
-            // 
-            // btnRecepcionarPaciente
-            // 
             btnRecepcionarPaciente.BackColor = Color.FromArgb(178, 235, 242);
             btnRecepcionarPaciente.Cursor = Cursors.Hand;
             btnRecepcionarPaciente.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -193,9 +163,6 @@ namespace Seprise
             btnRecepcionarPaciente.Text = "📋✓\r\n\r\nRecepcionar Pacientes";
             btnRecepcionarPaciente.UseVisualStyleBackColor = false;
             btnRecepcionarPaciente.Click += btnRecepcionarPaciente_Click;
-            // 
-            // btnAtencionPaciente
-            // 
             btnAtencionPaciente.BackColor = Color.FromArgb(178, 235, 242);
             btnAtencionPaciente.Cursor = Cursors.Hand;
             btnAtencionPaciente.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -209,9 +176,6 @@ namespace Seprise
             btnAtencionPaciente.Text = "🏥\r\n\r\nAtención de Pacientes";
             btnAtencionPaciente.UseVisualStyleBackColor = false;
             btnAtencionPaciente.Click += btnAtencionPaciente_Click;
-            // 
-            // lblSeccionEstudios
-            // 
             lblSeccionEstudios.BackColor = Color.FromArgb(0, 150, 136);
             lblSeccionEstudios.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblSeccionEstudios.ForeColor = Color.White;
@@ -222,9 +186,6 @@ namespace Seprise
             lblSeccionEstudios.TabIndex = 9;
             lblSeccionEstudios.Text = "ESTUDIOS CLÍNICOS";
             lblSeccionEstudios.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // btnGestionAgendaEstudios
-            // 
             btnGestionAgendaEstudios.BackColor = Color.FromArgb(178, 235, 242);
             btnGestionAgendaEstudios.Cursor = Cursors.Hand;
             btnGestionAgendaEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -238,9 +199,6 @@ namespace Seprise
             btnGestionAgendaEstudios.Text = "🔬📅\n\nGestión de Agenda\n";
             btnGestionAgendaEstudios.UseVisualStyleBackColor = false;
             btnGestionAgendaEstudios.Click += btnGestionAgendaEstudios_Click;
-            // 
-            // btnGestionTurnosEstudios
-            // 
             btnGestionTurnosEstudios.BackColor = Color.FromArgb(178, 235, 242);
             btnGestionTurnosEstudios.Cursor = Cursors.Hand;
             btnGestionTurnosEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -254,9 +212,6 @@ namespace Seprise
             btnGestionTurnosEstudios.Text = "🔬🕐\n\nGestión de Turnos\n";
             btnGestionTurnosEstudios.UseVisualStyleBackColor = false;
             btnGestionTurnosEstudios.Click += btnGestionTurnosEstudios_Click;
-            // 
-            // btnRecepcionarPacienteEstudio
-            // 
             btnRecepcionarPacienteEstudio.BackColor = Color.FromArgb(178, 235, 242);
             btnRecepcionarPacienteEstudio.Cursor = Cursors.Hand;
             btnRecepcionarPacienteEstudio.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -270,9 +225,6 @@ namespace Seprise
             btnRecepcionarPacienteEstudio.Text = "📋✓\n\nRecepcionar";
             btnRecepcionarPacienteEstudio.UseVisualStyleBackColor = false;
             btnRecepcionarPacienteEstudio.Click += btnRecepcionarEstudio_Click;
-            // 
-            // btnSolicitudEstudios
-            // 
             btnSolicitudEstudios.BackColor = Color.FromArgb(178, 235, 242);
             btnSolicitudEstudios.Cursor = Cursors.Hand;
             btnSolicitudEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -286,9 +238,6 @@ namespace Seprise
             btnSolicitudEstudios.Text = "📝\n\nSolicitar Estudios";
             btnSolicitudEstudios.UseVisualStyleBackColor = false;
             btnSolicitudEstudios.Click += btnSolicitudEstudios_Click;
-            // 
-            // btnConfirmacionEstudios
-            // 
             btnConfirmacionEstudios.BackColor = Color.FromArgb(178, 235, 242);
             btnConfirmacionEstudios.Cursor = Cursors.Hand;
             btnConfirmacionEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -302,9 +251,6 @@ namespace Seprise
             btnConfirmacionEstudios.Text = "✅\n\nConfirmar Estudios";
             btnConfirmacionEstudios.UseVisualStyleBackColor = false;
             btnConfirmacionEstudios.Click += btnConfirmacionEstudios_Click;
-            // 
-            // btnProcesamientoEstudios
-            // 
             btnProcesamientoEstudios.BackColor = Color.FromArgb(178, 235, 242);
             btnProcesamientoEstudios.Cursor = Cursors.Hand;
             btnProcesamientoEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -318,9 +264,6 @@ namespace Seprise
             btnProcesamientoEstudios.Text = "⚙️\n\nProcesar Estudios";
             btnProcesamientoEstudios.UseVisualStyleBackColor = false;
             btnProcesamientoEstudios.Click += btnProcesamientoEstudios_Click;
-            // 
-            // Form1
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1254, 703);

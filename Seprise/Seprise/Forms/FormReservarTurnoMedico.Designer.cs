@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormReservarTurnoMedico
     {
@@ -44,21 +44,18 @@ namespace Seprise
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "CU07 - Reservar turno médico";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Muestra primera fecha disponible y permite consultar disponibilidad por otra fecha.";
 
-            // lblEspecialidad
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Location = new System.Drawing.Point(20, 90);
             this.lblEspecialidad.Name = "lblEspecialidad";
@@ -66,7 +63,6 @@ namespace Seprise
             this.lblEspecialidad.TabIndex = 2;
             this.lblEspecialidad.Text = "Especialidad";
 
-            // cmbEspecialidad
             this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEspecialidad.FormattingEnabled = true;
             this.cmbEspecialidad.Location = new System.Drawing.Point(20, 110);
@@ -74,7 +70,6 @@ namespace Seprise
             this.cmbEspecialidad.Size = new System.Drawing.Size(250, 23);
             this.cmbEspecialidad.TabIndex = 3;
 
-            // lblProfesional
             this.lblProfesional.AutoSize = true;
             this.lblProfesional.Location = new System.Drawing.Point(290, 90);
             this.lblProfesional.Name = "lblProfesional";
@@ -82,7 +77,6 @@ namespace Seprise
             this.lblProfesional.TabIndex = 4;
             this.lblProfesional.Text = "Profesional";
 
-            // cmbProfesional
             this.cmbProfesional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfesional.FormattingEnabled = true;
             this.cmbProfesional.Location = new System.Drawing.Point(290, 110);
@@ -90,7 +84,6 @@ namespace Seprise
             this.cmbProfesional.Size = new System.Drawing.Size(250, 23);
             this.cmbProfesional.TabIndex = 5;
 
-            // lblFecha
             this.lblFecha.AutoSize = true;
             this.lblFecha.Location = new System.Drawing.Point(560, 90);
             this.lblFecha.Name = "lblFecha";
@@ -98,7 +91,6 @@ namespace Seprise
             this.lblFecha.TabIndex = 6;
             this.lblFecha.Text = "Fecha deseada";
 
-            // dtpFecha
             this.dtpFecha.CustomFormat = "dd/MM/yyyy";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(560, 110);
@@ -106,7 +98,6 @@ namespace Seprise
             this.dtpFecha.Size = new System.Drawing.Size(200, 23);
             this.dtpFecha.TabIndex = 7;
 
-            // btnBuscar
             this.btnBuscar.Location = new System.Drawing.Point(20, 150);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(150, 30);
@@ -115,7 +106,6 @@ namespace Seprise
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 
-            // btnPrimeraDisponible
             this.btnPrimeraDisponible.Location = new System.Drawing.Point(180, 150);
             this.btnPrimeraDisponible.Name = "btnPrimeraDisponible";
             this.btnPrimeraDisponible.Size = new System.Drawing.Size(150, 30);
@@ -124,7 +114,6 @@ namespace Seprise
             this.btnPrimeraDisponible.UseVisualStyleBackColor = true;
             this.btnPrimeraDisponible.Click += new System.EventHandler(this.btnPrimeraDisponible_Click);
 
-            // dgvTurnos
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnos.Location = new System.Drawing.Point(20, 200);
             this.dgvTurnos.Name = "dgvTurnos";
@@ -133,14 +122,12 @@ namespace Seprise
             this.dgvTurnos.TabIndex = 10;
             this.dgvTurnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellClick);
 
-            // lblNota
             this.lblNota.AutoSize = true;
             this.lblNota.Location = new System.Drawing.Point(20, 510);
             this.lblNota.Name = "lblNota";
             this.lblNota.TabIndex = 11;
             this.lblNota.Text = "El DNI del paciente se solicita recién al presionar Reservar.";
 
-            // btnSalir
             this.btnSalir.Location = new System.Drawing.Point(780, 505);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 30);
@@ -153,7 +140,6 @@ namespace Seprise
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 
-            // FormReservarTurnoMedico
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 550);

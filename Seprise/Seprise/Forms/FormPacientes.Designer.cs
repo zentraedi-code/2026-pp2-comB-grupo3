@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormPacientes
     {
@@ -29,9 +29,6 @@ namespace Seprise
             btnDesactivar = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPacientes).BeginInit();
             SuspendLayout();
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.FromArgb(36, 52, 71);
@@ -40,9 +37,6 @@ namespace Seprise
             lblTitulo.Size = new Size(229, 30);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestión de pacientes";
-            // 
-            // lblSubtitulo
-            // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 10F);
             lblSubtitulo.ForeColor = Color.FromArgb(102, 102, 102);
@@ -51,9 +45,6 @@ namespace Seprise
             lblSubtitulo.Size = new Size(0, 19);
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Visible = false;
-            // 
-            // btnCrear
-            // 
             btnCrear.BackColor = Color.FromArgb(47, 143, 85);
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.ForeColor = Color.White;
@@ -65,9 +56,6 @@ namespace Seprise
             btnCrear.Text = "Crear paciente";
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(47, 143, 85);
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.ForeColor = Color.White;
@@ -79,9 +67,6 @@ namespace Seprise
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
-            // 
-            // dgvPacientes
-            // 
             dgvPacientes.AllowUserToAddRows = false;
             dgvPacientes.AllowUserToDeleteRows = false;
             dgvPacientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -99,41 +84,26 @@ namespace Seprise
             dgvPacientes.Size = new Size(1046, 345);
             dgvPacientes.TabIndex = 3;
             dgvPacientes.CellContentClick += dgvPacientes_CellContentClick;
-            // 
-            // DNI
-            // 
             DNI.FillWeight = 70F;
             DNI.HeaderText = "DNI";
             DNI.MinimumWidth = 6;
             DNI.Name = "DNI";
             DNI.ReadOnly = true;
-            // 
-            // Paciente
-            // 
             Paciente.FillWeight = 150F;
             Paciente.HeaderText = "Paciente";
             Paciente.MinimumWidth = 6;
             Paciente.Name = "Paciente";
             Paciente.ReadOnly = true;
-            // 
-            // Telefono
-            // 
             Telefono.FillWeight = 110F;
             Telefono.HeaderText = "Teléfono";
             Telefono.MinimumWidth = 6;
             Telefono.Name = "Telefono";
             Telefono.ReadOnly = true;
-            // 
-            // Estado
-            // 
             Estado.FillWeight = 90F;
             Estado.HeaderText = "Estado";
             Estado.MinimumWidth = 6;
             Estado.Name = "Estado";
             Estado.ReadOnly = true;
-            // 
-            // btnConsultar
-            // 
             btnConsultar.FillWeight = 95F;
             btnConsultar.HeaderText = "";
             btnConsultar.MinimumWidth = 6;
@@ -141,9 +111,6 @@ namespace Seprise
             btnConsultar.ReadOnly = true;
             btnConsultar.Text = "Consultar";
             btnConsultar.UseColumnTextForButtonValue = true;
-            // 
-            // btnModificar
-            // 
             btnModificar.FillWeight = 95F;
             btnModificar.HeaderText = "";
             btnModificar.MinimumWidth = 6;
@@ -151,9 +118,6 @@ namespace Seprise
             btnModificar.ReadOnly = true;
             btnModificar.Text = "Modificar";
             btnModificar.UseColumnTextForButtonValue = true;
-            // 
-            // btnDesactivar
-            // 
             btnDesactivar.FillWeight = 95F;
             btnDesactivar.HeaderText = "";
             btnDesactivar.MinimumWidth = 6;
@@ -161,9 +125,6 @@ namespace Seprise
             btnDesactivar.ReadOnly = true;
             btnDesactivar.Text = "Desactivar";
             btnDesactivar.UseColumnTextForButtonValue = true;
-            // 
-            // FormPacientes
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 250, 250);

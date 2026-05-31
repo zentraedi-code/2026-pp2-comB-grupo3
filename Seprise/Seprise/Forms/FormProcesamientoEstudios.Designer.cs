@@ -1,4 +1,4 @@
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Seprise
@@ -38,9 +38,6 @@ namespace Seprise
             panelBotones.SuspendLayout();
             SuspendLayout();
 
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -49,9 +46,6 @@ namespace Seprise
             panelHeader.Size = new Size(520, 60);
             panelHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = false;
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -63,9 +57,6 @@ namespace Seprise
             lblTitulo.Text = "Procesamiento de Estudios";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
-            // 
-            // panelBotones
-            // 
             panelBotones.Controls.Add(btnFinalizarEstudio);
             panelBotones.Controls.Add(btnGenerarInforme);
             panelBotones.Controls.Add(btnEntregarEstudio);
@@ -76,9 +67,6 @@ namespace Seprise
             panelBotones.Size = new Size(520, 240);
             panelBotones.TabIndex = 1;
 
-            // 
-            // btnFinalizarEstudio
-            // 
             btnFinalizarEstudio.BackColor = Color.FromArgb(178, 235, 242);
             btnFinalizarEstudio.Cursor = Cursors.Hand;
             btnFinalizarEstudio.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -94,9 +82,6 @@ namespace Seprise
             btnFinalizarEstudio.UseVisualStyleBackColor = false;
             btnFinalizarEstudio.Click += btnFinalizarEstudio_Click;
 
-            // 
-            // btnGenerarInforme
-            // 
             btnGenerarInforme.BackColor = Color.FromArgb(178, 235, 242);
             btnGenerarInforme.Cursor = Cursors.Hand;
             btnGenerarInforme.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -112,9 +97,6 @@ namespace Seprise
             btnGenerarInforme.UseVisualStyleBackColor = false;
             btnGenerarInforme.Click += btnGenerarInforme_Click;
 
-            // 
-            // btnEntregarEstudio
-            // 
             btnEntregarEstudio.BackColor = Color.FromArgb(178, 235, 242);
             btnEntregarEstudio.Cursor = Cursors.Hand;
             btnEntregarEstudio.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -130,9 +112,6 @@ namespace Seprise
             btnEntregarEstudio.UseVisualStyleBackColor = false;
             btnEntregarEstudio.Click += btnEntregarEstudio_Click;
 
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -147,9 +126,6 @@ namespace Seprise
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormProcesamientoEstudios
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(520, 300);

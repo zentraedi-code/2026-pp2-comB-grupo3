@@ -1,4 +1,4 @@
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Seprise.dao;
 using Seprise.entity;
 
@@ -33,9 +33,7 @@ namespace Seprise
                 cboProfesional.Items.Clear();
                 cboProfesional.Items.Add("-- Seleccione un profesional --");
                 foreach (Medico m in medicos)
-                {
                     cboProfesional.Items.Add(m);
-                }
                 cboProfesional.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -51,9 +49,7 @@ namespace Seprise
                 cboConsultorio.Items.Clear();
                 cboConsultorio.Items.Add("-- Seleccione un consultorio --");
                 foreach (Consultorio c in consultorios)
-                {
                     cboConsultorio.Items.Add(c);
-                }
                 cboConsultorio.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -69,45 +65,57 @@ namespace Seprise
         private void cboProfesional_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboProfesional.SelectedItem is Medico medicoSeleccionado)
-            {
                 txtDuracion.Text = medicoSeleccionado.DuracionMinimaTurno.ToString();
-            }
             else
-            {
                 txtDuracion.Clear();
-            }
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos())
+            if (!ValidarCampos())
+                return;
+
+            try
             {
-                try
+                Medico medico = (Medico)cboProfesional.SelectedItem;
+                Consultorio consultorio = (Consultorio)cboConsultorio.SelectedItem;
+                DateTime fecha = dtpFecha.Value.Date;
+                TimeSpan horaDesde = dtpHoraDesde.Value.TimeOfDay;
+                TimeSpan horaHasta = dtpHoraHasta.Value.TimeOfDay;
+
+                AgendaMedicaDao agendaDao = new AgendaMedicaDao();
+
+                if (agendaDao.existeSuperposicionPorMedico(medico.Id, fecha, horaDesde, horaHasta))
                 {
-                    Medico medico = (Medico)cboProfesional.SelectedItem;
-                    Consultorio consultorio = (Consultorio)cboConsultorio.SelectedItem;
-
-                    AgendaMedica agenda = new AgendaMedica(
-                        medico.Id,
-                        consultorio.Id,
-                        dtpFecha.Value.Date,
-                        dtpHoraDesde.Value.TimeOfDay,
-                        dtpHoraHasta.Value.TimeOfDay,
-                        int.Parse(txtDuracion.Text),
-                        1,
-                        EstadoAgendaMedica.INACTIVA
-                    );
-
-                    AgendaMedicaDao agendaDao = new AgendaMedicaDao();
-                    agendaDao.agregar(agenda);
-
-                    MessageBox.Show("Agenda médica creada exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    MessageBox.Show("El profesional ya tiene una agenda en ese día con horario superpuesto.", "Conflicto de horario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                catch (Exception ex)
+
+                if (agendaDao.existeSuperposicionPorConsultorio(consultorio.Id, fecha, horaDesde, horaHasta))
                 {
-                    MessageBox.Show($"Error al guardar la agenda: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El consultorio ya está ocupado en ese día con horario superpuesto.", "Conflicto de horario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                AgendaMedica agenda = new AgendaMedica(
+                    medico.Id,
+                    consultorio.Id,
+                    fecha,
+                    horaDesde,
+                    horaHasta,
+                    int.Parse(txtDuracion.Text),
+                    1,
+                    EstadoAgendaMedica.INACTIVA
+                );
+
+                agendaDao.agregar(agenda);
+
+                MessageBox.Show("Agenda médica creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar la agenda: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -115,31 +123,31 @@ namespace Seprise
         {
             if (dtpFecha.Value.Date < DateTime.Today)
             {
-                MessageBox.Show("La fecha no puede ser anterior a hoy", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La fecha no puede ser anterior a hoy.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (cboProfesional.SelectedItem is not Medico)
             {
-                MessageBox.Show("Debe seleccionar un profesional", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un profesional.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (cboConsultorio.SelectedItem is not Consultorio)
             {
-                MessageBox.Show("Debe seleccionar un consultorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un consultorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (dtpHoraHasta.Value.TimeOfDay <= dtpHoraDesde.Value.TimeOfDay)
             {
-                MessageBox.Show("La hora hasta debe ser mayor a la hora desde", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La hora hasta debe ser mayor a la hora desde.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtDuracion.Text) || !int.TryParse(txtDuracion.Text, out int duracion) || duracion < 15)
+            if (string.IsNullOrWhiteSpace(txtDuracion.Text) || !int.TryParse(txtDuracion.Text, out int duracion) || duracion < 1)
             {
-                MessageBox.Show("La duración debe ser de al menos 15 minutos", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La duración de consulta no es válida.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -168,12 +176,6 @@ namespace Seprise
 
         private void FormCrearAgendaMedica_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblSubtitulo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

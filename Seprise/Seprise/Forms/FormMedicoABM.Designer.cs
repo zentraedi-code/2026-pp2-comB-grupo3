@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormMedicoABM
     {
@@ -43,14 +43,12 @@ namespace Seprise
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "ABM Médico";
 
-            // lblMatricula
             this.lblMatricula.AutoSize = true;
             this.lblMatricula.Location = new System.Drawing.Point(20, 60);
             this.lblMatricula.Name = "lblMatricula";
@@ -58,14 +56,12 @@ namespace Seprise
             this.lblMatricula.TabIndex = 1;
             this.lblMatricula.Text = "Matrícula";
 
-            // txtMatricula
             this.txtMatricula.Location = new System.Drawing.Point(20, 80);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.PlaceholderText = "Ej: MN12345";
             this.txtMatricula.Size = new System.Drawing.Size(250, 23);
             this.txtMatricula.TabIndex = 2;
 
-            // lblNombre
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(290, 60);
             this.lblNombre.Name = "lblNombre";
@@ -73,13 +69,11 @@ namespace Seprise
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
 
-            // txtNombre
             this.txtNombre.Location = new System.Drawing.Point(290, 80);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(250, 23);
             this.txtNombre.TabIndex = 4;
 
-            // lblApellido
             this.lblApellido.AutoSize = true;
             this.lblApellido.Location = new System.Drawing.Point(20, 120);
             this.lblApellido.Name = "lblApellido";
@@ -87,13 +81,11 @@ namespace Seprise
             this.lblApellido.TabIndex = 5;
             this.lblApellido.Text = "Apellido";
 
-            // txtApellido
             this.txtApellido.Location = new System.Drawing.Point(20, 140);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(250, 23);
             this.txtApellido.TabIndex = 6;
 
-            // lblEspecialidad
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Location = new System.Drawing.Point(290, 120);
             this.lblEspecialidad.Name = "lblEspecialidad";
@@ -101,7 +93,6 @@ namespace Seprise
             this.lblEspecialidad.TabIndex = 7;
             this.lblEspecialidad.Text = "Especialidad";
 
-            // cmbEspecialidad
             this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEspecialidad.FormattingEnabled = true;
             this.cmbEspecialidad.Location = new System.Drawing.Point(290, 140);
@@ -109,7 +100,6 @@ namespace Seprise
             this.cmbEspecialidad.Size = new System.Drawing.Size(250, 23);
             this.cmbEspecialidad.TabIndex = 8;
 
-            // lblHonorario
             this.lblHonorario.AutoSize = true;
             this.lblHonorario.Location = new System.Drawing.Point(20, 180);
             this.lblHonorario.Name = "lblHonorario";
@@ -117,14 +107,12 @@ namespace Seprise
             this.lblHonorario.TabIndex = 9;
             this.lblHonorario.Text = "Honorario";
 
-            // txtHonorario
             this.txtHonorario.Location = new System.Drawing.Point(20, 200);
             this.txtHonorario.Name = "txtHonorario";
             this.txtHonorario.PlaceholderText = "Ej: 15000";
             this.txtHonorario.Size = new System.Drawing.Size(250, 23);
             this.txtHonorario.TabIndex = 10;
 
-            // btnGuardar
             this.btnGuardar.Location = new System.Drawing.Point(20, 250);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 30);
@@ -133,7 +121,6 @@ namespace Seprise
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
 
-            // btnCancelar
             this.btnCancelar.Location = new System.Drawing.Point(130, 250);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 30);
@@ -142,7 +129,6 @@ namespace Seprise
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
 
-            // FormMedicoABM
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 300);

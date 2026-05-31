@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormGenerarHistoriaClinica
     {
@@ -58,21 +58,18 @@ namespace Seprise
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudios)).BeginInit();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Generar historia clínica";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "El médico atiende al paciente, registra la historia clínica y finaliza la atención.";
 
-            // lblPaciente
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.Location = new System.Drawing.Point(20, 90);
             this.lblPaciente.Name = "lblPaciente";
@@ -80,14 +77,12 @@ namespace Seprise
             this.lblPaciente.TabIndex = 2;
             this.lblPaciente.Text = "Paciente";
 
-            // txtPaciente
             this.txtPaciente.Enabled = false;
             this.txtPaciente.Location = new System.Drawing.Point(20, 110);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.Size = new System.Drawing.Size(250, 23);
             this.txtPaciente.TabIndex = 3;
 
-            // lblMedico
             this.lblMedico.AutoSize = true;
             this.lblMedico.Location = new System.Drawing.Point(290, 90);
             this.lblMedico.Name = "lblMedico";
@@ -95,14 +90,12 @@ namespace Seprise
             this.lblMedico.TabIndex = 4;
             this.lblMedico.Text = "Médico";
 
-            // txtMedico
             this.txtMedico.Enabled = false;
             this.txtMedico.Location = new System.Drawing.Point(290, 110);
             this.txtMedico.Name = "txtMedico";
             this.txtMedico.Size = new System.Drawing.Size(250, 23);
             this.txtMedico.TabIndex = 5;
 
-            // lblFechaAtencion
             this.lblFechaAtencion.AutoSize = true;
             this.lblFechaAtencion.Location = new System.Drawing.Point(560, 90);
             this.lblFechaAtencion.Name = "lblFechaAtencion";
@@ -110,7 +103,6 @@ namespace Seprise
             this.lblFechaAtencion.TabIndex = 6;
             this.lblFechaAtencion.Text = "Fecha atención";
 
-            // dtpFechaAtencion
             this.dtpFechaAtencion.CustomFormat = "dd/MM/yyyy HH:mm";
             this.dtpFechaAtencion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaAtencion.Location = new System.Drawing.Point(560, 110);
@@ -118,7 +110,6 @@ namespace Seprise
             this.dtpFechaAtencion.Size = new System.Drawing.Size(200, 23);
             this.dtpFechaAtencion.TabIndex = 7;
 
-            // lblEstadoTurno
             this.lblEstadoTurno.AutoSize = true;
             this.lblEstadoTurno.Location = new System.Drawing.Point(780, 90);
             this.lblEstadoTurno.Name = "lblEstadoTurno";
@@ -126,14 +117,12 @@ namespace Seprise
             this.lblEstadoTurno.TabIndex = 8;
             this.lblEstadoTurno.Text = "Estado turno";
 
-            // txtEstadoTurno
             this.txtEstadoTurno.Enabled = false;
             this.txtEstadoTurno.Location = new System.Drawing.Point(780, 110);
             this.txtEstadoTurno.Name = "txtEstadoTurno";
             this.txtEstadoTurno.Size = new System.Drawing.Size(150, 23);
             this.txtEstadoTurno.TabIndex = 9;
 
-            // lblMotivo
             this.lblMotivo.AutoSize = true;
             this.lblMotivo.Location = new System.Drawing.Point(20, 150);
             this.lblMotivo.Name = "lblMotivo";
@@ -141,7 +130,6 @@ namespace Seprise
             this.lblMotivo.TabIndex = 10;
             this.lblMotivo.Text = "Motivo de consulta";
 
-            // txtMotivo
             this.txtMotivo.Location = new System.Drawing.Point(20, 170);
             this.txtMotivo.Multiline = true;
             this.txtMotivo.Name = "txtMotivo";
@@ -150,7 +138,6 @@ namespace Seprise
             this.txtMotivo.Size = new System.Drawing.Size(910, 70);
             this.txtMotivo.TabIndex = 11;
 
-            // lblDiagnostico
             this.lblDiagnostico.AutoSize = true;
             this.lblDiagnostico.Location = new System.Drawing.Point(20, 250);
             this.lblDiagnostico.Name = "lblDiagnostico";
@@ -158,7 +145,6 @@ namespace Seprise
             this.lblDiagnostico.TabIndex = 12;
             this.lblDiagnostico.Text = "Diagnóstico / evolución";
 
-            // txtDiagnostico
             this.txtDiagnostico.Location = new System.Drawing.Point(20, 270);
             this.txtDiagnostico.Multiline = true;
             this.txtDiagnostico.Name = "txtDiagnostico";
@@ -167,7 +153,6 @@ namespace Seprise
             this.txtDiagnostico.Size = new System.Drawing.Size(910, 70);
             this.txtDiagnostico.TabIndex = 13;
 
-            // lblIndicaciones
             this.lblIndicaciones.AutoSize = true;
             this.lblIndicaciones.Location = new System.Drawing.Point(20, 350);
             this.lblIndicaciones.Name = "lblIndicaciones";
@@ -175,7 +160,6 @@ namespace Seprise
             this.lblIndicaciones.TabIndex = 14;
             this.lblIndicaciones.Text = "Indicaciones";
 
-            // txtIndicaciones
             this.txtIndicaciones.Location = new System.Drawing.Point(20, 370);
             this.txtIndicaciones.Multiline = true;
             this.txtIndicaciones.Name = "txtIndicaciones";
@@ -184,7 +168,6 @@ namespace Seprise
             this.txtIndicaciones.Size = new System.Drawing.Size(910, 70);
             this.txtIndicaciones.TabIndex = 15;
 
-            // lblNota
             this.lblNota.AutoSize = true;
             this.lblNota.Location = new System.Drawing.Point(20, 450);
             this.lblNota.MaximumSize = new System.Drawing.Size(910, 0);
@@ -192,7 +175,6 @@ namespace Seprise
             this.lblNota.TabIndex = 16;
             this.lblNota.Text = "Desde esta pantalla el médico puede finalizar la atención directamente o generar una solicitud de estudio si lo considera necesario.";
 
-            // btnGuardar
             this.btnGuardar.Location = new System.Drawing.Point(20, 480);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(250, 30);
@@ -201,7 +183,6 @@ namespace Seprise
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
 
-            // btnSolicitarEstudio
             this.btnSolicitarEstudio.Location = new System.Drawing.Point(280, 480);
             this.btnSolicitarEstudio.Name = "btnSolicitarEstudio";
             this.btnSolicitarEstudio.Size = new System.Drawing.Size(150, 30);
@@ -210,7 +191,6 @@ namespace Seprise
             this.btnSolicitarEstudio.UseVisualStyleBackColor = true;
             this.btnSolicitarEstudio.Click += new System.EventHandler(this.btnSolicitarEstudio_Click);
 
-            // dgvEstudios
             this.dgvEstudios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudios.Location = new System.Drawing.Point(20, 530);
             this.dgvEstudios.Name = "dgvEstudios";
@@ -218,7 +198,6 @@ namespace Seprise
             this.dgvEstudios.Size = new System.Drawing.Size(910, 150);
             this.dgvEstudios.TabIndex = 19;
 
-            // FormGenerarHistoriaClinica
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);

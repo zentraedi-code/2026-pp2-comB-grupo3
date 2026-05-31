@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ClubDeportivo.service
 {
-    public class AbstractDao // la clase debe ser PUBLICA
+    public class AbstractDao
     {
         private ServicioConexion connection;
         public AbstractDao()

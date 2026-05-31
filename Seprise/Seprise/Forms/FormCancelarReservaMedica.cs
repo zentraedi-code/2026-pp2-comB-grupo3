@@ -1,79 +1,171 @@
-using System;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
+using Seprise.dao;
+using Seprise.entity;
 
 namespace Seprise
 {
     public partial class FormCancelarReservaMedica : Form
     {
+        private Paciente pacienteSeleccionado = null;
+
         public FormCancelarReservaMedica()
         {
             InitializeComponent();
-            ConfigurarDataGridView();
-            dtpFecha.Value = DateTime.Now;
+            if (!IsDesignMode())
+                ConfigurarGrilla();
         }
 
-        private void ConfigurarDataGridView()
+        private bool IsDesignMode()
         {
-            dgvTurnos.AllowUserToAddRows = false;
-            dgvTurnos.AllowUserToDeleteRows = false;
-            dgvTurnos.ReadOnly = true;
-            dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTurnos.MultiSelect = false;
+            return LicenseManager.UsageMode == LicenseUsageMode.Designtime || (Site != null && Site.DesignMode);
+        }
+
+        private void ConfigurarGrilla()
+        {
             dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTurnos.MultiSelect = false;
+            dgvTurnos.RowHeadersVisible = false;
+            dgvTurnos.Font = new Font("Segoe UI", 9f);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 107, 160);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvTurnos.EnableHeadersVisualStyles = false;
+            dgvTurnos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 246, 255);
 
-            dgvTurnos.Columns.Add("Fecha", "Fecha");
-            dgvTurnos.Columns.Add("Hora", "Hora");
-            dgvTurnos.Columns.Add("Paciente", "Paciente");
-            dgvTurnos.Columns.Add("Medico", "Médico");
-            dgvTurnos.Columns.Add("Estado", "Estado");
+            dgvTurnos.Columns.Clear();
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "ID", Visible = false });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colFechaHora", HeaderText = "Fecha y hora", FillWeight = 22 });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colMedico", HeaderText = "Médico", FillWeight = 30 });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colConsultorio", HeaderText = "Consultorio", FillWeight = 20 });
+            dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colSobreturno", HeaderText = "Sobreturno", FillWeight = 13 });
 
-            DataGridViewButtonColumn btnCancelar = new DataGridViewButtonColumn();
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Text = "Cancelar reserva";
-            btnCancelar.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn btnCancelar = new DataGridViewButtonColumn
+            {
+                Name = "colCancelar",
+                HeaderText = "",
+                Text = "Cancelar",
+                UseColumnTextForButtonValue = true,
+                FillWeight = 15,
+                FlatStyle = FlatStyle.Flat
+            };
             dgvTurnos.Columns.Add(btnCancelar);
+        }
+
+        private void chkFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFecha.Enabled = chkFecha.Checked;
         }
 
         private void btnBuscarPaciente_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDniPaciente.Text))
+            string dni = txtDniPaciente.Text.Trim();
+
+            if (string.IsNullOrEmpty(dni))
             {
-                MessageBox.Show("Ingrese un DNI para buscar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese el DNI del paciente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            txtPaciente.Text = $"(auto) Pérez Juan - DNI {txtDniPaciente.Text}";
+            try
+            {
+                PacienteDao pacienteDao = new PacienteDao();
+                Paciente p = pacienteDao.buscar(dni);
+
+                if (p == null)
+                {
+                    MessageBox.Show("No se encontró un paciente activo con ese DNI.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtPaciente.Clear();
+                    pacienteSeleccionado = null;
+                    return;
+                }
+
+                pacienteSeleccionado = p;
+                txtPaciente.Text = $"{p.Apellido}, {p.Nombre}";
+                dgvTurnos.Rows.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar paciente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDniPaciente.Text))
+            if (pacienteSeleccionado == null)
             {
                 MessageBox.Show("Debe buscar un paciente primero.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            dgvTurnos.Rows.Clear();
-            dgvTurnos.Rows.Add("2026-05-10", "08:00", "Pérez Juan", "Dra. Gómez", "RESERVADO");
-            dgvTurnos.Rows.Add("2026-05-12", "14:00", "Pérez Juan", "Dr. Rodríguez", "RESERVADO");
+            try
+            {
+                DateTime? fecha = chkFecha.Checked ? dtpFecha.Value.Date : (DateTime?)null;
+
+                TurnoConsultaDao turnoDao = new TurnoConsultaDao();
+                System.Data.DataTable dt = turnoDao.buscarReservadosPorPaciente(pacienteSeleccionado.Id, fecha);
+
+                dgvTurnos.Rows.Clear();
+
+                if (dt == null || dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("El paciente no tiene turnos reservados con los filtros indicados.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                foreach (System.Data.DataRow row in dt.Rows)
+                {
+                    DateTime fechaHora = Convert.ToDateTime(row["fecha_hora_turno"]);
+                    int idx = dgvTurnos.Rows.Add(
+                        row["id"].ToString(),
+                        fechaHora.ToString("dd/MM/yyyy HH:mm"),
+                        row["medico"].ToString(),
+                        row["consultorio"].ToString(),
+                        Convert.ToBoolean(row["es_sobreturno"]) ? "Sí" : "No"
+                    );
+                    dgvTurnos.Rows[idx].Tag = int.Parse(row["id"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar turnos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0 || e.ColumnIndex != dgvTurnos.Columns["colCancelar"].Index)
+                return;
 
-            string columna = dgvTurnos.Columns[e.ColumnIndex].Name;
+            int turnoId = (int)dgvTurnos.Rows[e.RowIndex].Tag;
 
-            if (columna == "btnCancelar")
+            var respuesta = MessageBox.Show(
+                "¿Cancelar esta reserva? El turno volverá a estado DISPONIBLE.",
+                "Confirmar cancelación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (respuesta != DialogResult.Yes)
+                return;
+
+            try
             {
-                var result = MessageBox.Show("Al cancelar: se desasigna el paciente, se borra fecha de reserva y el turno vuelve a DISPONIBLE.\n\n¿Desea continuar?", 
-                    "Confirmar cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TurnoConsultaDao turnoDao = new TurnoConsultaDao();
+                bool ok = turnoDao.cancelarReserva(turnoId);
 
-                if (result == DialogResult.Yes)
+                if (ok)
                 {
+                    MessageBox.Show("Reserva cancelada. El turno volvió a estado DISPONIBLE.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvTurnos.Rows.RemoveAt(e.RowIndex);
-                    MessageBox.Show("Reserva cancelada exitosamente. El turno volvió a estado DISPONIBLE.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("No se pudo cancelar la reserva.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cancelar la reserva: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

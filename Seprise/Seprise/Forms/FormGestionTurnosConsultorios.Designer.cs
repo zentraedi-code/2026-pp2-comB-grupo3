@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormGestionTurnosConsultorios
     {
@@ -27,9 +27,6 @@ namespace Seprise
             panelBotones.SuspendLayout();
             SuspendLayout();
 
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -38,9 +35,6 @@ namespace Seprise
             panelHeader.Size = new Size(450, 60);
             panelHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = false;
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -52,9 +46,6 @@ namespace Seprise
             lblTitulo.Text = "Gestión de Turnos - Consultorios Externos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
-            // 
-            // panelBotones
-            // 
             panelBotones.Controls.Add(btnReservarTurno);
             panelBotones.Controls.Add(btnCancelarReserva);
             panelBotones.Controls.Add(btnSalir);
@@ -64,9 +55,6 @@ namespace Seprise
             panelBotones.Size = new Size(450, 240);
             panelBotones.TabIndex = 1;
 
-            // 
-            // btnReservarTurno
-            // 
             btnReservarTurno.BackColor = Color.FromArgb(178, 235, 242);
             btnReservarTurno.Cursor = Cursors.Hand;
             btnReservarTurno.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -82,9 +70,6 @@ namespace Seprise
             btnReservarTurno.UseVisualStyleBackColor = false;
             btnReservarTurno.Click += btnReservarTurno_Click;
 
-            // 
-            // btnCancelarReserva
-            // 
             btnCancelarReserva.BackColor = Color.FromArgb(178, 235, 242);
             btnCancelarReserva.Cursor = Cursors.Hand;
             btnCancelarReserva.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -100,9 +85,6 @@ namespace Seprise
             btnCancelarReserva.UseVisualStyleBackColor = false;
             btnCancelarReserva.Click += btnCancelarReserva_Click;
 
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -117,9 +99,6 @@ namespace Seprise
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormGestionTurnos
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 250, 250);

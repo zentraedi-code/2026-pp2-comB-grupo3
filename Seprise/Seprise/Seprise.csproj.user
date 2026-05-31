@@ -8,6 +8,9 @@
     <Compile Update="Forms\FormAtencionPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\FormBuscarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FormCancelarAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>

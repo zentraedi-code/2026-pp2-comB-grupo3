@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormGestionAgendaEstudios
     {
@@ -28,9 +28,6 @@ namespace Seprise
             panelBotones.SuspendLayout();
             SuspendLayout();
 
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -39,9 +36,6 @@ namespace Seprise
             panelHeader.Size = new Size(550, 60);
             panelHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = false;
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -53,9 +47,6 @@ namespace Seprise
             lblTitulo.Text = "Gestión de Agenda - Estudios Clínicos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
-            // 
-            // panelBotones
-            // 
             panelBotones.Controls.Add(btnCrearAgenda);
             panelBotones.Controls.Add(btnConfirmarAgenda);
             panelBotones.Controls.Add(btnCancelarAgenda);
@@ -66,9 +57,6 @@ namespace Seprise
             panelBotones.Size = new Size(550, 240);
             panelBotones.TabIndex = 1;
 
-            // 
-            // btnCrearAgenda
-            // 
             btnCrearAgenda.BackColor = Color.FromArgb(178, 235, 242);
             btnCrearAgenda.Cursor = Cursors.Hand;
             btnCrearAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -84,9 +72,6 @@ namespace Seprise
             btnCrearAgenda.UseVisualStyleBackColor = false;
             btnCrearAgenda.Click += btnCrearAgenda_Click;
 
-            // 
-            // btnConfirmarAgenda
-            // 
             btnConfirmarAgenda.BackColor = Color.FromArgb(178, 235, 242);
             btnConfirmarAgenda.Cursor = Cursors.Hand;
             btnConfirmarAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -102,9 +87,6 @@ namespace Seprise
             btnConfirmarAgenda.UseVisualStyleBackColor = false;
             btnConfirmarAgenda.Click += btnConfirmarAgenda_Click;
 
-            // 
-            // btnCancelarAgenda
-            // 
             btnCancelarAgenda.BackColor = Color.FromArgb(178, 235, 242);
             btnCancelarAgenda.Cursor = Cursors.Hand;
             btnCancelarAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -120,9 +102,6 @@ namespace Seprise
             btnCancelarAgenda.UseVisualStyleBackColor = false;
             btnCancelarAgenda.Click += btnCancelarAgenda_Click;
 
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -137,9 +116,6 @@ namespace Seprise
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormGestionAgendaEstudios
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;

@@ -54,3 +54,4 @@ C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\n
 C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormRecepcionarPacienteEstudios.resources
 C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormReservarTurnoMedico.resources
 C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormSolicitudEstudio.resources
+c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormBuscarPaciente.resources

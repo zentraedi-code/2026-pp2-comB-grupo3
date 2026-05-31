@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,7 +14,6 @@ namespace Seprise
 
         private void ConfigurarEventosHover()
         {
-            // Efecto hover para btnSalir
             btnSalir.MouseEnter += (s, e) => {
                 btnSalir.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -22,7 +21,6 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnConfirmarSolicitud
             btnConfirmarSolicitud.MouseEnter += (s, e) => {
                 btnConfirmarSolicitud.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -30,7 +28,6 @@ namespace Seprise
                 btnConfirmarSolicitud.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnFacturarEstudio
             btnFacturarEstudio.MouseEnter += (s, e) => {
                 btnFacturarEstudio.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -41,14 +38,12 @@ namespace Seprise
 
         private void btnConfirmarSolicitud_Click(object sender, EventArgs e)
         {
-            // TODO: Implementar confirmación de solicitud de estudios
             MessageBox.Show("Funcionalidad de Confirmar Solicitud pendiente de implementación",
                           "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnFacturarEstudio_Click(object sender, EventArgs e)
         {
-            // TODO: Implementar facturación de estudios
             MessageBox.Show("Funcionalidad de Facturar Estudio pendiente de implementación",
                           "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

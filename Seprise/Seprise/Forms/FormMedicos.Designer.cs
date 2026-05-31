@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormMedicos
     {
@@ -26,21 +26,18 @@ namespace Seprise
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "CU03 - ABM Médicos";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Alta, baja y modificación de médicos, incluyendo honorarios.";
 
-            // btnCrear
             this.btnCrear.Location = new System.Drawing.Point(20, 80);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(120, 30);
@@ -49,7 +46,6 @@ namespace Seprise
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
 
-            // dgvMedicos
             this.dgvMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMedicos.Location = new System.Drawing.Point(20, 120);
@@ -59,7 +55,6 @@ namespace Seprise
             this.dgvMedicos.TabIndex = 3;
             this.dgvMedicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicos_CellClick);
 
-            // FormMedicos
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);

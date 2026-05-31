@@ -1,4 +1,4 @@
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Seprise
@@ -38,9 +38,6 @@ namespace Seprise
             panelBotones.SuspendLayout();
             SuspendLayout();
 
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -49,9 +46,6 @@ namespace Seprise
             panelHeader.Size = new Size(520, 60);
             panelHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = false;
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -63,9 +57,6 @@ namespace Seprise
             lblTitulo.Text = "Atención paciente";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
-            // 
-            // panelBotones
-            // 
             panelBotones.Controls.Add(btnRevisarPacientesPendientes);
             panelBotones.Controls.Add(btnGenerarHistoriaClinica);
             panelBotones.Controls.Add(btnSolicitarEstudios);
@@ -76,9 +67,6 @@ namespace Seprise
             panelBotones.Size = new Size(520, 240);
             panelBotones.TabIndex = 1;
 
-            // 
-            // btnRevisarPacientesPendientes
-            // 
             btnRevisarPacientesPendientes.BackColor = Color.FromArgb(178, 235, 242);
             btnRevisarPacientesPendientes.Cursor = Cursors.Hand;
             btnRevisarPacientesPendientes.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -94,9 +82,6 @@ namespace Seprise
             btnRevisarPacientesPendientes.UseVisualStyleBackColor = false;
             btnRevisarPacientesPendientes.Click += btnRevisarPacientesPendientes_Click;
 
-            // 
-            // btnGenerarHistoriaClinica
-            // 
             btnGenerarHistoriaClinica.BackColor = Color.FromArgb(178, 235, 242);
             btnGenerarHistoriaClinica.Cursor = Cursors.Hand;
             btnGenerarHistoriaClinica.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -112,9 +97,6 @@ namespace Seprise
             btnGenerarHistoriaClinica.UseVisualStyleBackColor = false;
             btnGenerarHistoriaClinica.Click += btnGenerarHistoriaClinica_Click;
 
-            // 
-            // btnSolicitarEstudios
-            // 
             btnSolicitarEstudios.BackColor = Color.FromArgb(178, 235, 242);
             btnSolicitarEstudios.Cursor = Cursors.Hand;
             btnSolicitarEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -130,9 +112,6 @@ namespace Seprise
             btnSolicitarEstudios.UseVisualStyleBackColor = false;
             btnSolicitarEstudios.Click += btnSolicitarEstudios_Click;
 
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -147,9 +126,6 @@ namespace Seprise
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormAtencionPaciente
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 250, 250);

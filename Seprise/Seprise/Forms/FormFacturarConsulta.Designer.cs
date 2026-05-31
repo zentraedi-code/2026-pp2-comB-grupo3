@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormFacturarConsulta
     {
@@ -51,21 +51,18 @@ namespace Seprise
             this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "CU10 - Facturar consulta";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Facturación de la consulta médica luego de recepcionar al paciente.";
 
-            // lblPaciente
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.Location = new System.Drawing.Point(20, 90);
             this.lblPaciente.Name = "lblPaciente";
@@ -73,7 +70,6 @@ namespace Seprise
             this.lblPaciente.TabIndex = 2;
             this.lblPaciente.Text = "Paciente";
 
-            // cmbPaciente
             this.cmbPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPaciente.FormattingEnabled = true;
             this.cmbPaciente.Location = new System.Drawing.Point(20, 110);
@@ -81,7 +77,6 @@ namespace Seprise
             this.cmbPaciente.Size = new System.Drawing.Size(400, 23);
             this.cmbPaciente.TabIndex = 3;
 
-            // lblMedico
             this.lblMedico.AutoSize = true;
             this.lblMedico.Location = new System.Drawing.Point(20, 150);
             this.lblMedico.Name = "lblMedico";
@@ -89,14 +84,12 @@ namespace Seprise
             this.lblMedico.TabIndex = 4;
             this.lblMedico.Text = "Médico";
 
-            // txtMedico
             this.txtMedico.Enabled = false;
             this.txtMedico.Location = new System.Drawing.Point(20, 170);
             this.txtMedico.Name = "txtMedico";
             this.txtMedico.Size = new System.Drawing.Size(300, 23);
             this.txtMedico.TabIndex = 5;
 
-            // lblConcepto
             this.lblConcepto.AutoSize = true;
             this.lblConcepto.Location = new System.Drawing.Point(340, 150);
             this.lblConcepto.Name = "lblConcepto";
@@ -104,14 +97,12 @@ namespace Seprise
             this.lblConcepto.TabIndex = 6;
             this.lblConcepto.Text = "Concepto";
 
-            // txtConcepto
             this.txtConcepto.Enabled = false;
             this.txtConcepto.Location = new System.Drawing.Point(340, 170);
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(300, 23);
             this.txtConcepto.TabIndex = 7;
 
-            // lblImporte
             this.lblImporte.AutoSize = true;
             this.lblImporte.Location = new System.Drawing.Point(20, 210);
             this.lblImporte.Name = "lblImporte";
@@ -119,13 +110,11 @@ namespace Seprise
             this.lblImporte.TabIndex = 8;
             this.lblImporte.Text = "Importe";
 
-            // txtImporte
             this.txtImporte.Location = new System.Drawing.Point(20, 230);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(200, 23);
             this.txtImporte.TabIndex = 9;
 
-            // lblMedioPago
             this.lblMedioPago.AutoSize = true;
             this.lblMedioPago.Location = new System.Drawing.Point(240, 210);
             this.lblMedioPago.Name = "lblMedioPago";
@@ -133,7 +122,6 @@ namespace Seprise
             this.lblMedioPago.TabIndex = 10;
             this.lblMedioPago.Text = "Medio de pago";
 
-            // cmbMedioPago
             this.cmbMedioPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMedioPago.FormattingEnabled = true;
             this.cmbMedioPago.Location = new System.Drawing.Point(240, 230);
@@ -141,7 +129,6 @@ namespace Seprise
             this.cmbMedioPago.Size = new System.Drawing.Size(200, 23);
             this.cmbMedioPago.TabIndex = 11;
 
-            // lblEstadoFactura
             this.lblEstadoFactura.AutoSize = true;
             this.lblEstadoFactura.Location = new System.Drawing.Point(460, 210);
             this.lblEstadoFactura.Name = "lblEstadoFactura";
@@ -149,14 +136,12 @@ namespace Seprise
             this.lblEstadoFactura.TabIndex = 12;
             this.lblEstadoFactura.Text = "Estado factura";
 
-            // txtEstadoFactura
             this.txtEstadoFactura.Enabled = false;
             this.txtEstadoFactura.Location = new System.Drawing.Point(460, 230);
             this.txtEstadoFactura.Name = "txtEstadoFactura";
             this.txtEstadoFactura.Size = new System.Drawing.Size(180, 23);
             this.txtEstadoFactura.TabIndex = 13;
 
-            // btnEmitir
             this.btnEmitir.Location = new System.Drawing.Point(20, 280);
             this.btnEmitir.Name = "btnEmitir";
             this.btnEmitir.Size = new System.Drawing.Size(120, 30);
@@ -169,7 +154,6 @@ namespace Seprise
             this.btnEmitir.UseVisualStyleBackColor = true;
             this.btnEmitir.Click += new System.EventHandler(this.btnEmitir_Click);
 
-            // btnImprimir
             this.btnImprimir.Location = new System.Drawing.Point(150, 280);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(150, 30);
@@ -182,7 +166,6 @@ namespace Seprise
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
 
-            // btnSalir
             this.btnSalir.Location = new System.Drawing.Point(565, 280);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
@@ -195,7 +178,6 @@ namespace Seprise
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 
-            // FormFacturarConsulta
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 340);

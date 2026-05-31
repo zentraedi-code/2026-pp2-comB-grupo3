@@ -1,4 +1,4 @@
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Seprise
@@ -36,9 +36,6 @@ namespace Seprise
             panelBotones.SuspendLayout();
             SuspendLayout();
 
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -47,9 +44,6 @@ namespace Seprise
             panelHeader.Size = new Size(450, 60);
             panelHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = false;
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -61,9 +55,6 @@ namespace Seprise
             lblTitulo.Text = "Confirmación de Estudios";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
-            // 
-            // panelBotones
-            // 
             panelBotones.Controls.Add(btnConfirmarSolicitud);
             panelBotones.Controls.Add(btnFacturarEstudio);
             panelBotones.Controls.Add(btnSalir);
@@ -73,9 +64,6 @@ namespace Seprise
             panelBotones.Size = new Size(450, 240);
             panelBotones.TabIndex = 1;
 
-            // 
-            // btnConfirmarSolicitud
-            // 
             btnConfirmarSolicitud.BackColor = Color.FromArgb(178, 235, 242);
             btnConfirmarSolicitud.Cursor = Cursors.Hand;
             btnConfirmarSolicitud.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -91,9 +79,6 @@ namespace Seprise
             btnConfirmarSolicitud.UseVisualStyleBackColor = false;
             btnConfirmarSolicitud.Click += btnConfirmarSolicitud_Click;
 
-            // 
-            // btnFacturarEstudio
-            // 
             btnFacturarEstudio.BackColor = Color.FromArgb(178, 235, 242);
             btnFacturarEstudio.Cursor = Cursors.Hand;
             btnFacturarEstudio.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -109,9 +94,6 @@ namespace Seprise
             btnFacturarEstudio.UseVisualStyleBackColor = false;
             btnFacturarEstudio.Click += btnFacturarEstudio_Click;
 
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -126,9 +108,6 @@ namespace Seprise
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormConfirmacionEstudios
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(450, 300);

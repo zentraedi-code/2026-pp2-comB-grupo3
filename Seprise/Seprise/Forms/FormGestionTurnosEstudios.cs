@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     public partial class FormGestionTurnosEstudios : Form
     {
@@ -10,7 +10,6 @@ namespace Seprise
 
         private void ConfigurarEventosHover()
         {
-            // Efecto hover para btnSalir
             btnSalir.MouseEnter += (s, e) => {
                 btnSalir.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -18,7 +17,6 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnReservarTurno
             btnReservarTurno.MouseEnter += (s, e) => {
                 btnReservarTurno.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -26,7 +24,6 @@ namespace Seprise
                 btnReservarTurno.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnCancelarReserva
             btnCancelarReserva.MouseEnter += (s, e) => {
                 btnCancelarReserva.BackColor = Color.FromArgb(128, 203, 196);
             };

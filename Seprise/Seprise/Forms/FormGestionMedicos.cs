@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,7 +14,6 @@ namespace Seprise
 
         private void ConfigurarEventosHover()
         {
-            // Efecto hover para btnSalir
             btnSalir.MouseEnter += (s, e) => {
                 btnSalir.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -22,7 +21,6 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnABMMedicos
             btnABMMedicos.MouseEnter += (s, e) => {
                 btnABMMedicos.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -30,7 +28,6 @@ namespace Seprise
                 btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnLiquidarHonorarios
             btnLiquidarHonorarios.MouseEnter += (s, e) => {
                 btnLiquidarHonorarios.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -52,7 +49,6 @@ namespace Seprise
             btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn.Cursor = Cursors.Hand;
 
-            // Configurar texto con icono arriba y texto abajo
             btn.Text = $"{icono}\n\n{texto}";
             btn.TextAlign = ContentAlignment.MiddleCenter;
 

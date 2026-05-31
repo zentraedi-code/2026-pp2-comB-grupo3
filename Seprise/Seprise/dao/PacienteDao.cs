@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -138,6 +138,49 @@ namespace Seprise.dao
                 return result > 0;
             }
             catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public List<Paciente> buscarFiltrado(string dni, string nomApe)
+        {
+            try
+            {
+                string sql = "SELECT id, dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo " +
+                             "FROM paciente WHERE activo = 1";
+
+                if (!string.IsNullOrEmpty(dni))
+                    sql += $" AND dni LIKE '%{dni}%'";
+
+                if (!string.IsNullOrEmpty(nomApe))
+                    sql += $" AND (nombre LIKE '%{nomApe}%' OR apellido LIKE '%{nomApe}%')";
+
+                sql += " ORDER BY apellido, nombre";
+
+                DataTable dataTable = Connection.ejecutarSQL(sql);
+                List<Paciente> pacientes = new List<Paciente>();
+
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        pacientes.Add(new Paciente(
+                            int.Parse(row["id"].ToString()),
+                            row["dni"].ToString(),
+                            row["nombre"].ToString(),
+                            row["apellido"].ToString(),
+                            Convert.ToDateTime(row["fecha_nacimiento"]),
+                            row["telefono"] != DBNull.Value ? row["telefono"].ToString() : null,
+                            row["obra_social"] != DBNull.Value ? row["obra_social"].ToString() : null,
+                            Convert.ToBoolean(row["activo"])
+                        ));
+                    }
+                }
+
+                return pacientes;
+            }
+            catch (Exception)
             {
                 throw;
             }

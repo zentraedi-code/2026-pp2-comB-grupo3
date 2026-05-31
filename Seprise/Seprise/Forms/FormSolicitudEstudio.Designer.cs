@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormSolicitudEstudio
     {
@@ -53,21 +53,18 @@ namespace Seprise
             this.lblNota = new System.Windows.Forms.Label();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "CU02 - Crear solicitud de estudio";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Solicitud común para consultorios externos, guardia, internación, laboratorio o externo.";
 
-            // lblDniPaciente
             this.lblDniPaciente.AutoSize = true;
             this.lblDniPaciente.Location = new System.Drawing.Point(20, 90);
             this.lblDniPaciente.Name = "lblDniPaciente";
@@ -75,14 +72,12 @@ namespace Seprise
             this.lblDniPaciente.TabIndex = 2;
             this.lblDniPaciente.Text = "DNI del paciente";
 
-            // txtDniPaciente
             this.txtDniPaciente.Location = new System.Drawing.Point(20, 110);
             this.txtDniPaciente.Name = "txtDniPaciente";
             this.txtDniPaciente.PlaceholderText = "Ej: 30111222";
             this.txtDniPaciente.Size = new System.Drawing.Size(200, 23);
             this.txtDniPaciente.TabIndex = 3;
 
-            // btnBuscarPaciente
             this.btnBuscarPaciente.Location = new System.Drawing.Point(230, 110);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
             this.btnBuscarPaciente.Size = new System.Drawing.Size(75, 23);
@@ -91,7 +86,6 @@ namespace Seprise
             this.btnBuscarPaciente.UseVisualStyleBackColor = true;
             this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
 
-            // lblPaciente
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.Location = new System.Drawing.Point(320, 90);
             this.lblPaciente.Name = "lblPaciente";
@@ -99,14 +93,12 @@ namespace Seprise
             this.lblPaciente.TabIndex = 5;
             this.lblPaciente.Text = "Paciente";
 
-            // txtPaciente
             this.txtPaciente.Enabled = false;
             this.txtPaciente.Location = new System.Drawing.Point(320, 110);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.Size = new System.Drawing.Size(300, 23);
             this.txtPaciente.TabIndex = 6;
 
-            // lblTipoEstudio
             this.lblTipoEstudio.AutoSize = true;
             this.lblTipoEstudio.Location = new System.Drawing.Point(20, 150);
             this.lblTipoEstudio.Name = "lblTipoEstudio";
@@ -114,7 +106,6 @@ namespace Seprise
             this.lblTipoEstudio.TabIndex = 7;
             this.lblTipoEstudio.Text = "Tipo de estudio";
 
-            // cmbTipoEstudio
             this.cmbTipoEstudio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoEstudio.FormattingEnabled = true;
             this.cmbTipoEstudio.Location = new System.Drawing.Point(20, 170);
@@ -122,7 +113,6 @@ namespace Seprise
             this.cmbTipoEstudio.Size = new System.Drawing.Size(285, 23);
             this.cmbTipoEstudio.TabIndex = 8;
 
-            // lblOrigen
             this.lblOrigen.AutoSize = true;
             this.lblOrigen.Location = new System.Drawing.Point(335, 150);
             this.lblOrigen.Name = "lblOrigen";
@@ -130,7 +120,6 @@ namespace Seprise
             this.lblOrigen.TabIndex = 9;
             this.lblOrigen.Text = "Origen";
 
-            // cmbOrigen
             this.cmbOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrigen.FormattingEnabled = true;
             this.cmbOrigen.Location = new System.Drawing.Point(335, 170);
@@ -138,7 +127,6 @@ namespace Seprise
             this.cmbOrigen.Size = new System.Drawing.Size(285, 23);
             this.cmbOrigen.TabIndex = 10;
 
-            // lblFechaSolicitud
             this.lblFechaSolicitud.AutoSize = true;
             this.lblFechaSolicitud.Location = new System.Drawing.Point(20, 210);
             this.lblFechaSolicitud.Name = "lblFechaSolicitud";
@@ -146,7 +134,6 @@ namespace Seprise
             this.lblFechaSolicitud.TabIndex = 11;
             this.lblFechaSolicitud.Text = "Fecha de solicitud";
 
-            // dtpFechaSolicitud
             this.dtpFechaSolicitud.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaSolicitud.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaSolicitud.Location = new System.Drawing.Point(20, 230);
@@ -154,7 +141,6 @@ namespace Seprise
             this.dtpFechaSolicitud.Size = new System.Drawing.Size(285, 23);
             this.dtpFechaSolicitud.TabIndex = 12;
 
-            // lblObservaciones
             this.lblObservaciones.AutoSize = true;
             this.lblObservaciones.Location = new System.Drawing.Point(20, 270);
             this.lblObservaciones.Name = "lblObservaciones";
@@ -162,7 +148,6 @@ namespace Seprise
             this.lblObservaciones.TabIndex = 13;
             this.lblObservaciones.Text = "Observaciones";
 
-            // txtObservaciones
             this.txtObservaciones.Location = new System.Drawing.Point(20, 290);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
@@ -170,7 +155,6 @@ namespace Seprise
             this.txtObservaciones.Size = new System.Drawing.Size(600, 80);
             this.txtObservaciones.TabIndex = 14;
 
-            // btnCrear
             this.btnCrear.Location = new System.Drawing.Point(20, 390);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(120, 30);
@@ -183,7 +167,6 @@ namespace Seprise
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
 
-            // btnLimpiar
             this.btnLimpiar.Location = new System.Drawing.Point(150, 390);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 30);
@@ -196,7 +179,6 @@ namespace Seprise
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
 
-            // lblNota
             this.lblNota.AutoSize = true;
             this.lblNota.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblNota.Location = new System.Drawing.Point(20, 430);
@@ -205,7 +187,6 @@ namespace Seprise
             this.lblNota.TabIndex = 17;
             this.lblNota.Text = "Estado inicial sugerido: PENDIENTE.";
 
-            // FormSolicitudEstudio
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 470);

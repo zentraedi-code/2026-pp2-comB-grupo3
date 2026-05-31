@@ -1,4 +1,4 @@
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Seprise
@@ -36,9 +36,6 @@ namespace Seprise
             panelBotones.SuspendLayout();
             SuspendLayout();
 
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -47,9 +44,6 @@ namespace Seprise
             panelHeader.Size = new Size(450, 60);
             panelHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = false;
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -61,9 +55,6 @@ namespace Seprise
             lblTitulo.Text = "Gestión Médicos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
-            // 
-            // panelBotones
-            // 
             panelBotones.Controls.Add(btnABMMedicos);
             panelBotones.Controls.Add(btnLiquidarHonorarios);
             panelBotones.Controls.Add(btnSalir);
@@ -73,9 +64,6 @@ namespace Seprise
             panelBotones.Size = new Size(450, 240);
             panelBotones.TabIndex = 1;
 
-            // 
-            // btnABMMedicos
-            // 
             btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
             btnABMMedicos.Cursor = Cursors.Hand;
             btnABMMedicos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -91,9 +79,6 @@ namespace Seprise
             btnABMMedicos.UseVisualStyleBackColor = false;
             btnABMMedicos.Click += btnABMMedicos_Click;
 
-            // 
-            // btnLiquidarHonorarios
-            // 
             btnLiquidarHonorarios.BackColor = Color.FromArgb(178, 235, 242);
             btnLiquidarHonorarios.Cursor = Cursors.Hand;
             btnLiquidarHonorarios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -109,9 +94,6 @@ namespace Seprise
             btnLiquidarHonorarios.UseVisualStyleBackColor = false;
             btnLiquidarHonorarios.Click += btnLiquidarHonorarios_Click;
 
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -126,9 +108,6 @@ namespace Seprise
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormGestionMedicos
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;

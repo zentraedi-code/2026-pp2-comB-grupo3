@@ -1,4 +1,4 @@
-namespace Seprise.entity
+﻿namespace Seprise.entity
 {
     public enum EstadoAgendaMedica
     {

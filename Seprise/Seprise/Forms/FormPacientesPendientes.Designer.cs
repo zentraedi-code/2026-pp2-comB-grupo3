@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormPacientesPendientes
     {
@@ -34,21 +34,18 @@ namespace Seprise
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Pacientes Pendientes";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Pacientes recepcionados que todavía no fueron atendidos, ordenados por fecha/hora de recepción.";
 
-            // lblMedico
             this.lblMedico.AutoSize = true;
             this.lblMedico.Location = new System.Drawing.Point(20, 90);
             this.lblMedico.Name = "lblMedico";
@@ -56,7 +53,6 @@ namespace Seprise
             this.lblMedico.TabIndex = 2;
             this.lblMedico.Text = "Médico";
 
-            // cmbMedico
             this.cmbMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMedico.FormattingEnabled = true;
             this.cmbMedico.Location = new System.Drawing.Point(20, 110);
@@ -64,7 +60,6 @@ namespace Seprise
             this.cmbMedico.Size = new System.Drawing.Size(300, 23);
             this.cmbMedico.TabIndex = 3;
 
-            // lblFecha
             this.lblFecha.AutoSize = true;
             this.lblFecha.Location = new System.Drawing.Point(340, 90);
             this.lblFecha.Name = "lblFecha";
@@ -72,7 +67,6 @@ namespace Seprise
             this.lblFecha.TabIndex = 4;
             this.lblFecha.Text = "Fecha";
 
-            // dtpFecha
             this.dtpFecha.CustomFormat = "dd/MM/yyyy";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(340, 110);
@@ -80,7 +74,6 @@ namespace Seprise
             this.dtpFecha.Size = new System.Drawing.Size(200, 23);
             this.dtpFecha.TabIndex = 5;
 
-            // btnActualizar
             this.btnActualizar.Location = new System.Drawing.Point(20, 150);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(150, 30);
@@ -89,7 +82,6 @@ namespace Seprise
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
 
-            // dgvCola
             this.dgvCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCola.Location = new System.Drawing.Point(20, 200);
             this.dgvCola.Name = "dgvCola";
@@ -98,7 +90,6 @@ namespace Seprise
             this.dgvCola.TabIndex = 7;
             this.dgvCola.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCola_CellClick);
 
-            // FormPacientesPendientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);

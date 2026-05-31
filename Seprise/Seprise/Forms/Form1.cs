@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     public partial class Form1 : Form
     {
@@ -10,7 +10,6 @@ namespace Seprise
 
         private void ConfigurarEventosHover()
         {
-            // Configurar hover para todos los botones
             var botones = new[] {
                 btnPacientes,
                 btnGestionMedicos, btnGestionAgenda, btnGestionTurnos,

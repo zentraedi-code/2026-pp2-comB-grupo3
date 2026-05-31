@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormConfirmarAsistencia
     {
@@ -44,21 +44,18 @@ namespace Seprise
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Confirmar asistencia";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Confirmación de asistencia del paciente al llegar al centro médico.";
 
-            // lblDniPaciente
             this.lblDniPaciente.AutoSize = true;
             this.lblDniPaciente.Location = new System.Drawing.Point(20, 90);
             this.lblDniPaciente.Name = "lblDniPaciente";
@@ -66,14 +63,12 @@ namespace Seprise
             this.lblDniPaciente.TabIndex = 2;
             this.lblDniPaciente.Text = "DNI del paciente";
 
-            // txtDniPaciente
             this.txtDniPaciente.Location = new System.Drawing.Point(20, 110);
             this.txtDniPaciente.Name = "txtDniPaciente";
             this.txtDniPaciente.PlaceholderText = "Ej: 30111222";
             this.txtDniPaciente.Size = new System.Drawing.Size(200, 23);
             this.txtDniPaciente.TabIndex = 3;
 
-            // btnBuscarPaciente
             this.btnBuscarPaciente.Location = new System.Drawing.Point(230, 110);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
             this.btnBuscarPaciente.Size = new System.Drawing.Size(75, 23);
@@ -82,7 +77,6 @@ namespace Seprise
             this.btnBuscarPaciente.UseVisualStyleBackColor = true;
             this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
 
-            // lblPaciente
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.Location = new System.Drawing.Point(320, 90);
             this.lblPaciente.Name = "lblPaciente";
@@ -90,14 +84,12 @@ namespace Seprise
             this.lblPaciente.TabIndex = 5;
             this.lblPaciente.Text = "Paciente";
 
-            // txtPaciente
             this.txtPaciente.Enabled = false;
             this.txtPaciente.Location = new System.Drawing.Point(320, 110);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.Size = new System.Drawing.Size(300, 23);
             this.txtPaciente.TabIndex = 6;
 
-            // lblFecha
             this.lblFecha.AutoSize = true;
             this.lblFecha.Location = new System.Drawing.Point(20, 150);
             this.lblFecha.Name = "lblFecha";
@@ -105,7 +97,6 @@ namespace Seprise
             this.lblFecha.TabIndex = 7;
             this.lblFecha.Text = "Fecha";
 
-            // dtpFecha
             this.dtpFecha.CustomFormat = "dd/MM/yyyy";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(20, 170);
@@ -113,7 +104,6 @@ namespace Seprise
             this.dtpFecha.Size = new System.Drawing.Size(285, 23);
             this.dtpFecha.TabIndex = 8;
 
-            // btnBuscar
             this.btnBuscar.Location = new System.Drawing.Point(20, 210);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(180, 30);
@@ -122,7 +112,6 @@ namespace Seprise
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 
-            // dgvTurnos
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnos.Location = new System.Drawing.Point(20, 260);
             this.dgvTurnos.Name = "dgvTurnos";
@@ -131,7 +120,6 @@ namespace Seprise
             this.dgvTurnos.TabIndex = 10;
             this.dgvTurnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellClick);
 
-            // lblNota
             this.lblNota.AutoSize = true;
             this.lblNota.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblNota.Location = new System.Drawing.Point(20, 520);
@@ -140,7 +128,6 @@ namespace Seprise
             this.lblNota.TabIndex = 11;
             this.lblNota.Text = "Al confirmar asistencia: el turno cambia a RECEPCIONADO y queda disponible para facturación y para la cola del médico.";
 
-            // btnSalir
             this.btnSalir.Location = new System.Drawing.Point(745, 520);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
@@ -149,7 +136,6 @@ namespace Seprise
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 
-            // FormConfirmarAsistencia
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 560);

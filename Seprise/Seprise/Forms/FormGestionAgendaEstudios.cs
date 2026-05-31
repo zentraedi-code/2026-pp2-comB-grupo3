@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     public partial class FormGestionAgendaEstudios : Form
     {
@@ -10,7 +10,6 @@ namespace Seprise
 
         private void ConfigurarEventosHover()
         {
-            // Efecto hover para btnSalir
             btnSalir.MouseEnter += (s, e) => {
                 btnSalir.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -18,7 +17,6 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnCrearAgenda
             btnCrearAgenda.MouseEnter += (s, e) => {
                 btnCrearAgenda.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -26,7 +24,6 @@ namespace Seprise
                 btnCrearAgenda.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnConfirmarAgenda
             btnConfirmarAgenda.MouseEnter += (s, e) => {
                 btnConfirmarAgenda.BackColor = Color.FromArgb(128, 203, 196);
             };
@@ -34,7 +31,6 @@ namespace Seprise
                 btnConfirmarAgenda.BackColor = Color.FromArgb(178, 235, 242);
             };
 
-            // Efecto hover para btnCancelarAgenda
             btnCancelarAgenda.MouseEnter += (s, e) => {
                 btnCancelarAgenda.BackColor = Color.FromArgb(128, 203, 196);
             };

@@ -1,4 +1,4 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormLiquidarHonorarios
     {
@@ -40,21 +40,18 @@ namespace Seprise
             ((System.ComponentModel.ISupportInitialize)(this.dgvHonorarios)).BeginInit();
             this.SuspendLayout();
 
-            // lblTitulo
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(20, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "CU13 - Liquidar honorarios médicos";
 
-            // lblSubtitulo
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Reporte de facturación por médico.";
 
-            // lblMedico
             this.lblMedico.AutoSize = true;
             this.lblMedico.Location = new System.Drawing.Point(20, 90);
             this.lblMedico.Name = "lblMedico";
@@ -62,7 +59,6 @@ namespace Seprise
             this.lblMedico.TabIndex = 2;
             this.lblMedico.Text = "Médico";
 
-            // cmbMedico
             this.cmbMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMedico.FormattingEnabled = true;
             this.cmbMedico.Location = new System.Drawing.Point(20, 110);
@@ -70,7 +66,6 @@ namespace Seprise
             this.cmbMedico.Size = new System.Drawing.Size(250, 23);
             this.cmbMedico.TabIndex = 3;
 
-            // lblDesde
             this.lblDesde.AutoSize = true;
             this.lblDesde.Location = new System.Drawing.Point(290, 90);
             this.lblDesde.Name = "lblDesde";
@@ -78,7 +73,6 @@ namespace Seprise
             this.lblDesde.TabIndex = 4;
             this.lblDesde.Text = "Desde";
 
-            // dtpDesde
             this.dtpDesde.CustomFormat = "dd/MM/yyyy";
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDesde.Location = new System.Drawing.Point(290, 110);
@@ -86,7 +80,6 @@ namespace Seprise
             this.dtpDesde.Size = new System.Drawing.Size(150, 23);
             this.dtpDesde.TabIndex = 5;
 
-            // lblHasta
             this.lblHasta.AutoSize = true;
             this.lblHasta.Location = new System.Drawing.Point(460, 90);
             this.lblHasta.Name = "lblHasta";
@@ -94,7 +87,6 @@ namespace Seprise
             this.lblHasta.TabIndex = 6;
             this.lblHasta.Text = "Hasta";
 
-            // dtpHasta
             this.dtpHasta.CustomFormat = "dd/MM/yyyy";
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHasta.Location = new System.Drawing.Point(460, 110);
@@ -102,7 +94,6 @@ namespace Seprise
             this.dtpHasta.Size = new System.Drawing.Size(150, 23);
             this.dtpHasta.TabIndex = 7;
 
-            // btnGenerar
             this.btnGenerar.Location = new System.Drawing.Point(20, 150);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(120, 30);
@@ -111,7 +102,6 @@ namespace Seprise
             this.btnGenerar.UseVisualStyleBackColor = true;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
 
-            // btnExportar
             this.btnExportar.Location = new System.Drawing.Point(150, 150);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(100, 30);
@@ -120,7 +110,6 @@ namespace Seprise
             this.btnExportar.UseVisualStyleBackColor = true;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
 
-            // dgvHonorarios
             this.dgvHonorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHonorarios.Location = new System.Drawing.Point(20, 200);
             this.dgvHonorarios.Name = "dgvHonorarios";
@@ -128,7 +117,6 @@ namespace Seprise
             this.dgvHonorarios.Size = new System.Drawing.Size(760, 300);
             this.dgvHonorarios.TabIndex = 10;
 
-            // FormLiquidarHonorarios
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 530);

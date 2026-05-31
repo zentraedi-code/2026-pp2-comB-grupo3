@@ -1,4 +1,4 @@
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Seprise
@@ -36,9 +36,6 @@ namespace Seprise
             panelBotones.SuspendLayout();
             SuspendLayout();
 
-            // 
-            // panelHeader
-            // 
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -47,9 +44,6 @@ namespace Seprise
             panelHeader.Size = new Size(450, 60);
             panelHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = false;
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -61,9 +55,6 @@ namespace Seprise
             lblTitulo.Text = "Recepcionar Paciente - Consultorios Externos";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
 
-            // 
-            // panelBotones
-            // 
             panelBotones.Controls.Add(btnConfirmarAsistencia);
             panelBotones.Controls.Add(btnFacturarConsulta);
             panelBotones.Controls.Add(btnSalir);
@@ -73,9 +64,6 @@ namespace Seprise
             panelBotones.Size = new Size(450, 240);
             panelBotones.TabIndex = 1;
 
-            // 
-            // btnConfirmarAsistencia
-            // 
             btnConfirmarAsistencia.BackColor = Color.FromArgb(178, 235, 242);
             btnConfirmarAsistencia.Cursor = Cursors.Hand;
             btnConfirmarAsistencia.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -91,9 +79,6 @@ namespace Seprise
             btnConfirmarAsistencia.UseVisualStyleBackColor = false;
             btnConfirmarAsistencia.Click += btnConfirmarAsistencia_Click;
 
-            // 
-            // btnFacturarConsulta
-            // 
             btnFacturarConsulta.BackColor = Color.FromArgb(178, 235, 242);
             btnFacturarConsulta.Cursor = Cursors.Hand;
             btnFacturarConsulta.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -109,9 +94,6 @@ namespace Seprise
             btnFacturarConsulta.UseVisualStyleBackColor = false;
             btnFacturarConsulta.Click += btnFacturarConsulta_Click;
 
-            // 
-            // btnSalir
-            // 
             btnSalir.BackColor = Color.FromArgb(178, 235, 242);
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
@@ -126,9 +108,6 @@ namespace Seprise
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormRecepcionarPaciente
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;

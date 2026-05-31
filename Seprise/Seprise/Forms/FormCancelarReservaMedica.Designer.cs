@@ -1,178 +1,212 @@
-namespace Seprise
+﻿namespace Seprise
 {
     partial class FormCancelarReservaMedica
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Label lblDniPaciente;
-        private System.Windows.Forms.TextBox txtDniPaciente;
-        private System.Windows.Forms.Button btnBuscarPaciente;
-        private System.Windows.Forms.Label lblPaciente;
-        private System.Windows.Forms.TextBox txtPaciente;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvTurnos;
-        private System.Windows.Forms.Label lblNota;
-        private System.Windows.Forms.Button btnSalir;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblSubtitulo = new System.Windows.Forms.Label();
-            this.lblDniPaciente = new System.Windows.Forms.Label();
-            this.txtDniPaciente = new System.Windows.Forms.TextBox();
-            this.btnBuscarPaciente = new System.Windows.Forms.Button();
-            this.lblPaciente = new System.Windows.Forms.Label();
-            this.txtPaciente = new System.Windows.Forms.TextBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvTurnos = new System.Windows.Forms.DataGridView();
-            this.lblNota = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
-            this.SuspendLayout();
+            lblTitulo = new Label();
+            grpPaciente = new GroupBox();
+            lblDniPaciente = new Label();
+            txtDniPaciente = new TextBox();
+            btnBuscarPaciente = new Button();
+            lblPaciente = new Label();
+            txtPaciente = new TextBox();
+            grpFiltros = new GroupBox();
+            chkFecha = new CheckBox();
+            dtpFecha = new DateTimePicker();
+            btnBuscar = new Button();
+            dgvTurnos = new DataGridView();
+            lblNota = new Label();
+            btnSalir = new Button();
+            grpPaciente.SuspendLayout();
+            grpFiltros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
+            SuspendLayout();
 
-            // lblTitulo
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(20, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "CU08 - Cancelar reserva de turno médico";
+            lblTitulo.BackColor = Color.FromArgb(30, 107, 160);
+            lblTitulo.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(900, 48);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "   Cancelar reserva de turno médico";
+            lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
 
-            // lblSubtitulo
-            this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(20, 50);
-            this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "El paciente cancela la reserva. El turno vuelve a quedar disponible.";
+            grpPaciente.Location = new Point(15, 62);
+            grpPaciente.Name = "grpPaciente";
+            grpPaciente.Size = new Size(870, 70);
+            grpPaciente.TabIndex = 1;
+            grpPaciente.TabStop = false;
+            grpPaciente.Text = "Paciente";
 
-            // lblDniPaciente
-            this.lblDniPaciente.AutoSize = true;
-            this.lblDniPaciente.Location = new System.Drawing.Point(20, 90);
-            this.lblDniPaciente.Name = "lblDniPaciente";
-            this.lblDniPaciente.Size = new System.Drawing.Size(95, 15);
-            this.lblDniPaciente.TabIndex = 2;
-            this.lblDniPaciente.Text = "DNI del paciente";
+            lblDniPaciente.AutoSize = true;
+            lblDniPaciente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblDniPaciente.Location = new Point(12, 26);
+            lblDniPaciente.Name = "lblDniPaciente";
+            lblDniPaciente.TabIndex = 0;
+            lblDniPaciente.Text = "DNI:";
 
-            // txtDniPaciente
-            this.txtDniPaciente.Location = new System.Drawing.Point(20, 110);
-            this.txtDniPaciente.Name = "txtDniPaciente";
-            this.txtDniPaciente.PlaceholderText = "Ej: 30111222";
-            this.txtDniPaciente.Size = new System.Drawing.Size(200, 23);
-            this.txtDniPaciente.TabIndex = 3;
+            txtDniPaciente.Location = new Point(45, 24);
+            txtDniPaciente.Name = "txtDniPaciente";
+            txtDniPaciente.PlaceholderText = "Ej: 30111222";
+            txtDniPaciente.Size = new Size(140, 23);
+            txtDniPaciente.TabIndex = 1;
 
-            // btnBuscarPaciente
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(230, 110);
-            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarPaciente.TabIndex = 4;
-            this.btnBuscarPaciente.Text = "🔍 Buscar";
-            this.btnBuscarPaciente.UseVisualStyleBackColor = true;
-            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
+            btnBuscarPaciente.BackColor = Color.FromArgb(30, 107, 160);
+            btnBuscarPaciente.FlatAppearance.BorderSize = 0;
+            btnBuscarPaciente.FlatStyle = FlatStyle.Flat;
+            btnBuscarPaciente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnBuscarPaciente.ForeColor = Color.White;
+            btnBuscarPaciente.Location = new Point(195, 22);
+            btnBuscarPaciente.Name = "btnBuscarPaciente";
+            btnBuscarPaciente.Size = new Size(90, 27);
+            btnBuscarPaciente.TabIndex = 2;
+            btnBuscarPaciente.Text = "Buscar";
+            btnBuscarPaciente.UseVisualStyleBackColor = false;
+            btnBuscarPaciente.Click += btnBuscarPaciente_Click;
 
-            // lblPaciente
-            this.lblPaciente.AutoSize = true;
-            this.lblPaciente.Location = new System.Drawing.Point(320, 90);
-            this.lblPaciente.Name = "lblPaciente";
-            this.lblPaciente.Size = new System.Drawing.Size(52, 15);
-            this.lblPaciente.TabIndex = 5;
-            this.lblPaciente.Text = "Paciente";
+            lblPaciente.AutoSize = true;
+            lblPaciente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPaciente.Location = new Point(300, 27);
+            lblPaciente.Name = "lblPaciente";
+            lblPaciente.TabIndex = 3;
+            lblPaciente.Text = "Nombre:";
 
-            // txtPaciente
-            this.txtPaciente.Enabled = false;
-            this.txtPaciente.Location = new System.Drawing.Point(320, 110);
-            this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.Size = new System.Drawing.Size(300, 23);
-            this.txtPaciente.TabIndex = 6;
+            txtPaciente.BackColor = SystemColors.Control;
+            txtPaciente.Location = new Point(358, 24);
+            txtPaciente.Name = "txtPaciente";
+            txtPaciente.ReadOnly = true;
+            txtPaciente.Size = new Size(490, 23);
+            txtPaciente.TabIndex = 4;
+            txtPaciente.TabStop = false;
 
-            // lblFecha
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(20, 150);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(84, 15);
-            this.lblFecha.TabIndex = 7;
-            this.lblFecha.Text = "Fecha del turno";
+            grpPaciente.Controls.Add(lblDniPaciente);
+            grpPaciente.Controls.Add(txtDniPaciente);
+            grpPaciente.Controls.Add(btnBuscarPaciente);
+            grpPaciente.Controls.Add(lblPaciente);
+            grpPaciente.Controls.Add(txtPaciente);
 
-            // dtpFecha
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(20, 170);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(285, 23);
-            this.dtpFecha.TabIndex = 8;
+            grpFiltros.Location = new Point(15, 144);
+            grpFiltros.Name = "grpFiltros";
+            grpFiltros.Size = new Size(870, 60);
+            grpFiltros.TabIndex = 2;
+            grpFiltros.TabStop = false;
+            grpFiltros.Text = "Filtros";
 
-            // btnBuscar
-            this.btnBuscar.Location = new System.Drawing.Point(20, 210);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(180, 30);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "Buscar turnos reservados";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            chkFecha.AutoSize = true;
+            chkFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            chkFecha.Location = new Point(12, 22);
+            chkFecha.Name = "chkFecha";
+            chkFecha.TabIndex = 0;
+            chkFecha.Text = "Fecha:";
+            chkFecha.CheckedChanged += chkFecha_CheckedChanged;
 
-            // dgvTurnos
-            this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(20, 260);
-            this.dgvTurnos.Name = "dgvTurnos";
-            this.dgvTurnos.RowTemplate.Height = 25;
-            this.dgvTurnos.Size = new System.Drawing.Size(860, 250);
-            this.dgvTurnos.TabIndex = 10;
-            this.dgvTurnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellClick);
+            dtpFecha.CustomFormat = "dd/MM/yyyy";
+            dtpFecha.Enabled = false;
+            dtpFecha.Format = DateTimePickerFormat.Custom;
+            dtpFecha.Location = new Point(75, 20);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(140, 23);
+            dtpFecha.TabIndex = 1;
 
-            // lblNota
-            this.lblNota.AutoSize = true;
-            this.lblNota.Location = new System.Drawing.Point(20, 520);
-            this.lblNota.Name = "lblNota";
-            this.lblNota.TabIndex = 11;
-            this.lblNota.Text = "Al cancelar: se desasigna el paciente, se borra fecha de reserva y el turno vuelve a DISPONIBLE.";
+            btnBuscar.BackColor = Color.FromArgb(30, 107, 160);
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(230, 17);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(150, 28);
+            btnBuscar.TabIndex = 2;
+            btnBuscar.Text = "Buscar turnos";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
 
-            // btnSalir
-            this.btnSalir.Location = new System.Drawing.Point(780, 515);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 30);
-            this.btnSalir.TabIndex = 12;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            grpFiltros.Controls.Add(chkFecha);
+            grpFiltros.Controls.Add(dtpFecha);
+            grpFiltros.Controls.Add(btnBuscar);
 
-            // FormCancelarReservaMedica
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 560);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.lblNota);
-            this.Controls.Add(this.dgvTurnos);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.txtPaciente);
-            this.Controls.Add(this.lblPaciente);
-            this.Controls.Add(this.btnBuscarPaciente);
-            this.Controls.Add(this.txtDniPaciente);
-            this.Controls.Add(this.lblDniPaciente);
-            this.Controls.Add(this.lblSubtitulo);
-            this.Controls.Add(this.lblTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormCancelarReservaMedica";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Cancelar reserva de turno médico";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            dgvTurnos.AllowUserToAddRows = false;
+            dgvTurnos.AllowUserToDeleteRows = false;
+            dgvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTurnos.Location = new Point(15, 216);
+            dgvTurnos.Name = "dgvTurnos";
+            dgvTurnos.ReadOnly = true;
+            dgvTurnos.RowTemplate.Height = 25;
+            dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTurnos.Size = new Size(870, 270);
+            dgvTurnos.TabIndex = 3;
+            dgvTurnos.CellClick += dgvTurnos_CellClick;
+
+            lblNota.BackColor = Color.FromArgb(232, 244, 248);
+            lblNota.BorderStyle = BorderStyle.FixedSingle;
+            lblNota.Location = new Point(15, 495);
+            lblNota.Name = "lblNota";
+            lblNota.Padding = new Padding(6, 4, 6, 4);
+            lblNota.Size = new Size(760, 28);
+            lblNota.TabIndex = 4;
+            lblNota.Text = "Al cancelar, el turno vuelve a estado DISPONIBLE y se desasigna el paciente.";
+
+            btnSalir.BackColor = Color.FromArgb(100, 149, 180);
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(785, 491);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(100, 32);
+            btnSalir.TabIndex = 5;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(900, 535);
+            ControlBox = false;
+            Controls.Add(btnSalir);
+            Controls.Add(lblNota);
+            Controls.Add(dgvTurnos);
+            Controls.Add(grpFiltros);
+            Controls.Add(grpPaciente);
+            Controls.Add(lblTitulo);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormCancelarReservaMedica";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cancelar Reserva de Turno - Sistema SEPRISE";
+            grpPaciente.ResumeLayout(false);
+            grpPaciente.PerformLayout();
+            grpFiltros.ResumeLayout(false);
+            grpFiltros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
+            ResumeLayout(false);
         }
+
+        private Label lblTitulo;
+        private GroupBox grpPaciente;
+        private Label lblDniPaciente;
+        private TextBox txtDniPaciente;
+        private Button btnBuscarPaciente;
+        private Label lblPaciente;
+        private TextBox txtPaciente;
+        private GroupBox grpFiltros;
+        private CheckBox chkFecha;
+        private DateTimePicker dtpFecha;
+        private Button btnBuscar;
+        private DataGridView dgvTurnos;
+        private Label lblNota;
+        private Button btnSalir;
     }
 }
