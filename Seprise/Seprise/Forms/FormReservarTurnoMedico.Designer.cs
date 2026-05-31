@@ -30,7 +30,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
             SuspendLayout();
 
-            // lblTitulo
             lblTitulo.BackColor = Color.FromArgb(30, 107, 160);
             lblTitulo.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.White;
@@ -41,7 +40,6 @@
             lblTitulo.Text = "   Reservar turno médico";
             lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
 
-            // grpFiltros
             grpFiltros.Location = new Point(15, 62);
             grpFiltros.Name = "grpFiltros";
             grpFiltros.Size = new Size(870, 100);
@@ -49,7 +47,6 @@
             grpFiltros.TabStop = false;
             grpFiltros.Text = "Filtros de búsqueda";
 
-            // lblEspecialidad
             lblEspecialidad.AutoSize = true;
             lblEspecialidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblEspecialidad.Location = new Point(12, 24);
@@ -57,7 +54,6 @@
             lblEspecialidad.TabIndex = 0;
             lblEspecialidad.Text = "Especialidad:";
 
-            // cmbEspecialidad
             cmbEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEspecialidad.FormattingEnabled = true;
             cmbEspecialidad.Location = new Point(100, 21);
@@ -66,7 +62,6 @@
             cmbEspecialidad.TabIndex = 1;
             cmbEspecialidad.SelectedIndexChanged += cmbEspecialidad_SelectedIndexChanged;
 
-            // lblMedico
             lblMedico.AutoSize = true;
             lblMedico.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblMedico.Location = new Point(335, 24);
@@ -74,7 +69,6 @@
             lblMedico.TabIndex = 2;
             lblMedico.Text = "Médico:";
 
-            // cmbMedico
             cmbMedico.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMedico.FormattingEnabled = true;
             cmbMedico.Location = new Point(390, 21);
@@ -82,7 +76,6 @@
             cmbMedico.Size = new Size(280, 23);
             cmbMedico.TabIndex = 3;
 
-            // chkFecha
             chkFecha.AutoSize = true;
             chkFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             chkFecha.Location = new Point(12, 62);
@@ -92,7 +85,6 @@
             chkFecha.Text = "Fecha:";
             chkFecha.CheckedChanged += chkFecha_CheckedChanged;
 
-            // dtpFecha
             dtpFecha.CustomFormat = "dd/MM/yyyy";
             dtpFecha.Enabled = false;
             dtpFecha.Format = DateTimePickerFormat.Custom;
@@ -101,7 +93,6 @@
             dtpFecha.Size = new Size(140, 23);
             dtpFecha.TabIndex = 5;
 
-            // btnBuscar
             btnBuscar.BackColor = Color.FromArgb(30, 107, 160);
             btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatStyle = FlatStyle.Flat;
@@ -115,7 +106,6 @@
             btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
 
-            // btnPrimeraDisponible
             btnPrimeraDisponible.BackColor = Color.FromArgb(60, 140, 60);
             btnPrimeraDisponible.FlatAppearance.BorderSize = 0;
             btnPrimeraDisponible.FlatStyle = FlatStyle.Flat;
@@ -138,7 +128,6 @@
             grpFiltros.Controls.Add(btnBuscar);
             grpFiltros.Controls.Add(btnPrimeraDisponible);
 
-            // dgvTurnos
             dgvTurnos.AllowUserToAddRows = false;
             dgvTurnos.AllowUserToDeleteRows = false;
             dgvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -151,7 +140,6 @@
             dgvTurnos.TabIndex = 2;
             dgvTurnos.CellClick += dgvTurnos_CellClick;
 
-            // lblNota
             lblNota.BackColor = Color.FromArgb(232, 244, 248);
             lblNota.BorderStyle = BorderStyle.FixedSingle;
             lblNota.Location = new Point(15, 444);
@@ -161,7 +149,6 @@
             lblNota.TabIndex = 3;
             lblNota.Text = "Al reservar un turno se solicitará la búsqueda del paciente.";
 
-            // btnSalir
             btnSalir.BackColor = Color.FromArgb(100, 149, 180);
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;

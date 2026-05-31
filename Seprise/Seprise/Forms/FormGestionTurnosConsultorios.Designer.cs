@@ -13,8 +13,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
         private void InitializeComponent()
         {
             panelHeader = new Panel();
@@ -116,8 +114,6 @@
             panelBotones.ResumeLayout(false);
             ResumeLayout(false);
         }
-
-        #endregion
 
         private Panel panelHeader;
         private Label lblTitulo;
