@@ -6,6 +6,7 @@ using Seprise.entity;
 
 namespace Seprise
 {
+    
     public partial class FormGenerarHistoriaClinica : Form
     {
         [Browsable(false)]
@@ -37,6 +38,22 @@ namespace Seprise
             : this()
         {
             SetAtencion(pacienteId, medicoId, turnoConsultaId, pacienteNombre, medicoNombre, estadoTurno);
+            
+            // Si el formulario ya se abre con un paciente asignado desde la agenda, mostramos los datos inmediatamente
+            if (pacienteId > 0)
+            {
+                try
+                {
+                    var lista = new PacienteDao().listarTodos();
+                    var pac = lista.Find(p => p.Id == pacienteId);
+                    if (pac != null)
+                    {
+                        txtDni.Text = pac.Dni;
+                        lblDatosPacienteInfo.Text = $"Paciente: {pac.Apellido}, {pac.Nombre}\nDNI: {pac.Dni}";
+                    }
+                }
+                catch { }
+            }
         }
 
         public void SetAtencion(int pacienteId, int medicoId, int turnoConsultaId, string pacienteNombre, string medicoNombre, string estadoTurno)
@@ -46,7 +63,7 @@ namespace Seprise
             TurnoConsultaId = turnoConsultaId;
             try
             {
-                // seleccionar medico en el combo si está cargado
+                // Seleccionar médico en el combo si está cargado
                 for (int i = 0; i < cmbMedicos.Items.Count; i++)
                 {
                     if (cmbMedicos.Items[i] is ComboBoxItem it && it.Id == medicoId)
@@ -106,6 +123,8 @@ namespace Seprise
                 return;
             }
 
+            TurnoConsultaDao turnoDao = new TurnoConsultaDao();
+            turnoDao.atenderTurno(TurnoConsultaId);
             MessageBox.Show("Historia clínica guardada y atención finalizada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -128,11 +147,6 @@ namespace Seprise
             return true;
         }
 
-        private void btnSolicitarEstudio_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Abriendo formulario de solicitud de estudio...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         private void btnBuscarPaciente_Click(object sender, EventArgs e)
         {
             try
@@ -148,10 +162,28 @@ namespace Seprise
                 if (paciente == null)
                 {
                     MessageBox.Show($"No se encontró paciente con DNI {dni}.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblDatosPacienteInfo.Text = "Los datos del paciente aparecerán aquí\r\nBuscá por DNI para ver la información del paciente.";
                     PacienteId = 0;
+                    TurnoConsultaId = 0;
                     return;
                 }
 
+                // Asignamos el ID del paciente hallado y actualizamos la tarjeta celeste
+                PacienteId = paciente.Id;
+                lblDatosPacienteInfo.Text = $"Paciente: {paciente.Apellido}, {paciente.Nombre}\nDNI: {paciente.Dni}";
+
+                // Buscamos el turno activo 'RECEPCIONADO' del día de la fecha para este paciente
+                var dtTurnos = new TurnoConsultaDao().buscarRecepcionadosPorPaciente(paciente.Id, null);
+                if (dtTurnos != null && dtTurnos.Rows.Count > 0)
+                {
+                    TurnoConsultaId = Convert.ToInt32(dtTurnos.Rows[0]["id"]);
+                }
+                else
+                {
+                    MessageBox.Show("El paciente no registra turnos en estado 'RECEPCIONADO' para el día de hoy.\nNo se puede generar la evolución clínica sin un turno válido.", 
+                                    "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TurnoConsultaId = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -174,6 +206,11 @@ namespace Seprise
             }
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         // Helper class para almacenar Id y texto en el ComboBox
         private class ComboBoxItem
         {
@@ -181,10 +218,6 @@ namespace Seprise
             public string Text { get; }
             public ComboBoxItem(int id, string text) { Id = id; Text = text; }
             public override string ToString() => Text;
-        }
-         private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

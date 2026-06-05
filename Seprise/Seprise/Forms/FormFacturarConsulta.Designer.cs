@@ -382,7 +382,7 @@
             this.btnEmitir.ForeColor = System.Drawing.Color.White;
             this.btnEmitir.Location = new System.Drawing.Point(20, 550);
             this.btnEmitir.Size = new System.Drawing.Size(370, 38);
-            this.btnEmitir.Text = "📄 Emitir factura";
+            this.btnEmitir.Text = "COBRAR";
             this.btnEmitir.UseVisualStyleBackColor = false;
             this.btnEmitir.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             this.btnEmitir.Click += new System.EventHandler(this.btnEmitir_Click);

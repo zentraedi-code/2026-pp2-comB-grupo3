@@ -10,6 +10,7 @@
         private System.Windows.Forms.Panel pnlMotivo = null!;
         private System.Windows.Forms.Panel pnlDiagnostico = null!;
         private System.Windows.Forms.Panel pnlIndicaciones = null!;
+        
         // Componentes de la interfaz
         private System.Windows.Forms.Label lblTitulo = null!;
         private System.Windows.Forms.Label lblSubtitulo = null!;
@@ -31,6 +32,10 @@
         
         private System.Windows.Forms.Button btnGuardar = null!;
 
+        // Nuevos componentes para mostrar los datos del paciente (Estilo Alerta Celeste)
+        private System.Windows.Forms.Panel pnlInfoPacienteCard = null!;
+        private System.Windows.Forms.Label lblDatosPacienteInfo = null!;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -47,8 +52,14 @@
             this.lblSubtitulo = new System.Windows.Forms.Label();
             
             this.pnlDatosAtencion = new System.Windows.Forms.Panel();
+            this.lblDatosAtencion = new System.Windows.Forms.Label();
             this.lblPaciente = new System.Windows.Forms.Label();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.lblMedico = new System.Windows.Forms.Label();
+            this.cmbMedicos = new System.Windows.Forms.ComboBox();
+            this.pnlInfoPacienteCard = new System.Windows.Forms.Panel();
+            this.lblDatosPacienteInfo = new System.Windows.Forms.Label();
             
             this.pnlMotivo = new System.Windows.Forms.Panel();
             this.lblMotivo = new System.Windows.Forms.Label();
@@ -60,7 +71,6 @@
             
             this.pnlIndicaciones = new System.Windows.Forms.Panel();
             this.lblIndicaciones = new System.Windows.Forms.Label();
-            this.lblDatosAtencion = new System.Windows.Forms.Label();
             this.txtIndicaciones = new System.Windows.Forms.TextBox();
             
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -70,14 +80,15 @@
 
             this.pnlHeader.SuspendLayout();
             this.pnlDatosAtencion.SuspendLayout();
+            this.pnlInfoPacienteCard.SuspendLayout();
             this.pnlMotivo.SuspendLayout();
-            this.pnlFooter.SuspendLayout();
             this.pnlDiagnostico.SuspendLayout();
             this.pnlIndicaciones.SuspendLayout();
+            this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
 
             // =================================================================
-            // pnlHeader (Franja Superior - Color Personalizado)
+            // pnlHeader (Franja Superior)
             // =================================================================
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(0, 150, 136);
             this.pnlHeader.Controls.Add(this.lblTitulo);
@@ -85,7 +96,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(800, 100);
+            this.pnlHeader.Size = new System.Drawing.Size(900, 100);
             this.pnlHeader.TabIndex = 0;
 
             this.lblTitulo.AutoSize = true;
@@ -102,16 +113,20 @@
             this.lblSubtitulo.Text = "El médico atiende al paciente, registra la historia clínica y finaliza la atención.";
 
             // =================================================================
-            // pnlDatosAtencion (Agrupador: Datos de la Atención)
+            // pnlDatosAtencion (Agrupador: Datos de la Atención - Mejorado)
             // =================================================================
             this.pnlDatosAtencion.BackColor = System.Drawing.Color.White;
             this.pnlDatosAtencion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlDatosAtencion.Controls.Add(this.lblDatosAtencion);
             this.pnlDatosAtencion.Controls.Add(this.lblPaciente);
+            this.pnlDatosAtencion.Controls.Add(this.txtDni);
+            this.pnlDatosAtencion.Controls.Add(this.btnBuscarPaciente);
             this.pnlDatosAtencion.Controls.Add(this.lblMedico);
+            this.pnlDatosAtencion.Controls.Add(this.cmbMedicos);
+            this.pnlDatosAtencion.Controls.Add(this.pnlInfoPacienteCard);
             this.pnlDatosAtencion.Location = new System.Drawing.Point(24, 120);
             this.pnlDatosAtencion.Name = "pnlDatosAtencion";
-            this.pnlDatosAtencion.Size = new System.Drawing.Size(757, 90);
+            this.pnlDatosAtencion.Size = new System.Drawing.Size(857, 165); // Incrementado para albergar el recuadro
             this.pnlDatosAtencion.TabIndex = 1;
 
             this.lblDatosAtencion.AutoSize = true;
@@ -126,9 +141,6 @@
             this.lblPaciente.Location = new System.Drawing.Point(16, 34);
             this.lblPaciente.Text = "Paciente";
 
-            this.txtDni = new System.Windows.Forms.TextBox();
-            this.btnBuscarPaciente = new System.Windows.Forms.Button();
-
             this.txtDni.BackColor = System.Drawing.Color.White;
             this.txtDni.Location = new System.Drawing.Point(16, 53);
             this.txtDni.Name = "txtDni";
@@ -139,15 +151,12 @@
             this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarPaciente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.btnBuscarPaciente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(310, 51);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(310, 52);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(80, 24);
-            this.btnBuscarPaciente.Text = "Buscar";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(80, 25);
+            this.btnBuscarPaciente.Text = "🔍 Buscar";
             this.btnBuscarPaciente.UseVisualStyleBackColor = false;
             this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
-
-            this.pnlDatosAtencion.Controls.Add(this.txtDni);
-            this.pnlDatosAtencion.Controls.Add(this.btnBuscarPaciente);
 
             this.lblMedico.AutoSize = true;
             this.lblMedico.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -155,25 +164,37 @@
             this.lblMedico.Location = new System.Drawing.Point(447, 34);
             this.lblMedico.Text = "Médico";
 
-            this.cmbMedicos = new System.Windows.Forms.ComboBox();
             this.cmbMedicos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMedicos.Location = new System.Drawing.Point(450, 53);
             this.cmbMedicos.Name = "cmbMedicos";
             this.cmbMedicos.Size = new System.Drawing.Size(280, 23);
             this.cmbMedicos.SelectedIndexChanged += new System.EventHandler(this.cmbMedicos_SelectedIndexChanged);
 
-            this.pnlDatosAtencion.Controls.Add(this.cmbMedicos);
+            // Tarjeta Alerta Celeste de Información del Paciente
+            this.pnlInfoPacienteCard.BackColor = System.Drawing.Color.FromArgb(235, 243, 255);
+            this.pnlInfoPacienteCard.Controls.Add(this.lblDatosPacienteInfo);
+            this.pnlInfoPacienteCard.Location = new System.Drawing.Point(16, 92);
+            this.pnlInfoPacienteCard.Name = "pnlInfoPacienteCard";
+            this.pnlInfoPacienteCard.Size = new System.Drawing.Size(814, 58);
+            this.pnlInfoPacienteCard.TabIndex = 6;
+
+            this.lblDatosPacienteInfo.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblDatosPacienteInfo.ForeColor = System.Drawing.Color.FromArgb(0, 130, 115);
+            this.lblDatosPacienteInfo.Location = new System.Drawing.Point(12, 8);
+            this.lblDatosPacienteInfo.Name = "lblDatosPacienteInfo";
+            this.lblDatosPacienteInfo.Size = new System.Drawing.Size(690, 42);
+            this.lblDatosPacienteInfo.Text = "Los datos del paciente aparecerán aquí\r\nBuscá por DNI para ver la información del paciente.";
 
             // =================================================================
-            // pnlMotivo (Agrupador: Motivo de consulta)
+            // pnlMotivo (Agrupador: Motivo de consulta - Desplazado)
             // =================================================================
             this.pnlMotivo.BackColor = System.Drawing.Color.White;
             this.pnlMotivo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlMotivo.Controls.Add(this.lblMotivo);
             this.pnlMotivo.Controls.Add(this.txtMotivo);
-            this.pnlMotivo.Location = new System.Drawing.Point(24, 225);
+            this.pnlMotivo.Location = new System.Drawing.Point(24, 300);
             this.pnlMotivo.Name = "pnlMotivo";
-            this.pnlMotivo.Size = new System.Drawing.Size(757, 115);
+            this.pnlMotivo.Size = new System.Drawing.Size(857, 95);
             this.pnlMotivo.TabIndex = 2;
 
             this.lblMotivo.AutoSize = true;
@@ -187,18 +208,18 @@
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.PlaceholderText = "Describe el motivo de consulta...";
             this.txtMotivo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMotivo.Size = new System.Drawing.Size(740, 65);
+            this.txtMotivo.Size = new System.Drawing.Size(800, 50);
 
             // =================================================================
-            // pnlDiagnostico (Agrupador: Diagnóstico / Evolución)
+            // pnlDiagnostico (Agrupador: Diagnóstico / Evolución - Desplazado)
             // =================================================================
             this.pnlDiagnostico.BackColor = System.Drawing.Color.White;
             this.pnlDiagnostico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlDiagnostico.Controls.Add(this.lblDiagnostico);
             this.pnlDiagnostico.Controls.Add(this.txtDiagnostico);
-            this.pnlDiagnostico.Location = new System.Drawing.Point(24, 355);
+            this.pnlDiagnostico.Location = new System.Drawing.Point(24, 410);
             this.pnlDiagnostico.Name = "pnlDiagnostico";
-            this.pnlDiagnostico.Size = new System.Drawing.Size(757, 115);
+            this.pnlDiagnostico.Size = new System.Drawing.Size(857, 95);
             this.pnlDiagnostico.TabIndex = 3;
 
             this.lblDiagnostico.AutoSize = true;
@@ -212,18 +233,18 @@
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.PlaceholderText = "Carga de historia clínica...";
             this.txtDiagnostico.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDiagnostico.Size = new System.Drawing.Size(740, 65);
+            this.txtDiagnostico.Size = new System.Drawing.Size(800, 50);
 
             // =================================================================
-            // pnlIndicaciones (Agrupador: Indicaciones)
+            // pnlIndicaciones (Agrupador: Indicaciones - Desplazado)
             // =================================================================
             this.pnlIndicaciones.BackColor = System.Drawing.Color.White;
             this.pnlIndicaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlIndicaciones.Controls.Add(this.lblIndicaciones);
             this.pnlIndicaciones.Controls.Add(this.txtIndicaciones);
-            this.pnlIndicaciones.Location = new System.Drawing.Point(24, 485);
+            this.pnlIndicaciones.Location = new System.Drawing.Point(24, 520);
             this.pnlIndicaciones.Name = "pnlIndicaciones";
-            this.pnlIndicaciones.Size = new System.Drawing.Size(757, 115);
+            this.pnlIndicaciones.Size = new System.Drawing.Size(857, 99);
             this.pnlIndicaciones.TabIndex = 4;
 
             this.lblIndicaciones.AutoSize = true;
@@ -237,8 +258,7 @@
             this.txtIndicaciones.Name = "txtIndicaciones";
             this.txtIndicaciones.PlaceholderText = "Tratamiento, recomendaciones o medicación...";
             this.txtIndicaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtIndicaciones.Size = new System.Drawing.Size(740, 65);
-
+            this.txtIndicaciones.Size = new System.Drawing.Size(800, 50);
 
             // =================================================================
             // Botones de Acción
@@ -247,9 +267,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(24, 610);
+            this.btnGuardar.Location = new System.Drawing.Point(24, 628);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(757, 45);
+            this.btnGuardar.Size = new System.Drawing.Size(857, 45);
             this.btnGuardar.Text = "💾 Guardar historia y finalizar atención";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -258,8 +278,10 @@
             this.pnlFooter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlFooter.Controls.Add(this.btnSalir);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 520);
-            this.pnlFooter.Size = new System.Drawing.Size(800, 63);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 680);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(900, 63);
+            this.pnlFooter.TabIndex = 5;
 
             // btnSalir
             this.btnSalir.BackColor = System.Drawing.Color.White;
@@ -268,7 +290,8 @@
             this.btnSalir.FlatAppearance.BorderSize = 1;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(80, 80, 80);
-            this.btnSalir.Location = new System.Drawing.Point(650, 12);
+            this.btnSalir.Location = new System.Drawing.Point(750, 8);
+            this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(120, 38);
             this.btnSalir.Text = "🚪 Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -280,10 +303,9 @@
             // =================================================================
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(240, 244, 248); // Fondo gris claro sutil
-            this.ClientSize = new System.Drawing.Size(800, 730);
+            this.BackColor = System.Drawing.Color.FromArgb(240, 244, 248);
+            this.ClientSize = new System.Drawing.Size(900, 745); // Redimensionado
             
-            // Inyección de controles ordenados
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pnlIndicaciones);
             this.Controls.Add(this.pnlDiagnostico);
@@ -302,12 +324,14 @@
             this.pnlHeader.PerformLayout();
             this.pnlDatosAtencion.ResumeLayout(false);
             this.pnlDatosAtencion.PerformLayout();
+            this.pnlInfoPacienteCard.ResumeLayout(false);
             this.pnlMotivo.ResumeLayout(false);
             this.pnlMotivo.PerformLayout();
             this.pnlDiagnostico.ResumeLayout(false);
             this.pnlDiagnostico.PerformLayout();
             this.pnlIndicaciones.ResumeLayout(false);
             this.pnlIndicaciones.PerformLayout();
+            this.pnlFooter.ResumeLayout(false);
             this.ResumeLayout(false);
         }
     }

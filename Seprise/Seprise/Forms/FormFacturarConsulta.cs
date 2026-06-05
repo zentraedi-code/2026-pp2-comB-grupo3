@@ -294,9 +294,6 @@ namespace Seprise
                     return;
                 }
 
-                TurnoConsultaDao turnoDao = new TurnoConsultaDao();
-                turnoDao.atenderTurno(turnoIdSeleccionado.Value);
-
                 string[] lineasPaciente = lblDatosPacienteInfo.Text.Split('\n');
                 ultimoPacienteEmitido = lineasPaciente[0].Replace("Paciente: ", "").Trim();
                 ultimoDniEmitido = lineasPaciente.Length > 1 ? lineasPaciente[1].Replace("DNI: ", "").Trim() : txtDniPaciente.Text;
