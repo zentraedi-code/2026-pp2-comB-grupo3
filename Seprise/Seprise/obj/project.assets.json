@@ -1,7 +1,7 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
-    "net10.0-windows": {
+    "net10.0-windows7.0": {
       "BouncyCastle.Cryptography/2.6.2": {
         "type": "package",
         "compile": {
@@ -286,36 +286,33 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net10.0-windows": [
+    "net10.0-windows7.0": [
       "MySql.Data >= 9.7.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mpereira\\.nuget\\packages\\": {}
+    "C:\\Users\\emili\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
+      "projectUniqueName": "c:\\Users\\emili\\Desktop\\2026-pp2-comB-grupo3- NO\\Seprise\\Seprise\\Seprise.csproj",
       "projectName": "Seprise",
-      "projectPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
-      "packagesPath": "C:\\Users\\mpereira\\.nuget\\packages\\",
-      "outputPath": "C:\\documents-personal\\terciario\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\obj\\",
+      "projectPath": "c:\\Users\\emili\\Desktop\\2026-pp2-comB-grupo3- NO\\Seprise\\Seprise\\Seprise.csproj",
+      "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\emili\\Desktop\\2026-pp2-comB-grupo3- NO\\Seprise\\Seprise\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mpereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net10.0-windows": {
-          "framework": "net10.0-windows7.0",
+        "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
           "projectReferences": {}
         }
@@ -330,11 +327,10 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
-      "net10.0-windows": {
-        "framework": "net10.0-windows7.0",
+      "net10.0-windows7.0": {
         "targetAlias": "net10.0-windows",
         "dependencies": {
           "MySql.Data": {
@@ -361,7 +357,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.108/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

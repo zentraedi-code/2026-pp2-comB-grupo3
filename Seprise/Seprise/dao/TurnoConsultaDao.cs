@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using ClubDeportivo.service;
@@ -124,6 +124,111 @@ namespace Seprise.dao
 
                 int resultado = Connection.ejecutarComandoSQL(sql);
                 return resultado > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public System.Data.DataTable buscarTurnosPorPacienteEnFecha(int pacienteId, DateTime fecha)
+        {
+            try
+            {
+                string fechaStr = fecha.ToString("yyyy-MM-dd");
+                string sql = "SELECT tc.id, tc.fecha_hora_turno, " +
+                             "CONCAT(m.apellido, ', ', m.nombre) AS medico, " +
+                             "c.nombre AS consultorio, e.nombre AS especialidad, tc.estado, p.dni AS dni, " +
+                             "COALESCE(m.importe_consulta, 0) AS importe_consulta " +
+                             "FROM turno_consulta tc " +
+                             "INNER JOIN agenda_medica am ON tc.agenda_medica_id = am.id " +
+                             "INNER JOIN medico m ON am.medico_id = m.id " +
+                             "INNER JOIN consultorio c ON am.consultorio_id = c.id " +
+                             "LEFT JOIN especialidad e ON m.especialidad_id = e.id " +
+                             "LEFT JOIN paciente p ON tc.paciente_id = p.id " +
+                             $"WHERE tc.paciente_id = {pacienteId} AND DATE(tc.fecha_hora_turno) = '{fechaStr}' " +
+                             $"AND tc.estado IN ('{EstadoTurnoConsulta.RESERVADO}', '{EstadoTurnoConsulta.RECEPCIONADO}') " +
+                             "ORDER BY tc.fecha_hora_turno";
+
+                return Connection.ejecutarSQL(sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public System.Data.DataTable buscarRecepcionados()
+        {
+            try
+            {
+                string sql = "SELECT tc.id, tc.paciente_id, CONCAT(p.apellido, ', ', p.nombre) AS paciente, p.dni AS dni, " +
+                             "CONCAT(m.apellido, ', ', m.nombre) AS medico, COALESCE(m.importe_consulta,0) AS importe_consulta, tc.fecha_hora_turno " +
+                             "FROM turno_consulta tc " +
+                             "INNER JOIN agenda_medica am ON tc.agenda_medica_id = am.id " +
+                             "INNER JOIN medico m ON am.medico_id = m.id " +
+                             "INNER JOIN paciente p ON tc.paciente_id = p.id " +
+                             $"WHERE tc.estado = '{EstadoTurnoConsulta.RECEPCIONADO}' " +
+                             "ORDER BY tc.fecha_hora_turno";
+
+                return Connection.ejecutarSQL(sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public System.Data.DataTable buscarRecepcionadosPorPaciente(int pacienteId, DateTime? fecha)
+        {
+            try
+            {
+                string sql = "SELECT tc.id, tc.paciente_id, p.apellido, p.nombre, p.dni AS dni, " +
+                             "CONCAT(m.apellido, ', ', m.nombre) AS medico, COALESCE(m.importe_consulta,0) AS importe_consulta, tc.fecha_hora_turno " +
+                             "FROM turno_consulta tc " +
+                             "INNER JOIN agenda_medica am ON tc.agenda_medica_id = am.id " +
+                             "INNER JOIN medico m ON am.medico_id = m.id " +
+                             "INNER JOIN paciente p ON tc.paciente_id = p.id " +
+                             $"WHERE tc.paciente_id = {pacienteId} AND tc.estado = '{EstadoTurnoConsulta.RECEPCIONADO}' ";
+
+                if (fecha.HasValue)
+                    sql += $" AND DATE(tc.fecha_hora_turno) = '{fecha.Value:yyyy-MM-dd}' ";
+
+                sql += "ORDER BY tc.fecha_hora_turno";
+
+                return Connection.ejecutarSQL(sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool confirmarAsistencia(int turnoId)
+        {
+            try
+            {
+                string sql = $"UPDATE turno_consulta SET estado = '{EstadoTurnoConsulta.RECEPCIONADO}' " +
+                             $"WHERE id = {turnoId} AND estado = '{EstadoTurnoConsulta.RESERVADO}'";
+
+                int res = Connection.ejecutarComandoSQL(sql);
+                return res > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool atenderTurno(int turnoId)
+        {
+            try
+            {
+                string sql = $"UPDATE turno_consulta SET estado = '{EstadoTurnoConsulta.ATENDIDO}' " +
+                             $"WHERE id = {turnoId} AND (estado = '{EstadoTurnoConsulta.RECEPCIONADO}' OR estado = '{EstadoTurnoConsulta.RESERVADO}')";
+
+                int res = Connection.ejecutarComandoSQL(sql);
+                return res > 0;
             }
             catch (Exception)
             {
