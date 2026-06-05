@@ -32,8 +32,6 @@
         private System.Windows.Forms.TextBox txtImporte;
         private System.Windows.Forms.Label lblMedioPago;
         private System.Windows.Forms.ComboBox cmbMedioPago;
-        private System.Windows.Forms.Label lblEstadoFactura;
-        private System.Windows.Forms.TextBox txtEstadoFactura;
         private System.Windows.Forms.Label lblObraSocialNombre;
         private System.Windows.Forms.TextBox txtObraSocialNombre;
         private System.Windows.Forms.Label lblNumeroSocio;
@@ -91,8 +89,6 @@
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.lblMedioPago = new System.Windows.Forms.Label();
             this.cmbMedioPago = new System.Windows.Forms.ComboBox();
-            this.lblEstadoFactura = new System.Windows.Forms.Label();
-            this.txtEstadoFactura = new System.Windows.Forms.TextBox();
             this.lblObraSocialNombre = new System.Windows.Forms.Label();
             this.txtObraSocialNombre = new System.Windows.Forms.TextBox();
             this.lblNumeroSocio = new System.Windows.Forms.Label();
@@ -242,8 +238,6 @@
             this.pnlFacturacion.Controls.Add(this.lblSeccionFacturacion);
             this.pnlFacturacion.Controls.Add(this.lblMedico);
             this.pnlFacturacion.Controls.Add(this.txtMedico);
-            this.pnlFacturacion.Controls.Add(this.lblConcepto);
-            this.pnlFacturacion.Controls.Add(this.txtConcepto);
             this.pnlFacturacion.Controls.Add(this.lblImporte);
             this.pnlFacturacion.Controls.Add(this.txtImporte);
             this.pnlFacturacion.Controls.Add(this.lblMedioPago);
@@ -252,10 +246,10 @@
             this.pnlFacturacion.Controls.Add(this.txtObraSocialNombre);
             this.pnlFacturacion.Controls.Add(this.lblNumeroSocio);
             this.pnlFacturacion.Controls.Add(this.txtNumeroSocio);
+            this.pnlFacturacion.Controls.Add(this.lblConcepto);
+            this.pnlFacturacion.Controls.Add(this.txtConcepto);
             this.pnlFacturacion.Controls.Add(this.lblNumeroCobertura);
             this.pnlFacturacion.Controls.Add(this.txtNumeroCobertura);
-            this.pnlFacturacion.Controls.Add(this.lblEstadoFactura);
-            this.pnlFacturacion.Controls.Add(this.txtEstadoFactura);
             this.pnlFacturacion.Location = new System.Drawing.Point(20, 310);
             this.pnlFacturacion.Size = new System.Drawing.Size(760, 230);
             this.pnlFacturacion.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
@@ -297,7 +291,6 @@
             this.txtConcepto.Location = new System.Drawing.Point(400, 68);
             this.txtConcepto.Size = new System.Drawing.Size(340, 25);
             this.txtConcepto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtConcepto.Text = "Consulta médica";
             this.txtConcepto.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
 
             // lblMedioPago
@@ -315,35 +308,18 @@
             this.cmbMedioPago.Items.Add("Efectivo");
             this.cmbMedioPago.SelectedIndex = 0; 
 
-            // lblEstadoFactura
-            this.lblEstadoFactura.AutoSize = true;
-            this.lblEstadoFactura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblEstadoFactura.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEstadoFactura.Location = new System.Drawing.Point(267, 112);
-            this.lblEstadoFactura.Text = "Estado factura";
-
-            // txtEstadoFactura
-            this.txtEstadoFactura.BackColor = System.Drawing.Color.FromArgb(242, 243, 245);
-            this.txtEstadoFactura.Enabled = false;
-            this.txtEstadoFactura.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtEstadoFactura.Location = new System.Drawing.Point(270, 132);
-            this.txtEstadoFactura.Size = new System.Drawing.Size(220, 25);
-            this.txtEstadoFactura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEstadoFactura.Text = "PENDIENTE";
-            this.txtEstadoFactura.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-
             // lblObraSocialNombre
             this.lblObraSocialNombre.AutoSize = true;
             this.lblObraSocialNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblObraSocialNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.lblObraSocialNombre.Location = new System.Drawing.Point(517, 112);
+            this.lblObraSocialNombre.Location = new System.Drawing.Point(267, 112);
             this.lblObraSocialNombre.Text = "Obra social";
             this.lblObraSocialNombre.Visible = false;
 
             // txtObraSocialNombre
             this.txtObraSocialNombre.BackColor = System.Drawing.Color.FromArgb(242, 243, 245);
             this.txtObraSocialNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtObraSocialNombre.Location = new System.Drawing.Point(520, 132);
+            this.txtObraSocialNombre.Location = new System.Drawing.Point(270, 132);
             this.txtObraSocialNombre.Size = new System.Drawing.Size(220, 25);
             this.txtObraSocialNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObraSocialNombre.Visible = false;
@@ -352,14 +328,14 @@
             this.lblNumeroSocio.AutoSize = true;
             this.lblNumeroSocio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblNumeroSocio.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNumeroSocio.Location = new System.Drawing.Point(17, 170 );
+            this.lblNumeroSocio.Location = new System.Drawing.Point(517, 112);
             this.lblNumeroSocio.Text = "Número de socio";
             this.lblNumeroSocio.Visible = false;
 
             // txtNumeroSocio
             this.txtNumeroSocio.BackColor = System.Drawing.Color.FromArgb(242, 243, 245);
             this.txtNumeroSocio.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNumeroSocio.Location = new System.Drawing.Point(20, 190);
+            this.txtNumeroSocio.Location = new System.Drawing.Point(520, 132);
             this.txtNumeroSocio.Size = new System.Drawing.Size(220, 25);
             this.txtNumeroSocio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumeroSocio.Visible = false;
@@ -368,14 +344,14 @@
             this.lblNumeroCobertura.AutoSize = true;
             this.lblNumeroCobertura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblNumeroCobertura.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNumeroCobertura.Location = new System.Drawing.Point(267, 170);
+            this.lblNumeroCobertura.Location = new System.Drawing.Point(17, 170);
             this.lblNumeroCobertura.Text = "Número de cobertura";
             this.lblNumeroCobertura.Visible = false;
 
             // txtNumeroCobertura
             this.txtNumeroCobertura.BackColor = System.Drawing.Color.FromArgb(242, 243, 245);
             this.txtNumeroCobertura.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNumeroCobertura.Location = new System.Drawing.Point(270, 190);
+            this.txtNumeroCobertura.Location = new System.Drawing.Point(20, 190);
             this.txtNumeroCobertura.Size = new System.Drawing.Size(220, 25);
             this.txtNumeroCobertura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumeroCobertura.Visible = false;

@@ -179,30 +179,31 @@ namespace Seprise.dao
             }
         }
 
-        public System.Data.DataTable buscarRecepcionadosPorPaciente(int pacienteId, DateTime? fecha)
+       public DataTable buscarRecepcionadosPorPaciente(int pacienteId, string? parametroExtra = null)
         {
             try
             {
-                string sql = "SELECT tc.id, tc.paciente_id, p.apellido, p.nombre, p.dni AS dni, " +
-                             "CONCAT(m.apellido, ', ', m.nombre) AS medico, COALESCE(m.importe_consulta,0) AS importe_consulta, tc.fecha_hora_turno " +
-                             "FROM turno_consulta tc " +
-                             "INNER JOIN agenda_medica am ON tc.agenda_medica_id = am.id " +
-                             "INNER JOIN medico m ON am.medico_id = m.id " +
-                             "INNER JOIN paciente p ON tc.paciente_id = p.id " +
-                             $"WHERE tc.paciente_id = {pacienteId} AND tc.estado = '{EstadoTurnoConsulta.RECEPCIONADO}' ";
+                // Añadimos el JOIN con médico y especialidad para traer la columna que C# extrae con row["especialidad"]
+                string sql = @"
+                    SELECT 
+                        t.id, 
+                        CONCAT(m.apellido, ', ', m.nombre) AS medico, 
+                        e.nombre AS especialidad, 
+                        m.importe_consulta AS importe_consulta
+                    FROM turno_consulta t
+                    INNER JOIN agenda_medica a ON t.agenda_medica_id = a.id
+                    INNER JOIN medico m ON a.medico_id = m.id
+                    INNER JOIN especialidad e ON m.especialidad_id = e.id
+                    WHERE t.paciente_id = " + pacienteId + " AND t.estado = 'RECEPCIONADO'";
 
-                if (fecha.HasValue)
-                    sql += $" AND DATE(tc.fecha_hora_turno) = '{fecha.Value:yyyy-MM-dd}' ";
-
-                sql += "ORDER BY tc.fecha_hora_turno";
-
-                return Connection.ejecutarSQL(sql);
+                // Reemplaza esto por el método de conexión que uses en ese DAO
+                return Connection.ejecutarSQL(sql); 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
-        }
+        } 
 
         public bool confirmarAsistencia(int turnoId)
         {

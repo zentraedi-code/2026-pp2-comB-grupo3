@@ -40,7 +40,6 @@ namespace Seprise
                     txtPaciente.Clear();
                     pacienteSeleccionado = null;
                     btnConfirmarAsistencia.Enabled = false;
-                    pnlResultados.Controls.Clear();
                     return;
                 }
 
@@ -53,7 +52,6 @@ namespace Seprise
                     txtPaciente.Text = $"{paciente.Nombre} {paciente.Apellido}, no tiene turno para la fecha seleccionada.";
                     lblPacientePlaceholder.Visible = false;
                     btnConfirmarAsistencia.Enabled = false;
-                    pnlResultados.Controls.Clear();
                     return;
                 }
 
@@ -88,8 +86,7 @@ namespace Seprise
                                        $"Horario: {fechaHora:HH:mm}\r\n" +
                                        $"Médico: {medico}\r\n" +
                                        $"Especialidad: {especialidad}\r\n" +
-                                       $"Consultorio: {consultorio}\r\n" +
-                                       $"Estado: {estadoTurno}";
+                                       $"Consultorio: {consultorio}\r\n";
                 }
                 else if (recepcionadoRow != null)
                 {
@@ -103,7 +100,6 @@ namespace Seprise
                 }
 
                 lblPacientePlaceholder.Visible = false;
-                pnlResultados.Controls.Clear();
             }
             catch (Exception ex)
             {
@@ -117,7 +113,6 @@ namespace Seprise
             {
                 Location = new System.Drawing.Point(10, yPos),
                 Size = new System.Drawing.Size(760, 100),
-                BackColor = pnlResultados.BackColor,
                 BorderStyle = BorderStyle.None,
                 Tag = turnoId
             };
@@ -231,7 +226,6 @@ namespace Seprise
                     pacienteSeleccionado = null;
                     btnConfirmarAsistencia.Enabled = false;
                     txtDniPaciente.Clear();
-                    pnlResultados.Controls.Clear();
                     lblMensajes.Text = "Paciente confirmado. Ingrese un nuevo DNI.";
                 }
                 else

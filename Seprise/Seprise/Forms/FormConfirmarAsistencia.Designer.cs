@@ -31,7 +31,6 @@
         private System.Windows.Forms.TextBox txtPaciente;
 
         // Resultados de búsqueda
-        private System.Windows.Forms.Panel pnlResultados;
         private System.Windows.Forms.Label lblMensajes;
 
         // Botón de Acción Principal
@@ -68,7 +67,6 @@
             this.lblSeccionPaciente = new System.Windows.Forms.Label();
             this.pnlInfoPacienteBox = new System.Windows.Forms.Panel();
             this.txtPaciente = new System.Windows.Forms.TextBox();
-            this.pnlResultados = new System.Windows.Forms.Panel();
             this.lblPacientePlaceholder = new System.Windows.Forms.Label();
             this.btnConfirmarAsistencia = new System.Windows.Forms.Button();
             this.pnlFooter = new System.Windows.Forms.Panel();
@@ -168,11 +166,10 @@
             // --- PNLCARDPACIENTE (Módulo inferior de resultados de paciente) ---
             this.pnlCardPaciente.BackColor = System.Drawing.Color.White;
             this.pnlCardPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pnlCardPaciente.Controls.Add(this.btnConfirmarAsistencia);
             this.pnlCardPaciente.Controls.Add(this.pnlInfoPacienteBox);
             this.pnlCardPaciente.Controls.Add(this.lblSeccionPaciente);
             this.pnlCardPaciente.Location = new System.Drawing.Point(24, 295);
-            this.pnlCardPaciente.Size = new System.Drawing.Size(650, 280);
+            this.pnlCardPaciente.Size = new System.Drawing.Size(650, 160);
 
             this.lblSeccionPaciente.AutoSize = true;
             this.lblSeccionPaciente.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -186,7 +183,7 @@
             this.pnlInfoPacienteBox.Controls.Add(this.txtPaciente);
             this.pnlInfoPacienteBox.Controls.Add(this.lblPacientePlaceholder);
             this.pnlInfoPacienteBox.Location = new System.Drawing.Point(14, 38);
-            this.pnlInfoPacienteBox.Size = new System.Drawing.Size(650, 85);
+            this.pnlInfoPacienteBox.Size = new System.Drawing.Size(650, 135);
 
             // txtPaciente (muestra nombre del paciente seleccionado)
             this.txtPaciente.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular);
@@ -197,7 +194,7 @@
             this.txtPaciente.Enabled = false;
             this.txtPaciente.TabStop = false;
             this.txtPaciente.Multiline = true;
-            this.txtPaciente.Size = new System.Drawing.Size(650, 85);
+            this.txtPaciente.Size = new System.Drawing.Size(650, 135);
             this.txtPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPaciente.Text = string.Empty;
             this.txtPaciente.BackColor = System.Drawing.Color.White;
@@ -218,20 +215,11 @@
             this.btnConfirmarAsistencia.FlatAppearance.BorderSize = 0;
             this.btnConfirmarAsistencia.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnConfirmarAsistencia.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarAsistencia.Location = new System.Drawing.Point(18, 125);
-            this.btnConfirmarAsistencia.Size = new System.Drawing.Size(615, 45);
+            this.btnConfirmarAsistencia.Location = new System.Drawing.Point(24, 465);
+            this.btnConfirmarAsistencia.Size = new System.Drawing.Size(650, 45);
             this.btnConfirmarAsistencia.Text = "✔️  Confirmar asistencia del día";
             this.btnConfirmarAsistencia.UseVisualStyleBackColor = false;
             this.btnConfirmarAsistencia.Enabled = false;
-
-            // pnlResultados (panel para tarjetas de turnos encontrados)
-            this.pnlResultados.AutoScroll = true;
-            this.pnlResultados.BackColor = azulClaroBg;
-            this.pnlResultados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pnlResultados.Location = new System.Drawing.Point(18, 180);
-            this.pnlResultados.Name = "pnlResultados";
-            this.pnlResultados.Size = new System.Drawing.Size(650, 80);
-            this.pnlCardPaciente.Controls.Add(this.pnlResultados);
 
             // --- PNLFOOTER (Barra inferior de acciones y notas) ---
             this.pnlFooter.BackColor = fondoGrisGris;
@@ -239,7 +227,7 @@
             this.pnlFooter.Controls.Add(this.btnSalir);
             this.pnlFooter.Controls.Add(this.lblNota);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 515);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 565);
             this.pnlFooter.Size = new System.Drawing.Size(700, 65);
 
             this.lblNota.AutoSize = true;
@@ -273,12 +261,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(244, 246, 249);
-            this.ClientSize = new System.Drawing.Size(700, 580);
+            this.ClientSize = new System.Drawing.Size(700, 630);
             this.ControlBox = false;
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlCardPaciente);
             this.Controls.Add(this.pnlCardBuscar);
             this.Controls.Add(this.pnlHeader);
+            this.Controls.Add(this.btnConfirmarAsistencia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
