@@ -52,6 +52,10 @@ namespace Seprise
             dgvAgendas.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
             dgvAgendas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 150, 136);
             dgvAgendas.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvAgendas.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dgvAgendas.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dgvAgendas.DefaultCellStyle.SelectionBackColor = Color.FromArgb(120, 200, 190);
+            dgvAgendas.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvAgendas.EnableHeadersVisualStyles = false;
             dgvAgendas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 246, 255);
 

@@ -26,7 +26,11 @@ namespace Seprise
             dgvPacientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPacientes.Font = new Font("Segoe UI", 9f);
             dgvPacientes.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
-            dgvPacientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 107, 160);
+            dgvPacientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 150, 136);
+            dgvPacientes.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dgvPacientes.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dgvPacientes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 230, 225);
+            dgvPacientes.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvPacientes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvPacientes.EnableHeadersVisualStyles = false;
             dgvPacientes.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 246, 255);

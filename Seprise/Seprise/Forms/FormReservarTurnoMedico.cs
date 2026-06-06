@@ -76,9 +76,12 @@ namespace Seprise
             dgvTurnos.Font = new Font("Segoe UI", 9f);
             dgvTurnos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
             dgvTurnos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 150, 136);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dgvTurnos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(120, 200, 190);
+            dgvTurnos.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvTurnos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvTurnos.EnableHeadersVisualStyles = false;
-            dgvTurnos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 246, 255);
 
             dgvTurnos.Columns.Clear();
             dgvTurnos.Columns.Add(new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "ID", Visible = false });

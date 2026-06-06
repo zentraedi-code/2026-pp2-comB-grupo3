@@ -212,7 +212,7 @@
             pnlGridCard.Location = new Point(20, 320);
             pnlGridCard.Name = "pnlGridCard";
             pnlGridCard.Padding = new Padding(15);
-            pnlGridCard.Size = new Size(880, 190);
+            pnlGridCard.Size = new Size(880, 140);
             pnlGridCard.TabIndex = 3;
 
             // dgvTurnos
@@ -228,7 +228,7 @@
             dgvTurnos.RowHeadersVisible = false;
             dgvTurnos.RowTemplate.Height = 30;
             dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTurnos.Size = new Size(850, 180);
+            dgvTurnos.Size = new Size(850, 110);
             dgvTurnos.TabIndex = 0;
             dgvTurnos.CellClick += dgvTurnos_CellClick;
             pnlGridCard.Controls.Add(dgvTurnos);
@@ -241,7 +241,7 @@
             lblNota.BorderStyle = BorderStyle.None;
             lblNota.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
             lblNota.ForeColor = Color.FromArgb(20, 80, 120); // Letra azul original
-            lblNota.Location = new Point(20, 527);
+            lblNota.Location = new Point(20, 473);
             lblNota.Name = "lblNota";
             lblNota.Padding = new Padding(12, 8, 10, 8);
             lblNota.Size = new Size(730, 35);
@@ -254,7 +254,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnSalir.ForeColor = Color.FromArgb(100, 100, 100);
-            btnSalir.Location = new Point(770, 527);
+            btnSalir.Location = new Point(770, 473);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(130, 35);
             btnSalir.TabIndex = 5;
@@ -268,7 +268,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 242, 245); // El fondo gris exacto de las pantallas
-            ClientSize = new Size(930, 620);
+            ClientSize = new Size(930, 560);
             ControlBox = false;
             Controls.Add(btnSalir);
             Controls.Add(lblNota);

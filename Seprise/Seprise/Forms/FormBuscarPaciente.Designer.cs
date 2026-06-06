@@ -3,6 +3,15 @@
     partial class FormBuscarPaciente
     {
         private System.ComponentModel.IContainer components = null;
+
+        // Estructura de componentes visuales nuevos (Contenedores)
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Label lblSubtitulo;
+        private System.Windows.Forms.Panel pnlTarjetaContenedor;
+        private System.Windows.Forms.Panel pnlFooter;
+        private System.Windows.Forms.Label lblNota;
+
+        // Controles originales intactos
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblLeyendaDni;
         private System.Windows.Forms.TextBox txtDni;
@@ -10,7 +19,7 @@
         private System.Windows.Forms.TextBox txtNombreApellido;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvPacientes;
-        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Button btnSeleccionar; // Ahora pertenece directamente al Form
         private System.Windows.Forms.Button btnCancelar;
 
         protected override void Dispose(bool disposing)
@@ -22,114 +31,232 @@
 
         private void InitializeComponent()
         {
-            lblTitulo = new Label();
-            lblLeyendaDni = new Label();
-            txtDni = new TextBox();
-            lblLeyendaNomApe = new Label();
-            txtNombreApellido = new TextBox();
-            btnBuscar = new Button();
-            dgvPacientes = new DataGridView();
-            btnSeleccionar = new Button();
-            btnCancelar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvPacientes).BeginInit();
-            SuspendLayout();
-            lblTitulo.BackColor = Color.FromArgb(30, 107, 160);
-            lblTitulo.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(0, 0);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(660, 42);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "  Buscar paciente";
-            lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
-            lblLeyendaDni.AutoSize = true;
-            lblLeyendaDni.Font = new Font("Segoe UI", 9F);
-            lblLeyendaDni.Location = new Point(15, 55);
-            lblLeyendaDni.Name = "lblLeyendaDni";
-            lblLeyendaDni.Size = new Size(30, 15);
-            lblLeyendaDni.TabIndex = 1;
-            lblLeyendaDni.Text = "DNI:";
-            txtDni.Font = new Font("Segoe UI", 9.5F);
-            txtDni.Location = new Point(15, 73);
-            txtDni.Name = "txtDni";
-            txtDni.Size = new Size(190, 24);
-            txtDni.TabIndex = 2;
-            txtDni.KeyDown += txtCampo_KeyDown;
-            lblLeyendaNomApe.AutoSize = true;
-            lblLeyendaNomApe.Font = new Font("Segoe UI", 9F);
-            lblLeyendaNomApe.Location = new Point(220, 55);
-            lblLeyendaNomApe.Name = "lblLeyendaNomApe";
-            lblLeyendaNomApe.Size = new Size(54, 15);
-            lblLeyendaNomApe.TabIndex = 3;
-            lblLeyendaNomApe.Text = "Apellido:";
-            txtNombreApellido.Font = new Font("Segoe UI", 9.5F);
-            txtNombreApellido.Location = new Point(220, 73);
-            txtNombreApellido.Name = "txtNombreApellido";
-            txtNombreApellido.Size = new Size(300, 24);
-            txtNombreApellido.TabIndex = 4;
-            txtNombreApellido.KeyDown += txtCampo_KeyDown;
-            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnBuscar.Location = new Point(532, 71);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(113, 28);
-            btnBuscar.TabIndex = 5;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
-            dgvPacientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPacientes.Location = new Point(15, 112);
-            dgvPacientes.Name = "dgvPacientes";
-            dgvPacientes.Size = new Size(630, 230);
-            dgvPacientes.TabIndex = 6;
-            dgvPacientes.CellContentClick += dgvPacientes_CellContentClick;
-            dgvPacientes.SelectionChanged += dgvPacientes_SelectionChanged;
-            btnSeleccionar.BackColor = Color.FromArgb(30, 107, 160);
-            btnSeleccionar.Enabled = true;
-            btnSeleccionar.FlatAppearance.BorderSize = 0;
-            btnSeleccionar.FlatStyle = FlatStyle.Flat;
-            btnSeleccionar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnSeleccionar.ForeColor = Color.White;
-            btnSeleccionar.Location = new Point(415, 358);
-            btnSeleccionar.Name = "btnSeleccionar";
-            btnSeleccionar.Size = new Size(115, 32);
-            btnSeleccionar.TabIndex = 7;
-            btnSeleccionar.Text = "Seleccionar";
-            btnSeleccionar.UseVisualStyleBackColor = false;
-            btnSeleccionar.Click += btnSeleccionar_Click;
-            btnCancelar.BackColor = Color.FromArgb(180, 180, 180);
-            btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(540, 358);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(105, 32);
-            btnCancelar.TabIndex = 8;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(660, 406);
-            ControlBox = false;
-            Controls.Add(lblTitulo);
-            Controls.Add(lblLeyendaDni);
-            Controls.Add(txtDni);
-            Controls.Add(lblLeyendaNomApe);
-            Controls.Add(txtNombreApellido);
-            Controls.Add(btnBuscar);
-            Controls.Add(dgvPacientes);
-            Controls.Add(btnSeleccionar);
-            Controls.Add(btnCancelar);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "FormBuscarPaciente";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Buscar paciente";
-            ((System.ComponentModel.ISupportInitialize)dgvPacientes).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblSubtitulo = new System.Windows.Forms.Label();
+            
+            this.pnlTarjetaContenedor = new System.Windows.Forms.Panel();
+            this.lblLeyendaDni = new System.Windows.Forms.Label();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.lblLeyendaNomApe = new System.Windows.Forms.Label();
+            this.txtNombreApellido = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.dgvPacientes = new System.Windows.Forms.DataGridView();
+            
+            this.btnSeleccionar = new System.Windows.Forms.Button(); // Botón suelto fuera del contenedor
+            this.pnlFooter = new System.Windows.Forms.Panel();
+            this.lblNota = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+
+            this.pnlHeader.SuspendLayout();
+            this.pnlTarjetaContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
+            this.pnlFooter.SuspendLayout();
+            this.SuspendLayout();
+
+            // --- Paleta de Colores Institucional SePrice ---
+            var colorTealSePrice = System.Drawing.Color.FromArgb(0, 150, 136);
+            var colorTextoOscuro = System.Drawing.Color.FromArgb(33, 33, 33);
+            var colorTextoGrisClaro = System.Drawing.Color.FromArgb(220, 240, 235);
+            var colorFondoGrisForm = System.Drawing.Color.FromArgb(238, 242, 243);
+            var colorNotaFondo = System.Drawing.Color.FromArgb(230, 242, 240);
+            var colorNotaTexto = System.Drawing.Color.FromArgb(0, 75, 68);
+
+            // Tipografías
+            var fontTitulo = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            var fontSubtitulo = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular);
+            var fontLabels = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            var fontControles = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular);
+            var fontBotones = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+
+            // ==========================================
+            // PANEL HEADER (Cabecera Teal)
+            // ==========================================
+            this.pnlHeader.BackColor = colorTealSePrice;
+            this.pnlHeader.Controls.Add(this.lblTitulo);
+            this.pnlHeader.Controls.Add(this.lblSubtitulo);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(680, 68);
+            this.pnlHeader.TabIndex = 0;
+
+            // lblTitulo
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = fontTitulo;
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(16, 12);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(180, 25);
+            this.lblTitulo.Text = "👤 Buscar Paciente";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            // lblSubtitulo
+            this.lblSubtitulo.AutoSize = true;
+            this.lblSubtitulo.Font = fontSubtitulo;
+            this.lblSubtitulo.ForeColor = colorTextoGrisClaro;
+            this.lblSubtitulo.Location = new System.Drawing.Point(18, 40);
+            this.lblSubtitulo.Text = "Filtre por documento o apellido para asignar al turno médico.";
+
+            // ==========================================
+            // TARJETA CONTENEDORA PRINCIPAL (Blanca)
+            // ==========================================
+            this.pnlTarjetaContenedor.BackColor = System.Drawing.Color.White;
+            this.pnlTarjetaContenedor.Controls.Add(this.lblLeyendaDni);
+            this.pnlTarjetaContenedor.Controls.Add(this.txtDni);
+            this.pnlTarjetaContenedor.Controls.Add(this.lblLeyendaNomApe);
+            this.pnlTarjetaContenedor.Controls.Add(this.txtNombreApellido);
+            this.pnlTarjetaContenedor.Controls.Add(this.btnBuscar);
+            this.pnlTarjetaContenedor.Controls.Add(this.dgvPacientes);
+            this.pnlTarjetaContenedor.Location = new System.Drawing.Point(16, 84);
+            this.pnlTarjetaContenedor.Name = "pnlTarjetaContenedor";
+            this.pnlTarjetaContenedor.Size = new System.Drawing.Size(648, 185); // Altura justa para los filtros y el grid chico
+            this.pnlTarjetaContenedor.TabIndex = 1;
+
+            // lblLeyendaDni
+            this.lblLeyendaDni.AutoSize = true;
+            this.lblLeyendaDni.Font = fontLabels;
+            this.lblLeyendaDni.ForeColor = colorTextoOscuro;
+            this.lblLeyendaDni.Location = new System.Drawing.Point(16, 16);
+            this.lblLeyendaDni.Name = "lblLeyendaDni";
+            this.lblLeyendaDni.Size = new System.Drawing.Size(32, 15);
+            this.lblLeyendaDni.Text = "DNI:";
+
+            // txtDni
+            this.txtDni.Font = fontControles;
+            this.txtDni.Location = new System.Drawing.Point(16, 36);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(150, 24);
+            this.txtDni.TabIndex = 2;
+            this.txtDni.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCampo_KeyDown);
+
+            // lblLeyendaNomApe
+            this.lblLeyendaNomApe.AutoSize = true;
+            this.lblLeyendaNomApe.Font = fontLabels;
+            this.lblLeyendaNomApe.ForeColor = colorTextoOscuro;
+            this.lblLeyendaNomApe.Location = new System.Drawing.Point(182, 16);
+            this.lblLeyendaNomApe.Name = "lblLeyendaNomApe";
+            this.lblLeyendaNomApe.Size = new System.Drawing.Size(56, 15);
+            this.lblLeyendaNomApe.Text = "Apellido:";
+
+            // txtNombreApellido
+            this.txtNombreApellido.Font = fontControles;
+            this.txtNombreApellido.Location = new System.Drawing.Point(182, 36);
+            this.txtNombreApellido.Name = "txtNombreApellido";
+            this.txtNombreApellido.Size = new System.Drawing.Size(315, 24);
+            this.txtNombreApellido.TabIndex = 4;
+            this.txtNombreApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCampo_KeyDown);
+
+            // btnBuscar
+            this.btnBuscar.BackColor = colorTealSePrice;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = fontBotones;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(512, 32);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(120, 30);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "🔍 Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+
+            // dgvPacientes
+            this.dgvPacientes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPacientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPacientes.Location = new System.Drawing.Point(16, 78);
+            this.dgvPacientes.Name = "dgvPacientes";
+            this.dgvPacientes.Size = new System.Drawing.Size(616, 90);
+            this.dgvPacientes.TabIndex = 6;
+            this.dgvPacientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellContentClick);
+            this.dgvPacientes.SelectionChanged += new System.EventHandler(this.dgvPacientes_SelectionChanged);
+
+            // ==========================================
+            // BOTÓN SELECCIONAR (Fuera de la tarjeta, ancho completo)
+            // ==========================================
+            this.btnSeleccionar.BackColor = colorTealSePrice;
+            this.btnSeleccionar.Enabled = true;
+            this.btnSeleccionar.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.Font = fontBotones;
+            this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
+            // X = 16 (alineado al pnlTarjetaContenedor) y Y = 282 (deja un margen de 13px con la tarjeta)
+            this.btnSeleccionar.Location = new System.Drawing.Point(16, 282); 
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(648, 35); // Todo el ancho del contenedor blanco
+            this.btnSeleccionar.TabIndex = 8;
+            this.btnSeleccionar.Text = "✓ Seleccionar Paciente";
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+
+            // ==========================================
+            // PANEL FOOTER (Barra de Acciones Inferior)
+            // ==========================================
+            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.Controls.Add(this.lblNota);
+            this.pnlFooter.Controls.Add(this.btnCancelar);
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFooter.Location = new System.Drawing.Point(0, 335); // Espacio calibrado con la nueva posición del botón verde
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(680, 65);
+            this.pnlFooter.TabIndex = 7;
+
+            // lblNota
+            this.lblNota.AutoSize = false;
+            this.lblNota.BackColor = System.Drawing.Color.FromArgb(198, 234, 212);
+            this.lblNota.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblNota.ForeColor = colorNotaTexto;
+            this.lblNota.Location = new System.Drawing.Point(16, 8);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.lblNota.Size = new System.Drawing.Size(350, 48);
+            this.lblNota.Text = "ℹ Seleccione la fila del paciente y confirme los datos presionando Seleccionar.";
+            this.lblNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            // btnCancelar
+            this.btnCancelar.BackColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(200, 205, 210);
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = fontBotones;
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(100, 100, 100);
+            this.btnCancelar.Location = new System.Drawing.Point(544, 16);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(120, 32);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "🚪 Salir";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+
+            // ==========================================
+            // PROPIEDADES DEL FORMULARIO MODAL
+            // ==========================================
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = colorFondoGrisForm;
+            this.ClientSize = new System.Drawing.Size(690, 430); // Altura compacta ideal para este orden de elementos
+            this.ControlBox = false;
+            
+            // Se añaden los tres elementos en el orden correcto de capas
+            this.Controls.Add(this.btnSeleccionar); // Agregado directamente a los controles del Form
+            this.Controls.Add(this.pnlTarjetaContenedor);
+            this.Controls.Add(this.pnlHeader);
+            this.Controls.Add(this.pnlFooter);
+            
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormBuscarPaciente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "SePrice - Buscar Paciente";
+            
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
+            this.pnlTarjetaContenedor.ResumeLayout(false);
+            this.pnlTarjetaContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
+            this.pnlFooter.ResumeLayout(false);
+            this.ResumeLayout(false);
         }
     }
 }

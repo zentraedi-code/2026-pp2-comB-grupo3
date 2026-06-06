@@ -91,6 +91,10 @@ namespace Seprise
             dgvConsultas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvConsultas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvConsultas.RowHeadersVisible = false;
+            dgvConsultas.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dgvConsultas.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dgvConsultas.DefaultCellStyle.SelectionBackColor = Color.FromArgb(120, 200, 190);
+            dgvConsultas.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvConsultas.Rows.Clear();
         }
 
