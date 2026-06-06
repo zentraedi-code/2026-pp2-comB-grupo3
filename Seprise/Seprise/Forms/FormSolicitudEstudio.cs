@@ -1,18 +1,34 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Seprise.dao;
+using Seprise.entity;
+using System.ComponentModel;
 
 namespace Seprise
 {
     public partial class FormSolicitudEstudio : Form
     {
+        private PacienteDao pacienteDao;
+        private Paciente pacienteSeleccionado;
+
         public FormSolicitudEstudio()
         {
             InitializeComponent();
-            CargarDatosIniciales();
+            if (!IsDesignMode())
+            {
+                pacienteDao = new PacienteDao();
+                CargarDatosIniciales();
+            }
+        }
+
+        private bool IsDesignMode()
+        {
+            return LicenseManager.UsageMode == LicenseUsageMode.Designtime || (Site != null && Site.DesignMode);
         }
 
         private void CargarDatosIniciales()
         {
+            cmbTipoEstudio.Items.Clear();
+            cmbOrigen.Items.Clear();
+
             cmbTipoEstudio.Items.AddRange(new string[] { "Radiografía", "Laboratorio", "Ecografía", "Tomografía", "Resonancia" });
             cmbOrigen.Items.AddRange(new string[] { "CONSULTORIO_EXTERNO", "EXTERNO", "GUARDIA", "INTERNACION", "LAB" });
 
@@ -32,7 +48,24 @@ namespace Seprise
                 return;
             }
 
-            txtPaciente.Text = $"(auto) Pérez Juan - DNI {txtDniPaciente.Text}";
+            try
+            {
+                pacienteSeleccionado = pacienteDao.buscar(txtDniPaciente.Text.Trim());
+                if (pacienteSeleccionado != null)
+                {
+                    txtPaciente.Text = $"{pacienteSeleccionado.ObtenerNombreCompleto()} - DNI {pacienteSeleccionado.Dni}";
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún paciente con ese DNI.", "Paciente no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPaciente.Clear();
+                    pacienteSeleccionado = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar paciente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
@@ -40,17 +73,31 @@ namespace Seprise
             if (!ValidarCampos())
                 return;
 
-            MessageBox.Show($"Solicitud de estudio creada con éxito.\n\nTipo: {cmbTipoEstudio.Text}\nOrigen: {cmbOrigen.Text}\nEstado: PENDIENTE", 
-                "Solicitud creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                string sql = $"INSERT INTO solicitud_estudio " +
+                             $"(paciente_id, estudio_id, es_externo, origen_atencion_id, fecha_solicitud, estado) " +
+                             $"VALUES ({pacienteSeleccionado.Id}, 1, 0, 1, NOW(), 'PENDIENTE')";
 
-            LimpiarFormulario();
+                var conexion = ClubDeportivo.service.ServicioConexion.getInstancia();
+                conexion.ejecutarComandoSQL(sql);
+
+                MessageBox.Show($"Solicitud de estudio creada con éxito.\n\nPaciente: {pacienteSeleccionado.ObtenerNombreCompleto()}\nTipo: {cmbTipoEstudio.Text}\nOrigen: {cmbOrigen.Text}\nEstado: PENDIENTE",
+                    "Solicitud creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al crear solicitud: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool ValidarCampos()
         {
-            if (string.IsNullOrWhiteSpace(txtDniPaciente.Text))
+            if (pacienteSeleccionado == null)
             {
-                MessageBox.Show("Debe buscar un paciente primero.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe buscar y seleccionar un paciente primero.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -80,6 +127,7 @@ namespace Seprise
             txtPaciente.Clear();
             txtObservaciones.Clear();
             dtpFechaSolicitud.Value = DateTime.Now;
+            pacienteSeleccionado = null;
             if (cmbTipoEstudio.Items.Count > 0)
                 cmbTipoEstudio.SelectedIndex = 0;
             if (cmbOrigen.Items.Count > 0)
