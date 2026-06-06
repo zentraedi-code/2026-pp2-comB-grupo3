@@ -1,19 +1,26 @@
-﻿using System;
+using Seprise.dao;
+using Seprise.entity;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace Seprise
 {
     public partial class FormMedicos : Form
     {
+        private MedicoDao medicoDao;
+
         public FormMedicos()
         {
             InitializeComponent();
             if (!IsDesignMode())
             {
-                ConfigurarDataGridView();
-                CargarDatosEjemplo();
+                medicoDao = new MedicoDao();
+                Shown += FormMedicos_Shown;
             }
+        }
+
+        private void FormMedicos_Shown(object sender, EventArgs e)
+        {
+            CargarMedicos();
         }
 
         private bool IsDesignMode()
@@ -21,86 +28,83 @@ namespace Seprise
             return LicenseManager.UsageMode == LicenseUsageMode.Designtime || (Site != null && Site.DesignMode);
         }
 
-        private void ConfigurarDataGridView()
+        private void CargarMedicos()
         {
-            dgvMedicos.AllowUserToAddRows = false;
-            dgvMedicos.AllowUserToDeleteRows = false;
-            dgvMedicos.ReadOnly = true;
-            dgvMedicos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMedicos.MultiSelect = false;
-            dgvMedicos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvMedicos.Columns.Add("Matricula", "Matrícula");
-            dgvMedicos.Columns.Add("Medico", "Médico");
-            dgvMedicos.Columns.Add("Especialidad", "Especialidad");
-            dgvMedicos.Columns.Add("Honorario", "Honorario");
-            dgvMedicos.Columns.Add("Estado", "Estado");
-
-            DataGridViewButtonColumn btnConsultar = new DataGridViewButtonColumn();
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseColumnTextForButtonValue = true;
-            dgvMedicos.Columns.Add(btnConsultar);
-
-            DataGridViewButtonColumn btnModificar = new DataGridViewButtonColumn();
-            btnModificar.Name = "btnModificar";
-            btnModificar.Text = "Modificar";
-            btnModificar.UseColumnTextForButtonValue = true;
-            dgvMedicos.Columns.Add(btnModificar);
-
-            DataGridViewButtonColumn btnDesactivar = new DataGridViewButtonColumn();
-            btnDesactivar.Name = "btnDesactivar";
-            btnDesactivar.Text = "Desactivar";
-            btnDesactivar.UseColumnTextForButtonValue = true;
-            dgvMedicos.Columns.Add(btnDesactivar);
-        }
-
-        private void CargarDatosEjemplo()
-        {
-            dgvMedicos.Rows.Add("MN12345", "Gómez Laura", "Clínica médica", "$15.000", "Activo");
-            dgvMedicos.Rows.Add("MN12346", "Rodríguez Carlos", "Fisio-kinesiología", "$18.000", "Activo");
-            dgvMedicos.Rows.Add("MN12347", "Martínez Ana", "Salud mental", "$20.000", "Activo");
+            try
+            {
+                dgvMedicos.Rows.Clear();
+                List<Medico> medicos = medicoDao.listarTodos();
+                foreach (Medico medico in medicos)
+                {
+                    dgvMedicos.Rows.Add(
+                        medico.Matricula,
+                        medico.ObtenerNombreCompleto(),
+                        medico.EspecialidadNombre,
+                        medico.ImporteConsulta.ToString("C"),
+                        medico.Activo ? "Activo" : "Inactivo"
+                    );
+                    dgvMedicos.Rows[dgvMedicos.Rows.Count - 1].Tag = medico;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar médicos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            FormMedicoABM form = new FormMedicoABM("Crear");
+            var form = new FormMedicoABM("Crear", null);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Médico creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                medicoDao.agregar(form.MedicoResultado);
+                CargarMedicos();
+                MessageBox.Show("Médico creado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void dgvMedicos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0) return;
-
-            string columna = dgvMedicos.Columns[e.ColumnIndex].Name;
-
-            if (columna == "btnConsultar")
+            if (dgvMedicos.SelectedRows.Count > 0)
             {
-                FormMedicoABM form = new FormMedicoABM("Consultar");
-                form.ShowDialog();
-            }
-            else if (columna == "btnModificar")
-            {
-                FormMedicoABM form = new FormMedicoABM("Modificar");
+                Medico medico = (Medico)dgvMedicos.SelectedRows[0].Tag;
+                var form = new FormMedicoABM("Modificar", medico);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Médico modificado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    medicoDao.modificar(form.MedicoResultado);
+                    CargarMedicos();
+                    MessageBox.Show("Médico modificado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else if (columna == "btnDesactivar")
+            else
             {
-                var result = MessageBox.Show("¿Está seguro de desactivar este médico?", 
-                    "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBox.Show("Seleccione un médico de la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            if (dgvMedicos.SelectedRows.Count > 0)
+            {
+                Medico medico = (Medico)dgvMedicos.SelectedRows[0].Tag;
+                var result = MessageBox.Show($"¿Desactivar a {medico.ObtenerNombreCompleto()}?",
+                    "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    dgvMedicos.Rows[e.RowIndex].Cells["Estado"].Value = "Inactivo";
-                    MessageBox.Show("Médico desactivado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    medicoDao.desactivar(medico.Id);
+                    CargarMedicos();
+                    MessageBox.Show("Médico desactivado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            else
+            {
+                MessageBox.Show("Seleccione un médico de la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

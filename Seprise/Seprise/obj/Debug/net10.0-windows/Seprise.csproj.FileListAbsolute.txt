@@ -54,6 +54,7 @@ C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\n
 C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormRecepcionarPacienteEstudios.resources
 C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormReservarTurnoMedico.resources
 C:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormSolicitudEstudio.resources
+<<<<<<< Updated upstream
 c:\documents-personal\terciario\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormBuscarPaciente.resources
 C:\Users\emili\Desktop\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.exe
 C:\Users\emili\Desktop\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.deps.json
@@ -202,3 +203,62 @@ c:\Users\emili\Desktop\2026-pp2-comB-grupo3- NO\Seprise\Seprise\bin\Debug\net10.
 c:\Users\emili\Desktop\2026-pp2-comB-grupo3- NO\Seprise\Seprise\bin\Debug\net10.0-windows-temp\runtimes\win-x64\native\k5sprt64.dll
 c:\Users\emili\Desktop\2026-pp2-comB-grupo3- NO\Seprise\Seprise\bin\Debug\net10.0-windows-temp\runtimes\win-x64\native\krb5_64.dll
 c:\Users\emili\Desktop\2026-pp2-comB-grupo3- NO\Seprise\Seprise\bin\Debug\net10.0-windows-temp\runtimes\win-x64\native\krbcc64.dll
+=======
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.csproj.AssemblyReference.cache
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.Form1.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormAtencionPaciente.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormCancelarAgendaMedica.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormCancelarReservaMedica.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormConfirmacionEstudios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormConfirmarAgendaMedica.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormConfirmarAsistencia.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormCrearAgendaMedica.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormFacturarConsulta.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGenerarHistoriaClinica.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGestionAgendaConsultorios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGestionAgendaEstudios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGestionMedicos.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGestionTurnosConsultorios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormGestionTurnosEstudios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormLiquidarHonorarios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormMedicoABM.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormMedicos.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormPaciente.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormPacientes.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormPacientesPendientes.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormProcesamientoEstudios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormRecepcionarPacienteConsultorios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormRecepcionarPacienteEstudios.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormReservarTurnoMedico.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormSolicitudEstudio.resources
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.csproj.GenerateResource.cache
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.AssemblyInfoInputs.cache
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.AssemblyInfo.cs
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.csproj.CoreCompileInputs.cache
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.sourcelink.json
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\refint\Seprise.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.pdb
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.exe
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.deps.json
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.runtimeconfig.json
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Seprise.pdb
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\Google.Protobuf.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\K4os.Compression.LZ4.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\K4os.Hash.xxHash.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\MySql.Data.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\ZstdSharp.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\bin\Debug\net10.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.csproj.Up2Date
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.genruntimeconfig.cache
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\ref\Seprise.dll
+>>>>>>> Stashed changes
+C:\Users\javy7\Inicio\Escritorio\TSDS 2026\PP2\2026-pp2-comB-grupo3\Seprise\Seprise\obj\Debug\net10.0-windows\Seprise.FormBuscarPaciente.resources

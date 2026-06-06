@@ -1,22 +1,30 @@
-﻿using System;
+using Seprise.entity;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace Seprise
 {
     public partial class FormMedicoABM : Form
     {
         private string _modo;
+        private Medico _medico;
+        public Medico MedicoResultado { get; private set; }
 
-        public FormMedicoABM()
+        private Dictionary<string, int> _especialidades = new Dictionary<string, int>
         {
-            InitializeComponent();
-        }
+            { "Clínica médica", 1 },
+            { "Pediatría", 2 },
+            { "Cardiología", 3 },
+            { "Traumatología", 4 },
+            { "Ginecología", 5 },
+            { "Fisio-kinesiología", 6 },
+            { "Salud mental", 7 }
+        };
 
-        public FormMedicoABM(string modo)
+        public FormMedicoABM(string modo, Medico medico)
         {
             InitializeComponent();
             _modo = modo;
+            _medico = medico;
             if (!IsDesignMode())
                 ConfigurarFormulario();
         }
@@ -31,13 +39,23 @@ namespace Seprise
             this.Text = $"{_modo} médico";
             lblTitulo.Text = $"{_modo} médico";
 
-            cmbEspecialidad.Items.AddRange(new string[] { 
-                "Clínica médica", 
-                "Fisio-kinesiología", 
-                "Salud mental", 
-                "Cardiología", 
-                "Pediatría" 
-            });
+            cmbEspecialidad.Items.Clear();
+            foreach (var esp in _especialidades.Keys)
+                cmbEspecialidad.Items.Add(esp);
+
+            if (_medico != null)
+            {
+                txtMatricula.Text = _medico.Matricula;
+                txtNombre.Text = _medico.Nombre;
+                txtApellido.Text = _medico.Apellido;
+                cmbEspecialidad.SelectedItem = _medico.EspecialidadNombre;
+                txtHonorario.Text = _medico.ImporteConsulta.ToString();
+            }
+            else
+            {
+                if (cmbEspecialidad.Items.Count > 0)
+                    cmbEspecialidad.SelectedIndex = 0;
+            }
 
             if (_modo == "Consultar")
             {
@@ -47,26 +65,10 @@ namespace Seprise
                 cmbEspecialidad.Enabled = false;
                 txtHonorario.ReadOnly = true;
                 btnGuardar.Visible = false;
-
-                txtMatricula.Text = "MN12345";
-                txtNombre.Text = "Laura";
-                txtApellido.Text = "Gómez";
-                cmbEspecialidad.SelectedIndex = 0;
-                txtHonorario.Text = "15000";
             }
             else if (_modo == "Modificar")
             {
                 txtMatricula.ReadOnly = true;
-                txtMatricula.Text = "MN12345";
-                txtNombre.Text = "Laura";
-                txtApellido.Text = "Gómez";
-                cmbEspecialidad.SelectedIndex = 0;
-                txtHonorario.Text = "15000";
-            }
-            else
-            {
-                if (cmbEspecialidad.Items.Count > 0)
-                    cmbEspecialidad.SelectedIndex = 0;
             }
         }
 
@@ -74,6 +76,20 @@ namespace Seprise
         {
             if (!ValidarCampos())
                 return;
+
+            string espNombre = cmbEspecialidad.SelectedItem.ToString();
+            int espId = _especialidades[espNombre];
+
+            MedicoResultado = new Medico(
+                _medico?.Id ?? 0,
+                txtMatricula.Text.Trim(),
+                txtNombre.Text.Trim(),
+                txtApellido.Text.Trim(),
+                espId,
+                espNombre,
+                decimal.Parse(txtHonorario.Text.Trim()),
+                true
+            );
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -86,31 +102,26 @@ namespace Seprise
                 MessageBox.Show("La matrícula es obligatoria.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 MessageBox.Show("El nombre es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             if (string.IsNullOrWhiteSpace(txtApellido.Text))
             {
                 MessageBox.Show("El apellido es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             if (cmbEspecialidad.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar una especialidad.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-            if (string.IsNullOrWhiteSpace(txtHonorario.Text) || !decimal.TryParse(txtHonorario.Text, out decimal honorario) || honorario <= 0)
+            if (string.IsNullOrWhiteSpace(txtHonorario.Text) || !decimal.TryParse(txtHonorario.Text, out decimal importe) || importe <= 0)
             {
-                MessageBox.Show("El honorario debe ser un número mayor a cero.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El importe debe ser un número mayor a cero.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             return true;
         }
 

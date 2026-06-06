@@ -53,7 +53,32 @@
             this.dgvMedicos.RowTemplate.Height = 25;
             this.dgvMedicos.Size = new System.Drawing.Size(860, 400);
             this.dgvMedicos.TabIndex = 3;
-            this.dgvMedicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicos_CellClick);
+
+            // Columnas del grid
+            var colMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colMatricula.HeaderText = "Matrícula";
+            colMatricula.Name = "Matricula";
+            this.dgvMedicos.Columns.Add(colMatricula);
+
+            var colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colNombre.HeaderText = "Nombre";
+            colNombre.Name = "Nombre";
+            this.dgvMedicos.Columns.Add(colNombre);
+
+            var colEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colEspecialidad.HeaderText = "Especialidad";
+            colEspecialidad.Name = "Especialidad";
+            this.dgvMedicos.Columns.Add(colEspecialidad);
+
+            var colImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colImporte.HeaderText = "Importe Consulta";
+            colImporte.Name = "ImporteConsulta";
+            this.dgvMedicos.Columns.Add(colImporte);
+
+            var colActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colActivo.HeaderText = "Estado";
+            colActivo.Name = "Activo";
+            this.dgvMedicos.Columns.Add(colActivo);
 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

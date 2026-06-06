@@ -29,6 +29,9 @@
     <Compile Update="Forms\FormCrearAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\FormExportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FormFacturarConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
