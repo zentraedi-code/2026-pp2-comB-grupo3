@@ -13,9 +13,10 @@
 
         private void InitializeComponent()
         {
+            pnlHeader = new Panel();
             lblTitulo = new Label();
+            lblSubtitulo = new Label();
             grpFiltros = new GroupBox();
-            chkFecha = new CheckBox();
             dtpFecha = new DateTimePicker();
             lblMedico = new Label();
             cmbMedico = new ComboBox();
@@ -23,135 +24,208 @@
             dgvAgendas = new DataGridView();
             lblNota = new Label();
             btnSalir = new Button();
+            pnlHeader.SuspendLayout();
             grpFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAgendas).BeginInit();
             SuspendLayout();
 
-            lblTitulo.BackColor = Color.FromArgb(30, 107, 160);
-            lblTitulo.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(0, 0);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(900, 48);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "   Confirmar agenda médica";
-            lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
+            Color colorPrincipal = Color.FromArgb(0, 150, 136);
 
-            grpFiltros.Location = new Point(15, 62);
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = colorPrincipal;
+            pnlHeader.Controls.Add(lblTitulo);
+            pnlHeader.Controls.Add(lblSubtitulo);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(750, 85);
+            pnlHeader.TabIndex = 0;
+
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(24, 15);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(325, 30);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "📅  Confirmar agenda médica";
+
+            // 
+            // lblSubtitulo
+            // 
+            lblSubtitulo.AutoSize = true;
+            lblSubtitulo.BackColor = Color.Transparent;
+            lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(204, 242, 239);
+            lblSubtitulo.Location = new Point(26, 48);
+            lblSubtitulo.Name = "lblSubtitulo";
+            lblSubtitulo.Size = new Size(230, 17);
+            lblSubtitulo.TabIndex = 1;
+            lblSubtitulo.Text = "Revise y confirme la agenda a crear.";
+
+            // 
+            // grpFiltros (Fila única horizontal)
+            // 
+            grpFiltros.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            grpFiltros.ForeColor = colorPrincipal;
+            grpFiltros.Location = new Point(20, 100);
             grpFiltros.Name = "grpFiltros";
-            grpFiltros.Size = new Size(870, 70);
+            grpFiltros.Size = new Size(700, 85);
             grpFiltros.TabIndex = 1;
             grpFiltros.TabStop = false;
-            grpFiltros.Text = "Filtros de búsqueda";
+            grpFiltros.Text = " 🔍  FILTROS DE BÚSQUEDA";
 
-            chkFecha.AutoSize = true;
-            chkFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            chkFecha.Location = new Point(12, 26);
-            chkFecha.Name = "chkFecha";
-            chkFecha.Size = new Size(56, 19);
-            chkFecha.TabIndex = 0;
-            chkFecha.Text = "Fecha:";
-            chkFecha.CheckedChanged += chkFecha_CheckedChanged;
+            // lblFechaEstatica (Reemplazo visual del CheckBox)
+            Label lblFechaEstatica = new Label();
+            lblFechaEstatica.AutoSize = true;
+            lblFechaEstatica.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblFechaEstatica.ForeColor = Color.FromArgb(30, 30, 30);
+            lblFechaEstatica.Location = new Point(15, 25);
+            lblFechaEstatica.Size = new Size(40, 15);
+            lblFechaEstatica.Text = "Fecha";
 
+            // dtpFecha
             dtpFecha.CustomFormat = "dd/MM/yyyy";
-            dtpFecha.Enabled = false;
+            dtpFecha.Enabled = true;
+            dtpFecha.Font = new Font("Segoe UI", 9.5F);
             dtpFecha.Format = DateTimePickerFormat.Custom;
-            dtpFecha.Location = new Point(75, 24);
+            dtpFecha.Location = new Point(15, 45);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(140, 23);
             dtpFecha.TabIndex = 1;
 
+            // lblMedico
             lblMedico.AutoSize = true;
             lblMedico.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblMedico.Location = new Point(230, 27);
+            lblMedico.ForeColor = Color.FromArgb(30, 30, 30);
+            lblMedico.Location = new Point(175, 25);
             lblMedico.Name = "lblMedico";
+            lblMedico.Size = new Size(52, 15);
             lblMedico.TabIndex = 2;
-            lblMedico.Text = "Médico:";
+            lblMedico.Text = "Médico";
 
+            // cmbMedico
             cmbMedico.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMedico.Font = new Font("Segoe UI", 9.5F);
             cmbMedico.FormattingEnabled = true;
-            cmbMedico.Location = new Point(285, 24);
+            cmbMedico.Location = new Point(175, 45);
             cmbMedico.Name = "cmbMedico";
-            cmbMedico.Size = new Size(280, 23);
+            cmbMedico.Size = new Size(360, 23);
             cmbMedico.TabIndex = 3;
 
-            btnBuscar.BackColor = Color.FromArgb(30, 107, 160);
+            // btnBuscar
+            btnBuscar.BackColor = colorPrincipal;
             btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatStyle = FlatStyle.Flat;
-            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnBuscar.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnBuscar.ForeColor = Color.White;
-            btnBuscar.Location = new Point(580, 22);
+            btnBuscar.Location = new Point(550, 40);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(120, 28);
+            btnBuscar.Size = new Size(140, 30);
             btnBuscar.TabIndex = 4;
-            btnBuscar.Text = "Buscar";
+            btnBuscar.Text = "🔍 Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
 
-            grpFiltros.Controls.Add(chkFecha);
+            grpFiltros.Controls.Add(lblFechaEstatica);
             grpFiltros.Controls.Add(dtpFecha);
             grpFiltros.Controls.Add(lblMedico);
             grpFiltros.Controls.Add(cmbMedico);
             grpFiltros.Controls.Add(btnBuscar);
 
+            // 
+            // dgvAgendas
+            // 
             dgvAgendas.AllowUserToAddRows = false;
             dgvAgendas.AllowUserToDeleteRows = false;
-            dgvAgendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAgendas.Location = new Point(15, 144);
+            dgvAgendas.BackgroundColor = Color.White;
+            dgvAgendas.BorderStyle = BorderStyle.None;
+            dgvAgendas.EnableHeadersVisualStyles = false;
+            
+            DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
+            headerStyle.BackColor = colorPrincipal;
+            headerStyle.ForeColor = Color.White;
+            headerStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvAgendas.ColumnHeadersDefaultCellStyle = headerStyle;
+            
+            dgvAgendas.Location = new Point(20, 200);
             dgvAgendas.Name = "dgvAgendas";
             dgvAgendas.ReadOnly = true;
-            dgvAgendas.RowTemplate.Height = 25;
+            dgvAgendas.RowTemplate.Height = 32;
             dgvAgendas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAgendas.Size = new Size(870, 290);
+            dgvAgendas.Size = new Size(700, 240);
             dgvAgendas.TabIndex = 2;
             dgvAgendas.CellClick += dgvAgendas_CellClick;
 
-            lblNota.BackColor = Color.FromArgb(232, 244, 248);
-            lblNota.BorderStyle = BorderStyle.FixedSingle;
-            lblNota.Location = new Point(15, 444);
+            // 
+            // lblNota (Estilo Footer adaptado)
+            // 
+            lblNota.BackColor = Color.FromArgb(230, 247, 245);
+            lblNota.BorderStyle = BorderStyle.None;
+            lblNota.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+            lblNota.ForeColor = Color.FromArgb(0, 100, 90);
+            lblNota.Location = new Point(20, 460);
             lblNota.Name = "lblNota";
-            lblNota.Padding = new Padding(6, 4, 6, 4);
-            lblNota.Size = new Size(760, 28);
+            lblNota.Padding = new Padding(10, 8, 10, 8);
+            lblNota.Size = new Size(500, 45);
             lblNota.TabIndex = 3;
-            lblNota.Text = "Al confirmar, el sistema crea turnos en estado DISPONIBLE y agrega 1 sobreturno por hora.";
+            lblNota.Text = "ℹ  Al confirmar, el sistema crea turnos en estado DISPONIBLE y agrega 1 sobreturno por hora.";
 
-            btnSalir.BackColor = Color.FromArgb(100, 149, 180);
-            btnSalir.FlatAppearance.BorderSize = 0;
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.White;
+            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(210, 210, 210);
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnSalir.ForeColor = Color.White;
-            btnSalir.Location = new Point(785, 440);
+            btnSalir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.FromArgb(100, 100, 100);
+            btnSalir.Location = new Point(570, 465);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(100, 32);
+            btnSalir.Size = new Size(150, 35);
             btnSalir.TabIndex = 4;
-            btnSalir.Text = "Salir";
+            btnSalir.Text = "🚪 Salir";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
+            // 
+            // FormConfirmarAgendaMedica
+            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(900, 487);
+            BackColor = Color.FromArgb(245, 247, 250);
+            ClientSize = new Size(750, 560);
             ControlBox = false;
             Controls.Add(btnSalir);
             Controls.Add(lblNota);
             Controls.Add(dgvAgendas);
             Controls.Add(grpFiltros);
-            Controls.Add(lblTitulo);
+            Controls.Add(pnlHeader);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormConfirmarAgendaMedica";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Confirmar Agenda Médica - Sistema SEPRISE";
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             grpFiltros.ResumeLayout(false);
             grpFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAgendas).EndInit();
             ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Panel pnlHeader;
         private Label lblTitulo;
+        private Label lblSubtitulo;
         private GroupBox grpFiltros;
-        private CheckBox chkFecha;
+        private CheckBox chkFecha = null; // En null para evitar roturas lógicas en compilación
         private DateTimePicker dtpFecha;
         private Label lblMedico;
         private ComboBox cmbMedico;
