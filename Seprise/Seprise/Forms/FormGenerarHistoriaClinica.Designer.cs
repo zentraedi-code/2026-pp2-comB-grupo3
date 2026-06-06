@@ -271,6 +271,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.Location = new System.Drawing.Point(24, 628);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(857, 45);
@@ -299,7 +300,7 @@
             this.lblNota.Location = new System.Drawing.Point(24, 15);
             this.lblNota.Name = "lblNota";
             this.lblNota.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
-            this.lblNota.Size = new System.Drawing.Size(700, 70);
+            this.lblNota.Size = new System.Drawing.Size(700, 50);
             this.lblNota.Text = "ℹ   El sistema actualizará automáticamente el estado del turno del paciente de Recepcionado a Atendido, liberando la  disponibilidad del médico y registrando la fecha y hora de cierre de la consulta.";
 
             // btnSalir 

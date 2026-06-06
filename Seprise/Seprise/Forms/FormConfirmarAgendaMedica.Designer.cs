@@ -222,7 +222,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 242, 245); // Gris corporativo de fondo
-            ClientSize = new Size(780, 565);
+            ClientSize = new Size(770, 570);
             ControlBox = false;
             Controls.Add(btnSalir);
             Controls.Add(lblNota);
