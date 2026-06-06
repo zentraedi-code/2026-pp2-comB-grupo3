@@ -18,6 +18,8 @@
             pnlHeader = new Panel();
             lblTitulo = new Label();
             lblSubtitulo = new Label();
+            pnlFormCard = new Panel(); // Tarjeta contenedora blanca para los controles de entrada
+            lblSeccionDatos = new Label();
             lblFecha = new Label();
             dtpFecha = new DateTimePicker();
             lblHoraDesde = new Label();
@@ -30,11 +32,12 @@
             cboConsultorio = new ComboBox();
             lblDuracion = new Label();
             txtDuracion = new TextBox();
-            lblNota = new Label();
             btnCrear = new Button();
-            btnLimpiar = new Button();
+            lblNota = new Label();
             btnSalir = new Button();
+            btnLimpiar = new Button();
             pnlHeader.SuspendLayout();
+            pnlFormCard.SuspendLayout();
             SuspendLayout();
 
             Color colorPrincipal = Color.FromArgb(0, 150, 136);
@@ -48,7 +51,7 @@
             pnlHeader.Dock = DockStyle.Top;
             pnlHeader.Location = new Point(0, 0);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(710, 85);
+            pnlHeader.Size = new Size(740, 85);
             pnlHeader.TabIndex = 0;
 
             // 
@@ -56,35 +59,49 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
-            lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(24, 15);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(280, 30);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "📅  Crear agenda médica";
+            lblTitulo.Text = "📅   Crear agenda médica";
 
             // 
             // lblSubtitulo
             // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.BackColor = Color.Transparent;
-            lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular);
-            lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(204, 242, 239);
+            lblSubtitulo.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
+            lblSubtitulo.ForeColor = Color.FromArgb(204, 242, 239);
             lblSubtitulo.Location = new Point(26, 48);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(280, 17);
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Complete los datos para crear una nueva agenda.";
 
-            // ==========================================
-            // FILA 1: FECHA (Ocupa la columna izquierda)
-            // ==========================================
-            // lblFecha (X = 23, 3 puntos menos que el dtpFecha que está en 26)
+            // =======================================================================
+            // TARJETA BLANCA DE ENTRADA DE DATOS (Central)
+            // =======================================================================
+            pnlFormCard.BackColor = Color.White;
+            pnlFormCard.Location = new Point(20, 105);
+            pnlFormCard.Name = "pnlFormCard";
+            pnlFormCard.Size = new Size(700, 275);
+            pnlFormCard.TabIndex = 1;
+
+            lblSeccionDatos.AutoSize = true;
+            lblSeccionDatos.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblSeccionDatos.ForeColor = colorPrincipal;
+            lblSeccionDatos.Location = new Point(17, 12);
+            lblSeccionDatos.Name = "lblSeccionDatos";
+            lblSeccionDatos.Size = new Size(150, 17);
+            lblSeccionDatos.Text = "📝 DATOS DE LA AGENDA";
+
+            // --- FILA 1: FECHA ---
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblFecha.ForeColor = Color.FromArgb(40, 40, 40);
-            lblFecha.Location = new Point(23, 102);
+            lblFecha.ForeColor = Color.FromArgb(60, 60, 60);
+            lblFecha.Location = new Point(17, 42); // Compensación de 3px a la izquierda de 20
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(43, 17);
             lblFecha.Text = "Fecha";
@@ -92,19 +109,16 @@
             dtpFecha.CustomFormat = "dd/MM/yyyy";
             dtpFecha.Font = new Font("Segoe UI", 10F);
             dtpFecha.Format = DateTimePickerFormat.Custom;
-            dtpFecha.Location = new Point(26, 122);
+            dtpFecha.Location = new Point(20, 62);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(320, 25);
+            dtpFecha.Size = new Size(315, 25);
             dtpFecha.TabIndex = 2;
 
-            // ==========================================
-            // FILA 2: HORAS (Desde y Hasta)
-            // ==========================================
-            // lblHoraDesde (X = 23, 3 puntos menos que dtpHoraDesde en 26)
+            // --- FILA 2: HORAS (Desde y Hasta) ---
             lblHoraDesde.AutoSize = true;
             lblHoraDesde.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblHoraDesde.ForeColor = Color.FromArgb(40, 40, 40);
-            lblHoraDesde.Location = new Point(23, 160);
+            lblHoraDesde.ForeColor = Color.FromArgb(60, 60, 60);
+            lblHoraDesde.Location = new Point(17, 100);
             lblHoraDesde.Name = "lblHoraDesde";
             lblHoraDesde.Size = new Size(77, 17);
             lblHoraDesde.Text = "Hora desde";
@@ -112,17 +126,16 @@
             dtpHoraDesde.CustomFormat = "HH:mm";
             dtpHoraDesde.Font = new Font("Segoe UI", 10F);
             dtpHoraDesde.Format = DateTimePickerFormat.Custom;
-            dtpHoraDesde.Location = new Point(26, 180);
+            dtpHoraDesde.Location = new Point(20, 120);
             dtpHoraDesde.Name = "dtpHoraDesde";
             dtpHoraDesde.ShowUpDown = true;
-            dtpHoraDesde.Size = new Size(320, 25);
+            dtpHoraDesde.Size = new Size(315, 25);
             dtpHoraDesde.TabIndex = 4;
 
-            // lblHoraHasta (X = 361, 3 puntos menos que dtpHoraHasta en 364)
             lblHoraHasta.AutoSize = true;
             lblHoraHasta.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblHoraHasta.ForeColor = Color.FromArgb(40, 40, 40);
-            lblHoraHasta.Location = new Point(361, 160);
+            lblHoraHasta.ForeColor = Color.FromArgb(60, 60, 60);
+            lblHoraHasta.Location = new Point(357, 100); // Compensación de 3px a la izquierda de 360
             lblHoraHasta.Name = "lblHoraHasta";
             lblHoraHasta.Size = new Size(73, 17);
             lblHoraHasta.Text = "Hora hasta";
@@ -130,20 +143,17 @@
             dtpHoraHasta.CustomFormat = "HH:mm";
             dtpHoraHasta.Font = new Font("Segoe UI", 10F);
             dtpHoraHasta.Format = DateTimePickerFormat.Custom;
-            dtpHoraHasta.Location = new Point(364, 180);
+            dtpHoraHasta.Location = new Point(360, 120);
             dtpHoraHasta.Name = "dtpHoraHasta";
             dtpHoraHasta.ShowUpDown = true;
-            dtpHoraHasta.Size = new Size(320, 25);
+            dtpHoraHasta.Size = new Size(315, 25);
             dtpHoraHasta.TabIndex = 6;
 
-            // ==========================================
-            // FILA 3: PROFESIONAL Y CONSULTORIO
-            // ==========================================
-            // lblProfesional (X = 23, 3 puntos menos que cboProfesional en 26)
+            // --- FILA 3: PROFESIONAL Y CONSULTORIO ---
             lblProfesional.AutoSize = true;
             lblProfesional.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblProfesional.ForeColor = Color.FromArgb(40, 40, 40);
-            lblProfesional.Location = new Point(23, 218);
+            lblProfesional.ForeColor = Color.FromArgb(60, 60, 60);
+            lblProfesional.Location = new Point(17, 158);
             lblProfesional.Name = "lblProfesional";
             lblProfesional.Size = new Size(77, 17);
             lblProfesional.Text = "Profesional";
@@ -151,17 +161,16 @@
             cboProfesional.DropDownStyle = ComboBoxStyle.DropDownList;
             cboProfesional.Font = new Font("Segoe UI", 10F);
             cboProfesional.FormattingEnabled = true;
-            cboProfesional.Location = new Point(26, 238);
+            cboProfesional.Location = new Point(20, 178);
             cboProfesional.Name = "cboProfesional";
-            cboProfesional.Size = new Size(320, 25);
+            cboProfesional.Size = new Size(315, 25);
             cboProfesional.TabIndex = 8;
             cboProfesional.SelectedIndexChanged += cboProfesional_SelectedIndexChanged;
 
-            // lblConsultorio (X = 361, 3 puntos menos que cboConsultorio en 364)
             lblConsultorio.AutoSize = true;
             lblConsultorio.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblConsultorio.ForeColor = Color.FromArgb(40, 40, 40);
-            lblConsultorio.Location = new Point(361, 218);
+            lblConsultorio.ForeColor = Color.FromArgb(60, 60, 60);
+            lblConsultorio.Location = new Point(357, 158);
             lblConsultorio.Name = "lblConsultorio";
             lblConsultorio.Size = new Size(79, 17);
             lblConsultorio.Text = "Consultorio";
@@ -169,19 +178,16 @@
             cboConsultorio.DropDownStyle = ComboBoxStyle.DropDownList;
             cboConsultorio.Font = new Font("Segoe UI", 10F);
             cboConsultorio.FormattingEnabled = true;
-            cboConsultorio.Location = new Point(364, 238);
+            cboConsultorio.Location = new Point(360, 178);
             cboConsultorio.Name = "cboConsultorio";
-            cboConsultorio.Size = new Size(320, 25);
+            cboConsultorio.Size = new Size(315, 25);
             cboConsultorio.TabIndex = 10;
 
-            // ==========================================
-            // FILA 4: DURACIÓN Y BOTÓN CREAR
-            // ==========================================
-            // lblDuracion (X = 23, 3 puntos menos que txtDuracion en 26)
+            // --- FILA 4: DURACIÓN Y BOTÓN ACCIÓN ---
             lblDuracion.AutoSize = true;
             lblDuracion.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblDuracion.ForeColor = Color.FromArgb(40, 40, 40);
-            lblDuracion.Location = new Point(23, 276);
+            lblDuracion.ForeColor = Color.FromArgb(60, 60, 60);
+            lblDuracion.Location = new Point(17, 216);
             lblDuracion.Name = "lblDuracion";
             lblDuracion.Size = new Size(155, 17);
             lblDuracion.Text = "Duración consulta (min)";
@@ -189,58 +195,72 @@
             txtDuracion.BackColor = Color.FromArgb(240, 242, 245);
             txtDuracion.BorderStyle = BorderStyle.FixedSingle;
             txtDuracion.Font = new Font("Segoe UI", 10F);
-            txtDuracion.Location = new Point(26, 296);
+            txtDuracion.Location = new Point(20, 236);
             txtDuracion.Name = "txtDuracion";
             txtDuracion.PlaceholderText = "Automático según profesional";
             txtDuracion.ReadOnly = true;
-            txtDuracion.Size = new Size(320, 25);
+            txtDuracion.Size = new Size(315, 25);
             txtDuracion.TabIndex = 12;
             txtDuracion.TabStop = false;
 
-            // btnCrear (Alineado simétricamente en la columna derecha de la duración)
             btnCrear.BackColor = colorPrincipal;
             btnCrear.FlatAppearance.BorderSize = 0;
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(364, 278);
+            btnCrear.Location = new Point(360, 225);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(320, 42);
+            btnCrear.Size = new Size(315, 36);
             btnCrear.TabIndex = 14;
             btnCrear.Text = "📅 Crear agenda";
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
 
-            // ==========================================
-            // FOOTER: NOTA INFORMATIVA Y BOTÓN SALIR
-            // ==========================================
-            // lblNota (Recuadro achicado, texto estructurado abajo para dar espacio)
-            lblNota.BackColor = Color.FromArgb(230, 247, 245);
+            pnlFormCard.Controls.Add(lblSeccionDatos);
+            pnlFormCard.Controls.Add(lblFecha);
+            pnlFormCard.Controls.Add(dtpFecha);
+            pnlFormCard.Controls.Add(lblHoraDesde);
+            pnlFormCard.Controls.Add(dtpHoraDesde);
+            pnlFormCard.Controls.Add(lblHoraHasta);
+            pnlFormCard.Controls.Add(dtpHoraHasta);
+            pnlFormCard.Controls.Add(lblProfesional);
+            pnlFormCard.Controls.Add(cboProfesional);
+            pnlFormCard.Controls.Add(lblConsultorio);
+            pnlFormCard.Controls.Add(cboConsultorio);
+            pnlFormCard.Controls.Add(lblDuracion);
+            pnlFormCard.Controls.Add(txtDuracion);
+            pnlFormCard.Controls.Add(btnCrear);
+
+            // =======================================================================
+            // FOOTER GENERAL
+            // =======================================================================
+            // lblNota (Fondo VERDE pastel con presencia real)
+            lblNota.BackColor = Color.FromArgb(198, 234, 212);
             lblNota.BorderStyle = BorderStyle.None;
             lblNota.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
-            lblNota.ForeColor = Color.FromArgb(0, 100, 90);
-            lblNota.Location = new Point(26, 345);
+            lblNota.ForeColor = Color.FromArgb(0, 75, 68); // Tipografía verde complementaria oscura
+            lblNota.Location = new Point(20, 395);
             lblNota.Name = "lblNota";
-            lblNota.Padding = new Padding(10, 6, 10, 6);
-            lblNota.Size = new Size(500, 42); // Más angosto para que el texto salte de línea de forma natural
+            lblNota.Padding = new Padding(12, 8, 12, 8);
+            lblNota.Size = new Size(500, 45);
             lblNota.TabIndex = 13;
-            lblNota.Text = "ℹ  La duración se establece automáticamente según la\n    especialidad del profesional seleccionado.";
+            lblNota.Text = "ℹ   La duración se establece automáticamente según la\r\n    especialidad del profesional seleccionado.";
 
-            // btnSalir (Botón "Cancelar/Salir" ubicado al costado derecho de la nota)
+            // btnSalir
             btnSalir.BackColor = Color.White;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(210, 210, 210);
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnSalir.ForeColor = Color.FromArgb(100, 100, 100);
-            btnSalir.Location = new Point(544, 348);
+            btnSalir.Location = new Point(540, 400);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(140, 35);
+            btnSalir.Size = new Size(180, 35);
             btnSalir.TabIndex = 16;
             btnSalir.Text = "🚪 Salir";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // btnLimpiar (Preservado oculto por compatibilidad con tus eventos internos)
+            // btnLimpiar (Preservado invisible para retrocompatibilidad absoluta de métodos)
             btnLimpiar.Location = new Point(0, 0);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(0, 0);
@@ -252,25 +272,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(245, 247, 250);
-            ClientSize = new Size(710, 445); // Formulario mucho más compacto y elegante
+            BackColor = Color.FromArgb(238, 242, 245); // El gris de fondo uniforme
+            ClientSize = new Size(750, 495);
             ControlBox = false;
             Controls.Add(btnSalir);
             Controls.Add(btnLimpiar);
-            Controls.Add(btnCrear);
             Controls.Add(lblNota);
-            Controls.Add(txtDuracion);
-            Controls.Add(lblDuracion);
-            Controls.Add(cboConsultorio);
-            Controls.Add(lblConsultorio);
-            Controls.Add(cboProfesional);
-            Controls.Add(lblProfesional);
-            Controls.Add(dtpHoraHasta);
-            Controls.Add(lblHoraHasta);
-            Controls.Add(dtpHoraDesde);
-            Controls.Add(lblHoraDesde);
-            Controls.Add(dtpFecha);
-            Controls.Add(lblFecha);
+            Controls.Add(pnlFormCard);
             Controls.Add(pnlHeader);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
@@ -281,28 +289,31 @@
             Load += FormCrearAgendaMedica_Load;
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
+            pnlFormCard.ResumeLayout(false);
+            pnlFormCard.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         private System.Windows.Forms.Panel pnlHeader;
-        private Label lblSubtitulo;
-        private Label lblTitulo;
-        private Label lblFecha;
-        private DateTimePicker dtpFecha;
-        private Label lblHoraDesde;
-        private DateTimePicker dtpHoraDesde;
-        private Label lblHoraHasta;
-        private DateTimePicker dtpHoraHasta;
-        private Label lblProfesional;
-        private ComboBox cboProfesional;
-        private Label lblConsultorio;
-        private ComboBox cboConsultorio;
-        private Label lblDuracion;
-        private TextBox txtDuracion;
-        private Label lblNota;
-        private Button btnCrear;
-        private Button btnLimpiar;
-        private Button btnSalir;
+        private System.Windows.Forms.Label lblSubtitulo;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Panel pnlFormCard; // Tarjeta base blanca
+        private System.Windows.Forms.Label lblSeccionDatos;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label lblHoraDesde;
+        private System.Windows.Forms.DateTimePicker dtpHoraDesde;
+        private System.Windows.Forms.Label lblHoraHasta;
+        private System.Windows.Forms.DateTimePicker dtpHoraHasta;
+        private System.Windows.Forms.Label lblProfesional;
+        private System.Windows.Forms.ComboBox cboProfesional;
+        private System.Windows.Forms.Label lblConsultorio;
+        private System.Windows.Forms.ComboBox cboConsultorio;
+        private System.Windows.Forms.Label lblDuracion;
+        private System.Windows.Forms.TextBox txtDuracion;
+        private System.Windows.Forms.Label lblNota;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

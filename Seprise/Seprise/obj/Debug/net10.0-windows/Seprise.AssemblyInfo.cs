@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Seprise")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9205f1e0aa92c03681ca2053d0feb63ec0430d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f874fef241a39f334107d0eb64b868ebfdda5a06")]
 [assembly: System.Reflection.AssemblyProductAttribute("Seprise")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Seprise")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

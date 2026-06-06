@@ -48,6 +48,7 @@
         private System.Windows.Forms.Label lblInfoDesc1;
         private System.Windows.Forms.Label lblInfoTitulo2;
         private System.Windows.Forms.Label lblInfoDesc2;
+        private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Panel pnlFooter;
         // Botones de acción inferiores
         private System.Windows.Forms.Button btnEmitir;
@@ -103,7 +104,10 @@
             this.lblInfoDesc2 = new System.Windows.Forms.Label();
             this.btnEmitir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            
+            // Componentes del Footer Institucional
             this.pnlFooter = new System.Windows.Forms.Panel();
+            this.lblNota = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             
             this.pnlHeader.SuspendLayout();
@@ -111,6 +115,7 @@
             this.pnlInfoPacienteCard.SuspendLayout();
             this.pnlFacturacion.SuspendLayout();
             this.pnlInfoImportante.SuspendLayout();
+            this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
 
             // 
@@ -119,8 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(248, 249, 250); 
-            this.ClientSize = new System.Drawing.Size(800, 650); // Rediseñado a escala armónica
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(800, 650); 
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnEmitir);
             this.Controls.Add(this.pnlFacturacion);
@@ -143,7 +147,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(700, 90);
+            this.pnlHeader.Size = new System.Drawing.Size(800, 90);
 
             // lblTitulo
             this.lblTitulo.AutoSize = true;
@@ -194,7 +198,6 @@
             this.txtDniPaciente.Size = new System.Drawing.Size(440, 40);
             this.txtDniPaciente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDniPaciente.PlaceholderText = " Ingresá el DNI del paciente";
-            this.txtDniPaciente.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
 
             // btnBuscarPaciente
             this.btnBuscarPaciente.BackColor = System.Drawing.Color.FromArgb(0, 150, 136);
@@ -251,7 +254,7 @@
             this.pnlFacturacion.Controls.Add(this.lblNumeroCobertura);
             this.pnlFacturacion.Controls.Add(this.txtNumeroCobertura);
             this.pnlFacturacion.Location = new System.Drawing.Point(20, 310);
-            this.pnlFacturacion.Size = new System.Drawing.Size(760, 230);
+            this.pnlFacturacion.Size = new System.Drawing.Size(760, 220);
             this.pnlFacturacion.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
 
             // lblSeccionFacturacion
@@ -275,7 +278,6 @@
             this.txtMedico.Location = new System.Drawing.Point(20, 68);
             this.txtMedico.Size = new System.Drawing.Size(340, 25);
             this.txtMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMedico.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left;
 
             // lblConcepto
             this.lblConcepto.AutoSize = true;
@@ -367,12 +369,12 @@
             this.txtImporte.BackColor = System.Drawing.Color.FromArgb(242, 243, 245);
             this.txtImporte.Enabled = false;
             this.txtImporte.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtImporte.Location = new System.Drawing.Point(520, 250);
+            this.txtImporte.Location = new System.Drawing.Point(520, 190);
             this.txtImporte.Size = new System.Drawing.Size(220, 25);
             this.txtImporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             // 
-            // BOTONES INFERIORES DE ACCIÓN (Con Posicionamiento Relativo Continuo)
+            // BOTONES DE ACCIÓN MEDIOS
             // 
             // btnEmitir
             this.btnEmitir.BackColor = System.Drawing.Color.FromArgb(0, 150, 136);
@@ -380,11 +382,10 @@
             this.btnEmitir.FlatAppearance.BorderSize = 0;
             this.btnEmitir.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEmitir.ForeColor = System.Drawing.Color.White;
-            this.btnEmitir.Location = new System.Drawing.Point(20, 550);
+            this.btnEmitir.Location = new System.Drawing.Point(20, 542);
             this.btnEmitir.Size = new System.Drawing.Size(370, 38);
             this.btnEmitir.Text = "COBRAR";
             this.btnEmitir.UseVisualStyleBackColor = false;
-            this.btnEmitir.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             this.btnEmitir.Click += new System.EventHandler(this.btnEmitir_Click);
 
             // btnImprimir
@@ -394,34 +395,47 @@
             this.btnImprimir.FlatAppearance.BorderSize = 1;
             this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(0, 150, 136);
-            this.btnImprimir.Location = new System.Drawing.Point(410, 550);
+            this.btnImprimir.Location = new System.Drawing.Point(410, 542);
             this.btnImprimir.Padding = new Padding(0, 2, 0, 0);
             this.btnImprimir.Size = new System.Drawing.Size(370, 38);
             this.btnImprimir.Text = "🖨️ Imprimir comprobante";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
 
-            this.pnlFooter.BackColor = System.Drawing.Color.FromArgb(242, 247, 247);
-            this.pnlFooter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            // =======================================================================
+            // PNLFOOTER (Barra inferior con Nota y Botón perfectamente alineados)
+            // =======================================================================
+            this.pnlFooter.BackColor = System.Drawing.Color.FromArgb(248, 249, 250);
+            this.pnlFooter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlFooter.Controls.Add(this.btnSalir);
+            this.pnlFooter.Controls.Add(this.lblNota);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 515);
-            this.pnlFooter.Size = new System.Drawing.Size(700, 55);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 585);
+            this.pnlFooter.Size = new System.Drawing.Size(800, 65);
 
-            // btnSalir
+            // lblNota (Estilo verde complementario y alineación exacta a Y=12)
+            this.lblNota.BackColor = System.Drawing.Color.FromArgb(198, 234, 212);
+            this.lblNota.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblNota.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular);
+            this.lblNota.ForeColor = System.Drawing.Color.FromArgb(0, 75, 75);
+            this.lblNota.Location = new System.Drawing.Point(20, 12);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
+            this.lblNota.Size = new System.Drawing.Size(620, 45);
+            this.lblNota.TabIndex = 13;
+            this.lblNota.Text = "ℹ   La facturación procesa la consulta actual, valida la cobertura de la obra social e imprime el comprobante de pago.";
+
+            // btnSalir (Centrado de forma vertical con respecto a lblNota en Y=12)
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btnSalir.FlatAppearance.BorderSize = 1;
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(80, 80, 80);
-            this.btnSalir.Location = new System.Drawing.Point(560, 6);
-            this.btnSalir.Size = new System.Drawing.Size(120, 38);
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(200, 210, 220);
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            this.btnSalir.Location = new System.Drawing.Point(660, 12);
+            this.btnSalir.Size = new System.Drawing.Size(120, 35);
             this.btnSalir.Text = "🚪 Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
 
             // Finalizaciones de layouts
             this.pnlHeader.ResumeLayout(false);
@@ -434,6 +448,8 @@
             this.pnlFacturacion.PerformLayout();
             this.pnlInfoImportante.ResumeLayout(false);
             this.pnlInfoImportante.PerformLayout();
+            this.pnlFooter.ResumeLayout(false);
+            this.pnlFooter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }

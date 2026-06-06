@@ -103,7 +103,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(24, 20);
-            this.lblTitulo.Text = "📅  CONFIRMAR ASISTENCIA DEL DÍA";
+            this.lblTitulo.Text = "📅   CONFIRMAR ASISTENCIA DEL DÍA";
 
             this.lblSubtitulo.AutoSize = true;
             this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -217,51 +217,59 @@
             this.btnConfirmarAsistencia.ForeColor = System.Drawing.Color.White;
             this.btnConfirmarAsistencia.Location = new System.Drawing.Point(24, 465);
             this.btnConfirmarAsistencia.Size = new System.Drawing.Size(650, 45);
-            this.btnConfirmarAsistencia.Text = "✔️  Confirmar asistencia del día";
+            this.btnConfirmarAsistencia.Text = "✔️   Confirmar asistencia del día";
             this.btnConfirmarAsistencia.UseVisualStyleBackColor = false;
             this.btnConfirmarAsistencia.Enabled = false;
 
-            // --- PNLFOOTER (Barra inferior de acciones y notas) ---
-            this.pnlFooter.BackColor = fondoGrisGris;
-            this.pnlFooter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            // =======================================================================
+            // PNLFOOTER (Barra inferior con Nota y Botón alineados de forma exacta)
+            // =======================================================================
+            this.pnlFooter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlFooter.Controls.Add(this.btnSalir);
             this.pnlFooter.Controls.Add(this.lblNota);
+            this.pnlFooter.Controls.Add(this.lblMensajes);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFooter.Location = new System.Drawing.Point(0, 565);
             this.pnlFooter.Size = new System.Drawing.Size(700, 65);
 
-            this.lblNota.AutoSize = true;
-            this.lblNota.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNota.ForeColor = System.Drawing.Color.FromArgb(80, 90, 100);
-            this.lblNota.Location = new System.Drawing.Point(24, 25);
-            this.lblNota.Text = "🔒 Esta confirmación registrará la llegada del paciente en la fecha actual.";
+            // lblNota (Alineada perfectamente a la altura del botón e Y=12 más arriba)
+            this.lblNota.BackColor = System.Drawing.Color.FromArgb(198, 234, 212);
+            this.lblNota.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblNota.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular);
+            this.lblNota.ForeColor = System.Drawing.Color.FromArgb(0, 75, 75);
+            this.lblNota.Location = new System.Drawing.Point(24, 12);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
+            this.lblNota.Size = new System.Drawing.Size(500, 36);
+            this.lblNota.TabIndex = 13;
+            this.lblNota.Text = "ℹ   La confirmación valida el DNI contra los turnos agendados en tiempo real. \r\nUna vez verificado, el estado del turno se actualizará automáticamente de Reservado a Recepcionado.";
 
-            // lblMensajes (mensajes de estado en el footer)
-            this.lblMensajes.AutoSize = false;
-            this.lblMensajes.Location = new System.Drawing.Point(24, 45);
-            this.lblMensajes.Name = "lblMensajes";
-            this.lblMensajes.Size = new System.Drawing.Size(550, 15);
-            this.lblMensajes.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblMensajes.ForeColor = azulPrincipal;
-            this.lblMensajes.Text = string.Empty;
-            this.pnlFooter.Controls.Add(this.lblMensajes);
-
+            // btnSalir (Centrado de forma perfecta respecto al alto de lblNota)
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(200, 210, 220);
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            this.btnSalir.Location = new System.Drawing.Point(545, 15);
+            this.btnSalir.Location = new System.Drawing.Point(547, 12);
             this.btnSalir.Size = new System.Drawing.Size(125, 35);
             this.btnSalir.Text = "🚪 Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 
+            // lblMensajes (Reubicado en el límite inferior para no pisar el diseño)
+            this.lblMensajes.AutoSize = false;
+            this.lblMensajes.Location = new System.Drawing.Point(24, 50);
+            this.lblMensajes.Name = "lblMensajes";
+            this.lblMensajes.Size = new System.Drawing.Size(540, 12);
+            this.lblMensajes.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblMensajes.ForeColor = azulPrincipal;
+            this.lblMensajes.Text = string.Empty;
+
             // --- FORM CONFIGURATION ---
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(244, 246, 249);
-            this.ClientSize = new System.Drawing.Size(700, 630);
+            this.ClientSize = new System.Drawing.Size(700, 610);
             this.ControlBox = false;
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlCardPaciente);

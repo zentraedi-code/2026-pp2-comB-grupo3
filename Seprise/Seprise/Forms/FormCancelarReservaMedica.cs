@@ -27,7 +27,7 @@ namespace Seprise
             dgvTurnos.RowHeadersVisible = false;
             dgvTurnos.Font = new Font("Segoe UI", 9f);
             dgvTurnos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
-            dgvTurnos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 107, 160);
+            dgvTurnos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 150, 136);
             dgvTurnos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvTurnos.EnableHeadersVisualStyles = false;
             dgvTurnos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 246, 255);
@@ -49,11 +49,6 @@ namespace Seprise
                 FlatStyle = FlatStyle.Flat
             };
             dgvTurnos.Columns.Add(btnCancelar);
-        }
-
-        private void chkFecha_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpFecha.Enabled = chkFecha.Checked;
         }
 
         private void btnBuscarPaciente_Click(object sender, EventArgs e)
@@ -99,7 +94,7 @@ namespace Seprise
 
             try
             {
-                DateTime? fecha = chkFecha.Checked ? dtpFecha.Value.Date : (DateTime?)null;
+                DateTime? fecha =  dtpFecha.Value.Date ;
 
                 TurnoConsultaDao turnoDao = new TurnoConsultaDao();
                 System.Data.DataTable dt = turnoDao.buscarReservadosPorPaciente(pacienteSeleccionado.Id, fecha);
