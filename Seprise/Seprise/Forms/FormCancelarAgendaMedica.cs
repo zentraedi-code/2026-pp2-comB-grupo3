@@ -76,16 +76,11 @@ namespace Seprise
             dgvAgendas.Columns.Add(btnCancelar);
         }
 
-        private void chkFecha_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpFecha.Enabled = chkFecha.Checked;
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                DateTime? fecha = chkFecha.Checked ? dtpFecha.Value.Date : (DateTime?)null;
+                DateTime? fecha = dtpFecha.Value.Date;
                 int? medicoId = cmbMedico.SelectedItem is Medico m ? m.Id : (int?)null;
 
                 AgendaMedicaDao dao = new AgendaMedicaDao();

@@ -85,7 +85,7 @@ namespace Seprise
         {
             try
             {
-                DateTime? fecha = chkFecha.Checked ? dtpFecha.Value.Date : (DateTime?)null;
+                DateTime? fecha = dtpFecha.Value.Date;
                 int? medicoId = cmbMedico.SelectedItem is Medico m ? m.Id : (int?)null;
 
                 AgendaMedicaDao dao = new AgendaMedicaDao();

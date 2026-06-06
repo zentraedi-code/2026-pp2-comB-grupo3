@@ -255,6 +255,5 @@
         private System.Windows.Forms.DataGridView dgvAgendas;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.CheckBox chkFecha = null; // Preservada para retrocompatibilidad
     }
 }
