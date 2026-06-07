@@ -20,14 +20,20 @@
             panelHeader = new Panel();
             lblTitulo = new Label();
             panelContenido = new Panel();
+            panelFooter = new Panel();
+            lblWelcome = new Label();
+            lblIcono = new Label();
+            lblSubtitulo = new Label();
+            btnSalir = new Button();
             lblSeccionComun = new Label();
+            btnGestionMedicos = new Button();
             btnPacientes = new Button();
             lblSeccionConsultorios = new Label();
-            btnGestionMedicos = new Button();
             btnGestionAgenda = new Button();
             btnGestionTurnos = new Button();
             btnRecepcionarPaciente = new Button();
             btnAtencionPaciente = new Button();
+            sepAdministracion = new Panel();
             lblSeccionEstudios = new Label();
             btnGestionAgendaEstudios = new Button();
             btnGestionTurnosEstudios = new Button();
@@ -37,29 +43,58 @@
             btnProcesamientoEstudios = new Button();
             panelHeader.SuspendLayout();
             panelContenido.SuspendLayout();
+            panelFooter.SuspendLayout();
             SuspendLayout();
+
             panelHeader.BackColor = Color.FromArgb(0, 150, 136);
             panelHeader.Controls.Add(lblTitulo);
+            panelHeader.Controls.Add(lblSubtitulo);
+            panelHeader.Controls.Add(lblIcono);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1254, 80);
+            panelHeader.Size = new Size(1254, 100);
             panelHeader.TabIndex = 0;
-            lblTitulo.Dock = DockStyle.Fill;
-            lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+
+            lblIcono.AutoSize = true;
+            lblIcono.BackColor = Color.Transparent;
+            lblIcono.Font = new Font("Segoe UI", 45F, FontStyle.Regular);
+            lblIcono.ForeColor = Color.White;
+            lblIcono.Location = new Point(26, 0);
+            lblIcono.Name = "lblIcono";
+            lblIcono.Size = new Size(300, 70);
+            lblIcono.Text = "🩺|";
+
+            lblTitulo.Dock = DockStyle.None;
+            lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Location = new Point(150, 15);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(1254, 80);
+            lblTitulo.Size = new Size(1254, 35);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Sistema de Gestión - Clínica SEPRISE";
-            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
+
+            lblSubtitulo.AutoSize = true;
+            lblSubtitulo.BackColor = Color.Transparent;
+            lblSubtitulo.Font = new Font("Segoe UI", 12F, FontStyle.Regular);
+            lblSubtitulo.ForeColor = Color.FromArgb(204, 242, 239);
+            lblSubtitulo.Location = new Point(150, 48);
+            lblSubtitulo.Name = "lblSubtitulo";
+            lblSubtitulo.Size = new Size(300, 17);
+            lblSubtitulo.TabIndex = 1;
+            lblSubtitulo.Text = "Seleccione la opción que desea gestionar.";
+
+            sepAdministracion.BackColor = Color.FromArgb(225, 230, 232);
+            sepAdministracion.Location = new Point(40, 225);
+            sepAdministracion.Size = new Size(1130,1);
+
             panelContenido.AutoScroll = true;
-            panelContenido.BackColor = Color.White;
+            panelContenido.BackColor = Color.FromArgb(244, 246, 247);
             panelContenido.Controls.Add(lblSeccionComun);
+            panelContenido.Controls.Add(btnGestionMedicos);
             panelContenido.Controls.Add(btnPacientes);
             panelContenido.Controls.Add(lblSeccionConsultorios);
-            panelContenido.Controls.Add(btnGestionMedicos);
             panelContenido.Controls.Add(btnGestionAgenda);
             panelContenido.Controls.Add(btnGestionTurnos);
             panelContenido.Controls.Add(btnRecepcionarPaciente);
@@ -71,210 +106,168 @@
             panelContenido.Controls.Add(btnSolicitudEstudios);
             panelContenido.Controls.Add(btnConfirmacionEstudios);
             panelContenido.Controls.Add(btnProcesamientoEstudios);
+            panelContenido.Controls.Add(sepAdministracion);
             panelContenido.Dock = DockStyle.Fill;
-            panelContenido.Location = new Point(0, 80);
+            panelContenido.Location = new Point(0, 100);
             panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(1254, 623);
+            panelContenido.Size = new Size(1254, 533);
             panelContenido.TabIndex = 1;
-            panelContenido.Paint += panelContenido_Paint;
-            lblSeccionComun.BackColor = Color.FromArgb(0, 150, 136);
-            lblSeccionComun.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblSeccionComun.ForeColor = Color.White;
-            lblSeccionComun.Location = new Point(30, 20);
-            lblSeccionComun.Name = "lblSeccionComun";
-            lblSeccionComun.Padding = new Padding(20, 0, 0, 0);
-            lblSeccionComun.Size = new Size(1203, 40);
-            lblSeccionComun.TabIndex = 0;
-            lblSeccionComun.Text = "ADMINISTRACIÓN";
-            lblSeccionComun.TextAlign = ContentAlignment.MiddleLeft;
-            lblSeccionComun.Click += lblSeccionComun_Click;
-            btnPacientes.BackColor = Color.FromArgb(178, 235, 242);
-            btnPacientes.Cursor = Cursors.Hand;
-            btnPacientes.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnPacientes.FlatAppearance.BorderSize = 2;
-            btnPacientes.FlatStyle = FlatStyle.Flat;
-            btnPacientes.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnPacientes.Location = new Point(250, 80);
-            btnPacientes.Name = "btnPacientes";
-            btnPacientes.Size = new Size(180, 120);
-            btnPacientes.TabIndex = 2;
-            btnPacientes.Text = "👥\r\n\r\nGestión de\r\nPacientes";
-            btnPacientes.UseVisualStyleBackColor = false;
-            btnPacientes.Click += btnPacientes_Click;
-            lblSeccionConsultorios.BackColor = Color.FromArgb(0, 150, 136);
-            lblSeccionConsultorios.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblSeccionConsultorios.ForeColor = Color.White;
-            lblSeccionConsultorios.Location = new Point(30, 230);
-            lblSeccionConsultorios.Name = "lblSeccionConsultorios";
-            lblSeccionConsultorios.Padding = new Padding(20, 0, 0, 0);
-            lblSeccionConsultorios.Size = new Size(1203, 40);
-            lblSeccionConsultorios.TabIndex = 3;
-            lblSeccionConsultorios.Text = "CONSULTORIOS EXTERNOS";
-            lblSeccionConsultorios.TextAlign = ContentAlignment.MiddleLeft;
-            btnGestionMedicos.BackColor = Color.FromArgb(178, 235, 242);
-            btnGestionMedicos.Cursor = Cursors.Hand;
-            btnGestionMedicos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnGestionMedicos.FlatAppearance.BorderSize = 2;
-            btnGestionMedicos.FlatStyle = FlatStyle.Flat;
-            btnGestionMedicos.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnGestionMedicos.Location = new Point(50, 80);
-            btnGestionMedicos.Name = "btnGestionMedicos";
-            btnGestionMedicos.Size = new Size(180, 120);
-            btnGestionMedicos.TabIndex = 1;
-            btnGestionMedicos.Text = "👨‍⚕️\r\n\r\nGestión de\r\nMédicos";
-            btnGestionMedicos.UseVisualStyleBackColor = false;
+
+            panelFooter.BackColor = Color.White;
+            panelFooter.Controls.Add(lblWelcome);
+            panelFooter.Controls.Add(btnSalir);
+            panelFooter.Dock = DockStyle.Bottom;
+            panelFooter.Location = new Point(0, 633);
+            panelFooter.Name = "panelFooter";
+            panelFooter.Size = new Size(1254, 70);
+            panelFooter.TabIndex = 2;
+
+            lblWelcome.Font = new Font("Segoe UI", 9F);
+            lblWelcome.ForeColor = Color.FromArgb(100, 110, 115);
+            lblWelcome.Location = new Point(35, 15);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(600, 40);
+            lblWelcome.Text = "ℹ️  Bienvenido al Sistema SEPRISE\r\nUtilice las opciones disponibles para gestionar la información de la clínica.";
+            lblWelcome.TextAlign = ContentAlignment.MiddleLeft;
+
+            btnSalir.BackColor = Color.White;
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(220, 224, 224);
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.FromArgb(33, 37, 41);
+            btnSalir.Location = new Point(1050, 18);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(165, 36);
+            btnSalir.Text = "🚪 Salir del sistema";
+            btnSalir.Click += btnSalir_Click;
+            btnSalir.UseVisualStyleBackColor = false;
+
+            ConfigurarEncabezadoSeccion(lblSeccionComun, "👥", "ADMINISTRACIÓN", "Gestión de la información principal del sistema.", 35, 25);
+
+            ConfigurarBotonTarjeta(btnGestionMedicos, "👨‍⚕️", "Gestión de Médicos", "Administre los datos\ndel personal médico.", 40, 105);
             btnGestionMedicos.Click += btnGestionMedicos_Click;
-            btnGestionAgenda.BackColor = Color.FromArgb(178, 235, 242);
-            btnGestionAgenda.Cursor = Cursors.Hand;
-            btnGestionAgenda.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnGestionAgenda.FlatAppearance.BorderSize = 2;
-            btnGestionAgenda.FlatStyle = FlatStyle.Flat;
-            btnGestionAgenda.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnGestionAgenda.Location = new Point(50, 292);
-            btnGestionAgenda.Name = "btnGestionAgenda";
-            btnGestionAgenda.Size = new Size(180, 120);
-            btnGestionAgenda.TabIndex = 5;
-            btnGestionAgenda.Text = "📅\n\nGestión de Agenda\n";
-            btnGestionAgenda.UseVisualStyleBackColor = false;
+
+            ConfigurarBotonTarjeta(btnPacientes, "👥", "Gestión de Pacientes", "Administre los datos\nde los pacientes.", 315, 105);
+            btnPacientes.Click += btnPacientes_Click;
+
+            ConfigurarEncabezadoSeccion(lblSeccionConsultorios, "📅", "CONSULTORIOS EXTERNOS", "Gestión de la atención en consultorios externos.", 35, 250);
+
+            ConfigurarBotonTarjeta(btnGestionAgenda, "📅", "Gestión de Agenda", "Administre la agenda\nde turnos.", 40, 320);
             btnGestionAgenda.Click += btnGestionAgenda_Click;
-            btnGestionTurnos.BackColor = Color.FromArgb(178, 235, 242);
-            btnGestionTurnos.Cursor = Cursors.Hand;
-            btnGestionTurnos.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnGestionTurnos.FlatAppearance.BorderSize = 2;
-            btnGestionTurnos.FlatStyle = FlatStyle.Flat;
-            btnGestionTurnos.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnGestionTurnos.Location = new Point(250, 292);
-            btnGestionTurnos.Name = "btnGestionTurnos";
-            btnGestionTurnos.Size = new Size(180, 120);
-            btnGestionTurnos.TabIndex = 6;
-            btnGestionTurnos.Text = "🕐\r\n\r\nGestión de Turnos\r\n";
-            btnGestionTurnos.UseVisualStyleBackColor = false;
+
+            ConfigurarBotonTarjeta(btnGestionTurnos, "🕐", "Gestión de Turnos", "Administre y\ncontrole los turnos.", 315, 320);
             btnGestionTurnos.Click += btnGestionTurnos_Click;
-            btnRecepcionarPaciente.BackColor = Color.FromArgb(178, 235, 242);
-            btnRecepcionarPaciente.Cursor = Cursors.Hand;
-            btnRecepcionarPaciente.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnRecepcionarPaciente.FlatAppearance.BorderSize = 2;
-            btnRecepcionarPaciente.FlatStyle = FlatStyle.Flat;
-            btnRecepcionarPaciente.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnRecepcionarPaciente.Location = new Point(448, 292);
-            btnRecepcionarPaciente.Name = "btnRecepcionarPaciente";
-            btnRecepcionarPaciente.Size = new Size(180, 120);
-            btnRecepcionarPaciente.TabIndex = 7;
-            btnRecepcionarPaciente.Text = "📋✓\r\n\r\nRecepcionar Pacientes";
-            btnRecepcionarPaciente.UseVisualStyleBackColor = false;
+
+            ConfigurarBotonTarjeta(btnRecepcionarPaciente, "📋", "Recepcionar Pacientes", "Registre la llegada\nde pacientes.", 590, 320);
             btnRecepcionarPaciente.Click += btnRecepcionarPaciente_Click;
-            btnAtencionPaciente.BackColor = Color.FromArgb(178, 235, 242);
-            btnAtencionPaciente.Cursor = Cursors.Hand;
-            btnAtencionPaciente.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnAtencionPaciente.FlatAppearance.BorderSize = 2;
-            btnAtencionPaciente.FlatStyle = FlatStyle.Flat;
-            btnAtencionPaciente.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnAtencionPaciente.Location = new Point(646, 292);
-            btnAtencionPaciente.Name = "btnAtencionPaciente";
-            btnAtencionPaciente.Size = new Size(180, 120);
-            btnAtencionPaciente.TabIndex = 8;
-            btnAtencionPaciente.Text = "🏥\r\n\r\nAtención de Pacientes";
-            btnAtencionPaciente.UseVisualStyleBackColor = false;
+
+            ConfigurarBotonTarjeta(btnAtencionPaciente, "🏥", "Atención de Pacientes", "Gestione la atención\nde pacientes.", 865, 320);
             btnAtencionPaciente.Click += btnAtencionPaciente_Click;
-            lblSeccionEstudios.BackColor = Color.FromArgb(0, 150, 136);
-            lblSeccionEstudios.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblSeccionEstudios.ForeColor = Color.White;
-            lblSeccionEstudios.Location = new Point(30, 440);
-            lblSeccionEstudios.Name = "lblSeccionEstudios";
-            lblSeccionEstudios.Padding = new Padding(20, 0, 0, 0);
-            lblSeccionEstudios.Size = new Size(1203, 40);
-            lblSeccionEstudios.TabIndex = 9;
-            lblSeccionEstudios.Text = "ESTUDIOS CLÍNICOS";
-            lblSeccionEstudios.TextAlign = ContentAlignment.MiddleLeft;
-            btnGestionAgendaEstudios.BackColor = Color.FromArgb(178, 235, 242);
-            btnGestionAgendaEstudios.Cursor = Cursors.Hand;
-            btnGestionAgendaEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnGestionAgendaEstudios.FlatAppearance.BorderSize = 2;
-            btnGestionAgendaEstudios.FlatStyle = FlatStyle.Flat;
-            btnGestionAgendaEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnGestionAgendaEstudios.Location = new Point(50, 500);
-            btnGestionAgendaEstudios.Name = "btnGestionAgendaEstudios";
-            btnGestionAgendaEstudios.Size = new Size(180, 100);
-            btnGestionAgendaEstudios.TabIndex = 10;
-            btnGestionAgendaEstudios.Text = "🔬📅\n\nGestión de Agenda\n";
-            btnGestionAgendaEstudios.UseVisualStyleBackColor = false;
-            btnGestionAgendaEstudios.Click += btnGestionAgendaEstudios_Click;
-            btnGestionTurnosEstudios.BackColor = Color.FromArgb(178, 235, 242);
-            btnGestionTurnosEstudios.Cursor = Cursors.Hand;
-            btnGestionTurnosEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnGestionTurnosEstudios.FlatAppearance.BorderSize = 2;
-            btnGestionTurnosEstudios.FlatStyle = FlatStyle.Flat;
-            btnGestionTurnosEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnGestionTurnosEstudios.Location = new Point(250, 500);
-            btnGestionTurnosEstudios.Name = "btnGestionTurnosEstudios";
-            btnGestionTurnosEstudios.Size = new Size(180, 100);
-            btnGestionTurnosEstudios.TabIndex = 11;
-            btnGestionTurnosEstudios.Text = "🔬🕐\n\nGestión de Turnos\n";
-            btnGestionTurnosEstudios.UseVisualStyleBackColor = false;
-            btnGestionTurnosEstudios.Click += btnGestionTurnosEstudios_Click;
-            btnRecepcionarPacienteEstudio.BackColor = Color.FromArgb(178, 235, 242);
-            btnRecepcionarPacienteEstudio.Cursor = Cursors.Hand;
-            btnRecepcionarPacienteEstudio.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnRecepcionarPacienteEstudio.FlatAppearance.BorderSize = 2;
-            btnRecepcionarPacienteEstudio.FlatStyle = FlatStyle.Flat;
-            btnRecepcionarPacienteEstudio.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnRecepcionarPacienteEstudio.Location = new Point(450, 500);
-            btnRecepcionarPacienteEstudio.Name = "btnRecepcionarPacienteEstudio";
-            btnRecepcionarPacienteEstudio.Size = new Size(180, 100);
-            btnRecepcionarPacienteEstudio.TabIndex = 12;
-            btnRecepcionarPacienteEstudio.Text = "📋✓\n\nRecepcionar";
-            btnRecepcionarPacienteEstudio.UseVisualStyleBackColor = false;
-            btnRecepcionarPacienteEstudio.Click += btnRecepcionarEstudio_Click;
-            btnSolicitudEstudios.BackColor = Color.FromArgb(178, 235, 242);
-            btnSolicitudEstudios.Cursor = Cursors.Hand;
-            btnSolicitudEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnSolicitudEstudios.FlatAppearance.BorderSize = 2;
-            btnSolicitudEstudios.FlatStyle = FlatStyle.Flat;
-            btnSolicitudEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnSolicitudEstudios.Location = new Point(646, 500);
-            btnSolicitudEstudios.Name = "btnSolicitudEstudios";
-            btnSolicitudEstudios.Size = new Size(180, 100);
-            btnSolicitudEstudios.TabIndex = 13;
-            btnSolicitudEstudios.Text = "📝\n\nSolicitar Estudios";
-            btnSolicitudEstudios.UseVisualStyleBackColor = false;
-            btnSolicitudEstudios.Click += btnSolicitudEstudios_Click;
-            btnConfirmacionEstudios.BackColor = Color.FromArgb(178, 235, 242);
-            btnConfirmacionEstudios.Cursor = Cursors.Hand;
-            btnConfirmacionEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnConfirmacionEstudios.FlatAppearance.BorderSize = 2;
-            btnConfirmacionEstudios.FlatStyle = FlatStyle.Flat;
-            btnConfirmacionEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnConfirmacionEstudios.Location = new Point(848, 500);
-            btnConfirmacionEstudios.Name = "btnConfirmacionEstudios";
-            btnConfirmacionEstudios.Size = new Size(180, 100);
-            btnConfirmacionEstudios.TabIndex = 14;
-            btnConfirmacionEstudios.Text = "✅\n\nConfirmar Estudios";
-            btnConfirmacionEstudios.UseVisualStyleBackColor = false;
-            btnConfirmacionEstudios.Click += btnConfirmacionEstudios_Click;
-            btnProcesamientoEstudios.BackColor = Color.FromArgb(178, 235, 242);
-            btnProcesamientoEstudios.Cursor = Cursors.Hand;
-            btnProcesamientoEstudios.FlatAppearance.BorderColor = Color.FromArgb(0, 150, 136);
-            btnProcesamientoEstudios.FlatAppearance.BorderSize = 2;
-            btnProcesamientoEstudios.FlatStyle = FlatStyle.Flat;
-            btnProcesamientoEstudios.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnProcesamientoEstudios.Location = new Point(1048, 500);
-            btnProcesamientoEstudios.Name = "btnProcesamientoEstudios";
-            btnProcesamientoEstudios.Size = new Size(180, 100);
-            btnProcesamientoEstudios.TabIndex = 15;
-            btnProcesamientoEstudios.Text = "⚙️\n\nProcesar Estudios";
-            btnProcesamientoEstudios.UseVisualStyleBackColor = false;
-            btnProcesamientoEstudios.Click += btnProcesamientoEstudios_Click;
+
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1254, 703);
+            ClientSize = new Size(1254, 613);
             Controls.Add(panelContenido);
             Controls.Add(panelHeader);
+            Controls.Add(panelFooter);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema SEPRISE - Consultorios y Estudios Clínicos";
             panelHeader.ResumeLayout(false);
             panelContenido.ResumeLayout(false);
+            panelFooter.ResumeLayout(false);
             ResumeLayout(false);
+        }
+
+        private void ConfigurarEncabezadoSeccion(Label label, string iconoSeccion, string titulo, string subtitulo, int x, int y)
+        {
+            label.Location = new Point(x, y);
+            label.Size = new Size(1180, 65); 
+            label.BackColor = Color.Transparent;
+            label.Text = ""; 
+
+            label.Paint += (s, e) =>
+            {
+                Graphics g = e.Graphics;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                Color colorPrincipal = Color.FromArgb(0, 150, 136); 
+
+                using (Brush brushCirculo = new SolidBrush(colorPrincipal))
+                {
+                    g.FillEllipse(brushCirculo, 0, 0, 60, 60);
+                }
+
+                using (Font fontIcono = new Font("Segoe UI Emoji", 22F, FontStyle.Regular))
+                using (Brush brushIcono = new SolidBrush(Color.White))
+                {
+                    RectangleF rectCirculo = new RectangleF(2, 2, 60, 60);
+                    StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+                    g.DrawString(iconoSeccion, fontIcono, brushIcono, rectCirculo, sf);
+                }
+
+                using (Font fontTitulo = new Font("Segoe UI", 12F, FontStyle.Bold))
+                using (Brush brushTitulo = new SolidBrush(colorPrincipal))
+                {
+                    g.DrawString(titulo, fontTitulo, brushTitulo, 65, 2);
+                }
+
+                using (Pen penTitulo = new Pen(colorPrincipal, 4))
+                {
+                    g.DrawLine(penTitulo, 67, 32, 120, 32);
+                }
+
+                using (Font fontSub = new Font("Segoe UI", 9F, FontStyle.Regular))
+                using (Brush brushSub = new SolidBrush(Color.FromArgb(120, 125, 130)))
+                {
+                    g.DrawString(subtitulo, fontSub, brushSub, 65, 37);
+                }
+            };
+        }
+
+        private void ConfigurarBotonTarjeta(Button boton, string icono, string titulo, string descripcion, int x, int y)
+        {
+            boton.Location = new Point(x, y);
+            boton.Size = new Size(260, 100);
+            boton.BackColor = Color.White;
+            boton.Cursor = Cursors.Hand;
+            boton.FlatStyle = FlatStyle.Flat;
+            boton.Text = ""; 
+
+            boton.FlatAppearance.BorderSize = 1;
+            boton.FlatAppearance.BorderColor = Color.FromArgb(230, 234, 236);
+            boton.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 246, 247);
+            boton.FlatAppearance.MouseDownBackColor = Color.FromArgb(225, 235, 236);
+
+            boton.Paint += (sender, e) =>
+            {
+                Graphics g = e.Graphics;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                using (Brush brushFondoIcono = new SolidBrush(Color.FromArgb(242, 247, 247)))
+                {
+                    g.FillRectangle(brushFondoIcono, 15, 35, 60, 60);
+                }
+
+                using (Font fontIcono = new Font("Segoe UI Emoji", 22F))
+                using (Brush brushIcono = new SolidBrush(Color.FromArgb(0, 150, 136))) 
+                {
+                    g.DrawString(icono, fontIcono, brushIcono, new RectangleF(15, 35, 60, 60), new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
+                }
+
+                using (Font fontTitulo = new Font("Segoe UI", 10.5F, FontStyle.Bold))
+                using (Brush brushTitulo = new SolidBrush(Color.FromArgb(33, 37, 41)))
+                {
+                    g.DrawString(titulo, fontTitulo, brushTitulo, 92, 20);
+                }
+
+                using (Font fontDesc = new Font("Segoe UI", 8.5F, FontStyle.Regular))
+                using (Brush brushDesc = new SolidBrush(Color.FromArgb(120, 125, 130)))
+                {
+                    g.DrawString(descripcion, fontDesc, brushDesc, 92, 58);
+                }
+            };
         }
 
         #endregion
@@ -282,6 +275,10 @@
         private Panel panelHeader;
         private Label lblTitulo;
         private Panel panelContenido;
+        private Panel panelFooter;
+        private Label lblWelcome;
+        private Label lblSubtitulo;
+        private Button btnSalir;
         private Label lblSeccionComun;
         private Button btnPacientes;
         private Label lblSeccionConsultorios;
@@ -289,8 +286,10 @@
         private Button btnGestionAgenda;
         private Button btnGestionTurnos;
         private Button btnRecepcionarPaciente;
+        private Panel sepAdministracion;
         private Button btnAtencionPaciente;
         private Label lblSeccionEstudios;
+        private Label lblIcono;
         private Button btnGestionAgendaEstudios;
         private Button btnGestionTurnosEstudios;
         private Button btnRecepcionarPacienteEstudio;

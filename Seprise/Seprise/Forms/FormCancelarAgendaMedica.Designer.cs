@@ -16,14 +16,14 @@
             pnlHeader = new Panel();
             lblTitulo = new Label();
             lblSubtitulo = new Label();
-            grpFiltros = new Panel(); // Convertido a Panel para estilo Tarjeta Blanca Flotante
+            grpFiltros = new Panel(); 
             lblSeccionFiltros = new Label();
             lblFechaEstatica = new Label();
             dtpFecha = new DateTimePicker();
             lblMedico = new Label();
             cmbMedico = new ComboBox();
             btnBuscar = new Button();
-            pnlGridCard = new Panel(); // Tarjeta contenedora blanca para la grilla
+            pnlGridCard = new Panel(); 
             dgvAgendas = new DataGridView();
             lblNota = new Label();
             btnSalir = new Button();
@@ -35,9 +35,6 @@
 
             Color colorPrincipal = Color.FromArgb(0, 150, 136);
 
-            // 
-            // pnlHeader (Cabecera corporativa)
-            // 
             pnlHeader.BackColor = colorPrincipal;
             pnlHeader.Controls.Add(lblTitulo);
             pnlHeader.Controls.Add(lblSubtitulo);
@@ -47,9 +44,6 @@
             pnlHeader.Size = new Size(760, 85);
             pnlHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -60,9 +54,6 @@
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "📅   Cancelar agenda médica";
 
-            // 
-            // lblSubtitulo
-            // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.BackColor = Color.Transparent;
             lblSubtitulo.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
@@ -73,9 +64,6 @@
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Seleccione la agenda médica que desea cancelar.";
 
-            // =======================================================================
-            // TARJETA BLANCA: FILTROS DE BÚSQUEDA
-            // =======================================================================
             grpFiltros.BackColor = Color.White;
             grpFiltros.Location = new Point(20, 105);
             grpFiltros.Name = "grpFiltros";
@@ -90,7 +78,6 @@
             lblSeccionFiltros.Size = new Size(160, 17);
             lblSeccionFiltros.Text = "⏳ FILTROS DE BÚSQUEDA";
 
-            // lblFechaEstatica (Regla de 3 píxeles: X = 17)
             lblFechaEstatica.AutoSize = true;
             lblFechaEstatica.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblFechaEstatica.ForeColor = Color.FromArgb(60, 60, 60);
@@ -107,7 +94,6 @@
             dtpFecha.Size = new Size(135, 25);
             dtpFecha.TabIndex = 1;
 
-            // lblMedico (Regla de 3 píxeles: X = 172)
             lblMedico.AutoSize = true;
             lblMedico.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblMedico.ForeColor = Color.FromArgb(60, 60, 60);
@@ -145,17 +131,13 @@
             grpFiltros.Controls.Add(cmbMedico);
             grpFiltros.Controls.Add(btnBuscar);
 
-            // =======================================================================
-            // TARJETA BLANCA: CONTENEDOR DE LA REJILLA
-            // =======================================================================
             pnlGridCard.BackColor = Color.White;
             pnlGridCard.Location = new Point(20, 215);
             pnlGridCard.Name = "pnlGridCard";
             pnlGridCard.Padding = new Padding(15);
-            pnlGridCard.Size = new Size(720, 180);
+            pnlGridCard.Size = new Size(720, 150);
             pnlGridCard.TabIndex = 2;
 
-            // dgvAgendas
             dgvAgendas.AllowUserToAddRows = false;
             dgvAgendas.AllowUserToDeleteRows = false;
             dgvAgendas.BackgroundColor = Color.White;
@@ -169,7 +151,6 @@
             headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvAgendas.ColumnHeadersDefaultCellStyle = headerStyle;
 
-            // Aplicación del Verde menta ultra claro para filas alternas
             dgvAgendas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(242, 249, 248);
             
             dgvAgendas.Dock = DockStyle.Fill;
@@ -184,28 +165,23 @@
             dgvAgendas.CellClick += dgvAgendas_CellClick;
             pnlGridCard.Controls.Add(dgvAgendas);
 
-            // =======================================================================
-            // FOOTER GENERAL
-            // =======================================================================
-            // lblNota (Fondo VERDE pastel real e informativo)
             lblNota.BackColor = Color.FromArgb(198, 234, 212);
             lblNota.BorderStyle = BorderStyle.None;
             lblNota.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
             lblNota.ForeColor = Color.FromArgb(0, 75, 68); // Tipografía verde oscura
-            lblNota.Location = new Point(20, 410);
+            lblNota.Location = new Point(20, 375);
             lblNota.Name = "lblNota";
             lblNota.Padding = new Padding(12, 8, 12, 8);
             lblNota.Size = new Size(520, 48);
             lblNota.TabIndex = 3;
             lblNota.Text = "ℹ   Seleccione una agenda y confirme para proceder con la cancelación.\r\n    Al cancelar una agenda ACTIVA se eliminarán todos sus turnos asociados.";
 
-            // btnSalir
             btnSalir.BackColor = Color.White;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(210, 210, 210);
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnSalir.ForeColor = Color.FromArgb(100, 100, 100);
-            btnSalir.Location = new Point(600, 415);
+            btnSalir.Location = new Point(600, 375);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(140, 35);
             btnSalir.TabIndex = 4;
@@ -213,13 +189,10 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormCancelarAgendaMedica
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(238, 242, 245); // El color gris exacto de fondo
-            ClientSize = new Size(770, 510);
+            BackColor = Color.FromArgb(238, 242, 245); 
+            ClientSize = new Size(770, 480);
             ControlBox = false;
             Controls.Add(btnSalir);
             Controls.Add(lblNota);
@@ -244,14 +217,14 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Panel grpFiltros; // Pasado a Panel
+        private System.Windows.Forms.Panel grpFiltros; 
         private System.Windows.Forms.Label lblSeccionFiltros;
         private System.Windows.Forms.Label lblFechaEstatica;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblMedico;
         private System.Windows.Forms.ComboBox cmbMedico;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Panel pnlGridCard; // Contenedor de grilla
+        private System.Windows.Forms.Panel pnlGridCard;
         private System.Windows.Forms.DataGridView dgvAgendas;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnSalir;

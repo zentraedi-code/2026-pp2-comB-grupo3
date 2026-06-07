@@ -4,18 +4,15 @@
     {
         private System.ComponentModel.IContainer components = null;
         
-        // Paneles de Estructura y Contenedores (Unificados SEPRISE)
         private System.Windows.Forms.Panel pnlHeader;
-        private System.Windows.Forms.Panel pnlFiltrosCard; // Convertido en contenedor blanco
-        private System.Windows.Forms.Panel pnlResumenCard;  // Contenedor blanco existente
-        private System.Windows.Forms.Panel pnlDetalleCard;  // Nuevo contenedor blanco para la tabla
+        private System.Windows.Forms.Panel pnlFiltrosCard; 
+        private System.Windows.Forms.Panel pnlResumenCard; 
+        private System.Windows.Forms.Panel pnlDetalleCard;  
         private System.Windows.Forms.Panel pnlFooter;
         
-        // Elementos del Encabezado
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSubtitulo;
         
-        // Elementos de Filtros (Irán dentro de pnlFiltrosCard)
         private System.Windows.Forms.Label lblSeccionFiltros;
         private System.Windows.Forms.Label lblMedico;
         private System.Windows.Forms.ComboBox cmbMedico;
@@ -26,7 +23,6 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.Button btnExportar;
         
-        // Elementos de Resumen del Período (Irán dentro de pnlResumenCard)
         private System.Windows.Forms.Label lblSeccionResumen;
         private System.Windows.Forms.Label lblResumenMedico;
         private System.Windows.Forms.Label lblResumenEspecialidad;
@@ -38,12 +34,9 @@
         private System.Windows.Forms.Label lblResumenTotalValor;
         private System.Windows.Forms.Button btnPagar;
 
-        // Elementos de Detalle (Irán dentro de pnlDetalleCard)
         private System.Windows.Forms.Label lblSeccionDetalle;
         private System.Windows.Forms.DataGridView dgvConsultas;
-        
-        // Elementos de Mensajería y Footer
-        private System.Windows.Forms.Label lblMensajes;
+                private System.Windows.Forms.Label lblMensajes;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnSalir;
 
@@ -64,7 +57,6 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             
-            // Inicialización de Tarjetas Blancas
             this.pnlFiltrosCard = new System.Windows.Forms.Panel();
             this.lblSeccionFiltros = new System.Windows.Forms.Label();
             this.lblMedico = new System.Windows.Forms.Label();
@@ -105,13 +97,9 @@
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
 
-            // Colores Institucionales SEPRISE
             System.Drawing.Color colorPrincipal = System.Drawing.Color.FromArgb(0, 150, 136);
             System.Drawing.Color fondoGrisFormulario = System.Drawing.Color.FromArgb(240, 244, 247);
 
-            // ==========================================
-            // pnlHeader (Franja Superior)
-            // ==========================================
             this.pnlHeader.BackColor = colorPrincipal;
             this.pnlHeader.Controls.Add(this.lblSubtitulo);
             this.pnlHeader.Controls.Add(this.lblTitulo);
@@ -137,9 +125,6 @@
             this.lblSubtitulo.Size = new System.Drawing.Size(224, 19);
             this.lblSubtitulo.Text = "Reporte de facturación por médico";
 
-            // ==========================================
-            // CUADRO BLANCO 1: FILTROS DE BÚSQUEDA
-            // ==========================================
             this.pnlFiltrosCard.BackColor = System.Drawing.Color.White;
             this.pnlFiltrosCard.Location = new System.Drawing.Point(20, 105);
             this.pnlFiltrosCard.Name = "pnlFiltrosCard";
@@ -222,9 +207,6 @@
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
 
-            // ==========================================
-            // CUADRO BLANCO 2: RESUMEN DEL PERÍODO
-            // ==========================================
             this.pnlResumenCard.BackColor = System.Drawing.Color.White;
             this.pnlResumenCard.Location = new System.Drawing.Point(20, 215);
             this.pnlResumenCard.Name = "pnlResumenCard";
@@ -303,9 +285,6 @@
             this.btnPagar.FlatAppearance.BorderSize = 0;
             this.btnPagar.UseVisualStyleBackColor = false;
 
-            // ==========================================
-            // CUADRO BLANCO 3: DETALLE DE CONSULTAS (Tabla)
-            // ==========================================
             this.pnlDetalleCard.BackColor = System.Drawing.Color.White;
             this.pnlDetalleCard.Location = new System.Drawing.Point(20, 350);
             this.pnlDetalleCard.Name = "pnlDetalleCard";
@@ -342,7 +321,6 @@
             this.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Mensajes Informativos (Fuera de los cuadros, sobre el fondo gris)
             this.lblMensajes.AutoSize = false;
             this.lblMensajes.Location = new System.Drawing.Point(20, 520);
             this.lblMensajes.Name = "lblMensajes";
@@ -351,9 +329,6 @@
             this.lblMensajes.ForeColor = colorPrincipal;
             this.lblMensajes.Text = string.Empty;
 
-            // ==========================================
-            // FOOTER GENERAL 
-            // ==========================================
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFooter.Location = new System.Drawing.Point(0, 545);
             this.pnlFooter.Name = "pnlFooter";
@@ -382,15 +357,11 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 
-            // ==========================================
-            // DISEÑO FINAL DEL FORMULARIO (Gris SEPRISE)
-            // ==========================================
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = fondoGrisFormulario; // Aplica fondo gris general
+            this.BackColor = fondoGrisFormulario; 
             this.ClientSize = new System.Drawing.Size(700, 600); 
 
-            // Se agregan los controles estructurales principales al formulario
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlFiltrosCard);
             this.Controls.Add(this.pnlResumenCard);

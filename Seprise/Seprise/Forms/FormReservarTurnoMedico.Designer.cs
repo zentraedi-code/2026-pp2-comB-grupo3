@@ -24,7 +24,7 @@
             cmbEspecialidad = new ComboBox();
             lblMedico = new Label();
             cmbMedico = new ComboBox();
-            chkFecha = new Label(); // Se transforma a Label para eliminar el casillero de check sin romper variables
+            chkFecha = new Label(); 
             dtpFecha = new DateTimePicker();
             btnBuscar = new Button();
             btnPrimeraDisponible = new Button();
@@ -38,11 +38,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
             SuspendLayout();
 
-            Color colorPrincipal = Color.FromArgb(0, 150, 136); // Tu azul institucional correcto
+            Color colorPrincipal = Color.FromArgb(0, 150, 136); 
 
-            // 
-            // pnlHeader
-            // 
             pnlHeader.BackColor = colorPrincipal;
             pnlHeader.Controls.Add(lblTitulo);
             pnlHeader.Controls.Add(lblSubtitulo);
@@ -52,9 +49,6 @@
             pnlHeader.Size = new Size(930, 85);
             pnlHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -65,9 +59,6 @@
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "📅  Reservar turno médico";
 
-            // 
-            // lblSubtitulo
-            // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.BackColor = Color.Transparent;
             lblSubtitulo.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
@@ -78,9 +69,6 @@
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Busque y seleccione un turno disponible";
 
-            // =======================================================================
-            // TARJETA BLANCA 1: FILTROS DE BÚSQUEDA
-            // =======================================================================
             pnlFiltrosCard.BackColor = Color.White;
             pnlFiltrosCard.BorderStyle = BorderStyle.None;
             pnlFiltrosCard.Controls.Add(lblFiltrosIcono);
@@ -97,7 +85,6 @@
             pnlFiltrosCard.Size = new Size(890, 105);
             pnlFiltrosCard.TabIndex = 1;
 
-            // Icono de sección
             lblFiltrosIcono.AutoSize = true;
             lblFiltrosIcono.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             lblFiltrosIcono.ForeColor = colorPrincipal;
@@ -106,7 +93,6 @@
             lblFiltrosIcono.Size = new Size(160, 17);
             lblFiltrosIcono.Text = "⏳ FILTROS DE BÚSQUEDA";
 
-            // lblEspecialidad (Regla de los 3 píxeles a la izquierda: X = 17)
             lblEspecialidad.AutoSize = true;
             lblEspecialidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblEspecialidad.ForeColor = Color.FromArgb(60, 60, 60);
@@ -124,7 +110,6 @@
             cmbEspecialidad.TabIndex = 1;
             cmbEspecialidad.SelectedIndexChanged += cmbEspecialidad_SelectedIndexChanged;
 
-            // lblMedico (Regla de los 3 píxeles a la izquierda: X = 222)
             lblMedico.AutoSize = true;
             lblMedico.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblMedico.ForeColor = Color.FromArgb(60, 60, 60);
@@ -141,7 +126,6 @@
             cmbMedico.Size = new Size(220, 25);
             cmbMedico.TabIndex = 3;
 
-            // chkFecha (Ahora es un Label limpio, alineado a X = 462 para cumplir la regla de 3 píxeles)
             chkFecha.AutoSize = true;
             chkFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             chkFecha.ForeColor = Color.FromArgb(60, 60, 60);
@@ -151,7 +135,6 @@
             chkFecha.TabIndex = 4;
             chkFecha.Text = "Fecha";
 
-            // dtpFecha (Habilitado por defecto ya que no hay checkbox)
             dtpFecha.CustomFormat = "dd/MM/yyyy";
             dtpFecha.Enabled = true; 
             dtpFecha.Font = new Font("Segoe UI", 9.5F);
@@ -161,7 +144,6 @@
             dtpFecha.Size = new Size(130, 25);
             dtpFecha.TabIndex = 5;
 
-            // btnBuscar
             btnBuscar.BackColor = colorPrincipal;
             btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatStyle = FlatStyle.Flat;
@@ -175,7 +157,6 @@
             btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
 
-            // btnPrimeraDisponible
             btnPrimeraDisponible.BackColor = Color.FromArgb(16, 157, 89);
             btnPrimeraDisponible.FlatAppearance.BorderSize = 0;
             btnPrimeraDisponible.FlatStyle = FlatStyle.Flat;
@@ -189,9 +170,6 @@
             btnPrimeraDisponible.UseVisualStyleBackColor = false;
             btnPrimeraDisponible.Click += btnPrimeraDisponible_Click;
 
-            // =======================================================================
-            // TARJETA BLANCA 2: LISTADO / GRID
-            // =======================================================================
             pnlGridCard.BackColor = Color.White;
             pnlGridCard.BorderStyle = BorderStyle.None;
             pnlGridCard.Controls.Add(dgvTurnos);
@@ -201,7 +179,6 @@
             pnlGridCard.Size = new Size(890, 250);
             pnlGridCard.TabIndex = 2;
 
-            // dgvTurnos
             dgvTurnos.AllowUserToAddRows = false;
             dgvTurnos.AllowUserToDeleteRows = false;
             dgvTurnos.BackgroundColor = Color.White;
@@ -218,10 +195,6 @@
             dgvTurnos.TabIndex = 0;
             dgvTurnos.CellClick += dgvTurnos_CellClick;
 
-            // =======================================================================
-            // FOOTER GENERAL
-            // =======================================================================
-            // lblNota
             lblNota.BackColor = Color.FromArgb(198, 234, 212);
             lblNota.BorderStyle = BorderStyle.None;
             lblNota.Font = new Font("Segoe UI", 9F, FontStyle.Regular); 
@@ -233,7 +206,6 @@
             lblNota.TabIndex = 3;
             lblNota.Text = "ℹ   Al reservar un turno se solicitará la búsqueda del paciente correspondiente.";
 
-            // btnSalir
             btnSalir.BackColor = Color.White;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(210, 210, 210);
             btnSalir.FlatStyle = FlatStyle.Flat;
@@ -247,9 +219,6 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormReservarTurnoMedico
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 242, 245); 
@@ -284,7 +253,7 @@
         private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label lblMedico;
         private System.Windows.Forms.ComboBox cmbMedico;
-        private System.Windows.Forms.Label chkFecha; // Mantiene el nombre original intacto como variable Label
+        private System.Windows.Forms.Label chkFecha; 
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnPrimeraDisponible;

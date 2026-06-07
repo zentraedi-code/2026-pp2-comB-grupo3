@@ -74,18 +74,16 @@ namespace Seprise
 
             if (esObraSocial)
             {
-                // Validamos que haya un paciente seleccionado en el formulario primero
                 if (!pacienteIdSeleccionado.HasValue)
                 {
                     MessageBox.Show("Debe buscar y seleccionar un paciente antes de elegir Obra Social como medio de pago.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cmbMedioPago.SelectedIndex = 0; // Vuelve a Efectivo
+                    cmbMedioPago.SelectedIndex = 0; 
                     return;
                 }
 
                 try
                 {
                     PacienteDao pacienteDao = new PacienteDao();
-                    // Usamos el DNI ingresado para recuperar el estado fresco del objeto paciente
                     var paciente = pacienteDao.buscar(txtDniPaciente.Text.Trim());
 
                     if (paciente == null)
@@ -95,7 +93,6 @@ namespace Seprise
                         return;
                     }
 
-                    // 1. Validamos si el paciente no está activo en el sistema o su obra social es "PARTICULAR"
                     if (!paciente.Activo || string.IsNullOrWhiteSpace(paciente.ObraSocial) || 
                         paciente.ObraSocial.Equals("PARTICULAR", StringComparison.OrdinalIgnoreCase))
                     {
@@ -104,11 +101,10 @@ namespace Seprise
                                         MessageBoxButtons.OK, 
                                         MessageBoxIcon.Stop);
                         
-                        cmbMedioPago.SelectedIndex = 0; // Forzamos el regreso a Efectivo
+                        cmbMedioPago.SelectedIndex = 0; 
                         return;
                     }
 
-                    // 2. Si pasó la validación, rellenamos el campo automáticamente
                     txtObraSocialNombre.Text = paciente.ObraSocial;
                 }
                 catch (Exception ex)
@@ -119,7 +115,6 @@ namespace Seprise
                 }
             }
 
-            // Control de visibilidad de los elementos gráficos de la interfaz
             lblObraSocialNombre.Visible = esObraSocial;
             txtObraSocialNombre.Visible = esObraSocial;
             lblNumeroSocio.Visible = esObraSocial;
@@ -148,7 +143,7 @@ namespace Seprise
             }
             else if (esObraSocial)
             {
-                importeFinal = 0; // Cobertura total por Obra Social
+                importeFinal = 0; 
             }
 
             lblImporteValor.Text = importeFinal > 0 ? $"${importeFinal:0.00}" : "$0.00";
@@ -205,7 +200,7 @@ namespace Seprise
                 ultimoConceptoEmitido = txtConcepto.Text;
                 importeBase = Convert.ToDecimal(primeraConsulta["importe_consulta"]);
                 
-                // Reseteamos el combobox a Efectivo al buscar un nuevo paciente para obligar a re-evaluar si cambian a obra social
+              
                 cmbMedioPago.SelectedIndex = 0; 
                 ActualizarImporte();
 
@@ -269,7 +264,7 @@ namespace Seprise
                     return;
                 }
                 
-                importe = 0; // Aseguramos que guarde 0 en BD si es obra social
+                importe = 0; 
             }
 
             try

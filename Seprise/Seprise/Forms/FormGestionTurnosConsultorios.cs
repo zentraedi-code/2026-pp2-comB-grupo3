@@ -24,21 +24,7 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(128, 203, 196);
             };
             btnSalir.MouseLeave += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            btnReservarTurno.MouseEnter += (s, e) => {
-                btnReservarTurno.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnReservarTurno.MouseLeave += (s, e) => {
-                btnReservarTurno.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            btnCancelarReserva.MouseEnter += (s, e) => {
-                btnCancelarReserva.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnCancelarReserva.MouseLeave += (s, e) => {
-                btnCancelarReserva.BackColor = Color.FromArgb(178, 235, 242);
+                btnSalir.BackColor = Color.White;
             };
         }
 

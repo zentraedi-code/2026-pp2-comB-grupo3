@@ -4,18 +4,14 @@
     {
         private System.ComponentModel.IContainer components = null;
         
-        // Contenedores principales (Paneles y Tarjetas)
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Panel pnlCardBuscar;
         private System.Windows.Forms.Panel pnlCardPaciente;
         private System.Windows.Forms.Panel pnlFooter;
 
-        // Elementos de la Cabecera (Header)
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSubtitulo;
-
-        // Elementos de Buscar Paciente
         private System.Windows.Forms.Label lblSeccionBuscar;
         private System.Windows.Forms.Label lblIndicacionBuscar;
         private System.Windows.Forms.Label lblDniPaciente;
@@ -24,19 +20,13 @@
         private System.Windows.Forms.Button btnBuscarPaciente;
         private System.Windows.Forms.Label lblEjemploDni;
 
-        // Elementos del Detalle del Paciente
         private System.Windows.Forms.Label lblSeccionPaciente;
         private System.Windows.Forms.Panel pnlInfoPacienteBox;
         private System.Windows.Forms.Label lblPacientePlaceholder;
         private System.Windows.Forms.TextBox txtPaciente;
-
-        // Resultados de búsqueda
         private System.Windows.Forms.Label lblMensajes;
-
-        // Botón de Acción Principal
         private System.Windows.Forms.Button btnConfirmarAsistencia;
 
-        // Barra Inferior (Footer)
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Button btnSalir;
 
@@ -82,7 +72,6 @@
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
 
-            // Colors setup (Paleta Azul institucional y fondos limpios)
             System.Drawing.Color azulPrincipal = System.Drawing.Color.FromArgb(0, 150, 136);
             System.Drawing.Color azulHover = System.Drawing.Color.FromArgb(21, 101, 192);
             System.Drawing.Color fondoGrisGris = System.Drawing.Color.FromArgb(248, 249, 250);
@@ -90,7 +79,6 @@
             System.Drawing.Color bordeGris = System.Drawing.Color.FromArgb(230, 235, 240);
             System.Drawing.Color textoGris = System.Drawing.Color.FromArgb(100, 110, 120);
 
-            // --- PNLHEADER (Cabecera Azul) ---
             this.pnlHeader.BackColor = azulPrincipal;
             this.pnlHeader.Controls.Add(this.lblSubtitulo);
             this.pnlHeader.Controls.Add(this.lblTitulo);
@@ -111,7 +99,6 @@
             this.lblSubtitulo.Location = new System.Drawing.Point(26, 58);
             this.lblSubtitulo.Text = "Registra la llegada del paciente al centro médico.";
 
-            // --- PNLCARDBUSCAR (Módulo superior de búsqueda) ---
             this.pnlCardBuscar.BackColor = System.Drawing.Color.White;
             this.pnlCardBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlCardBuscar.Controls.Add(this.lblEjemploDni);
@@ -163,7 +150,6 @@
             this.lblEjemploDni.Location = new System.Drawing.Point(16, 130);
             this.lblEjemploDni.Text = "Ejemplo: 12.345.678";
 
-            // --- PNLCARDPACIENTE (Módulo inferior de resultados de paciente) ---
             this.pnlCardPaciente.BackColor = System.Drawing.Color.White;
             this.pnlCardPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlCardPaciente.Controls.Add(this.pnlInfoPacienteBox);
@@ -177,7 +163,6 @@
             this.lblSeccionPaciente.Location = new System.Drawing.Point(10, 14);
             this.lblSeccionPaciente.Text = "👥 PACIENTE";
 
-            // Caja interior informativa blanca y de solo lectura
             this.pnlInfoPacienteBox.BackColor = System.Drawing.Color.White;
             this.pnlInfoPacienteBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlInfoPacienteBox.Controls.Add(this.txtPaciente);
@@ -185,7 +170,6 @@
             this.pnlInfoPacienteBox.Location = new System.Drawing.Point(14, 38);
             this.pnlInfoPacienteBox.Size = new System.Drawing.Size(650, 135);
 
-            // txtPaciente (muestra nombre del paciente seleccionado)
             this.txtPaciente.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular);
             this.txtPaciente.ForeColor = azulPrincipal;
             this.txtPaciente.Location = new System.Drawing.Point(15, 0);
@@ -209,7 +193,6 @@
             this.lblPacientePlaceholder.Text = "Los datos del paciente aparecerán aquí\nBuscá por DNI para ver la información del paciente.";
             this.lblPacientePlaceholder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
-            // Botón Principal Confirmar Asistencia
             this.btnConfirmarAsistencia.BackColor = azulPrincipal;
             this.btnConfirmarAsistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarAsistencia.FlatAppearance.BorderSize = 0;
@@ -221,9 +204,6 @@
             this.btnConfirmarAsistencia.UseVisualStyleBackColor = false;
             this.btnConfirmarAsistencia.Enabled = false;
 
-            // =======================================================================
-            // PNLFOOTER (Barra inferior con Nota y Botón alineados de forma exacta)
-            // =======================================================================
             this.pnlFooter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pnlFooter.Controls.Add(this.btnSalir);
             this.pnlFooter.Controls.Add(this.lblNota);
@@ -232,7 +212,6 @@
             this.pnlFooter.Location = new System.Drawing.Point(0, 565);
             this.pnlFooter.Size = new System.Drawing.Size(700, 65);
 
-            // lblNota (Alineada perfectamente a la altura del botón e Y=12 más arriba)
             this.lblNota.BackColor = System.Drawing.Color.FromArgb(198, 234, 212);
             this.lblNota.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblNota.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular);
@@ -244,7 +223,6 @@
             this.lblNota.TabIndex = 13;
             this.lblNota.Text = "ℹ   La confirmación valida el DNI contra los turnos agendados en tiempo real. \r\nUna vez verificado, el estado del turno se actualizará automáticamente de Reservado a Recepcionado.";
 
-            // btnSalir (Centrado de forma perfecta respecto al alto de lblNota)
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(200, 210, 220);
@@ -256,7 +234,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 
-            // lblMensajes (Reubicado en el límite inferior para no pisar el diseño)
             this.lblMensajes.AutoSize = false;
             this.lblMensajes.Location = new System.Drawing.Point(24, 50);
             this.lblMensajes.Name = "lblMensajes";
@@ -265,7 +242,6 @@
             this.lblMensajes.ForeColor = azulPrincipal;
             this.lblMensajes.Text = string.Empty;
 
-            // --- FORM CONFIGURATION ---
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(244, 246, 249);

@@ -16,14 +16,14 @@
             pnlHeader = new Panel();
             lblTitulo = new Label();
             lblSubtitulo = new Label();
-            grpFiltros = new Panel(); // Cambiado a Panel para el efecto Tarjeta Blanca
+            grpFiltros = new Panel(); 
             lblSeccionFiltros = new Label();
             lblFechaEstatica = new Label();
             dtpFecha = new DateTimePicker();
             lblMedico = new Label();
             cmbMedico = new ComboBox();
             btnBuscar = new Button();
-            pnlGridCard = new Panel(); // Tarjeta contenedora blanca para la grilla
+            pnlGridCard = new Panel();
             dgvAgendas = new DataGridView();
             lblNota = new Label();
             btnSalir = new Button();
@@ -35,9 +35,6 @@
 
             Color colorPrincipal = Color.FromArgb(0, 150, 136);
 
-            // 
-            // pnlHeader
-            // 
             pnlHeader.BackColor = colorPrincipal;
             pnlHeader.Controls.Add(lblTitulo);
             pnlHeader.Controls.Add(lblSubtitulo);
@@ -47,9 +44,6 @@
             pnlHeader.Size = new Size(760, 85);
             pnlHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -60,9 +54,6 @@
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "📅   Confirmar agenda médica";
 
-            // 
-            // lblSubtitulo
-            // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.BackColor = Color.Transparent;
             lblSubtitulo.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
@@ -73,9 +64,6 @@
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Revise y confirme la agenda a crear.";
 
-            // =======================================================================
-            // TARJETA BLANCA: FILTROS DE BÚSQUEDA
-            // =======================================================================
             grpFiltros.BackColor = Color.White;
             grpFiltros.Location = new Point(20, 105);
             grpFiltros.Name = "grpFiltros";
@@ -90,7 +78,6 @@
             lblSeccionFiltros.Size = new Size(160, 17);
             lblSeccionFiltros.Text = "⏳ FILTROS DE BÚSQUEDA";
 
-            // lblFechaEstatica (Alineación impecable)
             lblFechaEstatica.AutoSize = true;
             lblFechaEstatica.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblFechaEstatica.ForeColor = Color.FromArgb(60, 60, 60);
@@ -98,7 +85,6 @@
             lblFechaEstatica.Size = new Size(38, 15);
             lblFechaEstatica.Text = "Fecha";
 
-            // dtpFecha
             dtpFecha.CustomFormat = "dd/MM/yyyy";
             dtpFecha.Enabled = true;
             dtpFecha.Font = new Font("Segoe UI", 9.5F);
@@ -108,7 +94,6 @@
             dtpFecha.Size = new Size(135, 25);
             dtpFecha.TabIndex = 1;
 
-            // lblMedico
             lblMedico.AutoSize = true;
             lblMedico.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblMedico.ForeColor = Color.FromArgb(60, 60, 60);
@@ -118,7 +103,6 @@
             lblMedico.TabIndex = 2;
             lblMedico.Text = "Médico";
 
-            // cmbMedico
             cmbMedico.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMedico.Font = new Font("Segoe UI", 9.5F);
             cmbMedico.FormattingEnabled = true;
@@ -127,7 +111,6 @@
             cmbMedico.Size = new Size(365, 25);
             cmbMedico.TabIndex = 3;
 
-            // btnBuscar
             btnBuscar.BackColor = colorPrincipal;
             btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatStyle = FlatStyle.Flat;
@@ -148,17 +131,13 @@
             grpFiltros.Controls.Add(cmbMedico);
             grpFiltros.Controls.Add(btnBuscar);
 
-            // =======================================================================
-            // TARJETA BLANCA: CONTENEDOR DE LA REJILLA
-            // =======================================================================
             pnlGridCard.BackColor = Color.White;
             pnlGridCard.Location = new Point(20, 215);
             pnlGridCard.Name = "pnlGridCard";
             pnlGridCard.Padding = new Padding(15);
-            pnlGridCard.Size = new Size(720, 110);
+            pnlGridCard.Size = new Size(720, 150);
             pnlGridCard.TabIndex = 2;
 
-            // dgvAgendas
             dgvAgendas.AllowUserToAddRows = false;
             dgvAgendas.AllowUserToDeleteRows = false;
             dgvAgendas.BackgroundColor = Color.White;
@@ -172,7 +151,6 @@
             headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvAgendas.ColumnHeadersDefaultCellStyle = headerStyle;
 
-            // Fila alterna en el verde menta ultra claro definido
             dgvAgendas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(242, 249, 248);
             
             dgvAgendas.Dock = DockStyle.Fill;
@@ -187,28 +165,23 @@
             dgvAgendas.CellClick += dgvAgendas_CellClick;
             pnlGridCard.Controls.Add(dgvAgendas);
 
-            // =======================================================================
-            // FOOTER GENERAL
-            // =======================================================================
-            // lblNota (Fondo VERDE pastel corporativo real)
             lblNota.BackColor = Color.FromArgb(198, 234, 212);
             lblNota.BorderStyle = BorderStyle.None;
             lblNota.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
             lblNota.ForeColor = Color.FromArgb(0, 75, 68); 
-            lblNota.Location = new Point(20, 345);
+            lblNota.Location = new Point(20, 375);
             lblNota.Name = "lblNota";
             lblNota.Padding = new Padding(12, 10, 12, 10);
             lblNota.Size = new Size(520, 50);
             lblNota.TabIndex = 3;
             lblNota.Text = "ℹ   Al confirmar, el sistema crea turnos en estado DISPONIBLE y agrega 1 sobreturno por hora.";
 
-            // btnSalir
             btnSalir.BackColor = Color.White;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(210, 210, 210);
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnSalir.ForeColor = Color.FromArgb(100, 100, 100);
-            btnSalir.Location = new Point(600, 350);
+            btnSalir.Location = new Point(600, 380);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(140, 35);
             btnSalir.TabIndex = 4;
@@ -216,13 +189,10 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormConfirmarAgendaMedica
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(238, 242, 245); // Gris corporativo de fondo
-            ClientSize = new Size(770, 450);
+            BackColor = Color.FromArgb(238, 242, 245);
+            ClientSize = new Size(770, 480);
             ControlBox = false;
             Controls.Add(btnSalir);
             Controls.Add(lblNota);
@@ -247,7 +217,7 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Panel grpFiltros; // Mutado de GroupBox a Panel flat
+        private System.Windows.Forms.Panel grpFiltros; 
         private System.Windows.Forms.Label lblSeccionFiltros;
         private System.Windows.Forms.Label lblFechaEstatica;
         private System.Windows.Forms.DateTimePicker dtpFecha;

@@ -183,7 +183,6 @@ namespace Seprise.dao
         {
             try
             {
-                // Añadimos el JOIN con médico y especialidad para traer la columna que C# extrae con row["especialidad"]
                 string sql = @"
                     SELECT 
                         t.id, 
@@ -196,7 +195,6 @@ namespace Seprise.dao
                     INNER JOIN especialidad e ON m.especialidad_id = e.id
                     WHERE t.paciente_id = " + pacienteId + " AND t.estado = 'RECEPCIONADO'";
 
-                // Reemplaza esto por el método de conexión que uses en ese DAO
                 return Connection.ejecutarSQL(sql); 
             }
             catch (Exception ex)

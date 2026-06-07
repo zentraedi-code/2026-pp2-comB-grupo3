@@ -31,7 +31,6 @@ namespace Seprise.dao
         {
             try
             {
-                // Usar el rango de fechas inclusivo con horas para evitar problemas con timeparts
                 string desdeStr = $"{desde:yyyy-MM-dd} 00:00:00";
                 string hastaStr = $"{hasta:yyyy-MM-dd} 23:59:59";
 

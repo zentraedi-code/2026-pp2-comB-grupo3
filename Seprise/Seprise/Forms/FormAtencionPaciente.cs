@@ -18,28 +18,7 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(128, 203, 196);
             };
             btnSalir.MouseLeave += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            btnRevisarPacientesPendientes.MouseEnter += (s, e) => {
-                btnRevisarPacientesPendientes.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnRevisarPacientesPendientes.MouseLeave += (s, e) => {
-                btnRevisarPacientesPendientes.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            btnGenerarHistoriaClinica.MouseEnter += (s, e) => {
-                btnGenerarHistoriaClinica.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnGenerarHistoriaClinica.MouseLeave += (s, e) => {
-                btnGenerarHistoriaClinica.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            btnSolicitarEstudios.MouseEnter += (s, e) => {
-                btnSolicitarEstudios.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnSolicitarEstudios.MouseLeave += (s, e) => {
-                btnSolicitarEstudios.BackColor = Color.FromArgb(178, 235, 242);
+                btnSalir.BackColor = Color.White;
             };
         }
 

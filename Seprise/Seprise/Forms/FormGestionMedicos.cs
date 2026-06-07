@@ -18,21 +18,7 @@ namespace Seprise
                 btnSalir.BackColor = Color.FromArgb(128, 203, 196);
             };
             btnSalir.MouseLeave += (s, e) => {
-                btnSalir.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            btnABMMedicos.MouseEnter += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnABMMedicos.MouseLeave += (s, e) => {
-                btnABMMedicos.BackColor = Color.FromArgb(178, 235, 242);
-            };
-
-            btnLiquidarHonorarios.MouseEnter += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(128, 203, 196);
-            };
-            btnLiquidarHonorarios.MouseLeave += (s, e) => {
-                btnLiquidarHonorarios.BackColor = Color.FromArgb(178, 235, 242);
+                btnSalir.BackColor = Color.White;
             };
         }
 

@@ -1,4 +1,3 @@
--- PACIENTES (11 registros)
 INSERT INTO paciente (id, dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo) VALUES
 (1, '30111222', 'Juan Ignacio', 'Pérez', '1983-05-14', '1144556677', 'OSDE', true),
 (2, '35444555', 'María Belén', 'Rodríguez', '1990-11-23', '1122334455', 'SWISS MEDICAL', true),
@@ -12,7 +11,6 @@ INSERT INTO paciente (id, dni, nombre, apellido, fecha_nacimiento, telefono, obr
 (10, '18444555', 'Jorge Alberto', 'García', '1967-06-30', '1177665544', 'PAMI', true),
 (11, '95123789', 'Camila Inés', 'Herrera', '1999-08-14', '3512223344', 'PARTICULAR', true);
 
--- AGENDA_MEDICA (Planificación horaria para habilitar los turnos)
 INSERT INTO agenda_medica (id, medico_id, consultorio_id, fecha, hora_desde, hora_hasta, duracion_turno_minutos, sobre_turnos_por_hora, estado) VALUES
 (1, 1, 1, '2026-06-05', '08:00:00', '12:00:00', 15, 1, 'ACTIVA'), -- Dra. Gómez
 (2, 2, 2, '2026-06-05', '09:00:00', '13:00:00', 15, 0, 'ACTIVA'), -- Dr. Martínez
@@ -26,7 +24,6 @@ INSERT INTO agenda_medica (id, medico_id, consultorio_id, fecha, hora_desde, hor
 (10, 3, 2, '2026-06-06', '14:00:00', '18:00:00', 15, 2, 'ACTIVA'), -- Dra. Fernández
 (11, 4, 3, '2026-06-06', '14:00:00', '18:00:00', 15, 1, 'ACTIVA'); -- Dr. Díaz
 
--- TURNO_CONSULTA (Todos en estado 'RECEPCIONADO')
 INSERT INTO turno_consulta (id, agenda_medica_id, paciente_id, fecha_hora_turno, es_sobreturno, estado, fecha_asignacion, fecha_recepcion, fecha_atencion) VALUES
 (1, 1, 1, '2026-06-05 08:00:00', false, 'RESERVADO', '2026-06-01 10:00:00', '2026-06-05 07:50:00', NULL),
 (2, 2, 2, '2026-06-05 09:15:00', false, 'RESERVADO', '2026-05-28 09:30:00', '2026-06-05 09:02:00', NULL),
@@ -40,7 +37,6 @@ INSERT INTO turno_consulta (id, agenda_medica_id, paciente_id, fecha_hora_turno,
 (10, 10, 10, '2026-06-06 16:15:00', false, 'RECEPCIONADO', '2026-06-04 11:00:00', '2026-06-06 16:00:00', NULL),
 (11, 11, 11, '2026-06-06 15:00:00', true, 'RECEPCIONADO', '2026-06-06 12:00:00', '2026-06-06 14:45:00', NULL);
 
--- FACTURA (Asociadas a los turnos y con el importe exacto de la consulta de cada médico)
 INSERT INTO factura (id, paciente_id, turno_consulta_id, solicitud_estudio_id, importe_total, tipo_cobertura, estado, fecha_emision) VALUES
 (1, 1, 1, NULL, 8500.00, 'OBRA_SOCIAL', 'PAGADA', '2026-06-05 07:52:00'),   -- Turno 1 -> Medico 1 ($8500)
 (2, 2, 2, NULL, 12000.00, 'OBRA_SOCIAL', 'PAGADA', '2026-06-05 09:03:00'),  -- Turno 2 -> Medico 2 ($12000)

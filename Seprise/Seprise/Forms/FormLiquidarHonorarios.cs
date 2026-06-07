@@ -12,7 +12,6 @@ namespace Seprise
     {
         private List<string> pagosRegistrados = new List<string>();
 
-        // Clase auxiliar interna para poblar el ComboBox
         private class MedicoItem
         {
             public int Id { get; set; }
@@ -21,7 +20,6 @@ namespace Seprise
             public override string ToString() => Nombre ?? string.Empty;
         }
 
-        // Estructura de datos para evitar leer texto directamente de las Labels de la UI
         private class HonorarioDTO
         {
             public int MedicoId { get; set; }
@@ -37,7 +35,6 @@ namespace Seprise
             InitializeComponent();
             InicializarGrillaConsultas();
             CargarDatosIniciales();
-            // Ensure button event is wired (Designer may not wire it)
             try
             {
                 this.btnPagar.Click -= BtnPagar_Click;

@@ -16,19 +16,19 @@
             pnlHeader = new Panel();
             lblTitulo = new Label();
             lblSubtitulo = new Label();
-            grpPaciente = new Panel(); // Cambiado a Panel para estilo Tarjeta Blanca Flotante
+            grpPaciente = new Panel();
             lblFiltrosIcono = new Label();
             lblDniPaciente = new Label();
             txtDniPaciente = new TextBox();
             btnBuscarPaciente = new Button();
             lblPaciente = new Label();
             txtPaciente = new TextBox();
-            grpFiltros = new Panel(); // Cambiado a Panel para estilo Tarjeta Blanca Flotante
+            grpFiltros = new Panel(); 
             lblSeccionFiltros = new Label();
-            chkFecha = new Label(); // Se transforma a Label para sacar el CheckBox físico sin perder la funcionalidad
+            chkFecha = new Label(); 
             dtpFecha = new DateTimePicker();
             btnBuscar = new Button();
-            pnlGridCard = new Panel(); // Tarjeta contenedora para la grilla
+            pnlGridCard = new Panel(); 
             dgvTurnos = new DataGridView();
             lblNota = new Label();
             btnSalir = new Button();
@@ -39,11 +39,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
             SuspendLayout();
 
-            Color colorPrincipal = Color.FromArgb(0, 150, 136); // Azul/Verde institucional unificado
+            Color colorPrincipal = Color.FromArgb(0, 150, 136);
 
-            // 
-            // pnlHeader (Cabecera moderna de la aplicación)
-            // 
             pnlHeader.BackColor = colorPrincipal;
             pnlHeader.Controls.Add(lblTitulo);
             pnlHeader.Controls.Add(lblSubtitulo);
@@ -53,9 +50,6 @@
             pnlHeader.Size = new Size(920, 85);
             pnlHeader.TabIndex = 0;
 
-            // 
-            // lblTitulo
-            // 
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -66,9 +60,6 @@
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "❌  Cancelar reserva de turno";
 
-            // 
-            // lblSubtitulo
-            // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.BackColor = Color.Transparent;
             lblSubtitulo.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
@@ -79,9 +70,6 @@
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Busque al paciente para liberar sus turnos agendados";
 
-            // =======================================================================
-            // TARJETA BLANCA 1: SECCIÓN PACIENTE
-            // =======================================================================
             grpPaciente.BackColor = Color.White;
             grpPaciente.Location = new Point(20, 105);
             grpPaciente.Name = "grpPaciente";
@@ -96,7 +84,6 @@
             lblFiltrosIcono.Size = new Size(150, 17);
             lblFiltrosIcono.Text = "👤 DATOS DEL PACIENTE";
 
-            // lblDniPaciente (Regla de 3 píxeles: X = 17)
             lblDniPaciente.AutoSize = true;
             lblDniPaciente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblDniPaciente.ForeColor = Color.FromArgb(60, 60, 60);
@@ -125,7 +112,6 @@
             btnBuscarPaciente.UseVisualStyleBackColor = false;
             btnBuscarPaciente.Click += btnBuscarPaciente_Click;
 
-            // lblPaciente (Regla de 3 píxeles: X = 267)
             lblPaciente.AutoSize = true;
             lblPaciente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblPaciente.ForeColor = Color.FromArgb(60, 60, 60);
@@ -151,9 +137,6 @@
             grpPaciente.Controls.Add(lblPaciente);
             grpPaciente.Controls.Add(txtPaciente);
 
-            // =======================================================================
-            // TARJETA BLANCA 2: FILTROS DE BÚSQUEDA
-            // =======================================================================
             grpFiltros.BackColor = Color.White;
             grpFiltros.Location = new Point(20, 210);
             grpFiltros.Name = "grpFiltros";
@@ -168,7 +151,6 @@
             lblSeccionFiltros.Size = new Size(160, 17);
             lblSeccionFiltros.Text = "⏳ FILTROS DE BÚSQUEDA";
 
-            // chkFecha (Ahora actúa limpiamente como Label, X = 17)
             chkFecha.AutoSize = true;
             chkFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             chkFecha.ForeColor = Color.FromArgb(60, 60, 60);
@@ -179,7 +161,7 @@
             chkFecha.Text = "Fecha";
 
             dtpFecha.CustomFormat = "dd/MM/yyyy";
-            dtpFecha.Enabled = true; // Habilitado directo ya que no requiere un check previo
+            dtpFecha.Enabled = true; 
             dtpFecha.Font = new Font("Segoe UI", 9.5F);
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.Location = new Point(20, 59);
@@ -205,9 +187,6 @@
             grpFiltros.Controls.Add(dtpFecha);
             grpFiltros.Controls.Add(btnBuscar);
 
-            // =======================================================================
-            // TARJETA BLANCA 3: CONTENEDOR GRID
-            // =======================================================================
             pnlGridCard.BackColor = Color.White;
             pnlGridCard.Location = new Point(20, 320);
             pnlGridCard.Name = "pnlGridCard";
@@ -215,7 +194,6 @@
             pnlGridCard.Size = new Size(880, 140);
             pnlGridCard.TabIndex = 3;
 
-            // dgvTurnos
             dgvTurnos.AllowUserToAddRows = false;
             dgvTurnos.AllowUserToDeleteRows = false;
             dgvTurnos.BackgroundColor = Color.White;
@@ -233,14 +211,10 @@
             dgvTurnos.CellClick += dgvTurnos_CellClick;
             pnlGridCard.Controls.Add(dgvTurnos);
 
-            // =======================================================================
-            // FOOTER GENERAL
-            // =======================================================================
-            // lblNota (Fondo VERDE pastel real con presencia)
             lblNota.BackColor = Color.FromArgb(198, 234, 212);
             lblNota.BorderStyle = BorderStyle.None;
             lblNota.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
-            lblNota.ForeColor = Color.FromArgb(20, 80, 120); // Letra azul original
+            lblNota.ForeColor = Color.FromArgb(20, 80, 120);
             lblNota.Location = new Point(20, 473);
             lblNota.Name = "lblNota";
             lblNota.Padding = new Padding(12, 8, 10, 8);
@@ -248,7 +222,6 @@
             lblNota.TabIndex = 4;
             lblNota.Text = "ℹ   Al cancelar, el turno vuelve a estado DISPONIBLE y se desasigna el paciente correspondiente.";
 
-            // btnSalir
             btnSalir.BackColor = Color.White;
             btnSalir.FlatAppearance.BorderColor = Color.FromArgb(210, 210, 210);
             btnSalir.FlatStyle = FlatStyle.Flat;
@@ -262,12 +235,9 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
 
-            // 
-            // FormCancelarReservaMedica
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(238, 242, 245); // El fondo gris exacto de las pantallas
+            BackColor = Color.FromArgb(238, 242, 245); 
             ClientSize = new Size(930, 560);
             ControlBox = false;
             Controls.Add(btnSalir);
@@ -305,7 +275,7 @@
         private System.Windows.Forms.TextBox txtPaciente;
         private System.Windows.Forms.Panel grpFiltros;
         private System.Windows.Forms.Label lblSeccionFiltros;
-        private System.Windows.Forms.Label chkFecha; // Cambiado a Label manteniendo nombre original intacto
+        private System.Windows.Forms.Label chkFecha; 
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Panel pnlGridCard;

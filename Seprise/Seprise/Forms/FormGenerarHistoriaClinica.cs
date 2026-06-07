@@ -39,7 +39,6 @@ namespace Seprise
         {
             SetAtencion(pacienteId, medicoId, turnoConsultaId, pacienteNombre, medicoNombre, estadoTurno);
             
-            // Si el formulario ya se abre con un paciente asignado desde la agenda, mostramos los datos inmediatamente
             if (pacienteId > 0)
             {
                 try
@@ -63,7 +62,6 @@ namespace Seprise
             TurnoConsultaId = turnoConsultaId;
             try
             {
-                // Seleccionar médico en el combo si está cargado
                 for (int i = 0; i < cmbMedicos.Items.Count; i++)
                 {
                     if (cmbMedicos.Items[i] is ComboBoxItem it && it.Id == medicoId)
@@ -90,8 +88,8 @@ namespace Seprise
                     cmbMedicos.SelectedIndex = 0;
             }
             catch (Exception)
-            {
-                // ignore load errors, keep form usable
+            {                 
+                MessageBox.Show("Error al cargar la lista de médicos. Intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
         }
 
@@ -168,11 +166,9 @@ namespace Seprise
                     return;
                 }
 
-                // Asignamos el ID del paciente hallado y actualizamos la tarjeta celeste
                 PacienteId = paciente.Id;
                 lblDatosPacienteInfo.Text = $"Paciente: {paciente.Apellido}, {paciente.Nombre}\nDNI: {paciente.Dni}";
 
-                // Buscamos el turno activo 'RECEPCIONADO' del día de la fecha para este paciente
                 var dtTurnos = new TurnoConsultaDao().buscarRecepcionadosPorPaciente(paciente.Id, null);
                 if (dtTurnos != null && dtTurnos.Rows.Count > 0)
                 {
@@ -201,8 +197,7 @@ namespace Seprise
                 }
             }
             catch (Exception)
-            {
-                // ignore
+            {   
             }
         }
 
@@ -211,7 +206,6 @@ namespace Seprise
             this.Close();
         }
 
-        // Helper class para almacenar Id y texto en el ComboBox
         private class ComboBoxItem
         {
             public int Id { get; }

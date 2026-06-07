@@ -14,7 +14,6 @@ namespace Seprise
         {
             InitializeComponent();
             dtpFecha.Value = DateTime.Now;
-            // Ensure the main Confirmar Asistencia button is wired
             try { this.btnConfirmarAsistencia.Click -= btnConfirmarAsistencia_Click; } catch { }
             this.btnConfirmarAsistencia.Click += btnConfirmarAsistencia_Click;
         }
@@ -179,7 +178,6 @@ namespace Seprise
             try
             {
                 TurnoConsultaDao turnoDao = new TurnoConsultaDao();
-                // Search for RESERVADO turnos only (not RECEPCIONADO)
                 var dt = turnoDao.buscarTurnosPorPacienteEnFecha(pacienteSeleccionado.Id, dtpFecha.Value.Date);
 
                 if (dt == null || dt.Rows.Count == 0)
@@ -198,7 +196,6 @@ namespace Seprise
                         int id = Convert.ToInt32(row["id"]);
                         string estado = row["estado"]?.ToString() ?? "DESCONOCIDO";
                         
-                        // Only confirm if state is RESERVADO
                         if (estado.Equals("RESERVADO", StringComparison.OrdinalIgnoreCase))
                         {
                             if (turnoDao.confirmarAsistencia(id))
@@ -220,7 +217,7 @@ namespace Seprise
                 if (anyConfirmed)
                 {
                     MessageBox.Show("Asistencia confirmada correctamente.", "�xito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Reset UI to allow new search
+
                     txtPaciente.Clear();
                     lblPacientePlaceholder.Visible = true;
                     pacienteSeleccionado = null;
