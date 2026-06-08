@@ -1,29 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emili\\Desktop\\2026-pp2-comB- grupo3 - diseño\\Seprise\\Seprise\\Seprise.csproj": {}
+    "C:\\Users\\javy7\\Inicio\\Escritorio\\TSDS 2026\\PP2\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emili\\Desktop\\2026-pp2-comB- grupo3 - diseño\\Seprise\\Seprise\\Seprise.csproj": {
+    "C:\\Users\\javy7\\Inicio\\Escritorio\\TSDS 2026\\PP2\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emili\\Desktop\\2026-pp2-comB- grupo3 - diseño\\Seprise\\Seprise\\Seprise.csproj",
+        "projectUniqueName": "C:\\Users\\javy7\\Inicio\\Escritorio\\TSDS 2026\\PP2\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
         "projectName": "Seprise",
-        "projectPath": "C:\\Users\\emili\\Desktop\\2026-pp2-comB- grupo3 - diseño\\Seprise\\Seprise\\Seprise.csproj",
-        "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emili\\Desktop\\2026-pp2-comB- grupo3 - diseño\\Seprise\\Seprise\\obj\\",
+        "projectPath": "C:\\Users\\javy7\\Inicio\\Escritorio\\TSDS 2026\\PP2\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\Seprise.csproj",
+        "packagesPath": "C:\\Users\\javy7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\javy7\\Inicio\\Escritorio\\TSDS 2026\\PP2\\2026-pp2-comB-grupo3\\Seprise\\Seprise\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\javy7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net10.0-windows7.0": {
+          "net10.0-windows": {
+            "framework": "net10.0-windows7.0",
             "targetAlias": "net10.0-windows",
             "projectReferences": {}
           }
@@ -38,10 +45,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
-        "net10.0-windows7.0": {
+        "net10.0-windows": {
+          "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "dependencies": {
             "MySql.Data": {
@@ -68,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.108/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

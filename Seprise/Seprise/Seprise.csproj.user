@@ -17,9 +17,6 @@
     <Compile Update="Forms\FormCancelarReservaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\FormConfirmacionEstudios.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\FormConfirmarAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -41,16 +38,10 @@
     <Compile Update="Forms\FormGestionAgendaConsultorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\FormGestionAgendaEstudios.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\FormGestionMedicos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FormGestionTurnosConsultorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\FormGestionTurnosEstudios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FormLiquidarHonorarios.cs">
@@ -71,13 +62,7 @@
     <Compile Update="Forms\FormPacientesPendientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\FormProcesamientoEstudios.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\FormRecepcionarPacienteConsultorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\FormRecepcionarPacienteEstudios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FormReservarTurnoMedico.cs">

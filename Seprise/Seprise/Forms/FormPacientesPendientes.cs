@@ -59,6 +59,8 @@ namespace Seprise
             dgvCola.Columns.Add("HoraRecepcion", "Hora recepción");
             dgvCola.Columns.Add("Paciente", "Paciente");
             dgvCola.Columns.Add("Estado", "Estado");
+            dgvCola.Columns.Add("Consultorio", "Consultorio");
+            dgvCola.Columns["Consultorio"].Visible = false;
             dgvCola.Columns.Add("TurnoId", "ID");
             dgvCola.Columns["TurnoId"].Visible = false;
 
@@ -81,10 +83,12 @@ namespace Seprise
                 string fecha = dtpFecha.Value.ToString("yyyy-MM-dd");
 
                 string sql = $"SELECT tc.id, tc.fecha_hora_turno, tc.fecha_recepcion, " +
-                             $"CONCAT(p.nombre, ' ', p.apellido) as paciente, tc.estado " +
+                             $"CONCAT(p.nombre, ' ', p.apellido) as paciente, tc.estado, " +
+                             $"c.nombre as consultorio " +
                              $"FROM turno_consulta tc " +
                              $"JOIN agenda_medica am ON tc.agenda_medica_id = am.id " +
                              $"JOIN paciente p ON tc.paciente_id = p.id " +
+                             $"JOIN consultorio c ON am.consultorio_id = c.id " +
                              $"WHERE am.medico_id = {medico.Id} " +
                              $"AND DATE(tc.fecha_hora_turno) = '{fecha}' " +
                              $"AND tc.estado = 'RECEPCIONADO' " +
@@ -109,6 +113,7 @@ namespace Seprise
                             horaRecepcion,
                             row["paciente"].ToString(),
                             row["estado"].ToString(),
+                            row["consultorio"].ToString(),
                             row["id"].ToString()
                         );
                     }
@@ -134,7 +139,14 @@ namespace Seprise
 
             if (columna == "btnAtender")
             {
-                MessageBox.Show("Abriendo formulario de Atención médica...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string paciente = dgvCola.Rows[e.RowIndex].Cells["Paciente"].Value?.ToString() ?? "-";
+                string consultorio = dgvCola.Rows[e.RowIndex].Cells["Consultorio"].Value?.ToString() ?? "consultorio asignado";
+
+                MessageBox.Show(
+                    $"El paciente {paciente} será atendido en {consultorio}.",
+                    "Llamar paciente",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
     }
