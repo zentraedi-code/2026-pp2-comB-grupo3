@@ -14,10 +14,12 @@ namespace Seprise.entity
         private string apellido;
         private DateTime fechaNacimiento;
         private string? telefono;
+        private string? email;
+        private string? direccion;
         private string? obraSocial;
         private bool activo;
 
-        public Paciente(int id, string dni, string nombre, string apellido, DateTime fechaNacimiento, string? telefono, string? obraSocial, bool activo)
+        public Paciente(int id, string dni, string nombre, string apellido, DateTime fechaNacimiento, string? telefono, string? email, string? direccion, string? obraSocial, bool activo)
         {
             this.Id = id;
             this.Dni = dni;
@@ -25,6 +27,8 @@ namespace Seprise.entity
             this.Apellido = apellido;
             this.FechaNacimiento = fechaNacimiento;
             this.Telefono = telefono;
+            this.Email = email;
+            this.Direccion = direccion;
             this.ObraSocial = obraSocial;
             this.Activo = activo;
         }
@@ -35,6 +39,8 @@ namespace Seprise.entity
         public string Apellido { get => apellido; set => apellido = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public string? Telefono { get => telefono; set => telefono = value; }
+        public string? Email { get => email; set => email = value; }
+        public string? Direccion { get => direccion; set => direccion = value; }
         public string? ObraSocial { get => obraSocial; set => obraSocial = value; }
         public bool Activo { get => activo; set => activo = value; }
 

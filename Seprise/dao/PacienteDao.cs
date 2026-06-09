@@ -18,10 +18,12 @@ namespace Seprise.dao
         {
             try
             {
-                string sql = $"INSERT INTO paciente (dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo) " +
+                string sql = $"INSERT INTO paciente (dni, nombre, apellido, fecha_nacimiento, telefono, email, direccion, obra_social, activo) " +
                              $"VALUES ('{paciente.Dni}', '{paciente.Nombre}', '{paciente.Apellido}', " +
                              $"'{paciente.FechaNacimiento:yyyy-MM-dd}', " +
                              $"{(paciente.Telefono != null ? $"'{paciente.Telefono}'" : "NULL")}, " +
+                             $"{(paciente.Email != null ? $"'{paciente.Email}'" : "NULL")}, " +
+                             $"{(paciente.Direccion != null ? $"'{paciente.Direccion}'" : "NULL")}, " +
                              $"{(paciente.ObraSocial != null ? $"'{paciente.ObraSocial}'" : "NULL")}, " +
                              $"{(paciente.Activo ? 1 : 0)})";
 
@@ -38,7 +40,7 @@ namespace Seprise.dao
         {
             try
             {
-                string sql = $"SELECT id, dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo " +
+                string sql = $"SELECT id, dni, nombre, apellido, fecha_nacimiento, telefono, email, direccion, obra_social, activo " +
                              $"FROM paciente WHERE dni = '{dni}'";
 
                 DataTable dataTable = Connection.ejecutarSQL(sql);
@@ -57,6 +59,8 @@ namespace Seprise.dao
                     row["apellido"].ToString(),
                     Convert.ToDateTime(row["fecha_nacimiento"]),
                     row["telefono"] != DBNull.Value ? row["telefono"].ToString() : null,
+                    row["email"] != DBNull.Value ? row["email"].ToString() : null,
+                    row["direccion"] != DBNull.Value ? row["direccion"].ToString() : null,
                     row["obra_social"] != DBNull.Value ? row["obra_social"].ToString() : null,
                     Convert.ToBoolean(row["activo"])
                 );
@@ -73,7 +77,7 @@ namespace Seprise.dao
         {
             try
             {
-                string sql = "SELECT id, dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo " +
+                string sql = "SELECT id, dni, nombre, apellido, fecha_nacimiento, telefono, email, direccion, obra_social, activo " +
                              "FROM paciente ORDER BY apellido, nombre";
 
                 DataTable dataTable = Connection.ejecutarSQL(sql);
@@ -91,6 +95,8 @@ namespace Seprise.dao
                             row["apellido"].ToString(),
                             Convert.ToDateTime(row["fecha_nacimiento"]),
                             row["telefono"] != DBNull.Value ? row["telefono"].ToString() : null,
+                            row["email"] != DBNull.Value ? row["email"].ToString() : null,
+                            row["direccion"] != DBNull.Value ? row["direccion"].ToString() : null,
                             row["obra_social"] != DBNull.Value ? row["obra_social"].ToString() : null,
                             Convert.ToBoolean(row["activo"])
                         );
@@ -116,6 +122,8 @@ namespace Seprise.dao
                              $"apellido = '{paciente.Apellido}', " +
                              $"fecha_nacimiento = '{paciente.FechaNacimiento:yyyy-MM-dd}', " +
                              $"telefono = {(paciente.Telefono != null ? $"'{paciente.Telefono}'" : "NULL")}, " +
+                             $"email = {(paciente.Email != null ? $"'{paciente.Email}'" : "NULL")}, " +
+                             $"direccion = {(paciente.Direccion != null ? $"'{paciente.Direccion}'" : "NULL")}, " +
                              $"obra_social = {(paciente.ObraSocial != null ? $"'{paciente.ObraSocial}'" : "NULL")}, " +
                              $"activo = {(paciente.Activo ? 1 : 0)} " +
                              $"WHERE id = {paciente.Id}";
@@ -147,7 +155,7 @@ namespace Seprise.dao
         {
             try
             {
-                string sql = "SELECT id, dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo " +
+                string sql = "SELECT id, dni, nombre, apellido, fecha_nacimiento, telefono, email, direccion, obra_social, activo " +
                              "FROM paciente WHERE activo = 1";
 
                 if (!string.IsNullOrEmpty(dni))
@@ -172,6 +180,8 @@ namespace Seprise.dao
                             row["apellido"].ToString(),
                             Convert.ToDateTime(row["fecha_nacimiento"]),
                             row["telefono"] != DBNull.Value ? row["telefono"].ToString() : null,
+                            row["email"] != DBNull.Value ? row["email"].ToString() : null,
+                            row["direccion"] != DBNull.Value ? row["direccion"].ToString() : null,
                             row["obra_social"] != DBNull.Value ? row["obra_social"].ToString() : null,
                             Convert.ToBoolean(row["activo"])
                         ));

@@ -69,8 +69,8 @@ namespace Seprise
                 txtNombre.Text = _paciente.Nombre;
                 txtApellido.Text = _paciente.Apellido;
                 txtTelefono.Text = _paciente.Telefono ?? "";
-                txtEmail.Text = "";
-                txtDireccion.Text = "";
+                txtEmail.Text = _paciente.Email ?? "";
+                txtDireccion.Text = _paciente.Direccion ?? "";
                 dtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
                 dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy";
                 dtpFechaNacimiento.Value = _paciente.FechaNacimiento;
@@ -103,6 +103,8 @@ namespace Seprise
                             txtApellido.Text.Trim(),
                             dtpFechaNacimiento.Value,
                             string.IsNullOrWhiteSpace(txtTelefono.Text) ? null : txtTelefono.Text.Trim(),
+                            string.IsNullOrWhiteSpace(txtEmail.Text) ? null : txtEmail.Text.Trim(),
+                            string.IsNullOrWhiteSpace(txtDireccion.Text) ? null : txtDireccion.Text.Trim(),
                             obraSocial,
                             true
                         );
@@ -124,6 +126,8 @@ namespace Seprise
                         _paciente.Apellido = txtApellido.Text.Trim();
                         _paciente.FechaNacimiento = dtpFechaNacimiento.Value;
                         _paciente.Telefono = string.IsNullOrWhiteSpace(txtTelefono.Text) ? null : txtTelefono.Text.Trim();
+                        _paciente.Email = string.IsNullOrWhiteSpace(txtEmail.Text) ? null : txtEmail.Text.Trim();
+                        _paciente.Direccion = string.IsNullOrWhiteSpace(txtDireccion.Text) ? null : txtDireccion.Text.Trim();
                         _paciente.ObraSocial = obraSocial;
 
                         if (_pacienteDao.modificar(_paciente))

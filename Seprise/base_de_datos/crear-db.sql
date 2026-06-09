@@ -35,6 +35,8 @@ CREATE TABLE paciente (
     apellido VARCHAR(100) NOT NULL,
     fecha_nacimiento DATE NOT NULL,
     telefono VARCHAR(50),
+    email VARCHAR(100),
+    direccion VARCHAR(200),
     obra_social VARCHAR(100),
     activo BOOLEAN NOT NULL
 );
