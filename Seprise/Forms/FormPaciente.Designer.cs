@@ -265,7 +265,7 @@
             this.cboObraSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboObraSocial.Font = fontControles;
             this.cboObraSocial.FormattingEnabled = true;
-            this.cboObraSocial.Items.AddRange(new object[] { "OSDE", "Swiss Medical", "IOMA", "PAMI", "Particular" });
+            this.cboObraSocial.Items.AddRange(new object[] { "OSDE","Swiss Medical","IOMA","PAMI","Particular","GALENO","OSECAC","MEDIFE","SANCOR SALUD" });
             this.cboObraSocial.Location = new System.Drawing.Point(290, 307);
             this.cboObraSocial.Name = "cboObraSocial";
             this.cboObraSocial.Size = new System.Drawing.Size(240, 25);

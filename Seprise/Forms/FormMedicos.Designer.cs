@@ -3,17 +3,12 @@
     partial class FormMedicos
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.DataGridView dgvMedicos;
 
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.Label lblIcono; 
         private System.Windows.Forms.Panel pnlTarjetaContenedor; 
         private System.Windows.Forms.Label lblNota;
-        private System.Windows.Forms.Button btnSalir;
 
         protected override void Dispose(bool disposing)
         {
@@ -26,190 +21,255 @@
 
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblSubtitulo = new System.Windows.Forms.Label();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.dgvMedicos = new System.Windows.Forms.DataGridView();
+            lblTitulo = new Label();
+            lblSubtitulo = new Label();
+            btnCrear = new Button();
+            btnSalir = new Button();
+            dgvMedicos = new DataGridView();
             
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.pnlFooter = new System.Windows.Forms.Panel();
-            this.lblIcono = new System.Windows.Forms.Label();
-            this.pnlTarjetaContenedor = new System.Windows.Forms.Panel();
-            this.lblNota = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
+            Matricula = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Especialidad = new DataGridViewTextBoxColumn();
+            ImporteConsulta = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
+            btnConsultar = new DataGridViewButtonColumn();
+            btnModificar = new DataGridViewButtonColumn();
+            btnDesactivar = new DataGridViewButtonColumn();
             
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
-            this.pnlHeader.SuspendLayout();
-            this.pnlTarjetaContenedor.SuspendLayout();
-            this.pnlFooter.SuspendLayout();
-            this.SuspendLayout();
+            pnlHeader = new Panel();
+            pnlFooter = new Panel();
+            lblIcono = new Label();
+            pnlTarjetaContenedor = new Panel();
+            lblNota = new Label();
 
-            var colorTealSePrice = System.Drawing.Color.FromArgb(0, 150, 136);
-            var colorTextoOscuro = System.Drawing.Color.FromArgb(33, 33, 33);
-            var colorTextoGrisClaro = System.Drawing.Color.FromArgb(220, 240, 235);
-            var colorFondoGrisForm = System.Drawing.Color.FromArgb(238, 242, 243); 
-            var colorFondoFooter = System.Drawing.Color.FromArgb(225, 230, 232);
-            var colorGrisBordes = System.Drawing.Color.FromArgb(224, 224, 224);
+            ((System.ComponentModel.ISupportInitialize)dgvMedicos).BeginInit();
+            pnlHeader.SuspendLayout();
+            pnlTarjetaContenedor.SuspendLayout();
+            pnlFooter.SuspendLayout();
+            SuspendLayout();
 
-            var fontTitulo = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold); 
-            var fontSubtitulo = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular);
-            var fontBotones = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            var fontGrid = new System.Drawing.Font("Segoe UI", 9.5F);
+            var colorTealSePrice = Color.FromArgb(0, 150, 136);
+            var colorTextoOscuro = Color.FromArgb(33, 33, 33);
+            var colorTextoGrisClaro = Color.FromArgb(220, 240, 235);
+            var colorFondoGrisForm = Color.FromArgb(238, 242, 243); 
+            var colorFondoFooter = Color.FromArgb(225, 230, 232);
+            var colorGrisBordes = Color.FromArgb(224, 224, 224);
 
-            this.pnlHeader.BackColor = colorTealSePrice;
-            this.pnlHeader.Controls.Add(this.lblIcono);
-            this.pnlHeader.Controls.Add(this.lblTitulo);
-            this.pnlHeader.Controls.Add(this.lblSubtitulo);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(950, 75); 
-            this.pnlHeader.TabIndex = 4;
+            var fontTitulo = new Font("Segoe UI", 18F, FontStyle.Bold); 
+            var fontSubtitulo = new Font("Segoe UI", 9F, FontStyle.Regular);
+            var fontBotones = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            var fontGrid = new Font("Segoe UI", 9.5F);
 
-            this.lblIcono.AutoSize = true;
-            this.lblIcono.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.lblIcono.ForeColor = System.Drawing.Color.White;
-            this.lblIcono.Location = new System.Drawing.Point(18, 16);
-            this.lblIcono.Name = "lblIcono";
-            this.lblIcono.Size = new System.Drawing.Size(47, 37);
-            this.lblIcono.TabIndex = 6;
-            this.lblIcono.Text = "👥";
+            pnlHeader.BackColor = colorTealSePrice;
+            pnlHeader.Controls.Add(lblIcono);
+            pnlHeader.Controls.Add(lblTitulo);
+            pnlHeader.Controls.Add(lblSubtitulo);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(1120, 75); 
+            pnlHeader.TabIndex = 4;
 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = fontTitulo;
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(75, 14); 
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(175, 32);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Gestión de Médicos";
+            lblIcono.AutoSize = true;
+            lblIcono.Font = new Font("Segoe UI", 20F);
+            lblIcono.ForeColor = Color.White;
+            lblIcono.Location = new Point(18, 16);
+            lblIcono.Name = "lblIcono";
+            lblIcono.Size = new Size(47, 37);
+            lblIcono.TabIndex = 6;
+            lblIcono.Text = "👥";
 
-            this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Font = fontSubtitulo;
-            this.lblSubtitulo.ForeColor = colorTextoGrisClaro;
-            this.lblSubtitulo.Location = new System.Drawing.Point(77, 48);
-            this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(364, 15);
-            this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "Alta, baja y modificación de médicos, incluyendo honorarios.";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = fontTitulo;
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(75, 14); 
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(244, 32);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Gestión de Médicos";
 
-            this.pnlTarjetaContenedor.BackColor = System.Drawing.Color.White;
-            this.pnlTarjetaContenedor.Controls.Add(this.btnCrear);
-            this.pnlTarjetaContenedor.Controls.Add(this.dgvMedicos);
-            this.pnlTarjetaContenedor.Location = new System.Drawing.Point(24, 95); 
-            this.pnlTarjetaContenedor.Name = "pnlTarjetaContenedor";
-            this.pnlTarjetaContenedor.Size = new System.Drawing.Size(902, 375); 
-            this.pnlTarjetaContenedor.TabIndex = 7;
+            lblSubtitulo.AutoSize = true;
+            lblSubtitulo.Font = fontSubtitulo;
+            lblSubtitulo.ForeColor = colorTextoGrisClaro;
+            lblSubtitulo.Location = new Point(77, 48);
+            lblSubtitulo.Name = "lblSubtitulo";
+            lblSubtitulo.Size = new Size(400, 15);
+            lblSubtitulo.TabIndex = 1;
+            lblSubtitulo.Text = "Alta, baja, modificación y consulta de honorarios de profesionales médicos.";
 
-            this.btnCrear.BackColor = colorTealSePrice;
-            this.btnCrear.FlatAppearance.BorderSize = 0;
-            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrear.Font = fontBotones;
-            this.btnCrear.ForeColor = System.Drawing.Color.White;
-            this.btnCrear.Location = new System.Drawing.Point(20, 18);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(160, 36);
-            this.btnCrear.TabIndex = 2;
-            this.btnCrear.Text = "+ CREAR MÉDICO";
-            this.btnCrear.UseVisualStyleBackColor = false;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            pnlTarjetaContenedor.BackColor = Color.White;
+            pnlTarjetaContenedor.Controls.Add(btnCrear);
+            pnlTarjetaContenedor.Controls.Add(dgvMedicos);
+            pnlTarjetaContenedor.Location = new Point(24, 95); 
+            pnlTarjetaContenedor.Name = "pnlTarjetaContenedor";
+            pnlTarjetaContenedor.Size = new Size(1072, 400); 
+            pnlTarjetaContenedor.TabIndex = 7;
 
-            this.dgvMedicos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMedicos.BorderStyle = System.Windows.Forms.BorderStyle.None; 
-            this.dgvMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMedicos.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 150, 136);
-            this.dgvMedicos.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
-            this.dgvMedicos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(120, 200, 190);
-            this.dgvMedicos.DefaultCellStyle.SelectionForeColor = Color.Black;
-            this.dgvMedicos.GridColor = colorGrisBordes;
-            this.dgvMedicos.Location = new System.Drawing.Point(20, 70);
-            this.dgvMedicos.Size = new System.Drawing.Size(862, 285); 
-            this.dgvMedicos.TabIndex = 3;
-            this.dgvMedicos.ScrollBars = System.Windows.Forms.ScrollBars.Both; 
-            this.dgvMedicos.RowTemplate.Height = 30;
-            this.dgvMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicos.DefaultCellStyle.Font = fontGrid;
-            this.dgvMedicos.DefaultCellStyle.ForeColor = colorTextoOscuro;
+            btnCrear.BackColor = colorTealSePrice;
+            btnCrear.FlatAppearance.BorderSize = 0;
+            btnCrear.FlatStyle = FlatStyle.Flat;
+            btnCrear.Font = fontBotones;
+            btnCrear.ForeColor = Color.White;
+            btnCrear.Location = new Point(20, 18);
+            btnCrear.Margin = new Padding(3, 2, 3, 2);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new Size(160, 36);
+            btnCrear.TabIndex = 2;
+            btnCrear.Text = "+ CREAR MÉDICO";
+            btnCrear.UseVisualStyleBackColor = false;
+            btnCrear.Click += btnCrear_Click;
 
-            var colMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colMatricula.HeaderText = "Matrícula";
-            colMatricula.Name = "Matricula";
-            this.dgvMedicos.Columns.Add(colMatricula);
+            dgvMedicos.AllowUserToAddRows = false;
+            dgvMedicos.AllowUserToDeleteRows = false;
+            dgvMedicos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMedicos.BackgroundColor = Color.White;
+            dgvMedicos.BorderStyle = BorderStyle.None; 
+            dgvMedicos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMedicos.Columns.AddRange(new DataGridViewColumn[] { Matricula, Nombre, Especialidad, ImporteConsulta, Estado, btnConsultar, btnModificar, btnDesactivar });
+            dgvMedicos.GridColor = colorGrisBordes;
+            dgvMedicos.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dgvMedicos.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dgvMedicos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(120, 200, 190);
+            dgvMedicos.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvMedicos.Location = new Point(20, 70);
+            dgvMedicos.Margin = new Padding(3, 2, 3, 2);
+            dgvMedicos.MultiSelect = false;
+            dgvMedicos.Name = "dgvMedicos";
+            dgvMedicos.ReadOnly = true;
+            dgvMedicos.RowHeadersVisible = false;
+            dgvMedicos.RowHeadersWidth = 51;
+            dgvMedicos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMedicos.Size = new Size(1032, 310); 
+            dgvMedicos.TabIndex = 3;
+            dgvMedicos.ScrollBars = ScrollBars.Both; 
+            dgvMedicos.RowTemplate.Height = 30;
+            dgvMedicos.DefaultCellStyle.Font = fontGrid;
+            dgvMedicos.DefaultCellStyle.ForeColor = colorTextoOscuro;
+            dgvMedicos.CellContentClick += dgvMedicos_CellContentClick;
 
-            var colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colNombre.HeaderText = "Nombre";
-            colNombre.Name = "Nombre";
-            this.dgvMedicos.Columns.Add(colNombre);
+            Matricula.FillWeight = 70F;
+            Matricula.HeaderText = "Matrícula";
+            Matricula.MinimumWidth = 6;
+            Matricula.Name = "Matricula";
+            Matricula.ReadOnly = true;
 
-            var colEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colEspecialidad.HeaderText = "Especialidad";
-            colEspecialidad.Name = "Especialidad";
-            this.dgvMedicos.Columns.Add(colEspecialidad);
+            Nombre.FillWeight = 140F;
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
 
-            var colImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colImporte.HeaderText = "Importe Consulta";
-            colImporte.Name = "ImporteConsulta";
-            this.dgvMedicos.Columns.Add(colImporte);
+            Especialidad.FillWeight = 120F;
+            Especialidad.HeaderText = "Especialidad";
+            Especialidad.MinimumWidth = 6;
+            Especialidad.Name = "Especialidad";
+            Especialidad.ReadOnly = true;
 
-            var colActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            colActivo.HeaderText = "Estado";
-            colActivo.Name = "Activo";
-            this.dgvMedicos.Columns.Add(colActivo);
+            ImporteConsulta.FillWeight = 90F;
+            ImporteConsulta.HeaderText = "Importe Consulta";
+            ImporteConsulta.MinimumWidth = 6;
+            ImporteConsulta.Name = "ImporteConsulta";
+            ImporteConsulta.ReadOnly = true;
 
-            this.pnlFooter.BackColor = colorFondoFooter;
-            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 495);
-            this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(950, 75);
-            this.pnlFooter.TabIndex = 6;
-            this.pnlFooter.Controls.Add(this.btnSalir);
-            this.pnlFooter.Controls.Add(this.lblNota);
+            Estado.FillWeight = 70F;
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
 
-            this.lblNota.BackColor = System.Drawing.Color.FromArgb(198, 234, 212);
-            this.lblNota.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular);
-            this.lblNota.ForeColor = System.Drawing.Color.FromArgb(0, 75, 68);
-            this.lblNota.Location = new System.Drawing.Point(24, 15);
-            this.lblNota.Name = "lblNota";
-            this.lblNota.Padding = new System.Windows.Forms.Padding(12, 6, 12, 6);
-            this.lblNota.Size = new System.Drawing.Size(650, 45);
-            this.lblNota.Text = "ℹ   Haga doble clic sobre un registro de la grilla para editar o gestionar la baja de un profesional médico del sistema.";
+            btnConsultar.FillWeight = 95F;
+            btnConsultar.HeaderText = "";
+            btnConsultar.MinimumWidth = 6;
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.ReadOnly = true;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseColumnTextForButtonValue = true;
 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(200, 205, 210);
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(100, 100, 100);
-            this.btnSalir.Location = new System.Drawing.Point(800, 20);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(125, 35);
-            this.btnSalir.Text = "🚪 Volver";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += (s, e) => { this.Close(); };
+            btnModificar.FillWeight = 95F;
+            btnModificar.HeaderText = "";
+            btnModificar.MinimumWidth = 6;
+            btnModificar.Name = "btnModificar";
+            btnModificar.ReadOnly = true;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseColumnTextForButtonValue = true;
 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = colorFondoGrisForm; 
-            this.ClientSize = new System.Drawing.Size(950, 570);
+            btnDesactivar.FillWeight = 95F;
+            btnDesactivar.HeaderText = "";
+            btnDesactivar.MinimumWidth = 6;
+            btnDesactivar.Name = "btnDesactivar";
+            btnDesactivar.ReadOnly = true;
+            btnDesactivar.Text = "Desactivar";
+            btnDesactivar.UseColumnTextForButtonValue = true;
+
+            pnlFooter.BackColor = colorFondoFooter;
+            pnlFooter.Dock = DockStyle.Bottom;
+            pnlFooter.Location = new Point(0, 520);
+            pnlFooter.Name = "pnlFooter";
+            pnlFooter.Size = new Size(1120, 75);
+            pnlFooter.TabIndex = 6;
+            pnlFooter.Controls.Add(btnSalir);
+            pnlFooter.Controls.Add(lblNota);
+
+            lblNota.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular);
+            lblNota.ForeColor = Color.FromArgb(0, 75, 68);
+            lblNota.Location = new Point(24, 15);
+            lblNota.Name = "lblNota";
+            lblNota.Padding = new Padding(12, 6, 12, 6);
+            lblNota.Size = new Size(750, 45);
+            lblNota.Text = "ℹ   Utilice los botones de acción integrados en la grilla para consultar legajos, modificar datos o gestionar el estado del profesional médico.";
+
+            btnSalir.BackColor = Color.White;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(200, 205, 210);
+            btnSalir.Font = fontBotones;
+            btnSalir.ForeColor = Color.FromArgb(100, 100, 100);
+            btnSalir.Location = new Point(971, 20);
+            btnSalir.Margin = new Padding(3, 2, 3, 2);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(125, 35);
+            btnSalir.TabIndex = 3;
+            btnSalir.Text = "🚪 Volver";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += (s, e) => { this.Close(); };
+
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = colorFondoGrisForm; 
+            ClientSize = new Size(1120, 595);
             
-            this.Controls.Add(this.pnlTarjetaContenedor);
-            this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.pnlFooter);
+            Controls.Add(pnlTarjetaContenedor);
+            Controls.Add(pnlHeader);
+            Controls.Add(pnlFooter);
             
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false; 
-            this.MinimizeBox = true;  
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false; 
+            MinimizeBox = true;  
             
-            this.Name = "FormMedicos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SePrice - Gestión de Médicos"; 
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "FormMedicos";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "SePrice - Gestión de Médicos"; 
             
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
-            this.pnlTarjetaContenedor.ResumeLayout(false);
-            this.pnlFooter.ResumeLayout(false);
-            this.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(dgvMedicos)).EndInit();
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            pnlTarjetaContenedor.ResumeLayout(false);
+            pnlFooter.ResumeLayout(false);
+            ResumeLayout(false);
         }
+
+        private Label lblTitulo;
+        private Label lblSubtitulo;
+        private Button btnCrear;
+        private Button btnSalir;
+        private DataGridView dgvMedicos;
+        private DataGridViewTextBoxColumn Matricula;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Especialidad;
+        private DataGridViewTextBoxColumn ImporteConsulta;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewButtonColumn btnConsultar;
+        private DataGridViewButtonColumn btnModificar;
+        private DataGridViewButtonColumn btnDesactivar;
     }
 }

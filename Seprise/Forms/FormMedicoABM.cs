@@ -11,7 +11,7 @@ namespace Seprise
 
         private Dictionary<string, int> _especialidades = new Dictionary<string, int>
         {
-            { "Clínica médica", 1 },
+            { "Clínica Médica", 1 },
             { "Pediatría", 2 },
             { "Cardiología", 3 },
             { "Traumatología", 4 },

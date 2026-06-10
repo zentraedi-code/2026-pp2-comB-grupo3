@@ -287,18 +287,18 @@ INSERT INTO medico (id, especialidad_id, matricula, nombre, apellido, importe_co
 (6, 6, 'MP-60093', 'Marcelo',  'Pereyra',    6500.00, true),
 (7, 7, 'MP-71845', 'Silvina',  'Torres',    10000.00, true);
 
-INSERT INTO paciente (id, dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo) VALUES
-(1, '30111222', 'Juan Ignacio', 'Pérez', '1983-05-14', '1144556677', 'OSDE', true),
-(2, '35444555', 'María Belén', 'Rodríguez', '1990-11-23', '1122334455', 'SWISS MEDICAL', true),
-(3, '28777888', 'Diego Armando', 'Maradona', '1980-10-30', '1199887766', 'PARTICULAR', true),
-(4, '40123456', 'Sofía Valentina', 'González', '1997-03-08', '261456789', 'GALENO', true),
-(5, '42888999', 'Lucas Mateo', 'Silva', '2000-07-19', '341654321', 'OSECAC', true),
-(6, '22333444', 'Patricia Noemí', 'Sánchez', '1972-01-15', '351987654', 'PAMI', true),
-(7, '38555666', 'Facundo Ezequiel', 'Romero', '1994-09-02', '2215554433', 'IOMA', true),
-(8, '45111222', 'Martina Paz', 'Álvarez', '2003-12-11', '2613334455', 'MEDIFE', true),
-(9, '33666777', 'Gonzalo Javier', 'Benítez', '1988-04-25', '1133445566', 'SANCOR SALUD', true),
-(10, '18444555', 'Jorge Alberto', 'García', '1967-06-30', '1177665544', 'PAMI', true),
-(11, '95123789', 'Camila Inés', 'Herrera', '1999-08-14', '3512223344', 'PARTICULAR', true);
+INSERT INTO paciente (id, dni, nombre, apellido, fecha_nacimiento, telefono, obra_social, activo, email, direccion) VALUES
+(1, '30111222', 'Juan Ignacio', 'Pérez', '1983-05-14', '1144556677', 'OSDE', true, 'juan@gmail.com', 'Siempre vivas 123'),
+(2, '35444555', 'María Belén', 'Rodríguez', '1990-11-23', '1122334455', 'SWISS MEDICAL', true, 'belen@gmail.com', 'Av Colon 1500'),
+(3, '28777888', 'Diego Armando', 'Maradona', '1980-10-30', '1199887766', 'PARTICULAR', true, 'diego@gmail.com', 'San Martin 400'),
+(4, '40123456', 'Sofía Valentina', 'González', '1997-03-08', '261456789', 'GALENO', true, 'sofia@gmail.com', 'Pompeya 558'),
+(5, '42888999', 'Lucas Mateo', 'Silva', '2000-07-19', '341654321', 'OSECAC', true, 'lucas@gmail.com', 'Benito juarez 85'),
+(6, '22333444', 'Patricia Noemí', 'Sánchez', '1972-01-15', '351987654', 'PAMI', true, 'patricia@gmail.com', 'La armada 3356'),
+(7, '38555666', 'Facundo Ezequiel', 'Romero', '1994-09-02', '2215554433', 'IOMA', true, 'facundo@gmail.com', 'Japon 3785'),
+(8, '45111222', 'Martina Paz', 'Álvarez', '2003-12-11', '2613334455', 'MEDIFE', true, 'martina@gmail.com', 'Chacabuco 1200'),
+(9, '33666777', 'Gonzalo Javier', 'Benítez', '1988-04-25', '1133445566', 'SANCOR SALUD', true, 'gonzalo@gmail.com', 'Santa fe 860'),
+(10, '18444555', 'Jorge Alberto', 'García', '1967-06-30', '1177665544', 'PAMI', true, 'jorge@gmail.com', 'Peguajo 764'),
+(11, '95123789', 'Camila Inés', 'Herrera', '1999-08-14', '3512223344', 'PARTICULAR', true, 'camila@gmail.com','Mardel 5523');
 
 INSERT INTO agenda_medica (id, medico_id, consultorio_id, fecha, hora_desde, hora_hasta, duracion_turno_minutos, sobre_turnos_por_hora, estado) VALUES
 (1, 1, 1, '2026-06-05', '08:00:00', '12:00:00', 15, 1, 'ACTIVA'), -- Dra. Gómez

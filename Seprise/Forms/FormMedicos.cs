@@ -23,6 +23,19 @@ namespace Seprise
             CargarMedicos();
         }
 
+        private void dgvMedicos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == btnConsultar.Index)
+                btnConsultar_Click(sender, e);
+            else if (e.ColumnIndex == btnModificar.Index)
+                btnModificar_Click(sender, e);
+            else if (e.ColumnIndex == btnDesactivar.Index)
+                btnDesactivar_Click(sender, e);
+        }
+
         private bool IsDesignMode()
         {
             return LicenseManager.UsageMode == LicenseUsageMode.Designtime || (Site != null && Site.DesignMode);
@@ -33,7 +46,7 @@ namespace Seprise
             try
             {
                 dgvMedicos.Rows.Clear();
-                List<Medico> medicos = medicoDao.listarTodos();
+                List<Medico> medicos = medicoDao.listarActivos();
                 foreach (Medico medico in medicos)
                 {
                     dgvMedicos.Rows.Add(
@@ -60,6 +73,20 @@ namespace Seprise
                 medicoDao.agregar(form.MedicoResultado);
                 CargarMedicos();
                 MessageBox.Show("Médico creado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (dgvMedicos.SelectedRows.Count > 0)
+            {
+                Medico medico = (Medico)dgvMedicos.SelectedRows[0].Tag;
+                var form = new FormMedicoABM("Consultar", medico);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un médico de la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

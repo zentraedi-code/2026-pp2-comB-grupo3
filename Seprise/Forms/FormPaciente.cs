@@ -71,18 +71,10 @@ namespace Seprise
                 txtTelefono.Text = _paciente.Telefono ?? "";
                 txtEmail.Text = _paciente.Email ?? "";
                 txtDireccion.Text = _paciente.Direccion ?? "";
+                cboObraSocial.Text = _paciente.ObraSocial ?? "";
                 dtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
                 dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy";
                 dtpFechaNacimiento.Value = _paciente.FechaNacimiento;
-
-                if (!string.IsNullOrWhiteSpace(_paciente.ObraSocial))
-                {
-                    int index = cboObraSocial.FindStringExact(_paciente.ObraSocial);
-                    if (index >= 0)
-                        cboObraSocial.SelectedIndex = index;
-                    else
-                        cboObraSocial.Text = _paciente.ObraSocial;
-                }
             }
         }
 
