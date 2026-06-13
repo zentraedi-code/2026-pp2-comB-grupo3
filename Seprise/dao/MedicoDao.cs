@@ -10,9 +10,10 @@ namespace Seprise.dao
 
         public bool agregar(Medico medico)
         {
+            string importe = medico.ImporteConsulta.ToString(System.Globalization.CultureInfo.InvariantCulture);
             string sql = $"INSERT INTO medico (especialidad_id, matricula, nombre, apellido, importe_consulta, activo) " +
                          $"VALUES ({medico.EspecialidadId}, '{medico.Matricula}', '{medico.Nombre}', " +
-                         $"'{medico.Apellido}', {medico.ImporteConsulta}, {(medico.Activo ? 1 : 0)})";
+                         $"'{medico.Apellido}', {importe}, {(medico.Activo ? 1 : 0)})";
             return Connection.ejecutarComandoSQL(sql) > 0;
         }
 
@@ -64,11 +65,12 @@ namespace Seprise.dao
 
         public bool modificar(Medico medico)
         {
+            string importe = medico.ImporteConsulta.ToString(System.Globalization.CultureInfo.InvariantCulture);
             string sql = $"UPDATE medico SET " +
                          $"nombre = '{medico.Nombre}', " +
                          $"apellido = '{medico.Apellido}', " +
                          $"especialidad_id = {medico.EspecialidadId}, " +
-                         $"importe_consulta = {medico.ImporteConsulta}, " +
+                         $"importe_consulta = {importe}, " +
                          $"activo = {(medico.Activo ? 1 : 0)} " +
                          $"WHERE id = {medico.Id}";
             return Connection.ejecutarComandoSQL(sql) > 0;
