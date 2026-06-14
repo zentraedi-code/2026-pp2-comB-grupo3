@@ -31,8 +31,8 @@ namespace Seprise
                 AutoSize = false,
                 Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold),
                 ForeColor = System.Drawing.Color.FromArgb(0, 150, 136),
-                Location = new System.Drawing.Point(520, 250),
-                Size = new System.Drawing.Size(220, 40),
+                Location = new System.Drawing.Point(520, 188),
+                Size = new System.Drawing.Size(220, 30),
                 TextAlign = System.Drawing.ContentAlignment.MiddleRight,
                 Text = "$0.00"
             };
